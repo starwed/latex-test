@@ -1,0 +1,142 @@
+
+\section{Genral Spin Formalism}
+
+\subsection{Formalism}
+First we need to work out a formalism that will apply to the general spin case.  
+We want to represent the spin state of the particles by an object that looks like a generalization of the Dirac bispinor.
+
+%TODO check what to call helical basis
+It is easiest to start with the Dirac basis, where the upper and lower components of the bispinor are objects of opposite helicity, each transforming as an object of spin $1/2$.
+
+To that end define an object
+
+\[
+\Psi  = \frac{1}{\sqrt{2}} \begin{pmatrix} \xi \\ \eta \end{pmatrix}
+\]
+
+that we wish to have the appropriate properties.  Each component should transform as a particle of spin s, but with opposite helicity.  Under reflection the upper and lower components transform into each other.
+
+The irreducible representations of the proper Lorentz group are spinors which are seperately symmetric in dotted and undotted indices.  The spin of the particle will be half the total number of indices.  So if $\xi$ is an object with $p$ undotted and $q$ dotted indices
+\[
+	\xi = \{ \xi^{\alpha_1 \ldots \alpha_p}_{\dot\beta_1 \ldots \dot\beta_q} \}
+\]
+Then this is a represenation of a particle of spin $s = (p+q)/2$.
+
+We have some free choice in how to partition the dotted/undotted indices, and we cannot choose exactly the same scheme for all spin as long as both types of indices are present.  However, we can make separately consistent choices for integral and half-integral spin.  For integral spin we can say $p=q=s$, while for the half-integral case we'll choose $p=s+\frac{1}{2}$, $q=s-\frac{1}{2}$.
+
+
+
+
+We want the $\xi$ and $\eta$ to transform as objects of opposite helicity.  Under reflection they will transform into each other.  So 
+ \[
+	\eta = \{ \eta_{\dot \alpha_1 \ldots \dot \alpha_p}^{\beta_1 \ldots \beta_q} \}
+\] 
+
+
+
+
+In the rest frame of the particle, they will have clearly defined and identical properties under rotation.    The rest frame spinors are equivalent to rank $2s$ nonrelativistic spinors.  So the bispinor in the rest frame looks like
+\[
+\Psi = \frac{1}{\sqrt{2}} \begin{pmatrix} \xi_0 \\ \xi_0 \end{pmatrix}
+\]
+
+where
+\[
+	\xi_0 = \{ (\xi_0)_{\alpha_1 \ldots \alpha_p \beta_1 \ldots \beta_q}  \}
+\]
+and all indices are symmetric.
+
+We can obtain the spinors in an arbitrary frame by boosting from the rest frame.  The upper and lower components we have defined to have opposite helicity, and so will act in opposite ways under boost:
+\[
+	\xi = \exp{(\frac{\v{\Sigma} \cdot \v{\phi}}{2}) } \xi_0,  
+	\hspace{3em} 
+	\eta = \exp{(-\frac{\v{\Sigma} \cdot \v{\phi}}{2}) } \xi_0
+\]
+
+%TODO check dotted/undotted transformations are correct
+What form should the operator $\v{\Sigma}$ have?  Under an infitesimal boost by a rapidity $\phi$, a spinor with a single undotted index is transformed as
+\[
+	\xi_\alpha \to \xi'_\alpha = \left(\delta_{\alpha \beta} + \frac{\gv{\phi}\cdot \gv{\sigma}_{\alpha \beta} }{2} \right) \xi_\beta 
+\]
+while one with a dotted index will transform as
+\[
+\xi_{\dot\alpha} \to \xi'_{\dot\alpha} = \left(\delta_{\dot \alpha \dot \beta} - \frac{\gv{\phi}\cdot \gv{\sigma}_{\dot \alpha \dot\beta} }{2} \right) \xi_{\dot \beta}
+\]
+
+
+The infinitesmal transformation of a higher spin object with the first $p$ indices undotted and the last $q$ dotted would then be
+\[
+	\xi \to \xi' = \left(1 
+		+  \sum\limits_{a=0}^p \frac{\gv{\sigma}_a \cdot \gv{\phi} }{2}
+		- \sum\limits_{a=p+1}^{p+q} \frac{\gv{\sigma}_a \cdot \gv{\phi} }{2}
+	\right ) \xi 
+\]
+where $a$ denotes which spinor index of $\xi$ is operated on.
+
+
+If we define 
+\[
+	\v{\Sigma} = \sum\limits_{a=0}^p \gv{\sigma}_a - \sum\limits_{a=p+1}^{p+q} \gv{\sigma}_a 
+\]
+
+Then the infinitesmal transformations would be
+\[
+	\xi \to \xi' = \left( 1 + \frac{\gv{\Sigma} \cdot \gv{\phi} }{2} \right) \xi
+\]
+\[
+	\eta \to \eta' = \left( 1 - \frac{\gv{\Sigma} \cdot \gv{\phi} }{2} \right) \eta
+\]
+So the exact transformation should be
+\[
+		\xi \to \xi' = \exp\left( \frac{\gv{\Sigma} \cdot \gv{\phi} }{2} \right) \xi
+\]
+\[
+	\eta \to \eta' = \exp \left( -\frac{\gv{\Sigma} \cdot \gv{\phi} }{2} \right) \eta
+\]  
+  
+Therefore, the bispinor of some particle boosted by $\gv{phi}$ will be
+% TODO check passive v. active boost
+\[
+\Psi = \frac{1}{\sqrt{2}} \begin{pmatrix} 
+		\exp\left( \frac{\gv{\Sigma} \cdot \gv{\phi} }{2} \right)\xi_0 \\ 
+		\exp \left( \frac{-\gv{\Sigma} \cdot \gv{\phi} }{2} \right) \xi_0 
+	\end{pmatrix}
+\]
+
+
+In dealing with the relativistic theory, we'll want a basis that seperates the particle and antiparticle parts of the wave function.  If we want the upper component to be the particle, then in the rest frame the lower component will vanish, and for low momentum will be small compared to the upper component.  The unitary transformation which accomplishes this is
+
+\[
+	\Psi' = \begin{pmatrix} \phi \\ \chi \end{pmatrix}
+\]
+
+\[
+	\phi = \frac{1}{\sqrt{2}}(\xi + \eta)
+\]
+\[
+	\chi = \frac{1}{\sqrt{2}}( \eta - \xi)
+\]
+
+Which is equivalent to
+\[
+	\Psi' = \frac{1}{\sqrt{2}} \begin{pmatrix}1 & 1 \\ -1 & 1 \end{pmatrix} \Psi
+\]
+
+Then,
+\[
+	\phi =  \cosh \left( \frac{\gv{\Sigma} \cdot \gv{\phi} }{2} \right ) \xi_0
+\]
+
+%Sign confusion compared to original equation again
+\[
+	\chi =  \sinh \left( \frac{\gv{\Sigma} \cdot \gv{\phi} }{2} \right ) \xi_0
+\]
+
+We cannot simply assert that the upper component is equivalent to the Shrodinger like wave function -- it would not be correctly normalized at nonzero momentum, for there is some mixing with the antiparticle component.
+
+We can obtain the correct expression by demanding that the Shrodinger like wave-function be correctly normalized.
+
+
+
+
+
