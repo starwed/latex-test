@@ -132,7 +132,50 @@ Then,
 	\chi =  \sinh \left( \frac{\gv{\Sigma} \cdot \gv{\phi} }{2} \right ) \xi_0
 \]
 
+%Section on bilinear transforms
+\input{bilinear_transforms}
 
+
+\subsection{Electromagnetic Interaction}
+%TODO insert diagram, showing the type of interaction we're talking about, defining momenta of particles in question.
+Knowing how the wave functions themselves behave, we want to see what that tells us about possible electromagnetic interaction.  Interaction with a single electromagnetic photon should take the form
+
+\[
+	M = A_\mu j^\mu 
+\]
+where $j^\mu$ is the electromagnetic current.
+
+
+The electromagnetic current must be built out of the particle's momenta and bilinears of the charged particle fields in such a way that they have the correct Lorentz properties.  We must also demand current conservation: the equation $q_\mu j^\mu = 0$ must hold.  Above we already have shown that, in the case of general spin, there exist only two such bilinears, a scalar and a tensor.
+
+There will be two permissible terms in the current.  We could consider a scalar bilinear coupled with a single power of external momenta.  In order to fufill the current conservation requirement, it should be
+\[
+	\frac{p^\mu + p'^\mu}{2m} \Psi^\dagger \Psi
+\]
+This will obey current conservation because $q = p' -p$, and $ (p+p')\cdot(p'-p) = p^2-p'^2=0$
+
+We can also consider a tensor term contracted with a power of momenta.  To fufill current conservation, we can demand that the tensor bilinear be antisymmetric, and contract it with $q$:
+\[
+	\frac{q_\nu}{2m} \Psi^\dagger T^{\mu\nu} \Psi
+\]
+
+We don't need to worry about higher order tensor bilinears: they will necessitate too many powers of the external momenta.
+
+So the most general current would look like
+\[
+	j^\mu = F_e \frac{p^\mu + p'^\mu}{2m} \Psi^\dagger \Psi + F_m 	\frac{q_\nu}{2m} \Psi^\dagger T^{\mu\nu} \Psi	
+\]
+In general the form factors might have quite complicated dependence on $q$, but these corrections will be too small compared to the type of result we're interested in.  At leading order $F_e$ will just be the electric charge of the particle in question, and $F_m$ will, as we'll see after connecting this result to the nonrelativistic limit, be related to the particle's $g$-factor.  So to the order we need, we can write the current as
+
+%TODO check definition of form factors F_e and F_m
+\[
+	j^\mu =  e \frac{p^\mu + p'^\mu}{2m} \Psi^\dagger \Psi +   e g \frac{q_\nu}{2m} \Psi^\dagger T^{\mu\nu} \Psi
+\]
+
+%TODO Actually show this formally: that the two types of antisymmetric tensors aren't truly different
+The tensor bilinear $\Psi^\dagger T^{\mu\nu} \Psi$ itself has some free parameters.  However, it'll turn out that, when computing actual nonrelativistic amplitudes, the two types of anti-symmetric tensors collapse into the same general form.
+
+This captures the essence of the interaction between a charged particle of general-spin and a single photon.
 
 
 \subsection{Connection to nonrelativistic spinors}
@@ -145,9 +188,11 @@ or
 \[
 	\Psi = \begin{pmatrix} 0 \\ \xi_0 \end{pmatrix}
 \]
+
 However, when we consider a particle with zero momentum it is not the case that the upper component of the bispinor can be directly associated with the Shrodinger like wave-function of the particle --- for instance, it would not be correctly normalized, for there is some mixing with the lower component.
 
-We can obtain a reasonable relation between $\xi_0$ and the Shrodinger amplitude $\phi_s$ by considering the current density.  For $\phi_s$ it will be $j_0 = \phi_s^\dagger \phi$.
+We can obtain a reasonable relation between $\xi_0$ and the Shrodinger amplitude $\phi_s$ by considering the current density at zero momentum transfer.  For $\phi_s$ it will be $j_0 = \phi_s^\dagger \phi$.  For the relativistic theory we have
+
 
 
 
