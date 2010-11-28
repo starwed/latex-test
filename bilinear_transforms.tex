@@ -1,0 +1,192 @@
+
+
+\subsection{General bilinear transform}
+We have the transformation of the spinor under small boosts:
+\beqa
+	\Psi &\to& \Psi' = \Psi + \frac{\eta_i }{2} \begin{pmatrix} 0 & \Sigma_i \\ \Sigma_i & 0 \end{pmatrix}\Psi
+\eeqa
+\beqa
+	\bar{\Psi} &\to& \bar{\Psi'} = \bar{\Psi} - \frac{\eta_i }{2} \bar{\Psi} \begin{pmatrix} 0 & \Sigma_i \\ \Sigma_i & 0 \end{pmatrix}
+\eeqa
+
+We can also see the transformation of the spinor under parity: simply put, because the upper component is even in $\gv{\Sigma} \cdot \v{p}$, whereas the lower component is odd, we obtain
+\[
+	\Psi \to \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}\Psi
+\]
+\[	\bar{\Psi} \to \bar{\Psi} \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}
+\]
+So
+\[
+	\bar{\Psi} \begin{pmatrix} A & B \\ C & D \end{pmatrix} \Psi
+		\to
+	\bar{\Psi} \begin{pmatrix} A & -B \\ -C & D \end{pmatrix} \Psi
+\]
+
+From these facts we can examine the general behavior of bilinears under Lorentz transformations.
+
+Now we'll examine the behavior of bilinears under boosts.  We can write the general structure of the bilinear as
+\[
+	\bar{\Psi} T \Psi = 	\bar{\Psi} \begin{pmatrix} A + D & B+C \\ B-C & A - D \end{pmatrix} \Psi
+\]
+or using a different notation
+\[
+\bar{\Psi} T \Psi = 	\bar{\Psi} 
+	\left [
+			A \otimes \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}
+			+ D \otimes \begin{pmatrix} 1 & 0 \\ 0 & -1\end{pmatrix}			
+			+ B \otimes \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}
+			+ C \otimes \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix}
+	\right)]  \Psi
+\]
+
+Under an infitesimal Lorentz boost $\gv{\eta}$ this will transform into
+\[
+	\bar{\Psi} T \Psi \to \bar{\Psi} T \Psi
+		+ \frac{\eta_i}{2} \bar{\Psi} \left (  \begin{pmatrix} A + D & B+C \\ B-C & A - D \end{pmatrix} \begin{pmatrix} 0 & \Sigma_i \\ \Sigma_i & 0 \end{pmatrix} - \begin{pmatrix} 0 & \Sigma_i \\ \Sigma_i & 0 \end{pmatrix} \begin{pmatrix} A + D & B+C \\ B-C & A - D \end{pmatrix} \right ) \Psi					
+\]
+We can express this in terms of commutators and anti-commutators
+\[
+	\bar{\Psi} T \Psi \to \bar{\Psi} T \Psi
+		+ \frac{\eta_i}{2} \bar{\Psi} \left [
+			[B, \Sigma_i] \otimes \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}
+			+ [A, \Sigma_i] \otimes \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}
+ 			+ \{C, \Sigma_i\} \otimes \begin{pmatrix} 1 & 0 \\ 0 & -1\end{pmatrix}
+			+ \{D, \Sigma_i\} \otimes \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix}
+	\right)] \Psi
+\]
+
+We can note here that, using only the matrices $\gv{\Sigma}$ and $\gv{S}$ we can build three structures invariant under rotations: and $S^2$, $\Sigma^2$, and $\Sigma \cdot S$.  All three of these structures commute with both $S_i$ and $\Sigma_i$, and their value depends only on the particular representation we're working with.  So for our purposes here, they can just be treated as pure numbers.
+
+
+\subsubsection{Scalar bilinears}
+Since the scalar must be invariant to rotation, then by the logic above it's block elements are proportional to the identity.
+
+It must also be unchanged under boosts.  We can see that this necessitates that $C=D=0$, while providing no constraint on A and B.  So the general form of a bilinear invariant under boosts is
+\[
+	\bar{\Psi} T \Psi = \bar{\Psi} \begin{pmatrix} A & B \\B & A \end{pmatrix} \Psi
+\]
+where A and B are proportional to the identity.
+
+Under the discrete partiy transformation this will transform into
+\[
+	\bar{\Psi} T' \Psi = \bar{\Psi} \begin{pmatrix} A & -B \\-B & A \end{pmatrix} \Psi
+\]
+This shows that for a true scalar, $B=0$.
+
+
+\subsubsection{Vector bilinears}
+To attempt to construct a vector bilinear, we can start by considering the time-like part of it.  Since this must be invariant under spatial rotations, then by the same logic as above it must essentially be composed of four blocks proportional to the identity.  We also know that under boosts the time-like part is transformed into the spatial and vice versa, so we can use these linked transformations to obtain constraints on the bilinear.
+
+If $T^\mu$ is a vector we know that, under an infinitesimal boost, it's transformation will be
+\beqa
+	T^0 &\to& T^0 + \eta_i T^i	\\
+	T^i &\to& T^i + \eta_i T^0
+\eeqa
+
+We again write 
+\[T^\mu = \begin{pmatrix}A^\mu + D^\mu & B^\mu+C^\mu \\ B^\mu-C^\mu & A^\mu - D^\mu  \end{pmatrix} \]
+
+Then we see that under boost, $T^0$ transforms as
+
+\[
+	\bar{\Psi} T^0 \Psi \to 	\bar{\Psi} T^0 \Psi
+	+  \eta_i \bar{\Psi} \left [
+			C^0 \Sigma_i \otimes \begin{pmatrix} 1 & 0 \\ 0 & -1\end{pmatrix}
+			+ D^0 \Sigma_i \otimes \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix}
+	\right] \Psi
+\]
+where we've used that fact that all the components of $T^0$ commute with $\Sigma_i$.
+This tells us that for $T^\mu$ to be a 4-vector, the following must be true.
+\beqa
+	A^i &=& 0	\\
+	B^i &=& 0 	\\
+	C^i &=& D^0 \Sigma^i	\\
+	D^i &=& C^0 \Sigma^i	\\
+\eeqa
+
+We can now consider how $T^i$ changes under a boost, and discover
+
+\beqa
+\bar{\Psi} T^i \Psi 
+	&\to& \bar{\Psi} T^i \Psi
+		+ \frac{\eta_j}{2} \bar{\Psi} \left [
+			\{C^i, \Sigma^j\} \otimes \begin{pmatrix} 1 & 0 \\ 0 & -1\end{pmatrix}
+			+ \{D^i, \Sigma^j\} \otimes \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix}
+		\right)] \Psi	\\
+	&=& \bar{\Psi} T^i \Psi
+		+ \frac{\eta_j}{2} \bar{\Psi} \left [
+			D^0\{\Sigma^i, \Sigma^j\} \otimes \begin{pmatrix} 1 & 0 \\ 0 & -1\end{pmatrix}
+			+ C^0\{\Sigma^i, \Sigma^j\} \otimes \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix}
+		\right)] \Psi	\\
+\eeqa
+Again considering our demand that $T^\mu$ transform like a 4-vector, we get
+\beqa
+	A^0 &=& 0	\\
+	B^0 &=& 0	\\
+	C^0 \delta^{ij} &=&  C^0 \frac{1}{2}\{\Sigma^i, \Sigma^j\}	\\
+	D^0 \delta^{ij} &=&  D^0 \frac{1}{2}\{\Sigma^i, \Sigma^j\}	\\
+\eeqa
+The last two constraints are met in the spin-1/2 case, but not for higher spins.  This tells us that there's no way to, in the higher spin case, construct a vector bilinear using only I, $\gv{\Sigma}$, and $\v{S}$.
+
+For spin-1/2, where $\Sigma_i = \sigma_i$, we see that a true vector bilinear (with correct transformation properties under parity) will be proportional to 
+\[
+	(T^0, \v{T} ) = \left( \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} , \begin{pmatrix} 0 & \gv{\sigma} \\ -\gv{\sigma} & 0 \end{pmatrix} \right )
+\]
+which, of course, is exactly what we knew already.
+
+\subsubsection{Tensor bilinears}
+Here we'll be a little less ambitious.  We can tell from the above considerations that, under boosts, we effectively mix A and B components seperately from the C and D blocks.  What's more, we need anti-commutation relationships to deal with the latter transformations.  So we'll just consider tensors that look like
+\[
+	T^{\mu\nu} = \begin{pmatrix} A^{\mu\nu} & B^{\mu\nu} \\ B^{\mu\nu} & A^{\mu\nu} \end{pmatrix}	
+\]
+Furthermore, we'll consider only anti-symmetric tensors for now.  Now we can basically procede as in the vector case, knowing how an anti-symmetric tensor should transform:
+\beqa
+	T^{0i} &\to& T^{0i} +  \eta_j T^{ji}	\\
+	T^{ij}	&\to& T^{ij} + \eta_i T^{0j} + \eta_j T^{i0}	\\
+\eeqa
+
+Start by considering the components of $T^{0i} = -T{i0}$.  They must transform as vectors under rotations.  We have two vectors available to us, so we can write
+\beqa
+	A^{0i} &=& \alpha \Sigma^i + \beta S^i	\\
+	B^{0i} &=& \gamma \Sigma^i + \delta S^i	\\
+\eeqa
+
+Under a boost, we find the relation that
+\beqa
+	A^{ji} &=& [B^{0i}, \Sigma^j]	\\
+	B^{ji} &=& [A^{0i}, \Sigma^j]	\\	
+\eeqa
+And then looking at how $T^{ij}$ transforms, we get the constraint
+\beqa
+	\eta_k \left[ [A^{0i}, \Sigma^j], \Sigma^k \right] &=& \eta_j A^{0i} - \eta_i A^{0j}	\\
+	\eta_k \left[ [B^{0i}, \Sigma^j], \Sigma^k \right] &=& \eta_j B^{0i} - \eta_i B^{0j}	\\
+\eeqa
+We're assuming that both $A^{0i}$ and $B^{0i}$ are linear combinations of $\Sigma_i$ and $S_i$.  So what we need are the relationships
+\beqa
+	[\Sigma^i, \Sigma^j] &=& 4 i \epsilon_{ijk} S^k	\\
+	{}[S^i, \Sigma^j] &=& i\epsilon_{ijk} \Sigma^k 	\\
+	{}[[\Sigma^i, \Sigma^j], \Sigma^k] 
+		&=& 4 i\epsilon_{ij\ell} [S^\ell, \Sigma^k]	\\
+		&=& -4 \epsilon_{ij\ell} \epsilon_{\ell k m} \Sigma^m \\		
+		&=& -4 (\delta_{ik} \Sigma^j - \delta_{jk} \Sigma^i)	\\ 
+	{}[[S^i, \Sigma^j], \Sigma^k] 
+		&=&  i\epsilon_{ij\ell} [\Sigma^\ell, \Sigma^k]	\\
+		&=& -4 \epsilon_{ij\ell} \epsilon_{\ell k m} S^m \\		
+		&=& -4 (\delta_{ik} S^j - \delta_{jk} S^i)	\\ 
+\eeqa
+So we can see that, no matter what $\alpha$ and $\beta$ are, we get the relation
+\[
+	[ [A^{0i}, \Sigma^j], \Sigma^k]
+		=
+	-4 (\delta{ik} A^{0i} -\delta_{jk} A^{0j } 
+\]
+And so necessarily, 
+\[
+	\eta_k[ [A^{0i}, \Sigma^j], \Sigma^k]
+		=
+	4 (\eta_j A^{0i} -  \eta_i A^{0j} )
+\]
+So any arbitrary combination of $\v{S}$ and $\gv{\Sigma}$ will allow us to construct a bilinear that transforms as a tensor.
+
+(In fact, it's not hard to generalise this to any operator expressable as a linear combination of $\sigma^A_i$, where the index A represents which spinor index $\sigma$ operates on.)
+

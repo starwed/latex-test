@@ -48,27 +48,27 @@ and all indices are symmetric.
 
 We can obtain the spinors in an arbitrary frame by boosting from the rest frame.  The upper and lower components we have defined to have opposite helicity, and so will act in opposite ways under boost:
 \[
-	\xi = \exp{(\frac{\v{\Sigma} \cdot \v{\phi}}{2}) } \xi_0,  
+	\xi = \exp{(\frac{\v{\Sigma} \cdot \v{\rapidity}}{2}) } \xi_0,  
 	\hspace{3em} 
-	\eta = \exp{(-\frac{\v{\Sigma} \cdot \v{\phi}}{2}) } \xi_0
+	\eta = \exp{(-\frac{\v{\Sigma} \cdot \v{\rapidity}}{2}) } \xi_0
 \]
 
 %TODO check dotted/undotted transformations are correct
 What form should the operator $\v{\Sigma}$ have?  Under an infitesimal boost by a rapidity $\phi$, a spinor with a single undotted index is transformed as
 \[
-	\xi_\alpha \to \xi'_\alpha = \left(\delta_{\alpha \beta} + \frac{\gv{\phi}\cdot \gv{\sigma}_{\alpha \beta} }{2} \right) \xi_\beta 
+	\xi_\alpha \to \xi'_\alpha = \left(\delta_{\alpha \beta} + \frac{\gv{\rapidity}\cdot \gv{\sigma}_{\alpha \beta} }{2} \right) \xi_\beta 
 \]
 while one with a dotted index will transform as
 \[
-\xi_{\dot\alpha} \to \xi'_{\dot\alpha} = \left(\delta_{\dot \alpha \dot \beta} - \frac{\gv{\phi}\cdot \gv{\sigma}_{\dot \alpha \dot\beta} }{2} \right) \xi_{\dot \beta}
+\xi_{\dot\alpha} \to \xi'_{\dot\alpha} = \left(\delta_{\dot \alpha \dot \beta} - \frac{\gv{\rapidity}\cdot \gv{\sigma}_{\dot \alpha \dot\beta} }{2} \right) \xi_{\dot \beta}
 \]
 
 
 The infinitesmal transformation of a higher spin object with the first $p$ indices undotted and the last $q$ dotted would then be
 \[
 	\xi \to \xi' = \left(1 
-		+  \sum\limits_{a=0}^p \frac{\gv{\sigma}_a \cdot \gv{\phi} }{2}
-		- \sum\limits_{a=p+1}^{p+q} \frac{\gv{\sigma}_a \cdot \gv{\phi} }{2}
+		+  \sum\limits_{a=0}^p \frac{\gv{\sigma}_a \cdot \gv{\rapidity} }{2}
+		- \sum\limits_{a=p+1}^{p+q} \frac{\gv{\sigma}_a \cdot \gv{\rapidity} }{2}
 	\right ) \xi 
 \]
 where $a$ denotes which spinor index of $\xi$ is operated on.
@@ -81,25 +81,25 @@ If we define
 
 Then the infinitesmal transformations would be
 \[
-	\xi \to \xi' = \left( 1 + \frac{\gv{\Sigma} \cdot \gv{\phi} }{2} \right) \xi
+	\xi \to \xi' = \left( 1 + \frac{\gv{\Sigma} \cdot \gv{\rapidity} }{2} \right) \xi
 \]
 \[
-	\eta \to \eta' = \left( 1 - \frac{\gv{\Sigma} \cdot \gv{\phi} }{2} \right) \eta
+	\eta \to \eta' = \left( 1 - \frac{\gv{\Sigma} \cdot \gv{\rapidity} }{2} \right) \eta
 \]
 So the exact transformation should be
 \[
-		\xi \to \xi' = \exp\left( \frac{\gv{\Sigma} \cdot \gv{\phi} }{2} \right) \xi
+		\xi \to \xi' = \exp\left( \frac{\gv{\Sigma} \cdot \gv{\rapidity} }{2} \right) \xi
 \]
 \[
-	\eta \to \eta' = \exp \left( -\frac{\gv{\Sigma} \cdot \gv{\phi} }{2} \right) \eta
+	\eta \to \eta' = \exp \left( -\frac{\gv{\Sigma} \cdot \gv{\rapidity} }{2} \right) \eta
 \]  
   
 Therefore, the bispinor of some particle boosted by $\gv{phi}$ will be
 % TODO check passive v. active boost
 \[
 \Psi = \frac{1}{\sqrt{2}} \begin{pmatrix} 
-		\exp\left( \frac{\gv{\Sigma} \cdot \gv{\phi} }{2} \right)\xi_0 \\ 
-		\exp \left( \frac{-\gv{\Sigma} \cdot \gv{\phi} }{2} \right) \xi_0 
+		\exp\left( \frac{\gv{\Sigma} \cdot \gv{\rapidity} }{2} \right)\xi_0 \\ 
+		\exp \left( \frac{-\gv{\Sigma} \cdot \gv{\rapidity} }{2} \right) \xi_0 
 	\end{pmatrix}
 \]
 
@@ -124,13 +124,16 @@ Which is equivalent to
 
 Then,
 \[
-	\phi =  \cosh \left( \frac{\gv{\Sigma} \cdot \gv{\phi} }{2} \right ) \xi_0
+	\phi =  \cosh \left( \frac{\gv{\Sigma} \cdot \gv{\rapidity} }{2} \right ) \xi_0
 \]
 
 %Sign confusion compared to original equation again
 \[
-	\chi =  \sinh \left( \frac{\gv{\Sigma} \cdot \gv{\phi} }{2} \right ) \xi_0
+	\chi =  \sinh \left( \frac{\gv{\Sigma} \cdot \gv{\rapidity} }{2} \right ) \xi_0
 \]
+
+
+\input{Building NRQED}
 
 %Section on bilinear transforms
 \input{bilinear_transforms}
@@ -150,35 +153,37 @@ The electromagnetic current must be built out of the particle's momenta and bili
 
 There will be two permissible terms in the current.  We could consider a scalar bilinear coupled with a single power of external momenta.  In order to fufill the current conservation requirement, it should be
 \[
-	\frac{p^\mu + p'^\mu}{2m} \Psi^\dagger \Psi
+	\frac{p^\mu + p'^\mu}{2m} \Psibar^\dagger \Psi
 \]
 This will obey current conservation because $q = p' -p$, and $ (p+p')\cdot(p'-p) = p^2-p'^2=0$
 
 We can also consider a tensor term contracted with a power of momenta.  To fufill current conservation, we can demand that the tensor bilinear be antisymmetric, and contract it with $q$:
 \[
-	\frac{q_\nu}{2m} \Psi^\dagger T^{\mu\nu} \Psi
+	\frac{q_\nu}{2m} \Psibar^\dagger T^{\mu\nu} \Psi
 \]
 
 We don't need to worry about higher order tensor bilinears: they will necessitate too many powers of the external momenta.
 
 So the most general current would look like
 \[
-	j^\mu = F_e \frac{p^\mu + p'^\mu}{2m} \Psi^\dagger \Psi + F_m 	\frac{q_\nu}{2m} \Psi^\dagger T^{\mu\nu} \Psi	
+	j^\mu = F_e \frac{p^\mu + p'^\mu}{2m} \Psibar^\dagger \Psi + F_m 	\frac{q_\nu}{2m} \Psibar^\dagger T^{\mu\nu} \Psi	
 \]
 In general the form factors might have quite complicated dependence on $q$, but these corrections will be too small compared to the type of result we're interested in.  At leading order $F_e$ will just be the electric charge of the particle in question, and $F_m$ will, as we'll see after connecting this result to the nonrelativistic limit, be related to the particle's $g$-factor.  So to the order we need, we can write the current as
 
 %TODO check definition of form factors F_e and F_m
 \[
-	j^\mu =  e \frac{p^\mu + p'^\mu}{2m} \Psi^\dagger \Psi +   e g \frac{q_\nu}{2m} \Psi^\dagger T^{\mu\nu} \Psi
+	j^\mu =  e \frac{p^\mu + p'^\mu}{2m} \Psibar^\dagger \Psi +   e g \frac{q_\nu}{2m} \Psibar^\dagger T^{\mu\nu} \Psi
 \]
 
 %TODO Actually show this formally: that the two types of antisymmetric tensors aren't truly different
-The tensor bilinear $\Psi^\dagger T^{\mu\nu} \Psi$ itself has some free parameters.  However, it'll turn out that, when computing actual nonrelativistic amplitudes, the two types of anti-symmetric tensors collapse into the same general form.
+The tensor bilinear $\Psibar^\dagger T^{\mu\nu} \Psi$ itself has some free parameters.  However, it'll turn out that, when computing actual nonrelativistic amplitudes, the two types of anti-symmetric tensors collapse into the same general form.
 
 This captures the essence of the interaction between a charged particle of general-spin and a single photon.
 
 
 \subsection{Connection to nonrelativistic spinors}
+
+
 In the rest frame, there are two independant bispinors which represent particle and antiparticle states: 
 \[
 	\Psi = \begin{pmatrix} \xi_0 \\ 0 \end{pmatrix}
@@ -191,13 +196,109 @@ or
 
 However, when we consider a particle with zero momentum it is not the case that the upper component of the bispinor can be directly associated with the Shrodinger like wave-function of the particle --- for instance, it would not be correctly normalized, for there is some mixing with the lower component.
 
-We can obtain a reasonable relation between $\xi_0$ and the Shrodinger amplitude $\phi_s$ by considering the current density at zero momentum transfer.  For $\phi_s$ it will be $j_0 = \phi_s^\dagger \phi$.  For the relativistic theory we have
+We can obtain a relation between $\xi_0$ and the Shrodinger amplitude $\phi_s$ by considering the current density at zero momentum transfer.  For $\phi_s$ it will be $j_0 = e \phi_s^\dagger \phi$.  For the relativistic theory we have, as calculated above:
+\[
+	j^0 = e \frac{p^0 + p'^0}{2m} \Psibar^\dagger \Psi + F_m 	\frac{q_\nu}{2m} \Psibar^\dagger T^{0\nu} \Psi	
+\]
+At $q=0$ the expression simplifies
+
+\[
+	j^0(q=0) = e \frac{p_0}{m} \Psibar^\dagger \Psi
+\]
+
+\[
+	= e  \frac{p_0}{m}( \phi^\dagger \phi - \chi^\dagger \chi )
+\]
+
+$\phi$ and $\chi$ are both related to the rest frame spinor $\xi_0$.  So we can write instead
+\[
+	j^0 = e \frac{p_0}{m} \xi_0^\dagger \left \{ 
+		\cosh^2( \frac{\gv{\Sigma} \cdot \gv{\rapidity} }{2})
+		- \sinh^2( \frac{\gv{\Sigma} \cdot \gv{\rapidity} }{2})
+	\right \} \xi_0  
+		=	e \frac{p_0}{m} \xi_0^\dagger \xi_0
+\]
+where the last equality follows from the hyperbolic trig identity.
+
+If we demand that the two current densities be equal to each other, we find
+\[
+	\frac{p_0}{m} \xi_0^\dagger \xi_0 = \phi_s^\dagger \phi_s
+\]
+Approximating
+\[
+	\left( 1 + \frac{\v{p}^2}{2m} \right) \xi_0^\dagger \xi_0 = \phi_s^\dagger \phi_s
+\]
+
+This will hold to the necessary order if we identify
+\[
+	\xi_0 = \left( 1 - \frac{\v{p}^2}{4m} \right) \phi_s
+\]
+
+%TODO fix cosh expansion
+
+To write the relativistic bispinors in terms of $\phi_s$ we will also need approximations to $\cosh( \frac{\gv{\Sigma} \cdot \gv{\rapidity} }{2})$ and $\sinh( \frac{\gv{\Sigma} \cdot \gv{\rapidity} }{2})$.  We only need the rapidity to the leading order: $\gv{\rapidity} \approx \v{v} \approx \frac{\v{p} }{m}$. 
+
+\[
+	\cosh( \frac{\gv{\Sigma} \cdot \gv{\rapidity} }{2}) 
+		\approx 1 + \left( \frac{\gv{\Sigma} \cdot \v{p} }{2m} \right)^2
+\]
+\[
+	\sinh( \frac{\gv{\Sigma} \cdot \gv{\rapidity} }{2}) 
+		\approx   \frac{\gv{\Sigma} \cdot \v{p} }{2m}
+\]
+
+The the two bispinor components are
+\beqa
+\phi 
+	&\approx&  \left(  1 + \left[ \frac{\gv{\Sigma} \cdot \v{p} }{2m} \right]^2 \right) \xi_0 \\
+	&\approx&  \left(  1 + \left[ \frac{\gv{\Sigma} \cdot \v{p} }{2m} \right]^2 - \frac{\v{p}^2}{4m} \right ) \phi_s	\\
+ \chi
+ 	&\approx&	\frac{\gv{\Sigma} \cdot \v{p} }{2m} \xi_0 \\
+ 	&\approx&	\frac{\gv{\Sigma} \cdot \v{p} }{2m} \phi_s
+\eeqa
+
+
+
+%TODO remember to hunt out all the \phi where I mean \rapidity
+\subsection{Bilinears in terms of nonrelativistic theory}
+The next step is to express the relativistic bilinears, built out of the bispinors $\Psi$, in terms of the Shrodinger like wave functions.
+
+We have above written the bispinors in terms of $\phi_s$, so we can use those identities to express the bilinears in the same manner.
+
+\beqa
+\Psibar^\dagger(p') \Psi(p)
+	&=&	\phi^\dagger \phi - \chi^\dagger \chi	\\
+	&=&	\phi_s^\dagger \left[1 + \frac{(\gv{\Sigma} \cdot \v{p'})^2 }{8m^2}  - \frac{\v{p'}^2}{4m^2} \right ]
+			 \left[1 + \frac{(\gv{\Sigma} \cdot \v{p})^2 }{8m^2}  - \frac{\v{p}^2}{4m^2} \right ] \phi_s
+		- \phi_s^\dagger \left[
+			\frac{ ( \gv{\Sigma} \cdot \v{p'}) (\gv{\Sigma} \cdot \v{p}) }{4m^2}
+		\right ] \phi_s	\\
+	&=&	\phi_s^\dagger \left (
+			1 - \frac{ \v{p}^2 + \v{p'}^2 }{4m^2}
+			+ \frac{1}{8m^2} \left \{
+				( \gv{\Sigma} \cdot \v{p'})^2 +  (\gv{\Sigma} \cdot \v{p})^2 
+				 - 2 ( \gv{\Sigma} \cdot \v{p'}) (\gv{\Sigma} \cdot \v{p})
+			\right \}
+	\right ) \phi_s	\\
+	&=& \phi_s^\dagger \left (
+			1 - \frac{ \v{p}^2 + \v{p'}^2 }{4m^2}
+			+ \frac{1}{8m^2} \left \{
+				[ \gv{\Sigma} \cdot \v{p},  \gv{\Sigma} \cdot \v{q}]  + ( \gv{\Sigma} \cdot \v{q})^2 
+			\right \}
+	\right ) \phi_s	\\
+	&=& \phi_s^\dagger \left (
+			1 - \frac{ \v{p}^2 + \v{p'}^2 }{4m^2}
+			+ \frac{1}{8m^2} \left \{
+				[ 4 i \epsilon_{ijk} p_i q_j S_k  + ( \gv{\Sigma} \cdot \v{q})^2 
+			\right \}
+	\right ) \phi_s
+\eeqa
+%TODO at some point need to translate \Sigma functions into spin functions in NR theory, but where?
 
 
 
 
-
-
+In calculating the nonrelativistic limit of the antisymmetric tensor bilinear, we will treat the $0i$ and the $ij$ components seperately.
 
 
 

@@ -1,0 +1,123 @@
+\subsection{The NRQED Lagrangian}
+
+We want to construct an effective Lagrangian in the nonrelativistic limit.  Our goal is to calculate the leading order corrections to the $g$-factor, which are corrections of order $\alpha^2$.  To this end, we need terms in the effective nonrelativistic Lagrangian which are equivalent corrections.
+
+
+%TODO Discussion of energy scales --  possibly move this into introduction, since it applies to each calculation
+We consider constant, infinitesimal external magnetic fields, so we need only consider terms linear in $\v{B}$.
+
+The velocity of the particles in our bound state system will be $v \sim \alpha$.
+
+The electric field we consider is the Coulomb field, so $e\Phi \sim m Z\alpha^2 \sim mv^2$, and $eE \sim m^2v^3$.
+
+Each derivative of the electric field will add an additional factor of $mv$, so the operator $\v{D}$ can be taken to be of this order.
+
+We need to keep terms up to order $mv^4$ and $\frac{B}{m} v^2$ in order to calculate the $g$-factor to the necessary precision.  We include $mv^4$ terms so we can be sure that there are no effects entering from second-order perturbation theory.
+
+
+
+%TODO insert qualifications on external field
+
+The Lagrangian is constrained to obey several symmetries.  It must be invariant under the symmetries of parity and time reversal.  It must also be invariant under Galilean transformations.  The Lagrangian must also be Hermitian, and gauge invariant.
+
+What are the gauge invariant building blocks we can use to construct this Lagrangian?  We have the external fields $\v{E}$ and $\v{B}$, the spin operators $\v{S}$, and the long derivative $\v{D} = \v{\partial} - i e\v{A}$.  The fields should always be accompanied by the charge $e$ of the particle.
+
+When considering the case of higher spin particles, we might consider terms quadratic and above in spin operators.  For a particle of spin $s$, there must be $(2s+1)^2$ independant hermitian operators.  We can span this set of operators by considering products of up to $2s$ spin matrices which are symmetric and traceless in every vector index.  For example, for spin-$1$ we have quadratic, in addition to $I$ and $S_i$, five independant structures of the form $ S_i S_j + S_j S_i + \delta_{ij} \v{S}$.
+
+We also have the scalar $D_0$, however, we need only include a single such term because we insist on having only one power of the time derivative.
+
+To consider possible terms, we need to know how each of the above behave under the discrete transformations and Hermitian conjugate.  The signs under these transformations are listed in the table below.  (Also included is the imaginary number $i$.)
+
+%TODO cleanup table, don't use pmatrix
+\[
+\begin{pmatrix}
+		& Order	&	P	&	T	&	\dagger	\\
+eE_i	&m^2v^3	&	-	& 	+	&	+		\\
+eB_i	&m^2v^2	&	+	&   -	&	+		\\
+D_i		& mv	&	-	&	+	&	-		\\
+D_0		& mv	&	+	&	-	&	-		\\
+S_i		& 1		&	+	&	-	&	+		\\
+i		& 1		&	+	&	-	&	-		\\
+\end{pmatrix}
+\]
+
+Our strategy in cataloguing terms will be to first list all the combinations of $E$, $B$ and $D$ which might be allowed at a particular order, to consider the various ways of contracting these vectors, and finally to eliminate terms which do not obey the proper symmetries.  We can always make a particular combination Hermitian, and get the proper behavior under time reversal by adding a factor of $i$, but parity will kill several terms.  Note that of the structures we can contract with, all are even under parity.
+
+%List objects with which we can contract the vector fields
+
+We can also insist that the Lagrangian have the expected form in the absence of external fields, which eliminates terms like $\bar{S}_{ij}D_i D_j$.
+The leading order terms should be of order $mv^2$ or $\frac{eB}{m}$.  Combinations of the correct order are:
+\begin{itemize}
+  \item The single $D_0$ term.  To have the correct transformation properties this should be $iD_0$.
+  \item The kinetic $\v{D}^2$ term, which must be simply $\frac{\v{D}^2}{2m}$
+  \item A term with a single power of $B_i$.  The only way to contract this is with the spin matrix, so the term will have the form $\frac{e}{m} \v{S} \cdot \v{B}$
+\end{itemize}
+All these terms are Hermitian in themselves.
+
+So, the allowed terms at this order are:
+\[
+	iD_0, \frac{\v{D}^2}{m}, \frac{e}{m} \v{S} \cdot \v{B}
+\]
+
+The first two terms have their coefficients fixed, while we wish to honestly calculate the factor before the last.
+
+%TODO check signs and other factors for consistency
+\[
+	\mathcal{L}_{NRQED} = iD_0 -  \frac{\v{D}^2}{2m}  +  c_B \frac{e}{m} \v{S} \cdot \v{B}
+\]
+
+Are there any terms of order $mv^3$ or $\frac{B}{m}v$ allowed?  Possible combinations are:
+\begin{itemize}
+  \item Three powers of D: $D_i D_j D_k$.  However, this is odd under parity, and so not allowed.  
+  \item A term with both the derivative and magnetic field: $D_i B_j$.  Again, this is odd under parity and so forbidden.
+  \item A single power of $E$.  Again, odd under parity.
+\end{itemize}
+So, all such terms are foribdden by consideration of parity.
+
+Next we consider terms of order $mv^4$.
+\begin{itemize}
+  \item Four powers of D: fixed by the kinetic term to be $\frac{\v{D}^2}{8m^3}$
+  \item One power of $E_i$ and one of $D_j$.  This combination is even under parity and odd under Hermitian conjugate.  There are three ways of contracting these two fields.
+  \begin{itemize}
+  		\item	With the delta function.  The allowed Hermitian term is then $\delta_{ij}(D_i E_j - E_j D_i)$.
+  		\item	With the combination $i\epsilon_{ijk} S_k$.  The allowed term is $i\epsilon_{ijk}(D_i E_j S_k + S_k E_j D_i)$.
+  		\item 	With the quadratic spin structure $Q_{ij}$: $ Q_{ij} ( D_i E_j - E_j D_i)$.
+  \end{itemize}
+\end{itemize}
+
+In the Lagrangian we'll write these as:
+\[
+	\mathcal{L}_{mv^4} = 
+		\frac{\v{D}^4}{8m^2}
+		+ c_D \frac{e (\v{D} \cdot \v{E} - \v{E} \cdot \v{D})}{8m^2} 
+		+ c_Q \frac{eQ_{ij}(D_i E_j - E_i D_j)}{8m^2}
+		+ c_S \frac{ i e \v{S} \cdot(\v{D} \times \v{E} - \v{E} \times \v{D}}{8m^2}
+\]
+
+
+Terms of order $\frac{B}{m} v^2$.  The only allowed combination is $D_i D_j B_k$.  We can contract two indices with each other and the third with a spin matrix in three different ways:
+\begin{itemize}
+	\item $(\v{S} \cdot \v{B}) \v{D}^2 +  \v{D}^2 (\v{S} \cdot \v{B})$
+	\item $S_i D_j B_i D_j$
+	\item $S_i (D_i B_j D_j + D_j B_j D_i)$
+\end{itemize}
+We can also contract all indices with a cubic spin structure:
+\begin{itemize}
+  \item $\bar{S}_{ijk} (D_i D_j B_k + B_k D_j D_i)$
+  \item $\bar{S}_{ijk} D_i B_j D_k$
+\end{itemize}
+
+In the Lagrangian we'll write these as:
+\[
+	\mathcal{L}_{Bv^2} =
+		c_{W1} \frac{ e \v{D}^2 \v{S} \cdot \v{B} + \v{S} \cdot \v{B} \v{D}^2 }{8m^3}
+		- c_{W2} \frac{e D_i (\v{S} \cdot \v{B}) D_i}{4m^3}
+		+c_{p'p} \frac{ e [ (\v{S}\cdot \v{D})(\v{B} \cdot \v{D}) + (\v{B} \cdot \v{D})(\v{S}\cdot \v{D})]}{8m^3}
+\]\[		+ c_{S^3_1} \frac{ e \bar{S}_{ijk} (D_i D_j B_k + B_k D_j D_i)}{8m^3}
+		+ c_{S^3_2} \frac{ e \bar{S}_{ijk} D_i B_j D_k }{8m^3}
+\]
+
+
+
+
+
