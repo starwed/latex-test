@@ -3,15 +3,28 @@
 \documentclass[11pt]{article}
 
 \include{header}
-
+\pagenumbering{arabic}
+\numberwithin{equation}{section}
+%NEW COMMANDS
 \newcommand{\beqa}{\begin{eqnarray*} }
 \newcommand{\eeqa}{\end{eqnarray*} }
-
+\newcommand{\beq}{\begin{equation} }
+\newcommand{\eeq}{\end{equation} }
+\newcommand{\beqB}{\begin{equation*}}
+\newcommand{\eeqB}{\end{equation*}}
+% macros used for consistency
 \newcommand{\Psibar}{\bar{\Psi}}
-
 \newcommand{\rapidity}{\phi}
+\newcommand{\TensBi}{\Sigma} %(Tensor bilinear)
+\newcommand{\phis}{\phi_S}
+
+\newcommand{\smalldot}{\cdot}
+
+\newcommand{\gradE}{\grad}
+
+
 
 \begin{document}
-\input{"Building\space NRQED"}
+\input{EquationsOfMotion}
 
 \end{document}

@@ -1,7 +1,19 @@
 
-\section{Genral Spin Formalism}
+\section{General Spin Formalism}
 
-\subsection{Formalism}
+%name? 
+
+Our ultimate goal is to calculate corrections to the $g$-factor of a loosely bound charged particle of arbitrary spin.  Our strategy is to obtain an effective Lagrangian in the nonrelativistic limit.
+
+We first consider features of a general-spin formalism in both the relativistic and nonrelativistic cases, and the connection between the wave functions of the free particles.  Then we consider how constraints of the relativistic theory let us calculate scattering off an external field.  Comparing this result to that done with an effective NRQED Lagrangian, we can obtain the coefficients of that Lagrangian for particles of general spin.
+
+
+
+
+\subsection{Spinors for general-spin charged particles}
+
+
+\subsubsection{Relativistic bispinors}
 First we need to work out a formalism that will apply to the general spin case.  
 We want to represent the spin state of the particles by an object that looks like a generalization of the Dirac bispinor.
 
@@ -10,101 +22,99 @@ It is easiest to start with the Dirac basis, where the upper and lower component
 
 To that end define an object
 
-\[
+\beq \label{eq:PsiDef}
 \Psi  = \frac{1}{\sqrt{2}} \begin{pmatrix} \xi \\ \eta \end{pmatrix}
-\]
+\eeq
 
-that we wish to have the appropriate properties.  Each component should transform as a particle of spin s, but with opposite helicity.  Under reflection the upper and lower components transform into each other.
+that we wish to have the appropriate properties.  Each component should transform as a particle of spin $s$, but with opposite helicity.  Under reflection the upper and lower components transform into each other.
 
-The irreducible representations of the proper Lorentz group are spinors which are seperately symmetric in dotted and undotted indices.  The spin of the particle will be half the total number of indices.  So if $\xi$ is an object with $p$ undotted and $q$ dotted indices
-\[
+Representations of the proper Lorentz group are spinors which are separately symmetric in dotted and undotted indices.  If $\xi$ is an object with $p$ undotted and $q$ dotted indices
+\beq
 	\xi = \{ \xi^{\alpha_1 \ldots \alpha_p}_{\dot\beta_1 \ldots \dot\beta_q} \}
-\]
-Then this is a represenation of a particle of spin $s = (p+q)/2$.
+\eeq
+Then this can be a representation of a particle of spin $s = (p+q)/2$.
 
 We have some free choice in how to partition the dotted/undotted indices, and we cannot choose exactly the same scheme for all spin as long as both types of indices are present.  However, we can make separately consistent choices for integral and half-integral spin.  For integral spin we can say $p=q=s$, while for the half-integral case we'll choose $p=s+\frac{1}{2}$, $q=s-\frac{1}{2}$.
 
-
-
-
 We want the $\xi$ and $\eta$ to transform as objects of opposite helicity.  Under reflection they will transform into each other.  So 
- \[
+\beq
 	\eta = \{ \eta_{\dot \alpha_1 \ldots \dot \alpha_p}^{\beta_1 \ldots \beta_q} \}
-\] 
+\eeq
 
 
 
 
 In the rest frame of the particle, they will have clearly defined and identical properties under rotation.    The rest frame spinors are equivalent to rank $2s$ nonrelativistic spinors.  So the bispinor in the rest frame looks like
-\[
+\beq \label{eq:PsiRest}
 \Psi = \frac{1}{\sqrt{2}} \begin{pmatrix} \xi_0 \\ \xi_0 \end{pmatrix}
-\]
+\eeq
 
 where
-\[
+\beq \label{eq:xi0def}
 	\xi_0 = \{ (\xi_0)_{\alpha_1 \ldots \alpha_p \beta_1 \ldots \beta_q}  \}
-\]
+\eeq
 and all indices are symmetric.
 
 We can obtain the spinors in an arbitrary frame by boosting from the rest frame.  The upper and lower components we have defined to have opposite helicity, and so will act in opposite ways under boost:
-\[
+\beq \label{eq:xi0boosted}
 	\xi = \exp{(\frac{\v{\Sigma} \cdot \v{\rapidity}}{2}) } \xi_0,  
 	\hspace{3em} 
 	\eta = \exp{(-\frac{\v{\Sigma} \cdot \v{\rapidity}}{2}) } \xi_0
-\]
+\eeq
 
 %TODO check dotted/undotted transformations are correct
-What form should the operator $\v{\Sigma}$ have?  Under an infitesimal boost by a rapidity $\phi$, a spinor with a single undotted index is transformed as
-\[
+What form should the operator $\v{\Sigma}$ have?  Under an infinitesimal boost by a rapidity $\phi$, a spinor with a single undotted index is transformed as
+\beqB
 	\xi_\alpha \to \xi'_\alpha = \left(\delta_{\alpha \beta} + \frac{\gv{\rapidity}\cdot \gv{\sigma}_{\alpha \beta} }{2} \right) \xi_\beta 
-\]
+\eeqB
 while one with a dotted index will transform as
-\[
+\beqB
 \xi_{\dot\alpha} \to \xi'_{\dot\alpha} = \left(\delta_{\dot \alpha \dot \beta} - \frac{\gv{\rapidity}\cdot \gv{\sigma}_{\dot \alpha \dot\beta} }{2} \right) \xi_{\dot \beta}
-\]
+\eeqB
 
 
-The infinitesmal transformation of a higher spin object with the first $p$ indices undotted and the last $q$ dotted would then be
-\[
+
+The infinitesimal transformation of a higher spin object with the first $p$ indices undotted and the last $q$ dotted would then be
+\beqB
 	\xi \to \xi' = \left(1 
 		+  \sum\limits_{a=0}^p \frac{\gv{\sigma}_a \cdot \gv{\rapidity} }{2}
 		- \sum\limits_{a=p+1}^{p+q} \frac{\gv{\sigma}_a \cdot \gv{\rapidity} }{2}
 	\right ) \xi 
-\]
+\eeqB
 where $a$ denotes which spinor index of $\xi$ is operated on.
 
 
 If we define 
-\[
+\beq \label{eq:SigDef}
 	\v{\Sigma} = \sum\limits_{a=0}^p \gv{\sigma}_a - \sum\limits_{a=p+1}^{p+q} \gv{\sigma}_a 
-\]
+\eeq
 
-Then the infinitesmal transformations would be
-\[
+Then the infinitesimal transformations would be
+\beqB
 	\xi \to \xi' = \left( 1 + \frac{\gv{\Sigma} \cdot \gv{\rapidity} }{2} \right) \xi
-\]
-\[
+\eeqB
+\beqB
 	\eta \to \eta' = \left( 1 - \frac{\gv{\Sigma} \cdot \gv{\rapidity} }{2} \right) \eta
-\]
+\eeqB
 So the exact transformation should be
-\[
+\beqB
 		\xi \to \xi' = \exp\left( \frac{\gv{\Sigma} \cdot \gv{\rapidity} }{2} \right) \xi
-\]
-\[
+\eeqB
+\beqB
 	\eta \to \eta' = \exp \left( -\frac{\gv{\Sigma} \cdot \gv{\rapidity} }{2} \right) \eta
-\]  
+\eeqB
   
-Therefore, the bispinor of some particle boosted by $\gv{phi}$ will be
+Therefore, the bispinor of some particle boosted by $\gv{\phi}$ from rest will be
 % TODO check passive v. active boost
-\[
+\beq \label{eq:PsiByXi0}
 \Psi = \frac{1}{\sqrt{2}} \begin{pmatrix} 
 		\exp\left( \frac{\gv{\Sigma} \cdot \gv{\rapidity} }{2} \right)\xi_0 \\ 
 		\exp \left( \frac{-\gv{\Sigma} \cdot \gv{\rapidity} }{2} \right) \xi_0 
 	\end{pmatrix}
-\]
+\eeq
 
-
-In dealing with the relativistic theory, we'll want a basis that seperates the particle and antiparticle parts of the wave function.  If we want the upper component to be the particle, then in the rest frame the lower component will vanish, and for low momentum will be small compared to the upper component.  The unitary transformation which accomplishes this is
+%TODO fix sqrt(2) factors in the right place
+In dealing with the relativistic theory, we'll want a basis that separates the particle and antiparticle parts of the wave function.  If we want the upper component to be the particle, then in the rest frame the lower component will vanish, and for low momentum will be small compared to the upper component.  The unitary transformation which accomplishes this is
 
 \[
 	\Psi' = \begin{pmatrix} \phi \\ \chi \end{pmatrix}
@@ -117,26 +127,29 @@ In dealing with the relativistic theory, we'll want a basis that seperates the p
 	\chi = \frac{1}{\sqrt{2}}( \eta - \xi)
 \]
 
+
 Which is equivalent to
 \[
 	\Psi' = \frac{1}{\sqrt{2}} \begin{pmatrix}1 & 1 \\ -1 & 1 \end{pmatrix} \Psi
 \]
 
 Then,
-\[
+\beq \label{eq:phiDef}
 	\phi =  \cosh \left( \frac{\gv{\Sigma} \cdot \gv{\rapidity} }{2} \right ) \xi_0
-\]
+\eeq
 
 %Sign confusion compared to original equation again
-\[
+\beq \label{eq:chiDef}
 	\chi =  \sinh \left( \frac{\gv{\Sigma} \cdot \gv{\rapidity} }{2} \right ) \xi_0
-\]
+\eeq
 
+\subsubsection{Spinors for nonrelativistic theory}
 
-\input{Building NRQED}
+We also need to discuss the nonrelativistic, single-particle theory.  This is much simpler: the spin state of particles in this theory is represented by symmetric spinors with $2s+1$ undotted indices.  The only operators we need to consider acting on this space are spin matrices and products of spin matrices. 
 
 %Section on bilinear transforms
-\input{bilinear_transforms}
+%\input{bilinear_transforms}
+
 
 
 \subsection{Electromagnetic Interaction}
@@ -151,40 +164,40 @@ where $j^\mu$ is the electromagnetic current.
 
 The electromagnetic current must be built out of the particle's momenta and bilinears of the charged particle fields in such a way that they have the correct Lorentz properties.  We must also demand current conservation: the equation $q_\mu j^\mu = 0$ must hold.  Above we already have shown that, in the case of general spin, there exist only two such bilinears, a scalar and a tensor.
 
-There will be two permissible terms in the current.  We could consider a scalar bilinear coupled with a single power of external momenta.  In order to fufill the current conservation requirement, it should be
+There will be two permissible terms in the current.  We could consider a scalar bilinear coupled with a single power of external momenta.  In order to fulfill the current conservation requirement, it should be
 \[
 	\frac{p^\mu + p'^\mu}{2m} \Psibar^\dagger \Psi
 \]
 This will obey current conservation because $q = p' -p$, and $ (p+p')\cdot(p'-p) = p^2-p'^2=0$
 
-We can also consider a tensor term contracted with a power of momenta.  To fufill current conservation, we can demand that the tensor bilinear be antisymmetric, and contract it with $q$:
+We can also consider a tensor term contracted with a power of momenta.  To fulfill current conservation, we can demand that the tensor bilinear be antisymmetric, and contract it with $q$:
 \[
-	\frac{q_\nu}{2m} \Psibar^\dagger T^{\mu\nu} \Psi
+	\frac{q_\nu}{2m} \Psibar^\dagger \TensBi^{\mu\nu} \Psi
 \]
 
 We don't need to worry about higher order tensor bilinears: they will necessitate too many powers of the external momenta.
 
 So the most general current would look like
-\[
-	j^\mu = F_e \frac{p^\mu + p'^\mu}{2m} \Psibar^\dagger \Psi + F_m 	\frac{q_\nu}{2m} \Psibar^\dagger T^{\mu\nu} \Psi	
-\]
+\beq \label{eq:khr_current}
+	j^\mu = F_e \frac{p^\mu + p'^\mu}{2m} \Psibar^\dagger \Psi + F_m 	\frac{q_\nu}{2m} \Psibar^\dagger \TensBi^{\mu\nu} \Psi	
+\eeq
 In general the form factors might have quite complicated dependence on $q$, but these corrections will be too small compared to the type of result we're interested in.  At leading order $F_e$ will just be the electric charge of the particle in question, and $F_m$ will, as we'll see after connecting this result to the nonrelativistic limit, be related to the particle's $g$-factor.  So to the order we need, we can write the current as
 
 %TODO check definition of form factors F_e and F_m
-\[
-	j^\mu =  e \frac{p^\mu + p'^\mu}{2m} \Psibar^\dagger \Psi +   e g \frac{q_\nu}{2m} \Psibar^\dagger T^{\mu\nu} \Psi
-\]
+\beq 
+	j^\mu =  e \frac{p^\mu + p'^\mu}{2m} \Psibar^\dagger \Psi +   e g \frac{q_\nu}{2m} \Psibar^\dagger \TensBi^{\mu\nu} \Psi
+\eeq
 
 %TODO Actually show this formally: that the two types of antisymmetric tensors aren't truly different
-The tensor bilinear $\Psibar^\dagger T^{\mu\nu} \Psi$ itself has some free parameters.  However, it'll turn out that, when computing actual nonrelativistic amplitudes, the two types of anti-symmetric tensors collapse into the same general form.
+%The tensor bilinear $\Psibar^\dagger T^{\mu\nu} \Psi$ itself has some free parameters.  However, it'll turn out that, when computing actual nonrelativistic amplitudes, the two types of anti-symmetric tensors collapse into the same general form.
 
 This captures the essence of the interaction between a charged particle of general-spin and a single photon.
 
 
-\subsection{Connection to nonrelativistic spinors}
 
 
-In the rest frame, there are two independant bispinors which represent particle and antiparticle states: 
+\subsubsection{Connection between the spinors of the two theories}
+Knowing something of how the relativistic theory behaves, we can find the connection between the relativistic and nonrelativistic spinors.  In the rest frame, there are two independent bispinors which represent particle and antiparticle states: 
 \[
 	\Psi = \begin{pmatrix} \xi_0 \\ 0 \end{pmatrix}
 \]
@@ -194,31 +207,32 @@ or
 	\Psi = \begin{pmatrix} 0 \\ \xi_0 \end{pmatrix}
 \]
 
-However, when we consider a particle with zero momentum it is not the case that the upper component of the bispinor can be directly associated with the Shrodinger like wave-function of the particle --- for instance, it would not be correctly normalized, for there is some mixing with the lower component.
+However, when we consider a particle with zero momentum it is not the case that the upper component of the bispinor can be directly associated with the Schrodinger like wave-function of the particle --- for instance, it would not be correctly normalized, for there is some mixing with the lower component.
 
-We can obtain a relation between $\xi_0$ and the Shrodinger amplitude $\phi_s$ by considering the current density at zero momentum transfer.  For $\phi_s$ it will be $j_0 = e \phi_s^\dagger \phi$.  For the relativistic theory we have, as calculated above:
+We can obtain a relation between $\xi_0$ and the Schrodinger amplitude $\phi_s$ by considering the current density at zero momentum transfer.  For $\phi_s$ it will be $j_0 =  \phi_s^\dagger \phi$.  For the relativistic theory we have, as calculated above:
 \[
-	j^0 = e \frac{p^0 + p'^0}{2m} \Psibar^\dagger \Psi + F_m 	\frac{q_\nu}{2m} \Psibar^\dagger T^{0\nu} \Psi	
+	j^0 = F_e \frac{p^0 + p'^0}{2m} \Psibar^\dagger \Psi + F_m 	\frac{q_\nu}{2m} \Psibar^\dagger T^{0\nu} \Psi	
 \]
 At $q=0$ the expression simplifies
 
 \[
-	j^0(q=0) = e \frac{p_0}{m} \Psibar^\dagger \Psi
+	j^0(q=0) = F_e \frac{p_0}{m} \Psibar^\dagger \Psi
 \]
 
 \[
-	= e  \frac{p_0}{m}( \phi^\dagger \phi - \chi^\dagger \chi )
+	= F_e  \frac{p_0}{m}( \phi^\dagger \phi - \chi^\dagger \chi )
 \]
 
 $\phi$ and $\chi$ are both related to the rest frame spinor $\xi_0$.  So we can write instead
 \[
-	j^0 = e \frac{p_0}{m} \xi_0^\dagger \left \{ 
+	j^0 = F_e \frac{p_0}{m} \xi_0^\dagger \left \{ 
 		\cosh^2( \frac{\gv{\Sigma} \cdot \gv{\rapidity} }{2})
 		- \sinh^2( \frac{\gv{\Sigma} \cdot \gv{\rapidity} }{2})
 	\right \} \xi_0  
-		=	e \frac{p_0}{m} \xi_0^\dagger \xi_0
+		=	F_e \frac{p_0}{m} \xi_0^\dagger \xi_0
 \]
 where the last equality follows from the hyperbolic trig identity.
+
 
 If we demand that the two current densities be equal to each other, we find
 \[
@@ -234,37 +248,41 @@ This will hold to the necessary order if we identify
 	\xi_0 = \left( 1 - \frac{\v{p}^2}{4m} \right) \phi_s
 \]
 
+
 %TODO fix cosh expansion
 
 To write the relativistic bispinors in terms of $\phi_s$ we will also need approximations to $\cosh( \frac{\gv{\Sigma} \cdot \gv{\rapidity} }{2})$ and $\sinh( \frac{\gv{\Sigma} \cdot \gv{\rapidity} }{2})$.  We only need the rapidity to the leading order: $\gv{\rapidity} \approx \v{v} \approx \frac{\v{p} }{m}$. 
 
 \[
 	\cosh( \frac{\gv{\Sigma} \cdot \gv{\rapidity} }{2}) 
-		\approx 1 + \left( \frac{\gv{\Sigma} \cdot \v{p} }{2m} \right)^2
+		\approx 1 + \frac{1}{2}\left( \frac{\gv{\Sigma} \cdot \v{p} }{2m} \right)^2
 \]
 \[
 	\sinh( \frac{\gv{\Sigma} \cdot \gv{\rapidity} }{2}) 
 		\approx   \frac{\gv{\Sigma} \cdot \v{p} }{2m}
 \]
-
 The the two bispinor components are
-\beqa
+%Non relativistic expression for \phi and \chi
+\begin{align}
 \phi 
-	&\approx&  \left(  1 + \left[ \frac{\gv{\Sigma} \cdot \v{p} }{2m} \right]^2 \right) \xi_0 \\
-	&\approx&  \left(  1 + \left[ \frac{\gv{\Sigma} \cdot \v{p} }{2m} \right]^2 - \frac{\v{p}^2}{4m} \right ) \phi_s	\\
+	&\approx  \left(  1 + \left[ \frac{1}{2}\frac{\gv{\Sigma} \cdot \v{p} }{2m} \right]^2 \right) \xi_0 \notag \\
+	&\approx  \left(  1 + \frac{(\gv{\Sigma} \cdot \v{p})^2 }{8m^2} - \frac{\v{p}^2}{4m} \right ) \phis	 \label{eq:nrPhi} \\
  \chi
- 	&\approx&	\frac{\gv{\Sigma} \cdot \v{p} }{2m} \xi_0 \\
- 	&\approx&	\frac{\gv{\Sigma} \cdot \v{p} }{2m} \phi_s
-\eeqa
+ 	&\approx	\frac{\gv{\Sigma} \cdot \v{p} }{2m} \xi_0 \notag \\
+ 	&\approx	\frac{\gv{\Sigma} \cdot \v{p} }{2m} \phis  \label{eq:nrChi}
+\end{align}
+
 
 
 
 %TODO remember to hunt out all the \phi where I mean \rapidity
 \subsection{Bilinears in terms of nonrelativistic theory}
-The next step is to express the relativistic bilinears, built out of the bispinors $\Psi$, in terms of the Shrodinger like wave functions.
+The next step is to express the relativistic bilinears, built out of the bispinors $\Psi$, in terms of the Schrodinger like wave functions.
 
 We have above written the bispinors in terms of $\phi_s$, so we can use those identities to express the bilinears in the same manner.
 
+
+\subsubsection{Scalar bilinear}
 \beqa
 \Psibar^\dagger(p') \Psi(p)
 	&=&	\phi^\dagger \phi - \chi^\dagger \chi	\\
@@ -295,10 +313,278 @@ We have above written the bispinors in terms of $\phi_s$, so we can use those id
 \eeqa
 %TODO at some point need to translate \Sigma functions into spin functions in NR theory, but where?
 
+\subsubsection{Tensor $ij$ component}
 
 
 
-In calculating the nonrelativistic limit of the antisymmetric tensor bilinear, we will treat the $0i$ and the $ij$ components seperately.
+In calculating the nonrelativistic limit of the antisymmetric tensor bilinear, we will treat the $0i$ and the $ij$ components seperately.  First let us consider $\Psibar \Sigma_{ij} \Psi$.
+
+\beqa
+	\Psibar \TensBi_{ij} \Psi 
+		&=& \Psibar (-2\epsilon_{ijk} S_k) \Psi	\\
+		&=&	-2i\epsilon_{ijk} ( \phi^\dagger S_k \phi - \chi^\dagger S_k \chi)	\\
+		&=&	-2i\epsilon_{ijk} \Big( \phis^\dagger \left[ 1 + \frac{( \gv{\Sigma} \cdot \v{p'})^2}{8m^2}  -\frac{\v{p'}^2}{4m^2} \right] S_k \left[ 1 + \frac{( \gv{\Sigma} \cdot \v{p})^2}{8m^2} -\frac{\v{p}^2}{4m^2}\right ] \phis - \phis^\dagger \frac{ ( \gv{\Sigma} \cdot \v{p'})S_k ( \gv{\Sigma} \cdot \v{p })}{4m^2} \phis \Big )	\\
+		&=&	-2i\epsilon_{ijk} \phis^\dagger \left \{
+				S_k \left( 1 - \frac{ \v{p}^2 + \v{p'}^2}{4m^2}  \right )
+				+ \frac{1}{8m^2} \Big[ ( \gv{\Sigma} \cdot \v{p'})^2 S_k + S_k ( \gv{\Sigma} \cdot \v{p})^2 - 2 ( \gv{\Sigma} \cdot \v{p'})S_k ( \gv{\Sigma} \cdot \v{p}) \Big ]
+			\right \} \phis
+\eeqa
+
+We want to write the terms in square brackets explicitly in terms of $\v{p}$ and $\v{q}$.
+\beqa
+( \gv{\Sigma} \cdot \v{p'})^2 S_k + S_k ( \gv{\Sigma} \cdot \v{p})^2 - 2 ( \gv{\Sigma} \cdot \v{p'})S_k ( \gv{\Sigma} \cdot \v{p}) 
+	&=& ( \gv{\Sigma} \cdot \v{p})^2 S_k + S_k ( \gv{\Sigma} \cdot \v{p}) -2 ( \gv{\Sigma} \cdot \v{p}) S_k ( \gv{\Sigma} \cdot \v{p})
+	\\ &&	+ \{ ( \gv{\Sigma} \cdot \v{p}) ( \gv{\Sigma} \cdot \v{q}) + ( \gv{\Sigma} \cdot \v{q}) ( \gv{\Sigma} \cdot \v{p}) \}S_k
+	\\ &&	- 2 ( \gv{\Sigma} \cdot \v{q}) S_k ( \gv{\Sigma} \cdot \v{p})
+		+ ( \gv{\Sigma} \cdot \v{q})^2 S_k
+\eeqa
+
+We can express many of these terms as commutators
+\[
+	=	\gv{\Sigma} \cdot \v{p} [ \gv{\Sigma} \cdot \v{p}, S_k] + [S_k, \gv{\Sigma} \cdot \v{p}] \gv{\Sigma} \cdot \v{p}
+		+ 2 \gv{\Sigma} \cdot \v{q} [ \gv{\Sigma} \cdot \v{p}, S_k] - [\gv{\Sigma} \cdot \v{q}, S_k] \gv{\Sigma} \cdot \v{p}
+		+ (\gv{\Sigma} \cdot \v{q})^2 S_k
+\]
+
+\[
+	= i\epsilon_{ijk} p_j \{ (\gv{\Sigma} \cdot \v{p})\Sigma_i - \Sigma_i (\gv{\Sigma} \cdot \v{p}) \}
+		+ 2 i\epsilon_{ijk} \{ (\gv{\Sigma} \cdot \v{q}) \Sigma_i p_j -  \Sigma_i (\gv{\Sigma} \cdot \v{p}) q_j ) \}
+		+ (\gv{\Sigma} \cdot \v{q})^2 S_k
+\]
+
+\[
+	= i\epsilon_{ijk} p_j [ (\gv{\Sigma} \cdot \v{p}), \Sigma_i  ]
+		+ 2 i\epsilon_{ijk} \{ (\gv{\Sigma} \cdot \v{q}) \Sigma_i p_j -  \Sigma_i (\gv{\Sigma} \cdot \v{p}) q_j ) \}
+		+ (\gv{\Sigma} \cdot \v{q})^2 S_k
+\]
+
+
+\[
+	= 4( \v{p}^2 S_k - (\v{S} \cdot \v{p}) p_k ) 
+		+ 2 i\epsilon_{ijk} \{ (\gv{\Sigma} \cdot \v{q}) \Sigma_i p_j -  \Sigma_i (\gv{\Sigma} \cdot \v{p}) q_j ) \}
+		+ (\gv{\Sigma} \cdot \v{q})^2 S_k
+\]
+
+Thus the whole bilinear is
+
+\beq
+-2i\epsilon_{ijk} \phis^\dagger \left \{
+				S_k \left( 1 - \frac{ \v{p}^2 + \v{p'}^2}{4m^2}  \right )
+				+ \frac{1}{8m^2} \Big[ 
+				4( \v{p}^2 S_k - (\v{S} \cdot \v{p}) p_k ) 
+				+ 2 i\epsilon_{\ell m k} \{ (\gv{\Sigma} \cdot \v{q}) \Sigma_\ell p_m -  \Sigma_\ell (\gv{\Sigma} \cdot \v{p}) q_m ) \}
+				+ (\gv{\Sigma} \cdot \v{q})^2 S_k
+			 \Big ]
+			\right \} \phis
+\eeq
+
+\subsubsection{Tensor $\Sigma_{0i}$ component}
+
+We calculate $\Psibar \Sigma_{0i} \Psi$.
+
+\[
+	\Psibar \Sigma_{0i} \Psi = \Psibar \begin{pmatrix} 0 & \Sigma_i \\ \Sigma_i & 0 \end{pmatrix} \Psi
+\]
+
+\[
+	=	\phi^\dagger \Sigma_i \chi - \chi^\dagger \Sigma_i \phi
+\]
+
+We'll only need $\phi$ and $\chi$ to first order here.
+\[
+	= \phis^\dagger \left( \frac{\Sigma_i \Sigma_j p_j - \Sigma_j \Sigma_i p'j}{2m} \right ) \phis
+\]
+Using $p'=p+q$ the terms involving only $p$ can be simplified using the commutator of $\Sigma$ matrices.
+\[
+	=\phis^\dagger \left( \frac{ 4i\epsilon_{ijk} p_j S_k - \Sigma_j \Sigma_i q_j}{2m} \right )\phi
+\]
 
 
 
+%%%%%%%  Calculate the Current
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Current in terms of nonrelativistic wave functions}
+
+%add ref to equation
+We derived the four-current \eqref{eq:khr_current} above; in nonrelativistic notation it is: 
+\beq
+	j_0 =  F_e \frac{p_0 + p'_0}{2m} \Psibar^\dagger \Psi -  F_m \frac{q_j}{2m} \Psibar^\dagger \TensBi^{0j} \Psi
+\eeq
+
+\beq
+	j_i =  F_e \frac{p_i + p'_i}{2m} \Psibar^\dagger \Psi -   F_m \frac{q_j}{2m} \Psibar^\dagger \TensBi^{ij} \Psi 
+			+F_m \frac{q_0}{2m} \Psibar^\dagger \TensBi^{i0} \Psi
+\eeq
+
+We have expressions for the bilinears in terms of the nonrelativistic wave functions $\phis$, so it is fairly straight forward to apply them here.  The calculation of $j_0$ is straightforward:
+\beqa
+F_e \frac{p_0 + p'_0}{2m} \Psibar^\dagger \Psi 
+	  &=& F_e \left(1 + \frac{\v{p}^2 + \v{p'}^2}{4m^2} \right)  \phis^\dagger \left (
+			1 - \frac{ \v{p}^2 + \v{p'}^2 }{4m^2}
+			+ \frac{1}{8m^2} \left \{
+				 4 i \epsilon_{ijk} p_i q_j S_k  + ( \gv{\Sigma} \cdot \v{q})^2 
+			\right \}
+	\right ) \phis	\\
+	&\approx& 	F_e   \phis^\dagger \left (
+					1 + \frac{1}{8m^2} \left \{ 4i \v{S} \cdot \v{p} \times \v{q}  + ( \gv{\Sigma} \cdot \v{q})^2 \right \}
+				\right ) \phis	\\
+F_m \frac{q_j}{2m} \Psibar^\dagger \TensBi^{0j} \Psi
+	&=& F_m \frac{q_i}{2m}\phis^\dagger \left( \frac{ 4i\epsilon_{ijk} p_j S_k - \Sigma_j \Sigma_i q_j}{2m} \right )\phis	\\
+	&=&  F_m \phis^\dagger \left( \frac{ 4i \v{S} \cdot \v{q} \times \v{p} -  (\gv{\Sigma} \cdot \v{q})^2 }{4m^2} \right )\phis	\\
+\eeqa
+
+It turns out that both terms here have the same form, so combining them we get
+\beq \label{eq:nrJ0}
+j_0 =  	 \phis^\dagger \left (
+			F_e + \frac{F_e + 2F_m}{8m^2} \left \{ 4i \v{S} \cdot \v{p} \times \v{q}  + ( \gv{\Sigma} \cdot \v{q})^2  \right \}
+		\right ) \phis	\\
+\eeq
+
+
+%Justify dropping derivatives of magnetic field a bit better
+To calculate $j_i$ we want to first simplify things by considering the constraints of our particular problem.  The term with $\Sigma_ij$ can be simplified by dropping terms with more than one power of $q$; these will turn into derivatives of the magnetic field, and our problem concerns only a constant field.  Further, we need only calculate elastic scattering, and so $q_0=0$.  With those simplifications
+\[
+\Psibar \Sigma_{ij} \Psi \approx
+		-2i\epsilon_{ijk} \phis^\dagger \left \{
+			S_k \left( 1 - \frac{ \v{p}^2 + \v{p'}^2}{4m^2}  \right )
+			+ \frac{\v{p}^2 S_k - (\v{S} \cdot \v{p}) p_k}{2m^2}  
+		\right \} \phis
+\]
+
+
+\beqa
+F_e \frac{p_i + p'_i}{2m} \Psibar^\dagger \Psi
+	&=&			F_e \frac{p_i + p'_i}{2m}  \phis^\dagger \left (
+					1 - \frac{ \v{p}^2 + \v{p'}^2 }{4m^2}
+					+ \frac{1}{8m^2} \left \{  4 i \epsilon_{\ell jk} p_\ell q_j S_k  + ( \gv{\Sigma} \cdot \v{q})^2	\right \}
+				\right ) \phis	\\
+	&\approx& 	F_e \frac{p_i + p'_i}{2m}  \phis^\dagger \left (
+					1 + \frac{1}{8m^2} \left \{ 4 i \epsilon_{\ell jk} p_\ell q_j S_k  \right \}
+				\right ) \phis	\\
+F_m \frac{q_j}{2m} \Psibar^\dagger \TensBi^{ij} \Psi
+	&=& 		- F_m\frac{ i\epsilon_{ijk} q_j}{m} \phis^\dagger \left \{
+					S_k \left( 1 - \frac{ \v{p}^2 + \v{p'}^2}{4m^2}  \right )
+					+ \frac{\v{p}^2 S_k - (\v{S} \cdot \v{p}) p_k}{2m^2}  
+				\right \} \phis
+\eeqa
+
+So the full spatial part of the current is
+\beq \label{eq:nrJi}
+j_i	=	\phis^\dagger \Bigg \{
+			F_e \frac{p_i + p'_i}{2m} \left (
+				1 + \frac{ i \epsilon_{\ell jk} p_\ell q_j S_k   }{2m^2}  \right)
+			+ F_m   \frac{i\epsilon_{ijk} q_j}{m} \left( 
+				S_k \left( 1 - \frac{ \v{p}^2 + \v{p'}^2}{4m^2}  \right )
+				+ \frac{\v{p}^2 S_k - (\v{S} \cdot \v{p}) p_k}{2m^2} \right)	
+		\Bigg \} \phis
+\eeq
+
+\subsection{Scattering off external field}
+To compare to the NRQED Lagrangian, we want to calculate scattering off an external field for an arbitrary spin particle.  We already have the current, so the scattering is just
+\[
+	M = e j_\mu A^\mu = e j_0 A_0 - e \v{j} \cdot \v{A}
+\]
+Above we have expressions for both $j_0$ \eqref{eq:nrJ0} and $\v{j}$ \eqref{eq:nrJi}.  So we can write down the parts of the amplitude directly:
+\beq
+\begin{split}
+	e j_0 A_0 = 
+		& eA_0 \phis^\dagger \left (
+			F_e + \frac{F_e + 2F_m}{8m^2} \left \{ 4i \v{S} \cdot \v{p} \times \v{q}  + ( \gv{\Sigma} \cdot \v{q})^2  \right \}
+		\right ) \phis	\\
+   e\v{j} \cdot \v{A} =
+		& A_i \phis^\dagger \Bigg \{
+			F_e \frac{p_i + p'_i}{2m} \left (
+				1 + \frac{ i \epsilon_{\ell jk} p_\ell q_j S_k   }{2m^2}  \right)
+			+ F_m   \frac{i\epsilon_{ijk} q_j}{m} \left( 
+				S_k \left( 1 - \frac{ \v{p}^2 + \v{p'}^2}{4m^2}  \right )
+				+ \frac{\v{p}^2 S_k - (\v{S} \cdot \v{p}) p_k}{2m^2} \right)	
+		\Bigg \} \phis
+\end{split}
+\eeq  
+
+
+As much as possible we want to express the result in terms of gauge invariant quantities $\v{B}$ and $\v{E}$.  We write the relations between these fields and $A_\mu$ in position space and the equivalent equation in momentum space.
+%FIXME add reference to gauge
+\beq
+\begin{split}
+	\v{B} &= \grad \times \v{A}	\notag \to i\v{q} \times \v{A} \\
+	\v{E} &= -\grad A_0	 \to -i\v{q} A_0 		\notag
+\end{split}
+\eeq
+
+There is one term above that can only be put into gauge-invariant form by considering the kinematic constraints of elastic scattering.  If the scattering is elastic, we have $\v{q} \cdot (\v{p'} + \v{p}) = \v{p'}^2 - \v{p}^2=0$.  We can use this identity on the term $q_j (p'_i + p_i) A_i$ as follows:
+\beqa
+	\epsilon_{ijk} B_k &=&
+		 \partial_i A_j - \partial_j A_i = i(q_i A_j - q_j A_i)	\\
+	(p_i + p'_i) \epsilon B_k 
+		&=& i (p_i + p'_i) (q_i A_j - q_j A_i)		\\
+		&=& - i (p_i + p'_i) q_j A_i	
+\eeqa
+So we have the identity
+\beq \label{eq:ppqAid}
+	i (p_i + p'_i) q_j A_i = - \epsilon_{ijk}B_k (p_i + p'_i)
+\eeq 
+
+Now we can write each term involving $q$ in terms of position space quantities.
+%TODO maybe write quad term more explicitly in terms of quad moment and term with trace
+\beqa
+i \v{S} \cdot \v{p} \times \v{q} A_0 
+		&=&	-\v{S} \cdot \v{p} \times \v{E}	\\
+( \gv{\Sigma} \cdot \v{q})^2 A_0	
+		&=&		\Sigma_i \Sigma_j q_i q_j A_0 		\\
+		&=&		 \Sigma_i \Sigma_j \partial_i E_j	\\
+i\epsilon_{ijk} A_i q_j	
+		&=&	-i (\v{q} \times \v{A})_k 			\\
+		&=&= - B_k	\\
+A_i (p_i + p'_i)  i \epsilon_{\ell jk} p_\ell q_j S_k  
+		&=&	\epsilon_{\ell jk}p_\ell S_k  i(p_i + p'_i) q_j A_i		\\
+		&=&	- \epsilon_{\ell jk}p_\ell S_k \{ \epsilon_{ijm}B_m (p_i + p'_i) \}			\\
+		&=& -(\delta_{\ell i} \delta_{km} - \delta{\ell m} \delta_{ik})p_\ell S_k \{ \epsilon_{ijm}B_m (p_i + p'_i) \}	\\
+		&=& 2\{ (\v{B} \cdot \v{p})  (\v{S} \cdot \v{p}) - (\v{B} \cdot \v{S}) \v{p}^2  \}  
+\eeqa
+
+Using these
+\beqB
+	ej_0 A_0 = e\phis^\dagger \left\{
+					A_0 + \frac{1 - 2F_2}{8m^2}\left( 4 \v{S} \cdot \v{E} \times \v{p} + \Sigma_i \Sigma_j \partial_i E_j \right)
+				\right \}
+\eeqB
+
+\beqB
+	e \v{j} \cdot \v{A}	= e \phis^\dagger \left \{
+			\frac{ \v{p} \cdot \v{A} }{m} + \frac{(\v{B} \cdot \v{p})  (\v{S} \cdot \v{p}) - (\v{B} \cdot \v{S}) \v{p}^2 }{m^2} 
+			- F_m \left ( \frac{ \v{S} \cdot \v{B} }{m} \left\{ 1 - \frac{\v{p}^2 + \v{p'}^2}{4m^2} \right \} + \frac{(\v{B} \cdot \v{p})  (\v{S} \cdot \v{p}) - (\v{B} \cdot \v{S}) \v{p}^2 }{2m^2} \right ) \right \} \phi
+\eeqB
+
+\beqB
+	=e\phis^\dagger \left\{
+		 \frac{ \v{p} \cdot \v{A} }{m} + [1 -2F_m] \frac{ (\v{B} \cdot \v{p} )(\v{S} \cdot \v{p})}{m^2} 
+				- \v{S} \cdot \v{B} \frac{ \v{p}^2 }{m^2} - \frac{F_m}{m} \v{S} \cdot \v{B} \right \}
+\eeqB
+From this we can see that our $F_m$ is actually $g/2$, so in such terms
+
+\beqB	
+	ej_0 A_0 = e\phis^\dagger \left\{
+					A_0 - \frac{g-1}{2m^2}\left( \v{S} \cdot \v{E} \times \v{p} + \frac{1}{4}\Sigma_i \Sigma_j \partial_i E_j \right)
+				\right \}
+\eeqB
+
+\beqB
+	e \v{j} \cdot \v{A} = e\phis^\dagger \left\{
+		 \frac{ \v{p} \cdot \v{A} }{m} - [g-1] \frac{ (\v{B} \cdot \v{p} )(\v{S} \cdot \v{p})}{m^2} 
+				- \v{S} \cdot \v{B} \frac{ \v{p}^2 }{m^2} - \frac{g}{2m} \v{S} \cdot \v{B} \right \}
+\eeqB
+
+
+
+So the entire scattering process is
+
+\beq \label{eq:fullScatter}
+	e \phis^\dagger  \left \{
+		A_0 - \frac{g-1}{2m^2}\left( \v{S} \cdot \v{E} \times \v{p} + \frac{1}{4}\Sigma_i \Sigma_j \partial_i E_j \right)
+		 \frac{ \v{p} \cdot \v{A} }{m} - [g-1] \frac{ (\v{B} \cdot \v{p} )(\v{S} \cdot \v{p})}{m^2} 
+				- \v{S} \cdot \v{B} \frac{ \v{p}^2 }{m^2} - \frac{g}{2m} \v{S} \cdot \v{B} 
+	\right \} \phis
+\eeq
+
+\input{Comparison}

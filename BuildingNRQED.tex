@@ -2,7 +2,7 @@
 
 We want to construct an effective Lagrangian in the nonrelativistic limit.  Our goal is to calculate the leading order corrections to the $g$-factor, which are corrections of order $\alpha^2$.  To this end, we need terms in the effective nonrelativistic Lagrangian which are equivalent corrections.
 
-
+\subsubsection{Order of terms}
 %TODO Discussion of energy scales --  possibly move this into introduction, since it applies to each calculation
 We consider constant, infinitesimal external magnetic fields, so we need only consider terms linear in $\v{B}$.
 
@@ -17,36 +17,35 @@ We need to keep terms up to order $mv^4$ and $\frac{B}{m} v^2$ in order to calcu
 
 
 %TODO insert qualifications on external field
-
+\subsubsection{Constraints on the form of the Lagrangian}
 The Lagrangian is constrained to obey several symmetries.  It must be invariant under the symmetries of parity and time reversal.  It must also be invariant under Galilean transformations.  The Lagrangian must also be Hermitian, and gauge invariant.
 
 What are the gauge invariant building blocks we can use to construct this Lagrangian?  We have the external fields $\v{E}$ and $\v{B}$, the spin operators $\v{S}$, and the long derivative $\v{D} = \v{\partial} - i e\v{A}$.  The fields should always be accompanied by the charge $e$ of the particle.
 
-When considering the case of higher spin particles, we might consider terms quadratic and above in spin operators.  For a particle of spin $s$, there must be $(2s+1)^2$ independant hermitian operators.  We can span this set of operators by considering products of up to $2s$ spin matrices which are symmetric and traceless in every vector index.  For example, for spin-$1$ we have quadratic, in addition to $I$ and $S_i$, five independant structures of the form $ S_i S_j + S_j S_i + \delta_{ij} \v{S}$.
+When considering the case of higher spin particles, we might consider terms quadratic and above in spin operators.  For a particle of spin $s$, there must be $(2s+1)^2$ independent hermitian operators.  We can span this set of operators by considering products of up to $2s$ spin matrices which are symmetric and traceless in every vector index.  For example, for spin-$1$ we have quadratic, in addition to $I$ and $S_i$, five independent structures of the form $ S_i S_j + S_j S_i + \delta_{ij} \v{S}$.
 
 We also have the scalar $D_0$, however, we need only include a single such term because we insist on having only one power of the time derivative.
 
 To consider possible terms, we need to know how each of the above behave under the discrete transformations and Hermitian conjugate.  The signs under these transformations are listed in the table below.  (Also included is the imaginary number $i$.)
 
-%TODO cleanup table, don't use pmatrix
-\[
-\begin{pmatrix}
-		& Order	&	P	&	T	&	\dagger	\\
-eE_i	&m^2v^3	&	-	& 	+	&	+		\\
-eB_i	&m^2v^2	&	+	&   -	&	+		\\
-D_i		& mv	&	-	&	+	&	-		\\
-D_0		& mv	&	+	&	-	&	-		\\
-S_i		& 1		&	+	&	-	&	+		\\
-i		& 1		&	+	&	-	&	-		\\
-\end{pmatrix}
-\]
 
+\begin{tabular}{l|c|ccc}
+& Order	&	P	&	T	&	$\dagger$	\\
+\hline
+$eE_i$	&$m^2v^3$	&	-	& 	+	&	+		\\
+$eB_i$	&$m^2v^2$	&	+	&   -	&	+		\\
+$D_i$		& mv	&	-	&	+	&	-		\\
+$D_0$		& mv	&	+	&	-	&	-		\\
+$S_i$		& 1		&	+	&	-	&	+		\\
+$i$		& 1		&	+	&	-	&	-		\\
+\end{tabular}
+
+\subsubsection{Allowed terms}
 Our strategy in cataloguing terms will be to first list all the combinations of $E$, $B$ and $D$ which might be allowed at a particular order, to consider the various ways of contracting these vectors, and finally to eliminate terms which do not obey the proper symmetries.  We can always make a particular combination Hermitian, and get the proper behavior under time reversal by adding a factor of $i$, but parity will kill several terms.  Note that of the structures we can contract with, all are even under parity.
 
 %List objects with which we can contract the vector fields
 
-We can also insist that the Lagrangian have the expected form in the absence of external fields, which eliminates terms like $\bar{S}_{ij}D_i D_j$.
-The leading order terms should be of order $mv^2$ or $\frac{eB}{m}$.  Combinations of the correct order are:
+We can also insist that the Lagrangian have the expected form in the absence of external fields, which eliminates terms like $\bar{S}_{ij}D_i D_j$.  The leading order terms should be of order $mv^2$ or $\frac{eB}{m}$.  Combinations of the correct order are:
 \begin{itemize}
   \item The single $D_0$ term.  To have the correct transformation properties this should be $iD_0$.
   \item The kinetic $\v{D}^2$ term, which must be simply $\frac{\v{D}^2}{2m}$
@@ -62,9 +61,9 @@ So, the allowed terms at this order are:
 The first two terms have their coefficients fixed, while we wish to honestly calculate the factor before the last.
 
 %TODO check signs and other factors for consistency
-\[
-	\mathcal{L}_{NRQED} = iD_0 -  \frac{\v{D}^2}{2m}  +  c_B \frac{e}{m} \v{S} \cdot \v{B}
-\]
+\beq \label{eq:nrLFirstOrder}
+	\mathcal{L}_{NRQED} = \Psi^\dagger \Bigg\{ iD_0 +  \frac{\v{D}^2}{2m}  +  c_F \frac{e}{m} \v{S} \cdot \v{B}\Bigg \} \Psi
+\eeq
 
 Are there any terms of order $mv^3$ or $\frac{B}{m}v$ allowed?  Possible combinations are:
 \begin{itemize}
@@ -86,13 +85,13 @@ Next we consider terms of order $mv^4$.
 \end{itemize}
 
 In the Lagrangian we'll write these as:
-\[
-	\mathcal{L}_{mv^4} = 
+\beq \label{eq:nrLv4}
+	\mathcal{L}_{mv^4} = \Psi^\dagger \Bigg\{
 		\frac{\v{D}^4}{8m^2}
 		+ c_D \frac{e (\v{D} \cdot \v{E} - \v{E} \cdot \v{D})}{8m^2} 
 		+ c_Q \frac{eQ_{ij}(D_i E_j - E_i D_j)}{8m^2}
-		+ c_S \frac{ i e \v{S} \cdot(\v{D} \times \v{E} - \v{E} \times \v{D}}{8m^2}
-\]
+		+ c_S \frac{ i e \v{S} \cdot(\v{D} \times \v{E} - \v{E} \times \v{D}}{8m^2} \Bigg \} \Psi
+\eeq
 
 
 Terms of order $\frac{B}{m} v^2$.  The only allowed combination is $D_i D_j B_k$.  We can contract two indices with each other and the third with a spin matrix in three different ways:
@@ -108,15 +107,39 @@ We can also contract all indices with a cubic spin structure:
 \end{itemize}
 
 In the Lagrangian we'll write these as:
-\[
-	\mathcal{L}_{Bv^2} =
-		c_{W1} \frac{ e \v{D}^2 \v{S} \cdot \v{B} + \v{S} \cdot \v{B} \v{D}^2 }{8m^3}
-		- c_{W2} \frac{e D_i (\v{S} \cdot \v{B}) D_i}{4m^3}
-		+c_{p'p} \frac{ e [ (\v{S}\cdot \v{D})(\v{B} \cdot \v{D}) + (\v{B} \cdot \v{D})(\v{S}\cdot \v{D})]}{8m^3}
-\]\[		+ c_{S^3_1} \frac{ e \bar{S}_{ijk} (D_i D_j B_k + B_k D_j D_i)}{8m^3}
-		+ c_{S^3_2} \frac{ e \bar{S}_{ijk} D_i B_j D_k }{8m^3}
-\]
+\beq \label{eq:nrLBv2} \begin{split}
+	\mathcal{L}_{Bv^2} = &
+		\Psi^\dagger \Bigg\{
+			c_{W1} \frac{ e \v{D}^2 \v{S} \cdot \v{B} + \v{S} \cdot \v{B} \v{D}^2 }{8m^3}
+			- c_{W2} \frac{e D_i (\v{S} \cdot \v{B}) D_i}{4m^3}
+			+c_{p'p} \frac{ e [ (\v{S}\cdot \v{D})(\v{B} \cdot \v{D}) + (\v{B} \cdot \v{D})(\v{S}\cdot \v{D})]}{8m^3}
+\\ &		+ c_{T_1} \frac{ e \bar{S}_{ijk} (D_i D_j B_k + B_k D_j D_i)}{8m^3}
+		+ c_{T_2} \frac{ e \bar{S}_{ijk} D_i B_j D_k }{8m^3} \Bigg \} \Psi
+\end{split}\eeq
 
+
+\subsubsection{Full Lagrangian}
+The full Lagrangian we consider is then:
+
+\beq \label{eq:nrLFull}
+\begin{split}
+\mathcal{L}_{NRQED} = & \Psi^\dagger \Bigg\{
+		iD_0 +  \frac{\v{D}^2}{2m}  + 	\frac{\v{D}^4}{8m^2}
+		 + c_F \frac{e}{m} \v{S} \cdot \v{B}
+		+ c_D \frac{e (\v{D} \cdot \v{E} - \v{E} \cdot \v{D})}{8m^2} 
+		+ c_Q \frac{eQ_{ij}(D_i E_j - E_i D_j)}{8m^2}
+\\	& + c_S \frac{ i e \v{S} \cdot(\v{D} \times \v{E} - \v{E} \times \v{D}}{8m^2}
+		+ c_{W1} \frac{ e \v{D}^2 \v{S} \cdot \v{B} + \v{S} \cdot \v{B} \v{D}^2 }{8m^3}
+		- c_{W2} \frac{e D_i (\v{S} \cdot \v{B}) D_i}{4m^3}
+\\	&		+c_{p'p} \frac{ e [ (\v{S}\cdot \v{D})(\v{B} \cdot \v{D}) + (\v{B} \cdot \v{D})(\v{S}\cdot \v{D})]}{8m^3}
+ 	+ c_{T_1} \frac{ e \bar{S}_{ijk} (D_i D_j B_k + B_k D_j D_i)}{8m^3}
+		+ c_{T_2} \frac{ e \bar{S}_{ijk} D_i B_j D_k }{8m^3} 
+		\Bigg \} \Psi
+\end{split}
+\eeq
+
+
+One of the features of this Lagrangian is that every coefficient is fixed by the one-photon interaction.  Although some terms might represent two-photon interactions, they are terms like $\v{S} \cdot \v{A} \times \v{E}$, whose coefficient is fixed by the gauge-invariant term $\v{S} \cdot \v{D} \times \v{E}$.  This in turn means that we can calculate the corrections to the $g$-factor by considering only one-photon interactions.
 
 
 
