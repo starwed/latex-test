@@ -1,0 +1,226 @@
+
+\subsection{Exact equations of motion for spin-1}
+
+\beq
+\mathcal{L} 
+	=	-\frac{1}{2} (D^\mu W^\nu - D^\nu W^\mu)^\dagger (D_\mu W_\nu - D_\nu W_\mu)
+		+ m^2 W^{\mu \dagger} W_\mu - i \lambda e  W^{\mu \dagger} W^\nu F_{\mu\nu}
+\eeq
+
+where as usual $D$ is the long derivative $D^\mu = \partial^\mu + ieA^\mu$.
+
+Obtain the equations of motion from the Euler-Lagrange equations:
+\[
+	\pd{\mathcal{L}}{W^{\dagger \alpha}} - \partial_\mu \pd{ \mathcal{L} }{ [\partial_\mu W^{\dagger \alpha}] } = 0
+\]
+Or equivalently, %TODO show this explicitly?
+\[
+	\pd{\mathcal{L}}{W^{\dagger \alpha}} - D_\mu \pd{ \mathcal{L} }{ [D_\mu W^{\dagger \alpha}] } = 0
+\]
+
+\beqa
+\pd{\mathcal{L}}{W^{\dagger \alpha}} 
+	&=&	\pd{}{W^{\dagger \alpha} } \left( m^2 W^{\mu \dagger} W_\mu - i \lambda e  W^{\mu \dagger} W^\nu F_{\mu\nu} \right )	\\
+	&=&	m^2 W_\alpha - i e \lambda W^\nu F_{\alpha \nu} 	\\
+\eeqa
+
+
+\beqa
+\pd{ \mathcal{L} }{ [D_\gamma W^{\dagger \alpha}] }
+	&=& -\frac{1}{2} \pd{}{ [D_\gamma W^{\dagger \alpha}] }	 (D^\mu W^\nu - D^\nu W^\mu)^\dagger (D_\mu W_\nu - D_\nu W_\mu) 	\\
+	&=&	\frac{1}{2} ( g^{\mu \gamma} g^\nu_\alpha - g^{\nu\gamma} g^\mu_\alpha)(D_\mu W_\nu - D_\nu W_\mu)	\\
+	&=& D^\gamma W_\alpha - D_\alpha W^\gamma	\\
+\eeqa
+
+
+So the complete equation from Euler-Lagrange is
+\beq \label{eq:ELeq}
+		m^2 W_\alpha - i e \lambda W^\nu F_{\alpha \nu} - D_\mu (D^\mu W_\alpha - D_\alpha W^\mu) = 0
+\eeq
+
+This is a set of four coupled second order equations for the field $W$.  We rewrite as a set of first order equations by introducing a field $W_{\mu\nu} = D_\mu W_\nu - D_\nu W_\mu$.  So \eqref{eq:ELeq} becomes 
+\beq
+	m^2 W_\alpha - i e \lambda W^\mu F_{\alpha \mu} - D^\mu W_{\mu\alpha} = 0
+\eeq
+
+%TODO add note about two three-vectors to form a bispinor with?
+$W^{\mu\nu}$ is antisymmetric and so has six degrees of freedom, corresponding to six independent fields.  Together with $W^\mu$ this represents a total of ten fields.  However, upon examination only some of these fields are dynamic.  The  fields $W^{0i}$ and $W^{i}$ appear in the equations with time derivatives, while the fields $W^{ij}$ and $W^0$ never do.  So it is only necessary to consider the former six fields.  So that these six fields all have the same dimension, we will define $\frac{W^{i0}}{m} = i \eta^i$.
+
+We will now eliminate the extraneous fields and solve for $iD_0 W^i$, $iD_0 \eta^i$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\beq 
+	m^2 W_\alpha - ie \lambda W^\nu F_{\alpha \nu} - D_\mu (D^\mu W_\alpha - D_\alpha W^\mu) = 0 
+\eeq
+
+Define $W_{\mu\nu} = D_\mu W_\nu - D_\nu W_\mu$.  
+Then
+\beq \label{eq:s1:EL1st}
+	m^2 W_\alpha - ie \lambda W^\nu F_{\alpha \nu} - D^\mu W_{\mu \alpha} = 0
+\eeq
+To get the exact Hamiltonian of a bispinor, we can eliminate nondynamic fields.  
+
+First consider \eqref{eq:s1:EL1st} with $\alpha=0$.
+\beq
+	m^2 W_0 - i e \lambda W^\nu F_{0\nu} - D^\mu W_{\mu0}
+\eeq
+\beq
+	m^2 W_0 - i e \lambda W^j F_{0j} - D^j W_{j0}
+\eeq
+
+Solve this for $W_0$
+\beq \label{eq:s1:w0}
+	W_0 = \frac{1}{m^2} \left( i e \lambda W^j F_{0j} + D^j W_{j0} \right )
+\eeq
+
+Now, consider \eqref{eq:s1:EL1st} with $\alpha=i$
+\beq
+	m^2 W_i - ie \lambda W^\mu F_{i \mu} - D^\mu W_{\mu i} = 0
+\eeq
+
+\beq
+	m^2 W_i - ie \lambda W^0 F_{i 0} - D^0 W_{0 i} - ie \lambda W^j F_{i j} - D^j W_{j i}= 0
+\eeq
+
+Using \eqref{eq:s1:w0} we can replace $W_0$
+
+\beq
+	m^2 W_i - \frac{i e \lambda}{m^2} \left( i e \lambda W^\nu F_{0\nu} + D^j W_{j0} \right ) F_{i 0} - D^0 W_{0 i} - ie \lambda W^j F_{i j} - D^j W_{j i}= 0
+\eeq
+Using $W_{ji} = D_j W_i - D_i W_j$
+\beq
+	m^2 W_i - \frac{i e \lambda}{m^2} \left( i e \lambda W^\nu F_{0\nu} + D^j W_{j0} \right ) F_{i 0} - D^0 W_{0 i} 
+	- ie \lambda W^j F_{i j} - D^j (  D_j W_i - D_i W_j ) = 0
+\eeq
+
+Solve this for $D^0 W_{0i}$:
+
+\beq \label{eq:s1:w0i}
+	D^0 W_{0i} = m^2 W_i  - \frac{i e \lambda}{m^2} \left( i e \lambda W^\nu F_{0\nu} + D^j W_{j0} \right ) F_{i 0} 
+	- ie \lambda W^j F_{i j} - D^j (  D_j W_i - D_i W_j )
+\eeq
+
+
+To get a similar equation for $W_i$, consider
+\beq
+	W_{i0} = D_i W_0 - D_0 W_i
+\eeq
+Then
+\beq
+	D^0 W_i = D_i W_0 - W_{i0}
+\eeq
+\beq \label{eq:s1:wi}
+	D^0 W_i = D_i \frac{1}{m^2}\left( i e \lambda W^j F_{0j} + D^j W_{j0} \right )  - W_{i0}
+\eeq
+
+We now have equations that tell us the time evolution of a total of six fields: $W_i$ and $W_{i0}$.  We want to treat these as the components of some sort of bispinor.  To that end, first define $\eta_i = -i/m W_{i0}$ so that we have a pair of fields with the same mass dimension and hermiticity.  (Since $W_{i0} = D_i W_0 - D_0 W_i$ would pick up another minus sign under complex conjugation compared to $W_i$.)  Going the other way $W_{i0} = im \eta_i$.
+
+Since eventually we want a nonrelativistic expression, we should write the spatial components of four vectors as three vectors.  To that end also write the components of the tensor $F_{\mu\nu}$ in terms of three vectors.
+$$ F_{0i} = E^i , \; F_{ij} = -\epsilon_{ijk} B^k $$
+
+Regular spatial vectors are ``naturally raised" while $D_i$ is ``naturally lowered".  Then we can rewrite \eqref{eq:s1:w0i}.
+%TODO define D_i and \v{D}
+\beq
+	-im D_0 \eta_i =  m^2 W_i  + \frac{i e \lambda}{m^2} \left( i e \lambda W^j E^j + D^j W_{j0} \right ) E^i
+	- ie \lambda W^j \epsilon_{ijk} B^k - D^j (  D_j W_i - D_i W_j )
+\eeq
+
+\beq
+	i D_0 \eta^i = - m W^i  + \frac{i e \lambda}{m^3} \left( i e \lambda W^j E^j + D^j W_{j0} \right ) E^i
+	- \frac{ie \lambda}{m} W^j \epsilon_{ijk} B^k - \frac{1}{m}D_j (  D_j W^i - D_i W^j )
+\eeq
+
+And likewise \eqref{eq:s1:wi} becomes
+\beq
+		D^0 W_i = D_i \frac{1}{m^2}\left( -i e \lambda W^j E^j + im  D^j \eta_j \right )  - im \eta_i
+\eeq
+\beq
+		i D^0 W^i = - i D_i \frac{1}{m^2}\left( -i e \lambda W^j E^j + i m  D_j \eta^j \right )  + m \eta^i
+\eeq
+
+\beq
+	i D^0 W^i= -\frac{1}{m^2} D_i  e \lambda \v{W} \cdot \v{E} + \frac{1}{m} D_i \v{D} \cdot \v{\eta} + m \eta^i
+\eeq
+
+\subsubsection{Spin identities}
+To obtain some Shrodinger like equation for a bispinor, we need to express the time derivative of the bispinor in terms of other operators which can be interpreted as the Hamiltonian: $i \partial_0 \Psi = \hat{H} \Psi$.  We have expressions for the time derivatives of $W_i$ and $\eta_i$, but some mixing of the indices is involved.  To write the Hamiltonian in a block form we can introduce spin matrices whose action will mix the components of the fields.
+
+The spin matrix for a spin one particle can represented as:
+\beq
+	(S^k)_{ij} = - i\epsilon_{ijk}
+\eeq
+which leads to the following identities:
+\beq
+	(\v{a} \times \v{v})_i = -i (\v{S} \cdot \v{a})_{ij} v_j
+\eeq
+\beq
+	\{ \v{a} \times (\v{a} \times \v{v}) \}_i = - ( \{\v{S} \cdot \v{a}\}^2)_{ij} v_j
+\eeq
+
+\beq
+	a_i (\v{b} \cdot \v{v}) = \{ \v{a} \cdot \v{b} \; \delta_{ij} - (S^k S^\ell)_{ij} a^\ell b^k \} v_j
+\eeq
+
+Using these identities
+
+\beq
+	i D^0 \v{W}= -\frac{e \lambda}{m^2} \v{D}   (\v{W} \cdot \v{E}) + \frac{1}{m} \v{D} (\v{D} \cdot \gv{\eta}) + m \gv{\eta}
+\eeq
+
+\beq
+	i D^0 \v{W} = 
+		-\frac{1}{m^2} \{ \v{D} \cdot \v{E} - (\v{S} \cdot \v{E}) (\v{S} \cdot \v{D})	\} \v{W}
+		+ \frac{1}{m}\{ \v{D}^2 -  (\v{S} \cdot \v{D})^2 \} \gv{\eta} + m \gv{\eta}
+\eeq
+and for the other equation
+\beq
+	i D_0 \eta^i = - m W^i  + \frac{i e \lambda}{m^3} \left( i e \lambda W^j E^j + D^j W_{j0} \right ) E^i
+	- \frac{ie \lambda}{m} W^j \epsilon_{ijk} B^k - \frac{1}{m}D_j (  D_j W^i - D_i W^j )
+\eeq
+
+\beq
+	i D_0 \eta^i = - m W^i  + \frac{i e \lambda}{m^3} \left( i e \lambda W^j E^j + D^j W_{j0} \right ) E^i
+	- \frac{ie \lambda}{m} W^j \epsilon_{ijk} B^k - \frac{1}{m}D_j (  D_j W^i - D_i W^j )
+\eeq
+
+\beq
+	i D_0 \gv{\eta} = -m \v{W} 
+			- \frac{e^2 \lambda^2}{m^3} \v{E} (\v{W} \cdot \v{E} )
+			-\frac{1}{m^2} \v{E} (\v{D} \cdot \gv{\eta})
+			- \frac{i e \lambda}{m} (\v{W} \times \v{B} )
+			+\frac{1}{m} \v{D} \times (\v{D} \times \v{W} ) 
+\eeq
+
+%TODO check order of D and E -- it matters!
+\beq
+	i D_0 \gv{\eta} = -m \v{W} 
+			- \frac{e^2 \lambda^2}{m^3} \{ \v{E}^2 - (\v{S} \cdot \v{E})^2 \} \v{W}
+			-\frac{1}{m^2} \{ \v{E} \cdot \v{D} - (\v{S} \cdot \v{E}) (\v{S} \cdot \v{D}) \} \gv{\eta}
+			- \frac{ e \lambda}{m} (\v{S} \cdot \v{B} ) \v{W}
+			 - \frac{1}{m} (\v{S} \cdot \v{D})^2  \v{W}  
+\eeq
+
+\beq
+	i D_0 \gv{\eta} = \left(
+				-m 
+				- \frac{e^2 \lambda^2}{m^3} \{ \v{E}^2 - (\v{S} \cdot \v{E})^2 \} 
+				- \frac{ e \lambda}{m} (\v{S} \cdot \v{B} )
+				- \frac{1}{m} (\v{S} \cdot \v{D})^2 
+			\right ) \v{W} 
+			-\frac{1}{m^2} \{ \v{E} \cdot \v{D} - (\v{S} \cdot \v{E}) (\v{S} \cdot \v{D}) \} \gv{\eta}  
+\eeq
+
+Now that the equations are in the correct form, we can write them as follows:
+
+\beq
+i D_0 \spinor{W}{\eta} = 
+	\Mblock
+	{-\frac{1}{m^2} \{ \v{D} \cdot \v{E} - (\v{S} \cdot \v{E}) (\v{S} \cdot \v{D})	\} }
+	{m + \frac{1}{m}\{ \v{D}^2 -  (\v{S} \cdot \v{D})^2 \}}
+	{-m 		- \frac{e^2 \lambda^2}{m^3} \{ \v{E}^2 - (\v{S} \cdot \v{E})^2 \} 
+				- \frac{ e \lambda}{m} (\v{S} \cdot \v{B} )
+				- \frac{1}{m} (\v{S} \cdot \v{D})^2 }
+	{-\frac{1}{m^2} \{ \v{E} \cdot \v{D} - (\v{S} \cdot \v{E}) (\v{S} \cdot \v{D}) \}}
+\eeq
+

@@ -9,17 +9,16 @@ We can write down those terms in the NRQED Lagrangian which have one power of th
 In writing the expansion of terms like $\v{D}^4$ it is convenient to use anticommutators.
 \small
 \beqa
-\mathcal{L}_A &=& \Psi^\dagger (  -eA_0- ie  \frac{ \{\nabla_i, A_i \} }{2m} -ie \frac{ \{\grad^2, \{\nabla_i, A_i \}  \} }{8m^3} 
+\mathcal{L}_A &=& \fnrb (  -eA_0- ie  \frac{ \{\nabla_i, A_i \} }{2m} -ie \frac{ \{\grad^2, \{\nabla_i, A_i \}  \} }{8m^3} 
 		+ c_F e \frac{\v{S} \smalldot \v{B}} {2m}   	
 		+ c_D \frac{ e(\v{\grad} \smalldot \v{E} - \v{E} \smalldot \v{\grad} ) }{8m^2}	
 		+ c_Q \frac{e Q_{ij} (\nabla_i E_j - E_i \nabla_j) }{8m^2}	
 	\\&&	+ c^{1}_S \frac{ ie \v{S} \smalldot ( \v{\grad} \times \v{E} - \v{E} \times \v{\grad} )}{8m^2}
 		+ c_{W_1} \frac{ e [ \v{\grad}^2 (\v{S} \smalldot \v{B} ) + (\v{S} \smalldot \v{B} ) \v{\grad}^2] }{8m^3}	
 		- c_{W_2} \frac{ e \nabla^i (\v{S} \smalldot \v{B} ) \nabla^i }{4m^3}
-		+ c_{p'p} \frac{ e [ (\v{S} \smalldot \v{\grad}) (\v{B} \smalldot \v{\grad}) + (\v{B} \smalldot \v{\grad})(\v{S} \smalldot \v{\grad}) }{8m^3} \big )\Psi
+		+ c_{p'p} \frac{ e [ (\v{S} \smalldot \v{\grad}) (\v{B} \smalldot \v{\grad}) + (\v{B} \smalldot \v{\grad})(\v{S} \smalldot \v{\grad}) }{8m^3} \big )\fnr
 \eeqa
 \normalsize
-
 
 We want to calculate from this a particular process: scattering off an external field, with incoming momentum $\v{p}$, outgoing $\v{p'}$, and $\v{q} = \v{p'} - \v{p}$.  There is one diagram associated with each term above, but the total amplitude is just going to be the sum of all these one-photon vertices.  These of course can just be read off directly from the Lagrangian: we replace the fields $\Psi$ with the spinors $\phi$, and any operator $\grad$ acting will become $i\v{p}$ if it acts on the right, $i\v{p'}$ if it is to the left.
 
@@ -42,7 +41,7 @@ And also use that
 Now we can write down the scattering amplitude for scattering off the external field, before we apply any assumptions about the particular process.
 \beqa
 	iM &=&
-		ie\phi^\dagger \Bigg( - A_0 +    \frac{ \v{A} \cdot (\v{p} + \v{p'}) }{2m} 
+		ie\wnrb \Bigg( - A_0 +    \frac{ \v{A} \cdot (\v{p} + \v{p'}) }{2m} 
 		- \frac{  \v{A} \cdot (\v{p} + \v{p'}) \v{p}^2 + \v{p'}^2 \v{A} \cdot (\v{p} + \v{p'}) }{8m^3} 
 	\\&&	+ c_F  \frac{\v{S} \smalldot \v{B}} {2m}   	
 		+ c_D \frac{ ( \partial_i E_i ) }{8m^2}	
@@ -50,7 +49,7 @@ Now we can write down the scattering amplitude for scattering off the external f
 		+ c^{1}_S \frac{  \v{E} \times \v{p} }{4m^2}
 	\\&&	- c_{W_1}  \frac{  (\v{S} \smalldot \v{B} ) (\v{p}^2 + \v{p'}^2)  }{8m^3}
 		+ c_{W_2} \frac{  (\v{S} \smalldot \v{B} ) (\v{p} \cdot \v{p'}) }{4m^3}
-		-  c_{p'p} \frac{  (\v{S} \smalldot \v{p'}) (\v{B} \smalldot \v{p}) + (\v{B} \smalldot \v{p'}) (\v{S} \smalldot \v{p}) }{8m^3} \Bigg )\phi
+		-  c_{p'p} \frac{  (\v{S} \smalldot \v{p'}) (\v{B} \smalldot \v{p}) + (\v{B} \smalldot \v{p'}) (\v{S} \smalldot \v{p}) }{8m^3} \Bigg )\wnr
 \eeqa
 
 The above can be simplified somewhat.  We choose our gauge such that $\nabla_i A_i = 0$.  If we specify elastic scattering then kinematics dictate that $\v{p'}^2 = \v{p}^2$.   Finally, if we consider $\v{B}$ constant, the $c_W$ terms become indistinguishable, since $[ \nabla_i, B_j] = 0$.    (It is only this last assumption that costs us any information.)  Then the scattering amplitude, as calculated from $\mathcal{L}_{NRQED}$, is:
@@ -58,12 +57,12 @@ The above can be simplified somewhat.  We choose our gauge such that $\nabla_i A
 \beq 
 \begin{split} \label{eq:nrqedScatter}
 	iM =&
-		ie\phi^\dagger \Bigg(  -A_0 +  \frac{ \v{A} \cdot \v{p} }{m} - \frac{  (\v{A} \cdot \v{p}) \v{p}^2   }{2m^3} 
+		ie\wnrb \Bigg(  -A_0 +  \frac{ \v{A} \cdot \v{p} }{m} - \frac{  (\v{A} \cdot \v{p}) \v{p}^2   }{2m^3} 
 		+ c_F  \frac{\v{S} \smalldot \v{B}} {2m}   	
 		+ c_D \frac{ ( \partial_i E_i ) }{8m^2}	
 		+ c_Q \frac{ Q_{ij} ( \partial_i E_j ) }{8m^2}	
 	\\&	+ c^{1}_S \frac{  \v{E} \times \v{p} }{4m^2}
 		- (c_{W_1} -c_{W_2}) \frac{   (\v{S} \smalldot \v{B} ) \v{p}^2  }{4m^3}	
-		-  c_{p'p} \frac{   (\v{S} \smalldot \v{p}) (\v{B} \smalldot \v{p})  }{4m^3} \Bigg )\phi 
+		-  c_{p'p} \frac{   (\v{S} \smalldot \v{p}) (\v{B} \smalldot \v{p})  }{4m^3} \Bigg )\wnr 
 \end{split}
 \eeq

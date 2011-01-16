@@ -16,15 +16,35 @@
 \newcommand{\Psibar}{\bar{\Psi}}
 \newcommand{\rapidity}{\phi}
 \newcommand{\TensBi}{\Sigma} %(Tensor bilinear)
+
+%nonrelativistic wave functions
 \newcommand{\phis}{\phi_S}
+\newcommand{\wnr}{\phi_S}
+\newcommand{\wnrb}{\phi_S^\dagger}
+
+%nonrelativistic fields
+\newcommand{\fnr}{\Psi}
+\newcommand{\fnrb}{\Psi^\dagger}
+
+%relativistic fields
+\newcommand{\fr}{\Psi}
+\newcommand{\frb}{\bar{\Psi} }
+
+%spinors u, ubar
+\newcommand{\sr}{u}
+\newcommand{\srb}{\bar{u}}
+
 
 \newcommand{\smalldot}{\cdot}
 
 \newcommand{\gradE}{\grad}
 
 
+%matrix/vector/spinor shorthands
+\newcommand{\spinor}[2]{ \begin{pmatrix} #1 \\ #2 \end{pmatrix} }
+\newcommand{\Mblock}[4]{\begin{pmatrix} #1 & #2 \\ #3 & #4 \end{pmatrix} }
 
 \begin{document}
-\input{EquationsOfMotion}
+\input{ExactEquationsSpin1}
 
 \end{document}

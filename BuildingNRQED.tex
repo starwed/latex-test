@@ -62,7 +62,7 @@ The first two terms have their coefficients fixed, while we wish to honestly cal
 
 %TODO check signs and other factors for consistency
 \beq \label{eq:nrLFirstOrder}
-	\mathcal{L}_{NRQED} = \Psi^\dagger \Bigg\{ iD_0 +  \frac{\v{D}^2}{2m}  +  c_F \frac{e}{m} \v{S} \cdot \v{B}\Bigg \} \Psi
+	\mathcal{L}_{NRQED} = \fnrb \Bigg\{ iD_0 +  \frac{\v{D}^2}{2m}  +  c_F \frac{e}{m} \v{S} \cdot \v{B}\Bigg \} \fnr
 \eeq
 
 Are there any terms of order $mv^3$ or $\frac{B}{m}v$ allowed?  Possible combinations are:
@@ -86,11 +86,11 @@ Next we consider terms of order $mv^4$.
 
 In the Lagrangian we'll write these as:
 \beq \label{eq:nrLv4}
-	\mathcal{L}_{mv^4} = \Psi^\dagger \Bigg\{
+	\mathcal{L}_{mv^4} = \fnrb \Bigg\{
 		\frac{\v{D}^4}{8m^2}
 		+ c_D \frac{e (\v{D} \cdot \v{E} - \v{E} \cdot \v{D})}{8m^2} 
 		+ c_Q \frac{eQ_{ij}(D_i E_j - E_i D_j)}{8m^2}
-		+ c_S \frac{ i e \v{S} \cdot(\v{D} \times \v{E} - \v{E} \times \v{D}}{8m^2} \Bigg \} \Psi
+		+ c_S \frac{ i e \v{S} \cdot(\v{D} \times \v{E} - \v{E} \times \v{D}}{8m^2} \Bigg \} \fnr
 \eeq
 
 
@@ -109,12 +109,12 @@ We can also contract all indices with a cubic spin structure:
 In the Lagrangian we'll write these as:
 \beq \label{eq:nrLBv2} \begin{split}
 	\mathcal{L}_{Bv^2} = &
-		\Psi^\dagger \Bigg\{
+		\fnrb \Bigg\{
 			c_{W1} \frac{ e \v{D}^2 \v{S} \cdot \v{B} + \v{S} \cdot \v{B} \v{D}^2 }{8m^3}
 			- c_{W2} \frac{e D_i (\v{S} \cdot \v{B}) D_i}{4m^3}
 			+c_{p'p} \frac{ e [ (\v{S}\cdot \v{D})(\v{B} \cdot \v{D}) + (\v{B} \cdot \v{D})(\v{S}\cdot \v{D})]}{8m^3}
 \\ &		+ c_{T_1} \frac{ e \bar{S}_{ijk} (D_i D_j B_k + B_k D_j D_i)}{8m^3}
-		+ c_{T_2} \frac{ e \bar{S}_{ijk} D_i B_j D_k }{8m^3} \Bigg \} \Psi
+		+ c_{T_2} \frac{ e \bar{S}_{ijk} D_i B_j D_k }{8m^3} \Bigg \} \fnr
 \end{split}\eeq
 
 
@@ -123,7 +123,7 @@ The full Lagrangian we consider is then:
 
 \beq \label{eq:nrLFull}
 \begin{split}
-\mathcal{L}_{NRQED} = & \Psi^\dagger \Bigg\{
+\mathcal{L}_{NRQED} = & \fnrb \Bigg\{
 		iD_0 +  \frac{\v{D}^2}{2m}  + 	\frac{\v{D}^4}{8m^2}
 		 + c_F \frac{e}{m} \v{S} \cdot \v{B}
 		+ c_D \frac{e (\v{D} \cdot \v{E} - \v{E} \cdot \v{D})}{8m^2} 
@@ -134,7 +134,7 @@ The full Lagrangian we consider is then:
 \\	&		+c_{p'p} \frac{ e [ (\v{S}\cdot \v{D})(\v{B} \cdot \v{D}) + (\v{B} \cdot \v{D})(\v{S}\cdot \v{D})]}{8m^3}
  	+ c_{T_1} \frac{ e \bar{S}_{ijk} (D_i D_j B_k + B_k D_j D_i)}{8m^3}
 		+ c_{T_2} \frac{ e \bar{S}_{ijk} D_i B_j D_k }{8m^3} 
-		\Bigg \} \Psi
+		\Bigg \} \fnr
 \end{split}
 \eeq
 
