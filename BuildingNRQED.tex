@@ -1,9 +1,81 @@
 \subsection{The NRQED Lagrangian}
 
 We want to construct an effective Lagrangian in the nonrelativistic limit.  Our goal is to calculate the leading order corrections to the $g$-factor, which are corrections of order $\alpha^2$.  To this end, we need terms in the effective nonrelativistic Lagrangian which are equivalent corrections.
+% is this name really right?
+\subsubsection{position space operators}
 
+\begin{tabular}{l|c|ccc}
+& Order	&	P	&	T	&	$\dagger$	\\
+\hline
+$eE_i$	&$m^2v^3$	&	-	& 	+	&	+		\\
+$eB_i$	&$m^2v^2$	&	+	&   -	&	+		\\
+$D_i$		& mv	&	-	&	+	&	-		\\
+$D_0$		& mv	&	+	&	-	&	-		\\
+$S_i$		& 1		&	+	&	-	&	+		\\
+$i$		& 1		&	+	&	-	&	-		\\
+\end{tabular}
+
+
+There are several symmetries that terms in the Lagrangian must preserve: spatial reflection, time reversal, gauge invariance, and Hermiticity.  Gauge invariance is taken care of by only considering gauge-invariant operators.
+
+All of the possible spin-space structures preserve spatial parity.  If the term in the Lagrangian is to obey such a symmetry, then any allowed collection of position-space operators must be themselves invariant under reflection.  
+
+Each term must also be invariant under time reversal.  The spin operator $S_i$ flips sign under time reversal.  Thus, $\bar{S}_{ij}$ is even, and $\bar{S}_{ijk}$ odd, under the same transformation.  $E_i$ and $D_i$ are even, while $B_i$ is odd.  Any set of operators with definite behavior under time reversal, though, can be made invariant by including an extra factor of $i$.  So even if some term $ABC$ is odd, $iABC$ will be even.
+
+Finally, any sequence of operators can be made Hermitian by simply adding the Hermitian conjugate; if we wish to include a term $ABC$ in the Lagrangian, we add $C^\dagger B^\dagger A^\dagger$.  Since all the operator	s under consideration are either Hermitian or anti-Hermitian, this means that exactly one of $ABC \pm CBA$ will be allowed.  The spin space operators are all Hermitian of themselves, and commute with all other operators, so only the position space operators are nontrivial.
+
+Thus for any possible set of operators, first it is determined if such a set is allowed by considerations of parity.  Then, whether an additional factor of $i$ is needed is determined by examining the properties under time reversal.  Finally, the allowed Hermitian terms are enumerated.
+
+
+%TODO add bit about order of operators as well, either before this or after it.
+Of the ``building blocks'' for the general Lagrangian, those odd in parity are also odd in $v$.  And those even in parity are of an order even in $v$.  So only terms of an order even in $v$ can possibly be allowed under parity, and at the same time every such term will have the correct symmetry properties under spatial reflection.
+
+First consider terms of leading order $mv^2$.  What collections of position space operators exist?  $E$ is already too high of an order, leaving only that with two powers of $D$:
+%TODO clean up notation -- shouldn't use O here, probably
+\beq
+ \text{Sets of } \mathcal{O}(mv^2) \text{ combinations} = \{ \frac{1}{m} D_i D_j \} 
+\eeq
+This is in addition to the single permitted term containing $e\Phi$ which is not, by itself, gauge-invariant.
+ 
+ Next consider terms of order $mv^4$.  We could have up to a single power of $E$, or only the long derivative operators:
+ 
+\beq
+ \text{Set of } \mathcal{O}(mv^2) \text{ combinations} = \{ \frac{1}{m^3} D_i D_j D_k D_\ell, \, \frac{1}{m^2} e E_i D_j \} 
+\eeq
+
+The leading order term in $B$ is just $\frac{e}{m}B_i$.
+
+The order $\frac{e}{m} B_i v^2$ terms are drawn from:
+\beq
+ \text{Set of } \mathcal{O}(\frac{e}{m} B v^2) \text{ combinations} = \{ \frac{e}{m^3} D_i D_j B_k \}
+\eeq
+
+
+\subsubsection{Contraction of terms}
+
+In this nonrelativistic theory the Lagrangian need not be Lorentz invariant, but must still be Galilean invariant.  All the operators we consider transform as 3-vectors or higher order 3-tensors.  To form allowed terms, all indices must be somehow contracted.
+
+Above, all relevant sets of position space operators are considered for each order of term.  The greatest number of indices free was four.  These must be contracted with order unity structures, which as well as the spin operators with up to four indices ($S_i$, $\Sb_{ij}$, $\Sb_{ijk}$,$\Sb_{ijk\ell}$) include $\delta_{ij}$ and the completely antisymmetric tensor $\epsilon_{ijk}$.
+
+\begin{itemize}
+\item The only structure with one index is just $S_i$.
+
+\item With two indices, there are the simple structures $\Sb_{ij}$ and $\delta_{ij}$, and also $S_i \epsilon_{ijk}$.
+
+\item With three indices, there are $\epsilon_{ijk}$ and $\Sb_{ijk}$ as well as $\delta_{ij} S_k$ or $\Sb_{ij} \epsilon_{jk\ell}$.
+
+\item The only position space operator with four indices is just $D_i D_j D_k D_\ell$.  While there are a fairly large number of order unity structures with four indices, any with spin operators are forbidden because of the kinetic nature of the term.  So only $\delta_{ij} \delta_{k\ell}$ need be considered.
+\end{itemize}
+
+Above are categorized the possible sets of position space operators for each order, and the ways of contracting them by number of indices.  The next step is to write all Hermitian combinations we can form from these operators.  This will form a complete catalogue of allowed terms in the Lagrangian.
+
+ 
+
+
+
+%%%%%%  OLD OLD OLD
 \subsubsection{Order of terms}
-%TODO Discussion of energy scales --  possibly move this into introduction, since it applies to each calculation
+%TODO Discussion of energy scales -- possibly move this into introduction, since it applies to each calculation
 We consider constant, infinitesimal external magnetic fields, so we need only consider terms linear in $\v{B}$.
 
 The velocity of the particles in our bound state system will be $v \sim \alpha$.
@@ -15,7 +87,6 @@ Each derivative of the electric field will add an additional factor of $mv$, so 
 We need to keep terms up to order $mv^4$ and $\frac{B}{m} v^2$ in order to calculate the $g$-factor to the necessary precision.  We include $mv^4$ terms so we can be sure that there are no effects entering from second-order perturbation theory.
 
 
-
 %TODO insert qualifications on external field
 \subsubsection{Constraints on the form of the Lagrangian}
 The Lagrangian is constrained to obey several symmetries.  It must be invariant under the symmetries of parity and time reversal.  It must also be invariant under Galilean transformations.  The Lagrangian must also be Hermitian, and gauge invariant.
@@ -23,6 +94,9 @@ The Lagrangian is constrained to obey several symmetries.  It must be invariant 
 What are the gauge invariant building blocks we can use to construct this Lagrangian?  We have the external fields $\v{E}$ and $\v{B}$, the spin operators $\v{S}$, and the long derivative $\v{D} = \v{\partial} - i e\v{A}$.  The fields should always be accompanied by the charge $e$ of the particle.
 
 When considering the case of higher spin particles, we might consider terms quadratic and above in spin operators.  For a particle of spin $s$, there must be $(2s+1)^2$ independent hermitian operators.  We can span this set of operators by considering products of up to $2s$ spin matrices which are symmetric and traceless in every vector index.  For example, for spin-$1$ we have quadratic, in addition to $I$ and $S_i$, five independent structures of the form $ S_i S_j + S_j S_i + \delta_{ij} \v{S}$.
+
+
+
 
 We also have the scalar $D_0$, however, we need only include a single such term because we insist on having only one power of the time derivative.
 
@@ -39,6 +113,9 @@ $D_0$		& mv	&	+	&	-	&	-		\\
 $S_i$		& 1		&	+	&	-	&	+		\\
 $i$		& 1		&	+	&	-	&	-		\\
 \end{tabular}
+
+\include{SpinSpaceOperators}
+
 
 \subsubsection{Allowed terms}
 Our strategy in cataloguing terms will be to first list all the combinations of $E$, $B$ and $D$ which might be allowed at a particular order, to consider the various ways of contracting these vectors, and finally to eliminate terms which do not obey the proper symmetries.  We can always make a particular combination Hermitian, and get the proper behavior under time reversal by adding a factor of $i$, but parity will kill several terms.  Note that of the structures we can contract with, all are even under parity.
@@ -71,7 +148,7 @@ Are there any terms of order $mv^3$ or $\frac{B}{m}v$ allowed?  Possible combina
   \item A term with both the derivative and magnetic field: $D_i B_j$.  Again, this is odd under parity and so forbidden.
   \item A single power of $E$.  Again, odd under parity.
 \end{itemize}
-So, all such terms are foribdden by consideration of parity.
+So, all such terms are forbidden by consideration of parity.
 
 Next we consider terms of order $mv^4$.
 \begin{itemize}

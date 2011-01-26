@@ -327,5 +327,253 @@ Writing this in terms of the bispinor $\begin{pmatrix}\eta \\ W\end{pmatrix}$, t
 
 
 
+\subsubsection{Hermiticity of Hamiltonian}
+
+
+It's clear from inspection that the above Hamiltonian is not Hermitian in the standard sense.  (Of the operators in use, the only one which is not self adjoint is $D_i^\dagger = - D_i$.)  Noticing that 
+\[
+	\left [ \v{E} \cdot \v{D} - (\v{S} \cdot \v{E})( \v{S} \cdot \v{D}) + i \v{S} \cdot \v{E} \times \v{D} \right]^\dagger 
+		= - \left [ \v{D} \cdot \v{E} - (\v{S} \cdot \v{D}) (\v{S} \cdot \v{E}) + i \v{S} \cdot \v{D} \times \v{E} \right ] 
+\]
+we can see it has the general form 
+\[
+	H = 
+\begin{pmatrix}
+	A	&	B	\\
+	C	&	A^\dagger
+\end{pmatrix}
+\]
+where the off diagonal blocks are Hermitian in the normal sense: $B^\dagger = B$ and $C^\dagger=C$.
+
+At this point we should consider that an operator is defined as Hermitian with respect to a particular inner product.  In quantum mechanics this inner product is normally defined as:
+\[	\langle \Psi, \phi \rangle = \int d^3x \Psi^\dagger \phi	\]
+This definition, however, does not produce sensible results for the states in question.  We need the inner product of a state with itself to be conserved; in other words, it should play the role of a conserved charge.  From the considerations above we already have one such quantity: the conserved charge $\int d^3x j_0$, where 
+
+\[	
+	j_0 = m [\eta^\dagger W + W^\dagger \eta] 
+		= 	m \begin{pmatrix} \eta^\dagger & W^\dagger \end{pmatrix}
+			\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}
+			\begin{pmatrix} \eta \\ W \end{pmatrix}
+\]
+
+A more general definition of the inner product includes some weight M: 
+\[	\langle \Psi, \phi \rangle = \int d^3x \Psi^\dagger M \phi	\]
+In normal quantum mechanics M would be the identity matrix, but here, as implied by the charge density, we want $M=\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}$.  Such a definition will lead to the inner product $<\Psi, \Psi>$ being conserved.
+
+An operator H is hermitian with respect to this inner product if
+\[ \langle H\Psi, \phi \rangle = \langle \Psi, H\phi \rangle \to
+		\int d^3x \Psi^\dagger H^\dagger M \phi	=	\int d^3x \Psi^\dagger M H \phi
+\]
+For this equality to hold, it is sufficient for $H^\dagger M = M H$.  With $M=\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}$ and $H=\begin{pmatrix} A & B \\ C & D \end{pmatrix}$ this condition reduces to 
+\[
+	\begin{pmatrix} A^\dagger & C^\dagger \\ B^\dagger & D^\dagger \end{pmatrix}
+	=\begin{pmatrix} D & C \\ B & A \end{pmatrix}
+\]
+Our Hamiltonian fulfills exactly this requirement, and so is Hermitian with respect to this particular inner product.
+
+
+
+\subsection{Non-relativistic Hamiltonian}
+Now we will consider the non-relativistic limit of the above Hamiltonian.  To work in this regime constrains the order of both the momentum and the electromagnetic field strength.
+\begin{eqnarray*}
+	D	&\sim&	mv	\\
+	\Phi	&\sim&	mv^2	\\
+	E	&\sim&	m^2v^3	\\
+	B	&\sim&	m^2v^2
+\end{eqnarray*}
+
+We can write the Hamiltonian matrix in terms of the basis of 2x2 Hermitian matrices: $({\bf I}, \rho_i)$:
+
+\begin{eqnarray*}
+H &=&	a_0 {\bf I} + a_i \rho_i \\
+a_0  	&=& 
+ \frac{1}{2}(H_{11}+H_{22}) =
+			e\Phi + 
+				\lambda \frac{e}{2m^2} 
+				\left [ 
+					\v{E} \cdot \v{D} - (\v{S} \cdot \v{E})( \v{S} \cdot \v{D}) + i \v{S} \cdot \v{E} \times \v{D}
+					- \v{D} \cdot \v{E} + (\v{S} \cdot \v{D}) (\v{S} \cdot \v{E}) - i \v{S} \cdot \v{D} \times \v{E} 
+				\right ]\\
+a_3 	&=&
+ \frac{1}{2}(H_{11}-H_{22}) =
+				\lambda s\frac{e}{2m^2} 	\left [ 
+					\v{E} \cdot \v{D} - (\v{S} \cdot \v{E})( \v{S} \cdot \v{D}) + i \v{S} \cdot \v{E} \times \v{D}
+					+ \v{D} \cdot \v{E} - (\v{S} \cdot \v{D}) (\v{S} \cdot \v{E}) + i \v{S} \cdot \v{D} \times \v{E} 
+				\right ]\\
+ia_2	&=& 
+ \frac{1}{2}(H_{21}-H_{12}) =
+				-\left [	
+					\frac{\v{D}^2}{2m} - \frac{1}{m} (\v{S} \cdot \v{D})^2 
+					-\frac{\lambda-1}{2} \frac{e}{m} \v{S} \cdot \v{B}
+					+ \frac{e^2}{2m^3}(\v{E}^2 -(\v{S}\cdot\v{E})^2)
+				\right ]	\\
+a_1		&=&	
+ \frac{1}{2}(H_{12}-H_{21}) =
+				\left [
+					m - \frac{\v{D}^2}{2m} - \frac{1+\lambda}{2}\frac{e}{m}\v{S} \cdot \v{B}
+					+ \frac{e^2}{2m^3}(\v{E}^2 -(\v{S}\cdot\v{E})^2)
+				\right ]
+\end{eqnarray*}
+
+We can see that to leading order, the Hamiltonian is
+\begin{equation*}
+H = m \rho_1 = 
+\begin{pmatrix}
+0	&	m \\
+m	&	0	\\
+\end{pmatrix}
+\end{equation*}
+Since we wish to separate positive and negative energy states, this poses a problem.  So we first switch to a basis where at least the rest energies are separate.  Then, remaining off-diagonal elements can be treated as perturbations.
+
+An appropriate transformation which meets our requirements is a "rotation" in the space spanned by $\rho_i$ matrices, about the $\rho_1 + \rho_3$ axis.  This has the explicit form:
+\begin{equation}
+U =\frac{1}{\sqrt {2}}  (\rho_1 + \rho_3)	
+	= \frac{1}{\sqrt {2}}
+\begin{pmatrix}
+1	&	1	\\
+1	&	-1	\\
+\end{pmatrix}
+\end{equation}
+Any transformation U can be described by it's action on the basis of 4x4 matrices.   This takes:
+\begin{eqnarray*}
+{\bf I} & \to &	{\bf I}	\\
+\rho_1	& \to &	\rho_3	\\
+\rho_3	& \to &	\rho_1	\\
+\rho_2	& \to &	-\rho_2	\\
+\begin{pmatrix}
+	\eta	\\	W
+\end{pmatrix}
+&	\to	&
+\begin{pmatrix}
+\Psi_u \\	\Psi_\ell
+\end{pmatrix}
+=	\frac{1}{\sqrt{2}}
+\begin{pmatrix}
+\eta	+ W \\	\eta - W
+\end{pmatrix}
+\end{eqnarray*}
+
+(This transformation will transform the current to
+\[	j_0 =  m (\Psi_u^\dagger \Psi_u  - \Psi_\ell^\dagger \Psi_\ell)		\]
+and the weight M, used in the inner product, to
+\[	M \to M' = U^\dagger M U = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}	\]
+The transformed Hamiltonian will of course be Hermitian with respect to the transformed inner product.)
+
+Our equation is now of the following form:
+\begin{eqnarray*}
+i\partial_0 \begin{pmatrix} \Psi_u \\	\Psi_\ell \end{pmatrix}  
+	& =&
+	H' \begin{pmatrix} \Psi_u \\	\Psi_\ell  \end{pmatrix}
+\end{eqnarray*}
+
+We can see that the Hamiltonian still contains off-diagonal elements, so this represents a pair of coupled equations for the upper and lower components of $\gv{\Psi}$.  But the off-diagonal terms are small, so we can consider the case where $\Psi_\ell$ is small compared to $\Psi_u$. Solving for $\Psi_\ell$ in terms of $\Psi_u$: 
+
+\begin{eqnarray*}
+	E \Psi_\ell &=& 	H'_{21} \Psi_u + H'_{22} \Psi_\ell \\
+	\Psi_\ell 	&=& 	(E - H'_{22})^{-1} H'_{21} \Psi_u
+\end{eqnarray*}
+
+This gives the exact formula:
+\begin{eqnarray*}
+	E \Psi_u 	&=&		\left( H'_{11} + H'_{12}[E-H'_{22}]^{-1} H'_{21} \right) \Psi_u
+\end{eqnarray*}
+
+However, we only need corrections to the magnetic moment of order $v^2$.  With $\frac{e}{m}\v{S} \cdot \v{B} \sim mv^2$, this means we only need the Hamiltonian to at most order $mv^4$.  Examining the leading order terms of the matrix H', the diagonal elements are order m while the off-diagonal elements are order $mv^2$.  To leading order the term $[E-H'_{22}]^{-1}=\frac{1}{2m}$. So we'll need $H'_{11}$ to $\mathcal{O}(v^4)$, and $H'_{12}$, $H'_{21}$, and $[E-H'_{22}]^{-1}$ each to only leading order.
+
+
+\[	E \Psi_u 	=		\left( H'_{11} + \frac{1}{2m}H'_{12} H'_{21} + \mathcal{O}(mv^6)\right) \Psi_u \]
+
+The needed terms of H are, using $\lambda=g-1$
+\begin{eqnarray*}
+	H'_{11} 	= a_0+ a_3
+			&=& m + e\Phi - \frac{D^2}{2m} - \frac{g}{2}\frac{e}{m} \v{S} \cdot \v{B}	\\
+			&& +(g-1)\frac{e}{2m^2} 
+				\left [ 
+					\v{E} \cdot \v{D} - (\v{S} \cdot \v{E})( \v{S} \cdot \v{D}) + i \v{S} \cdot \v{E} \times \v{D}
+					- \v{D} \cdot \v{E} + (\v{S} \cdot \v{D}) (\v{S} \cdot \v{E}) - i \v{S} \cdot \v{D} \times \v{E} 
+				\right ]
+			+\mathcal{O}(mv^6)	\\
+	H'_{12} 	= a_1 - ia_2
+			&=& \frac{D^2}{2m} - \frac{1}{m}(\v{S} \cdot \v{D})^2 - \frac{g-2}{2}\frac{e}{m} \v{S} \cdot \v{B}
+			+\mathcal{O}(mv^4)	\\
+	H'_{21}  = a_1 + ia_2
+			&=&  -\frac{D^2}{2m} + \frac{1}{m}(\v{S} \cdot \v{D})^2 + \frac{g-2}{2}\frac{e}{m} \v{S} \cdot \v{B}
+			+\mathcal{O}(mv^4)
+\end{eqnarray*}
+
+The product $H'_{12}H'_{21}$ is calculated in the appendix.  To first order in the magnetic field strength it is:
+\begin{eqnarray*}
+\frac{1}{2m}H'_{12}H'_{21}
+	&=&	-\frac{1}{2m^3}\left(  \frac {\v{D}^2} {2} -  (\v{S} \cdot \v{D})^2  -  \frac{g-2}{2}  e\v{S} \cdot \v{B} \right )^2	\\	
+	&=& 	-\frac{1}{2m^3}\left( 
+				\frac{ \gv{\pi}^4 } {4}  -  e \v{p}^2  \v{S} \cdot \v{B}   
+				-\frac{g-2}{2}e (\v{S} \cdot \v{p}) (\v{B} \cdot \v{p})
+			\right)
+\end{eqnarray*}
+
+So finally,replacing all $\v{D}$ with $\gv{\pi} \equiv  \v{p} - e \v{A}$, we have a direct expression for $\Psi_u$:
+\begin{eqnarray*}
+	E \Psi_u 
+		&=&\left \{ m + e\Phi + \frac{\pi^2}{2m} - \frac{g}{2}\frac{e}{m} \v{S} \cdot \v{B}
+			- \frac{\pi^4 } {8m^3}  
+			+ \frac{ e \v{p}^2  (\v{S} \cdot \v{B}) }{2m^3}
+			+ (g-2)\frac{e}{4m^3} (\v{S} \cdot \v{p}) (\v{B} \cdot \v{p})
+				 \right .	\\
+		&&	\left . 
+			+ (g-1)\frac{ie}{2m^2}  \left [ 
+					\v{E} \cdot \gv{\pi} - (\v{S} \cdot \v{E}) (\v{S} \cdot \gv{\pi}) + i \v{S} \cdot \v{E} \times \gv{\pi}
+					- \gv{\pi} \cdot \v{E} + (\v{S} \cdot \gv{\pi}) (\v{S} \cdot \v{E}) - i \v{S} \cdot \gv{\pi} \times \v{E} 
+			\right ]			
+			\right \}\Psi_u
+\end{eqnarray*}
+The complicated expression in square brackets can be cleaned up a bit:
+
+\begin{eqnarray*}
+\v{E} \cdot \gv{\pi} - \gv{\pi} \cdot \v{E}
+	&=&	[E_i, \pi_i]			\\
+	&=&	[E_i, -i\partial_i]	\\
+	&=&	i(\partial_i E_i)		\\
+(\v{S} \cdot \v{E}) (\v{S} \cdot \gv{\pi}) - (\v{S} \cdot \gv{\pi}) (\v{S} \cdot \v{E})
+	&=&	S_i S_j E_i \pi_j - S_i S_j \pi_i E_j						\\
+	&=&	(S_i S_j) (E_i \pi_j - E_j \pi_i - [\pi_i, E_j])					\\
+	&=&	[S_i, S_j](E_i \pi_j) - (S_i S_j)(-i \nabla_i E_j)				\\
+	&=&	(i\epsilon_{ijk}S_k)E_j \pi_i -  (S_i S_j)(-i \nabla_i E_j)		\\
+	&=&	i \v{S} \cdot \v{E} \times \gv{\pi} + i S_i S_j \nabla_i E_j)	\\
+(\v{E} \times \gv{\pi} - \gv{\pi} \times \v{E})_k
+	&=&	\epsilon_{ijk}(E_i \pi_j - \pi_i E_j)		\\
+	&=&	\epsilon_{ijk}(E_i \pi_j + \pi_j E_i)		\\
+	&=&	\epsilon_{ijk}(2 E_i \pi_j + [\pi_i, E_j])	\\
+	&=&	2 \epsilon_{ijk} E_i \pi_j				\\
+	&=&	2 (\v{E} \times \gv{\pi})_k
+\end{eqnarray*}
+
+Using these identities and collecting terms, and then writing everything in terms of $g$, $g-2$
+\begin{eqnarray*}
+	E \Psi_u 
+		&=&\left\{ m + e\Phi + \frac{\pi^2}{2m} - \frac{\pi^4 } {8m^3}
+			- \frac{e}{m} \v{S} \cdot \v{B} \left ( \frac{g}{2} - \frac{p^2}{2m^2} \right )
+			+ (g-2)\frac{e}{4m^3} (\v{S} \cdot \v{p}) (\v{B} \cdot \v{p})	\right. \\
+		&&	\left.
+			- (g-1)\frac{e}{2m^2} 
+				\left [ 
+					\v{\nabla} \cdot \v{E} 
+					- S_i S_j \nabla_i E_j +\v{S} \cdot \v{E} \times \gv{\pi}
+				\right ]
+			\right\}\Psi_u	\\
+		&=& \left\{ m + e\Phi + \frac{\pi^2}{2m} - \frac{\pi^4 } {8m^3}
+			- \frac{g}{2}\frac{e}{m} \v{S} \cdot \v{B} \left ( 1 - \frac{p^2}{2m^2} \right )
+			- \frac{g-2}{2} \frac{e}{m} \frac{p^2}{2m^2} \v{S} \cdot \v{B} 
+			+ (g-2)\frac{e}{4m^3} (\v{S} \cdot \v{p}) (\v{B} \cdot \v{p})	\right.	\\
+		&&	\left.
+			- \left ( \frac{g}{2} + \frac{g-2}{2} \right) \frac{e}{2m^2} 
+				\left [ 
+					\v{\nabla} \cdot \v{E} 
+					- S_i S_j \nabla_i E_j +\v{S} \cdot \v{E} \times \gv{\pi}
+				\right ]
+			\right\}\Psi_u
+\end{eqnarray*}
+			
+We have a Hamiltonian for the upper component of the bispinor, as desired.  But is it truly Schrodinger-like?  In the general case we would need to perform the Fouldy-Wouthyusen transformation, to a representation where all the physics up to the desired order is contained in the single spinor equation.  But we can show that, at the order we are working at, the Hamiltonian above is correct.
+
 
 
