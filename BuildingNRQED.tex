@@ -69,9 +69,107 @@ Above, all relevant sets of position space operators are considered for each ord
 
 Above are categorized the possible sets of position space operators for each order, and the ways of contracting them by number of indices.  The next step is to write all Hermitian combinations we can form from these operators.  This will form a complete catalogue of allowed terms in the Lagrangian.
 
- 
+%TODO address that D_i D_j \epsilon_{ijk} \sim B_k
+The term $D_i D_j$ has two indices.  There are three ways to contract it: with $\delta_{ij}$, $\Sb_{ij}$, or $S_k \epsilon_{ijk}$.  Since kinetic terms with spin are not considered, that only leaves one possible term: $\v{D}^2$.  This term is Hermitian in and of itself.  It has mass dimension two, so the term as it appears in the Lagrangian will be:
+\beq
+	 D_i D_j  \to \frac{\v{D^2}}{2m}
+\eeq 
+
+Terms from the set $E_i D_j$ also have two indices.  It can be contracted with all three of $\delta_{ij}$, $\Sb_{ij}$, or $i S_k \epsilon_{ijk}$.   
+$E_i$, $\delta_{ij}$ and $\Sb_{ij}$ are Hermitian, while $D_j$ and $i S_k \epsilon_{ijk}$ are anti-Hermitian.  It is convenient to use that $[D_j, E_i] = \grad_j E_i$.
+
+The Hermitian combination with $\delta_{ij}$ is 
+\beq
+	(D_i E_j - E_j D_i) \delta_{ij} \to \frac{ \grad \cdot \v{E}  }{4m^2} = \frac{ \grad \cdot \v{E} }{4m^2}
+\eeq
+
+The Hermitian combination with $\Sb_{ij}$ is
+\beq
+	(D_i E_j - E_j D_i)  \Sb_{ij} \to \frac{ \Sb_{ij} \partial_i E_j }{4m^2} 
+\eeq
+
+The Hermitian combination with $i S_k \epsilon_{ijk}$ is
+\beq
+	(D_i E_j + E_j D_i) \to i S_k \epsilon_{ijk} \to  \frac{ i\v{S} \cdot ( \v{D} \times \v{E} + \v{E} \times \v{D} ) }{4m^2}
+\eeq
+
+A single power of the magnetic field, $B_i$ may only be contracted with $S_i$.  So the term is
+\beq
+	\frac{e}{m} \v{S} \cdot \v{B}
+\eeq 
+
+The second order terms involving the magnetic field are drawn from the set $D_i D_j B_k$.  There are four order-unity structures which have three indices, but only two of those need be considered.  This is because $\v{D} \times \v{D} \sim \v{B}$ and $\v{D} \times \v{B} =0$.  If is not assumed that $[D_i, B_j] = 0$ then the allowed Hermitian combinations will be with $D_i D_j B_k + B_k D_j D_i$ and $D_i B_j D_k$.
+
+While $[D_i, D_j] \neq 0$, it does produce another term proportional to $B$ and thus, smaller than considered.  So for instance, $D_i D_j B_i$ need not be considered separate from $D_j D_i B_i$.   
+\beqa
+(D_i D_j B_k + B_k D_j D_i) \delta_{ij} S_k 
+	&\to&	 \frac{e}{m}\frac{ \v{D}^2 (\v{S} \cdot \v{B}) + (\v{S} \cdot \v{B}) \v{D}^2 }{4m^2}	\\  
+(D_i D_j B_k + B_k D_j D_i) \delta_{jk} S_i 
+	&\to&	 \frac{e}{m}\frac{ (\v{S} \cdot \v{D}) (\v{D} \cdot \v{B}) + (\v{B} \cdot \v{D}) (\v{S} \cdot \v{D}) }{4m^2}	\\
+D_i B_j D_k \delta_{ij} S_k  
+	&\to&	 \frac{e}{m}\frac{ (\v{S} \cdot \v{D}) (\v{B} \cdot \v{D}) + (\v{D} \cdot \v{B}) (\v{S} \cdot \v{B}) }{4m^2}		\\ 
+\eeqa
+
+\beqa
+(D_i D_j B_k + B_k D_j D_i) \Sb_{ijk} 
+	&\to&	\frac{e}{m}\frac{ \Sb_{ijk} (D_i D_j B_k + B_k D_j D_i)   }{4m^2}	\\
+D_i B_j D_k \Sb_{ijk} 
+	&\to&	\frac{e}{m}\frac{ \Sb_{ijk} D_i B_j D_k  }{4m^2}	\\  
+\eeqa
+
+Finally, there is only one way to contract $D_i D_j D_k D_\ell$, which is as $\v{D}^4$.  Again, variations such as $D_i \v{D}^2 D_i$ need not be considered because they just reproduce already considered terms with $B$.
+\beqa
+	D_i D_j D_k D_\ell \delta_{ij} \delta_{k \ell} 
+		&\to& \frac{\v{D}^4}{8m^3}
+\eeqa
+   
+   
+\beq \label{eq:nrLFirstOrder}
+	\mathcal{L}_{NRQED} = \fnrb \Bigg\{ iD_0 +  \frac{\v{D}^2}{2m}  +  c_F \frac{e}{m} \v{S} \cdot \v{B}\Bigg \} \fnr
+\eeq 
+
+%%%%%%%% Lagrangian
+\beq \label{eq:nrLv4}
+	\mathcal{L}_{mv^4} = \fnrb \Bigg\{
+		\frac{\v{D}^4}{8m^2}
+		+ c_D \frac{e (\v{D} \cdot \v{E} - \v{E} \cdot \v{D})}{8m^2} 
+		+ c_Q \frac{eQ_{ij}(D_i E_j - E_i D_j)}{8m^2}
+		+ c_S \frac{ i e \v{S} \cdot(\v{D} \times \v{E} - \v{E} \times \v{D}}{8m^2} \Bigg \} \fnr
+\eeq
 
 
+\beq \label{eq:nrLBv2} \begin{split}
+	\mathcal{L}_{Bv^2} = &
+		\fnrb \Bigg\{
+			c_{W1} \frac{ e \v{D}^2 \v{S} \cdot \v{B} + \v{S} \cdot \v{B} \v{D}^2 }{8m^3}
+			- c_{W2} \frac{e D_i (\v{S} \cdot \v{B}) D_i}{4m^3}
+			+c_{p'p} \frac{ e [ (\v{S}\cdot \v{D})(\v{B} \cdot \v{D}) + (\v{B} \cdot \v{D})(\v{S}\cdot \v{D})]}{8m^3}
+\\ &		+ c_{T_1} \frac{ e \bar{S}_{ijk} (D_i D_j B_k + B_k D_j D_i)}{8m^3}
+		+ c_{T_2} \frac{ e \bar{S}_{ijk} D_i B_j D_k }{8m^3} \Bigg \} \fnr
+\end{split}\eeq
+
+\subsubsection{Full Lagrangian}
+The full Lagrangian we consider is then:
+
+\beq \label{eq:nrLFull}
+\begin{split}
+\mathcal{L}_{NRQED} = & \fnrb \Bigg\{
+		iD_0 +  \frac{\v{D}^2}{2m}  + 	\frac{\v{D}^4}{8m^2}
+		 + c_F \frac{e}{m} \v{S} \cdot \v{B}
+		+ c_D \frac{e (\v{D} \cdot \v{E} - \v{E} \cdot \v{D})}{8m^2} 
+		+ c_Q \frac{eQ_{ij}(D_i E_j - E_i D_j)}{8m^2}
+\\	& + c_S \frac{ i e \v{S} \cdot(\v{D} \times \v{E} - \v{E} \times \v{D}}{8m^2}
+		+ c_{W1} \frac{ e \v{D}^2 \v{S} \cdot \v{B} + \v{S} \cdot \v{B} \v{D}^2 }{8m^3}
+		- c_{W2} \frac{e D_i (\v{S} \cdot \v{B}) D_i}{4m^3}
+\\	&		+c_{p'p} \frac{ e [ (\v{S}\cdot \v{D})(\v{B} \cdot \v{D}) + (\v{B} \cdot \v{D})(\v{S}\cdot \v{D})]}{8m^3}
+ 	+ c_{T_1} \frac{ e \bar{S}_{ijk} (D_i D_j B_k + B_k D_j D_i)}{8m^3}
+		+ c_{T_2} \frac{ e \bar{S}_{ijk} D_i B_j D_k }{8m^3} 
+		\Bigg \} \fnr
+\end{split}
+\eeq
+
+
+One of the features of this Lagrangian is that every coefficient is fixed by the one-photon interaction.  Although some terms might represent two-photon interactions, they are terms like $\v{S} \cdot \v{A} \times \v{E}$, whose coefficient is fixed by the gauge-invariant term $\v{S} \cdot \v{D} \times \v{E}$.  This in turn means that we can calculate the corrections to the $g$-factor by considering only one-photon interactions.
 
 %%%%%%  OLD OLD OLD
 \subsubsection{Order of terms}
@@ -117,106 +215,6 @@ $i$		& 1		&	+	&	-	&	-		\\
 \include{SpinSpaceOperators}
 
 
-\subsubsection{Allowed terms}
-Our strategy in cataloguing terms will be to first list all the combinations of $E$, $B$ and $D$ which might be allowed at a particular order, to consider the various ways of contracting these vectors, and finally to eliminate terms which do not obey the proper symmetries.  We can always make a particular combination Hermitian, and get the proper behavior under time reversal by adding a factor of $i$, but parity will kill several terms.  Note that of the structures we can contract with, all are even under parity.
-
-%List objects with which we can contract the vector fields
-
-We can also insist that the Lagrangian have the expected form in the absence of external fields, which eliminates terms like $\bar{S}_{ij}D_i D_j$.  The leading order terms should be of order $mv^2$ or $\frac{eB}{m}$.  Combinations of the correct order are:
-\begin{itemize}
-  \item The single $D_0$ term.  To have the correct transformation properties this should be $iD_0$.
-  \item The kinetic $\v{D}^2$ term, which must be simply $\frac{\v{D}^2}{2m}$
-  \item A term with a single power of $B_i$.  The only way to contract this is with the spin matrix, so the term will have the form $\frac{e}{m} \v{S} \cdot \v{B}$
-\end{itemize}
-All these terms are Hermitian in themselves.
-
-So, the allowed terms at this order are:
-\[
-	iD_0, \frac{\v{D}^2}{m}, \frac{e}{m} \v{S} \cdot \v{B}
-\]
-
-The first two terms have their coefficients fixed, while we wish to honestly calculate the factor before the last.
-
-%TODO check signs and other factors for consistency
-\beq \label{eq:nrLFirstOrder}
-	\mathcal{L}_{NRQED} = \fnrb \Bigg\{ iD_0 +  \frac{\v{D}^2}{2m}  +  c_F \frac{e}{m} \v{S} \cdot \v{B}\Bigg \} \fnr
-\eeq
-
-Are there any terms of order $mv^3$ or $\frac{B}{m}v$ allowed?  Possible combinations are:
-\begin{itemize}
-  \item Three powers of D: $D_i D_j D_k$.  However, this is odd under parity, and so not allowed.  
-  \item A term with both the derivative and magnetic field: $D_i B_j$.  Again, this is odd under parity and so forbidden.
-  \item A single power of $E$.  Again, odd under parity.
-\end{itemize}
-So, all such terms are forbidden by consideration of parity.
-
-Next we consider terms of order $mv^4$.
-\begin{itemize}
-  \item Four powers of D: fixed by the kinetic term to be $\frac{\v{D}^2}{8m^3}$
-  \item One power of $E_i$ and one of $D_j$.  This combination is even under parity and odd under Hermitian conjugate.  There are three ways of contracting these two fields.
-  \begin{itemize}
-  		\item	With the delta function.  The allowed Hermitian term is then $\delta_{ij}(D_i E_j - E_j D_i)$.
-  		\item	With the combination $i\epsilon_{ijk} S_k$.  The allowed term is $i\epsilon_{ijk}(D_i E_j S_k + S_k E_j D_i)$.
-  		\item 	With the quadratic spin structure $Q_{ij}$: $ Q_{ij} ( D_i E_j - E_j D_i)$.
-  \end{itemize}
-\end{itemize}
-
-In the Lagrangian we'll write these as:
-\beq \label{eq:nrLv4}
-	\mathcal{L}_{mv^4} = \fnrb \Bigg\{
-		\frac{\v{D}^4}{8m^2}
-		+ c_D \frac{e (\v{D} \cdot \v{E} - \v{E} \cdot \v{D})}{8m^2} 
-		+ c_Q \frac{eQ_{ij}(D_i E_j - E_i D_j)}{8m^2}
-		+ c_S \frac{ i e \v{S} \cdot(\v{D} \times \v{E} - \v{E} \times \v{D}}{8m^2} \Bigg \} \fnr
-\eeq
-
-
-Terms of order $\frac{B}{m} v^2$.  The only allowed combination is $D_i D_j B_k$.  We can contract two indices with each other and the third with a spin matrix in three different ways:
-\begin{itemize}
-	\item $(\v{S} \cdot \v{B}) \v{D}^2 +  \v{D}^2 (\v{S} \cdot \v{B})$
-	\item $S_i D_j B_i D_j$
-	\item $S_i (D_i B_j D_j + D_j B_j D_i)$
-\end{itemize}
-We can also contract all indices with a cubic spin structure:
-\begin{itemize}
-  \item $\bar{S}_{ijk} (D_i D_j B_k + B_k D_j D_i)$
-  \item $\bar{S}_{ijk} D_i B_j D_k$
-\end{itemize}
-
-In the Lagrangian we'll write these as:
-\beq \label{eq:nrLBv2} \begin{split}
-	\mathcal{L}_{Bv^2} = &
-		\fnrb \Bigg\{
-			c_{W1} \frac{ e \v{D}^2 \v{S} \cdot \v{B} + \v{S} \cdot \v{B} \v{D}^2 }{8m^3}
-			- c_{W2} \frac{e D_i (\v{S} \cdot \v{B}) D_i}{4m^3}
-			+c_{p'p} \frac{ e [ (\v{S}\cdot \v{D})(\v{B} \cdot \v{D}) + (\v{B} \cdot \v{D})(\v{S}\cdot \v{D})]}{8m^3}
-\\ &		+ c_{T_1} \frac{ e \bar{S}_{ijk} (D_i D_j B_k + B_k D_j D_i)}{8m^3}
-		+ c_{T_2} \frac{ e \bar{S}_{ijk} D_i B_j D_k }{8m^3} \Bigg \} \fnr
-\end{split}\eeq
-
-
-\subsubsection{Full Lagrangian}
-The full Lagrangian we consider is then:
-
-\beq \label{eq:nrLFull}
-\begin{split}
-\mathcal{L}_{NRQED} = & \fnrb \Bigg\{
-		iD_0 +  \frac{\v{D}^2}{2m}  + 	\frac{\v{D}^4}{8m^2}
-		 + c_F \frac{e}{m} \v{S} \cdot \v{B}
-		+ c_D \frac{e (\v{D} \cdot \v{E} - \v{E} \cdot \v{D})}{8m^2} 
-		+ c_Q \frac{eQ_{ij}(D_i E_j - E_i D_j)}{8m^2}
-\\	& + c_S \frac{ i e \v{S} \cdot(\v{D} \times \v{E} - \v{E} \times \v{D}}{8m^2}
-		+ c_{W1} \frac{ e \v{D}^2 \v{S} \cdot \v{B} + \v{S} \cdot \v{B} \v{D}^2 }{8m^3}
-		- c_{W2} \frac{e D_i (\v{S} \cdot \v{B}) D_i}{4m^3}
-\\	&		+c_{p'p} \frac{ e [ (\v{S}\cdot \v{D})(\v{B} \cdot \v{D}) + (\v{B} \cdot \v{D})(\v{S}\cdot \v{D})]}{8m^3}
- 	+ c_{T_1} \frac{ e \bar{S}_{ijk} (D_i D_j B_k + B_k D_j D_i)}{8m^3}
-		+ c_{T_2} \frac{ e \bar{S}_{ijk} D_i B_j D_k }{8m^3} 
-		\Bigg \} \fnr
-\end{split}
-\eeq
-
-
-One of the features of this Lagrangian is that every coefficient is fixed by the one-photon interaction.  Although some terms might represent two-photon interactions, they are terms like $\v{S} \cdot \v{A} \times \v{E}$, whose coefficient is fixed by the gauge-invariant term $\v{S} \cdot \v{D} \times \v{E}$.  This in turn means that we can calculate the corrections to the $g$-factor by considering only one-photon interactions.
 
 
 
