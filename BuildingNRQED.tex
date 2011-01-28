@@ -1,20 +1,44 @@
 \subsection{The NRQED Lagrangian}
 
+
+
+
+
 We want to construct an effective Lagrangian in the nonrelativistic limit.  Our goal is to calculate the leading order corrections to the $g$-factor, which are corrections of order $\alpha^2$.  To this end, we need terms in the effective nonrelativistic Lagrangian which are equivalent corrections.
-% is this name really right?
-\subsubsection{position space operators}
 
 \begin{tabular}{l|c|ccc}
 & Order	&	P	&	T	&	$\dagger$	\\
 \hline
 $eE_i$	&$m^2v^3$	&	-	& 	+	&	+		\\
 $eB_i$	&$m^2v^2$	&	+	&   -	&	+		\\
-$D_i$		& mv	&	-	&	+	&	-		\\
-$D_0$		& mv	&	+	&	-	&	-		\\
+$D_i$		& $mv$	&	-	&	+	&	-		\\
+$D_0$		& $mv^2$	&	+	&	-	&	-		\\
 $S_i$		& 1		&	+	&	-	&	+		\\
 $i$		& 1		&	+	&	-	&	-		\\
 \end{tabular}
 
+
+\subsubsection{Energy Scales}
+
+The effective Lagrangian contains an infinite number of terms.  But these terms may be organised by the order of their contribution to scattering.  Then, up to a particular order there are only a finite number of terms --- and for the first couple of orders this finite number is quite small and manageable.
+
+Consider again the particular physical situation of interest: a loosely bound state system of two charged particles, each with arbitrary spin, placed in an infinitesimal magnetic field.  It is crucial that the system is loosely bound, so that the entire system is nonrelativistic.  For now it is assumed that recoil effects are ignored.  
+
+Then what are the energy scales of this particular problem?  In addition to the mass of the particle, there are two: one is related to the external magnetic field, an energy scale of $ e/m \abs{\v{B}}$.  The other is related to the kinetic energy or momentum of the particle.  There is an electric field present as well, representing the interaction between the bound state particles.  But by the quantum virial theorem the Coulomb potential is proportional to the kinetic energy, and so is not an independent energy scale.  In general kinetic energy and momentum might be considered seprate energy scales, but in the nonrelativistic regime are just $mv$ and $(1/2) mv^2$.
+
+Both of these energy scales are nonrelativistic --- that is, small compared to the mass of the particle.  So the effective Lagrangian represents an expansion in the small quantities $e/m^2 B$ and $p/m = v$.  However, the calculation of the gyromagnetic ratio involves only linear terms in the magnetic field. (The $g$-factor is defined by the linear response to an infinitesimal magnetic field.)  So no terms quadratic in $B$ are needed.
+
+The goal is to calculate corrections to the $g$-factor of up to $\mathcal{O}(\alpha^2)$.  In the bound state system $v \sim Z\alpha$, so in the Lagrangian should definitely be included terms of up to order $(e/m) B v^2$.  It will also be necessary to consider terms of order $mv^4$, for they {\it might} effect the calculation of the $g$-factor through perturbation theory. 
+
+What is the exact order of each term?  The magnetic field defines its own scale, but the scale of operators $D$, $A_0$, and $E$ come from the particular bound state.
+
+%TODO more detailed explanation?
+The term involving the Coulomb potential, $e A_0 = Z e^2 / r^2$ is of order $mv^2$.  The first derivative $ \partial_i \Phi =E_i$ is of order $mv^3$.  The operator $\grad$ may then be said to be of order $mv$.
+
+ 
+
+% is this name really right?
+\subsubsection{position space operators}
 
 There are several symmetries that terms in the Lagrangian must preserve: spatial reflection, time reversal, gauge invariance, and Hermiticity.  Gauge invariance is taken care of by only considering gauge-invariant operators.
 
@@ -68,6 +92,30 @@ Above, all relevant sets of position space operators are considered for each ord
 \end{itemize}
 
 Above are categorized the possible sets of position space operators for each order, and the ways of contracting them by number of indices.  The next step is to write all Hermitian combinations we can form from these operators.  This will form a complete catalogue of allowed terms in the Lagrangian.
+
+Some terms which on the surface appear distinct might in fact be identical.  One identity of this nature is
+\beq
+	D_i D_j \epsilon_{ijk} = -ie B_k 
+\eeq  
+Which means that any term where two long derivative terms are contracted with the antisymmetric tensor will be equivalent to some already catalogued term involving $B$.
+
+Similarly, 
+%TODO check sign
+\beq
+	[D_i, D_j] = -ie (\partial_i A_j - \partial_j A_i) = -ie F_{ij} = -ie \epsilon_{ijk} B_k 
+\eeq
+so terms which appear distinct because of the ordering of two long derivative operators are really the same, up to some difference that is absorbed into a term involving $B$.  
+
+Finally, while in the general case $[D_i, B_j] \neq 0$, it is always true that $[D_i, B_j] = 0$.
+
+So many apparently distinct terms may be rewritten and absorbed as the combination of several already accounted for terms.  As an example, it is not necessary to write a term such as $D_i D_j D_i D_j$ in the Lagrangian.  It can be rewritten as
+\beqa
+	D_i D_j D_i D_j 
+		&=& D_i D_i D_j D_j + D_i  [D_i, D_j] D_j						\\
+		&=& \v{D}^4 - ie  D_i \epsilon_{ijk} B_k D_j					\\
+		&=& \v{D}^4  -ie \epsilon_{ijk} (D_i D_j B_k + [B_k, D_j] )		\\ 
+		&=&	\v{D}^4 - e^2 B^2  + ie \epsilon_{ijk} D_i (\partial_j B_k)
+\eeqa
 
 %TODO address that D_i D_j \epsilon_{ijk} \sim B_k
 The term $D_i D_j$ has two indices.  There are three ways to contract it: with $\delta_{ij}$, $\Sb_{ij}$, or $S_k \epsilon_{ijk}$.  Since kinetic terms with spin are not considered, that only leaves one possible term: $\v{D}^2$.  This term is Hermitian in and of itself.  It has mass dimension two, so the term as it appears in the Lagrangian will be:
@@ -212,7 +260,47 @@ $S_i$		& 1		&	+	&	-	&	+		\\
 $i$		& 1		&	+	&	-	&	-		\\
 \end{tabular}
 
-\include{SpinSpaceOperators}
+
+%scratch calculations
+
+What about terms such as $D_i D_j \epsilon_{ijk}$?  First write them using $\v{D} = \grad - i e\v{A}$:
+
+\beq
+	(\v{D} \times \v{D}) = D_i D_j \epsilon_{ijk} = (\grad_i - ieA_i)(\grad_j - ieA_j) \epsilon_{ijk}
+\eeq
+
+Or in full as
+\beq
+	= (\grad_i \grad_j -ie\grad_i A_j - ie\grad_j A_i - e^2 A_i A_j) \epsilon_{ijk}
+\eeq
+The antisymmetric tensor will kill the first and last terms, leaving
+\beq
+	= -ie (\grad_i A_j + \grad_j A_i) \epsilon_{ijk}
+\eeq
+We can use put this in the form of a commutator by switching indices in the second term: $\grad_j A_i \epsilon_{ijk} = - \grad_i A_j \epsilon_{ijk}$
+\beq
+	= -ie [ \grad_i, A_j] \epsilon_{ijk}
+\eeq
+and of course the commutator between $\grad$ and any field will just be the derivative of that field.
+\beq
+	= -ie \partial_i A_j \epsilon_{ijk}
+\eeq
+Finally, from Maxwell's equations this is just  $-ie B_k$, so 
+\beq
+	(\v{D} \times \v{D})_k = -i e B_k
+\eeq
+
+Going the other way, the commutator $[D_i, B_i]$ can be shown to vanish:
+\beq
+	[D_i, B_i] = D_i ( \epsilon_{ijk} D_j D_k ) - ( \epsilon_{ijk} D_j D_k ) D_i
+			= \epsilon_{ijk} (D_i D_j D_k - D_j D_k D_i)
+\eeq
+Taking the second term and taking an even permutation of the indices: $i \to k \to j \to i$ we show that
+\beq
+	[D_i, B_i] = \epsilon_{ijk} (D_i D_j D_k - D_i D_j D_k) = 0
+\eeq
+
+\input{SpinSpaceOperators}
 
 
 
