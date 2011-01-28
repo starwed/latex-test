@@ -1,6 +1,6 @@
-
+\subsection{Properties of spin operators}
 %TODO in the context of a field theory, is talking about the state-space the correct way of thinking about it?
-In formulating NRQED for general spin particles, we need to consider all the possible operators might show up in the Lagrangian.  The state-space of a spin-$s$ particle is the direct product of it's spin-state and all the other state information.  We want to write down all possible operators which act only on the spin space.
+In formulating NRQED for general spin particles, we need to consider all the possible operators might show up in the Lagrangian.  The state-space of a spin-$s$ particle is the direct product of it's spin-state and all the other state information.  Because the spaces are orthogonal, we can treat separately operators in the two spaces.  The operators and fields which exist in position space are the same for a particle of any spin, but unsurpsingly the operators allowed in spin space do depend upon the spin of the particle.  As the spin of the particle is increased, and thus its spin degrees of freedom rise, there are more ways to mix these components, and thus a greater number of spin operators to consider.
 
 For a particular representation, we can always write a bilinear as the spin operators and other operators acting between two spinors:
 \beq
@@ -9,16 +9,25 @@ For a particular representation, we can always write a bilinear as the spin oper
 
 The two types of operators will always commute, since they act on orthogonal spaces, so it doesn't matter what order they're written in.  All such bilinears must be Galilean invariant, but individual operators might not be.  The non-spin operators we consider, such as $\v{D}$, $\v{B}$ or contractions with the tensor $\epsilon_{ijk}$ are already all written as 3-vectors or (in combination) as higher rank tensors.  Therefore, it will be most convenient to write spin-operators in the same way, so that writing Galilean-invariant combinations of the two types of operators is done just by contracting indices. 
 
+Even though the number of spin opeartors does depend upon the spin of the particle, it is still possible to proceed in such a way that the same notation may be used no matter the spin.  There are a few requirements:
+\begin{itemize}
+  \item We write all high spin operators in terms of combinations of $S_i$, since these have universal properties regardless of the representation they are written in.
+  \item If an operator exists and is non-zero in the representation of spin-$s$, it also exists in spin-$s+1$
+  \item All operators introduced to account for the additional degrees of freedom in higher spin representations vanish when written in a lower spin theory.  (As an example of the last point, the operator $S_i S_j + S_j S_i - \delta_{ij} S^2$ is needed to account for the degrees of freedom in a spin-1 theory, but vanishes in spin-1/2.
+  \item )
+\end{itemize}
+If these requirements are met a consistent spin-agnostic notation can be adopted.  Now we attempt to construct operators that meet these conditions.
+
 The spinors $\Psi$ are written with $2s+1$ independent components.  The spin operators will be matrices acting on these components, and so for a spin-$s$ particle will be $(2s+1) \times (2s+1)$ matrices.  The combined operator $\mathcal{O}_S \mathcal{O}_X$ must be Hermitian, but without loss of generality we can require any $\mathcal{O}_S$, $\mathcal{O}_X$ to be Hermitian separately.  So there is the additional constraint that the matrices be Hermitian, and this means a total of $(2s+1)^2$ degrees of freedom.
 %TODO: could include derivation of degrees of freedom?
+
 
 For spin-$0$ there is only one component to the spinor, so the only possible matrix is equivalent to the identity.
 
 For spin-$1/2$ we have, in addition to the identity matrix, the spin matrices $s_i = \frac{1}{2} \sigma_i$.  This is four independent matrices, and since the space has $(2s+1)^2 = 4$ degrees of freedom, exactly spans the space of all spin-operators.  If we try to construct terms which are bilinear in spin matrices, they just reduce through the identity $\sigma_i \sigma_j = \delta_{ij} + \epsilon_{ijk}\sigma_k$, which we can already construct through combinations of the four operators we already have.  Since those four operators form a basis for the space, independent bilinears were forbidden even without an explicit form for the equation.
 
 
-%TODO: Discuss/define operator ``order''
-What about spin-$1$?  We need 9 independent operators to span the space.  All the operators that exist in spin-$1/2$ will work here as well, though the spin matrices will have a different representation.  That leaves 5 operators to construct.  It is natural to try to construct these from bilinear combinations of spin matrices.  Naively $S_i S_j$ would itself be 9 independent structures, but clearly some of these are expressible in terms of the lower order operators.
+What about spin-$1$?  We need 9 independent operators to span the space.  All the operators that exist in spin-$1/2$ will work here as well, though the spin matrices will have a different representation.  That leaves 5 operators to construct.  It is natural to try to construct these from bilinear combinations of spin matrices.  Naively $S_i S_j$ would itself be 9 independent structures, but clearly some of these are expressible in terms of the lower order operators.  (By the order of a spin operator we mean its greatest degree in $S_i$ )  %TODO multipole moment language better?
 
 Regardless of their representation, the spin operators always fulfill certain identities based on their Lie group.  Namely
 \beq
@@ -31,14 +40,16 @@ If instead of general spin bilinears we consider only combinations which are
   \item Symmetric in $i$, $j$ 
   \item Traceless
 \end{itemize}
-then such a structure will be independent of the set of operators $\{I, S_1, S_2, S_3\}$.  This is a set of 4 constraints, so from the original 9 degrees of freedom possessed by combinations of $S_i S_j$ are left only 5.  Together with the 4 lower order operators this is exactly enough to span the space.
+then such a structure will be independent of the set of operators $\{I, S_1, S_2, S_3\}$.  Because it is symmetric no combination may be related using the commutator, and because it is traceless there is no combination that reduces due to the other identity.  %TODO Name of id involving Killing operator \delta_{ij}?
+
+This conditions form a set of 4 constraints, so from the original 9 degrees of freedom possessed by combinations of $S_i S_j$ are left only 5.  Together with the 4 lower order operators this is exactly enough to span the space.
 
 We can explicitly write this symmetric, traceless structure as
 \beq
-	 S_i S_j + S_j S_i + \delta_{ij} S^2
+	 S_i S_j + S_j S_i - \delta_{ij} S^2
 \eeq
 
-Finally consider the general spin case, proceeding inductively using the same rough idea as for the case of spin-$1$.  We construct all the possible operators from the set of all ``lower order'' operators which were used for lower spin particles, and by introducing new operators which are of higher degree in the spin matrices.
+Having explored how the procedure works for spin-1, move on to consider the general spin case.   The idea is to proceed inductively using the same rough attack as for the case of spin-$1$.  In addition to all the ``lower order'' operators which were used for lower spin representations introduce new operators which are of higher degree in the spin matrices and guaranteed to be independent of the lower spin operators.
 
 So suppose that for a spin-$s-1$ particle we have a set of operators written as $\bar{S}^0, \bar{S}^1, \ldots \bar{S}^{(s-1)}$, where a structure $\bar{S}^n$ carries $n$ Galilean indices and is symmetric and traceless between any pair of indices, that is:
 \beq
@@ -50,7 +61,9 @@ The objects $\bar{S}^n$ are built as follows: start with all combinations involv
 \beq
 	\Sigma^n_{a=0} (n-a+1) = \frac{1}{2} (n+1) (n+2)
 \eeq
-We have the additional constraint that the $\bar{S}^n$ be traceless in all indices.  This is an additional constrain for each pair of indices, and there are $n (n-1)/2$ pairs of indices.  The total degrees of freedom left are
+We want to apply the additional constraint that the $\bar{S}^n$ be traceless in all indices.  This will involve subtracting all the lower order structures which result when the trace of the completely symmetric combinations is taken.  %TODO explicate {\it exactly} how this is accomplished.
+
+It introduces an additional constraint on $\Sb^n$ for each pair of indices, and there are $n (n-1)/2$ distinct pairs of indices.  The total degrees of freedom left are
 
 \beq
 	\frac{1}{2} (n+1) (n+2) - \frac{1}{2} n(n-1) 
@@ -59,4 +72,6 @@ We have the additional constraint that the $\bar{S}^n$ be traceless in all indic
 \eeq
 
 %TODO expand upon going from spin s particle to spin s-1
-In combination with the lower order spin operators, this is exactly the number of independent operators we need to span the space.
+In combination with the lower order spin operators, this is exactly the number of independent operators we need to span the space.  Combined with the lower order operators this is a complete basis, so we know we haven't missed any terms.  Because they are constructed to be independent from all the lower order operators, it must necessarily be true that they will vanish in lower spin representations.
+
+Using this notation we can write down terms in the Lagrangian that are valid for particles of any spin.  By writing all spin operators in terms of $S_i$ they are representation agnostic, and by construction they will vanish for low spin particles where they do not ``fit''.

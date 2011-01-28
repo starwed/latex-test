@@ -1,4 +1,4 @@
-\subsection{The NRQED Lagrangian}
+\section{Constructing the NRQED Lagrangian}
 
 
 
@@ -6,16 +6,18 @@
 
 We want to construct an effective Lagrangian in the nonrelativistic limit.  Our goal is to calculate the leading order corrections to the $g$-factor, which are corrections of order $\alpha^2$.  To this end, we need terms in the effective nonrelativistic Lagrangian which are equivalent corrections.
 
-\begin{tabular}{l|c|ccc}
-& Order	&	P	&	T	&	$\dagger$	\\
-\hline
-$eE_i$	&$m^2v^3$	&	-	& 	+	&	+		\\
-$eB_i$	&$m^2v^2$	&	+	&   -	&	+		\\
-$D_i$		& $mv$	&	-	&	+	&	-		\\
-$D_0$		& $mv^2$	&	+	&	-	&	-		\\
-$S_i$		& 1		&	+	&	-	&	+		\\
-$i$		& 1		&	+	&	-	&	-		\\
-\end{tabular}
+
+%TODO insert qualifications on external field
+\subsection{Constraints on the form of the Lagrangian}
+The Lagrangian is constrained to obey several symmetries.  It must be invariant under the symmetries of parity and time reversal.  It must also be invariant under Galilean transformations.  The Lagrangian must also be Hermitian, and gauge invariant.
+
+What are the gauge invariant building blocks we can use to construct this Lagrangian?  We have the fields $\v{E}$ and $\v{B}$, the spin operators $\v{S}$, and the long derivative $\v{D} = \v{\partial} - i e\v{A}$.  The fields should always be accompanied by the charge $e$ of the particle.
+
+When considering the case of higher spin particles, we might consider terms quadratic and above in spin operators.  For a particle of spin $s$, there must be $(2s+1)^2$ independent hermitian operators.  We can span this set of operators by considering products of up to $2s$ spin matrices which are symmetric and traceless in every vector index.  For example, for spin-$1$ we have quadratic, in addition to $I$ and $S_i$, five independent structures of the form $ S_i S_j + S_j S_i + \delta_{ij} \v{S}$.  This idea is pursued further in a section below.
+
+
+We also have the scalar $D_0$, however, we need only include a single such term because we insist on having only one power of the time derivative.
+
 
 
 \subsubsection{Energy Scales}
@@ -34,11 +36,75 @@ What is the exact order of each term?  The magnetic field defines its own scale,
 
 %TODO more detailed explanation?
 The term involving the Coulomb potential, $e A_0 = Z e^2 / r^2$ is of order $mv^2$.  The first derivative $ \partial_i \Phi =E_i$ is of order $mv^3$.  The operator $\grad$ may then be said to be of order $mv$.
+\subsubsection{Discrete Constraints}
+All the building blocks have been chosen so that their transformation under rotation is clear.  If a term has an index, it transforms like a 3-vector.  (Considering this nonrelativistic theory, there are no upper or lower indices.)  The Lagrangian must also be symmetric under the discrete symmetries of refleciton and time reversal, and terms must be Hermitian.  
+
+To construct terms that obey these symmetries, it is necessary to know how the building blocks themselves transform under spatial reflections and time reversal, as well as under complex conjugation.
+ \begin{itemize}
+   \item  Under spatial reflections, $\v{E}$ and $\v{D}$ are vectors, and so are odd under P.  While $\v{B}$  and $\v{S}$ are pseudovectors, even under P.
+   \item  $E$ and $D$ are even under time reversal, while spin and the magnetic field are odd.  Also, under time reversal imaginary constant $i$ is also odd.
+   \item Under complex conjugation $E$, $B$ and $S$ are Hermitian, while $D_i$, $D_0$ and (obviously) $i$ change sign. 
+ \end{itemize}
+ 
+ For reference, all these properties are tabulated below:
 
  
+\begin{tabular}{l|c|ccc}
+& Order	&	P	&	T	&	$\dagger$	\\
+\hline
+$eE_i$	&$m^2v^3$	&	-	& 	+	&	+		\\
+$eB_i$	&$m^2v^2$	&	+	&   -	&	+		\\
+$D_i$		& $mv$	&	-	&	+	&	-		\\
+$D_0$		& $mv^2$	&	+	&	-	&	-		\\
+$S_i$		& 1		&	+	&	-	&	+		\\
+$i$		& 1		&	+	&	-	&	-		\\
+\end{tabular}
+
+\subsection{Properties of $D_i$}
+Before going any further, note that it would be possible to write the entire Lagrangian without explicitly writing $B$.  Instead we could write antisymmetric combinations of $D_i$.  
+
+Consider a term containing $D_i D_j \epsilon_{ijk}$.  First write them using $\v{D} = \grad - i e\v{A}$:
+
+\beq
+	(\v{D} \times \v{D}) = D_i D_j \epsilon_{ijk} = (\grad_i - ieA_i)(\grad_j - ieA_j) \epsilon_{ijk}
+\eeq
+
+Or in full as
+\beq
+	= (\grad_i \grad_j -ie\grad_i A_j - ie\grad_j A_i - e^2 A_i A_j) \epsilon_{ijk}
+\eeq
+The antisymmetric tensor will kill the first and last terms, leaving
+\beq
+	= -ie (\grad_i A_j + \grad_j A_i) \epsilon_{ijk}
+\eeq
+We can use put this in the form of a commutator by switching indices in the second term: $\grad_j A_i \epsilon_{ijk} = - \grad_i A_j \epsilon_{ijk}$
+\beq
+	= -ie [ \grad_i, A_j] \epsilon_{ijk}
+\eeq
+and of course the commutator between $\grad$ and any field will just be the derivative of that field.
+\beq
+	= -ie \partial_i A_j \epsilon_{ijk}
+\eeq
+Finally, from Maxwell's equations this is just  $-ie B_k$, so 
+\beq
+	(\v{D} \times \v{D})_k = -i e B_k
+\eeq
+
+Going the other way, the commutator $[D_i, B_i]$ can be shown to vanish:
+\beq
+	[D_i, B_i] = D_i ( \epsilon_{ijk} D_j D_k ) - ( \epsilon_{ijk} D_j D_k ) D_i
+			= \epsilon_{ijk} (D_i D_j D_k - D_j D_k D_i)
+\eeq
+Taking the second term and taking an even permutation of the indices: $i \to k \to j \to i$ we show that
+\beq
+	[D_i, B_i] = \epsilon_{ijk} (D_i D_j D_k - D_i D_j D_k) = 0
+\eeq
+
+
+\input{SpinSpaceOperators}
 
 % is this name really right?
-\subsubsection{position space operators}
+\subsection{Composition of position space operators}
 
 There are several symmetries that terms in the Lagrangian must preserve: spatial reflection, time reversal, gauge invariance, and Hermiticity.  Gauge invariance is taken care of by only considering gauge-invariant operators.
 
@@ -50,8 +116,6 @@ Finally, any sequence of operators can be made Hermitian by simply adding the He
 
 Thus for any possible set of operators, first it is determined if such a set is allowed by considerations of parity.  Then, whether an additional factor of $i$ is needed is determined by examining the properties under time reversal.  Finally, the allowed Hermitian terms are enumerated.
 
-
-%TODO add bit about order of operators as well, either before this or after it.
 Of the ``building blocks'' for the general Lagrangian, those odd in parity are also odd in $v$.  And those even in parity are of an order even in $v$.  So only terms of an order even in $v$ can possibly be allowed under parity, and at the same time every such term will have the correct symmetry properties under spatial reflection.
 
 First consider terms of leading order $mv^2$.  What collections of position space operators exist?  $E$ is already too high of an order, leaving only that with two powers of $D$:
@@ -171,12 +235,15 @@ Finally, there is only one way to contract $D_i D_j D_k D_\ell$, which is as $\v
 		&\to& \frac{\v{D}^4}{8m^3}
 \eeqa
    
-   
+
+Having organised all the operators into all allowed combinations, we can write down the different orders of the Lagrangian.
+
+The leading order terms in the Lagrangian, of order $mv^2$ and $(e/m) B$, are:
 \beq \label{eq:nrLFirstOrder}
-	\mathcal{L}_{NRQED} = \fnrb \Bigg\{ iD_0 +  \frac{\v{D}^2}{2m}  +  c_F \frac{e}{m} \v{S} \cdot \v{B}\Bigg \} \fnr
+	\mathcal{L}_{mv^2} = \fnrb \Bigg\{ iD_0 +  \frac{\v{D}^2}{2m}  +  c_F \frac{e}{m} \v{S} \cdot \v{B}\Bigg \} \fnr
 \eeq 
 
-%%%%%%%% Lagrangian
+The part of the Lagrangian of order $mv^4$ is:
 \beq \label{eq:nrLv4}
 	\mathcal{L}_{mv^4} = \fnrb \Bigg\{
 		\frac{\v{D}^4}{8m^2}
@@ -185,7 +252,7 @@ Finally, there is only one way to contract $D_i D_j D_k D_\ell$, which is as $\v
 		+ c_S \frac{ i e \v{S} \cdot(\v{D} \times \v{E} - \v{E} \times \v{D}}{8m^2} \Bigg \} \fnr
 \eeq
 
-
+And the terms which are corrections to the magnetic field terms:
 \beq \label{eq:nrLBv2} \begin{split}
 	\mathcal{L}_{Bv^2} = &
 		\fnrb \Bigg\{
@@ -197,7 +264,7 @@ Finally, there is only one way to contract $D_i D_j D_k D_\ell$, which is as $\v
 \end{split}\eeq
 
 \subsubsection{Full Lagrangian}
-The full Lagrangian we consider is then:
+Combining all of the above, the full Lagrangian we consider is then:
 
 \beq \label{eq:nrLFull}
 \begin{split}
@@ -219,88 +286,13 @@ The full Lagrangian we consider is then:
 
 One of the features of this Lagrangian is that every coefficient is fixed by the one-photon interaction.  Although some terms might represent two-photon interactions, they are terms like $\v{S} \cdot \v{A} \times \v{E}$, whose coefficient is fixed by the gauge-invariant term $\v{S} \cdot \v{D} \times \v{E}$.  This in turn means that we can calculate the corrections to the $g$-factor by considering only one-photon interactions.
 
-%%%%%%  OLD OLD OLD
-\subsubsection{Order of terms}
-%TODO Discussion of energy scales -- possibly move this into introduction, since it applies to each calculation
-We consider constant, infinitesimal external magnetic fields, so we need only consider terms linear in $\v{B}$.
-
-The velocity of the particles in our bound state system will be $v \sim \alpha$.
-
-The electric field we consider is the Coulomb field, so $e\Phi \sim m Z\alpha^2 \sim mv^2$, and $eE \sim m^2v^3$.
-
-Each derivative of the electric field will add an additional factor of $mv$, so the operator $\v{D}$ can be taken to be of this order.
-
-We need to keep terms up to order $mv^4$ and $\frac{B}{m} v^2$ in order to calculate the $g$-factor to the necessary precision.  We include $mv^4$ terms so we can be sure that there are no effects entering from second-order perturbation theory.
-
-
-%TODO insert qualifications on external field
-\subsubsection{Constraints on the form of the Lagrangian}
-The Lagrangian is constrained to obey several symmetries.  It must be invariant under the symmetries of parity and time reversal.  It must also be invariant under Galilean transformations.  The Lagrangian must also be Hermitian, and gauge invariant.
-
-What are the gauge invariant building blocks we can use to construct this Lagrangian?  We have the external fields $\v{E}$ and $\v{B}$, the spin operators $\v{S}$, and the long derivative $\v{D} = \v{\partial} - i e\v{A}$.  The fields should always be accompanied by the charge $e$ of the particle.
-
-When considering the case of higher spin particles, we might consider terms quadratic and above in spin operators.  For a particle of spin $s$, there must be $(2s+1)^2$ independent hermitian operators.  We can span this set of operators by considering products of up to $2s$ spin matrices which are symmetric and traceless in every vector index.  For example, for spin-$1$ we have quadratic, in addition to $I$ and $S_i$, five independent structures of the form $ S_i S_j + S_j S_i + \delta_{ij} \v{S}$.
 
 
 
 
-We also have the scalar $D_0$, however, we need only include a single such term because we insist on having only one power of the time derivative.
-
-To consider possible terms, we need to know how each of the above behave under the discrete transformations and Hermitian conjugate.  The signs under these transformations are listed in the table below.  (Also included is the imaginary number $i$.)
 
 
-\begin{tabular}{l|c|ccc}
-& Order	&	P	&	T	&	$\dagger$	\\
-\hline
-$eE_i$	&$m^2v^3$	&	-	& 	+	&	+		\\
-$eB_i$	&$m^2v^2$	&	+	&   -	&	+		\\
-$D_i$		& mv	&	-	&	+	&	-		\\
-$D_0$		& mv	&	+	&	-	&	-		\\
-$S_i$		& 1		&	+	&	-	&	+		\\
-$i$		& 1		&	+	&	-	&	-		\\
-\end{tabular}
 
-
-%scratch calculations
-
-What about terms such as $D_i D_j \epsilon_{ijk}$?  First write them using $\v{D} = \grad - i e\v{A}$:
-
-\beq
-	(\v{D} \times \v{D}) = D_i D_j \epsilon_{ijk} = (\grad_i - ieA_i)(\grad_j - ieA_j) \epsilon_{ijk}
-\eeq
-
-Or in full as
-\beq
-	= (\grad_i \grad_j -ie\grad_i A_j - ie\grad_j A_i - e^2 A_i A_j) \epsilon_{ijk}
-\eeq
-The antisymmetric tensor will kill the first and last terms, leaving
-\beq
-	= -ie (\grad_i A_j + \grad_j A_i) \epsilon_{ijk}
-\eeq
-We can use put this in the form of a commutator by switching indices in the second term: $\grad_j A_i \epsilon_{ijk} = - \grad_i A_j \epsilon_{ijk}$
-\beq
-	= -ie [ \grad_i, A_j] \epsilon_{ijk}
-\eeq
-and of course the commutator between $\grad$ and any field will just be the derivative of that field.
-\beq
-	= -ie \partial_i A_j \epsilon_{ijk}
-\eeq
-Finally, from Maxwell's equations this is just  $-ie B_k$, so 
-\beq
-	(\v{D} \times \v{D})_k = -i e B_k
-\eeq
-
-Going the other way, the commutator $[D_i, B_i]$ can be shown to vanish:
-\beq
-	[D_i, B_i] = D_i ( \epsilon_{ijk} D_j D_k ) - ( \epsilon_{ijk} D_j D_k ) D_i
-			= \epsilon_{ijk} (D_i D_j D_k - D_j D_k D_i)
-\eeq
-Taking the second term and taking an even permutation of the indices: $i \to k \to j \to i$ we show that
-\beq
-	[D_i, B_i] = \epsilon_{ijk} (D_i D_j D_k - D_i D_j D_k) = 0
-\eeq
-
-\input{SpinSpaceOperators}
 
 
 

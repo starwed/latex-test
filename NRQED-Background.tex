@@ -31,3 +31,30 @@ Now, once all relevant terms are written, there will still be many undetermined 
 \section{Nonrelativistic Quantum Electrodynamics}
 One particular effective theory of interest is nonrelativistic quantum electrodynamics (NRQED).  It is a perfect example of how, even when an exact theory is known, an effective theory, especially suited for a particular energy regime, may be more practical.
 
+The theory of atomic bound states is precisely described by QED; however, in practice calculations past the leading order can be quite tedious.  This comes about because of the interplay of several different scales; corrections can come:
+\begin{itemize}
+  \item from relativistic effects, corresponding to expansion in $v = (Z\alpha)$
+  \item from radiative corrections, corresponding to an expansion in the coupling constant $\alpha$
+  \item or from recoil corrections, an expansion in $m/M$
+\end{itemize}  
+Once these corrections start appearing in combination it can be quite complex to calculate and account for all effects that enter at a particular level of precision.
+
+Using an effective theory, instead of exact QED, is useful because it already separates out the relativistic effects.  All the information from the exact theory is preserved, but rather than struggling to reconcile a nonrelativistic problem with a relativistic theory, we first craft a theory particularly suited to the problem.
+
+There are two particularly important features this effective theory will have that make it nonrelativistic, in addition to an explicit cut-off.  First, rather than demanding manifest Lorentz symmetry, only the nonrelativistic Galilean symmetry will be required.  Second, it will be a theory without an explicit anti-particle.  This is because, without access to energies approaching the particle mass, there is no way for an anti-particle to be produced. (Of course if a system like positronium is to be studied both particle and anti-particle must be included in the theory, but as {\it separate} fields.)
+
+With these principles in mind the effective Lagrangian for NRQED can be written down, for the case of a fermion like the electron:  
+
+\beq \label{eq:nrLfermion}
+\mathcal{L}_{NRQED} =  \fnrb \Bigg\{
+		iD_0 +  \frac{\v{D}^2}{2m}  + 	\frac{\v{D}^4}{8m^2}
+		 + c_F \frac{e}{2m} \gv{\sigma} \cdot \v{B} 
+		+ c_D \frac{e \div \v{E}}{8m^2} 
+	 + c_S \frac{ i e \gv{\sigma} \cdot(\v{D} \times \v{E} - \v{E} \times \v{D}}{8m^2}
+		\Bigg \} \fnr
+\eeq
+Here are included only the terms involving two powers of the electron field.
+
+The coefficients themselves are fixed by calculating some processes in the relativistic theory at a particular energy.  For instance, scattering off an external field will fix all those terms containing a single external field above, by comparing to the same calculation (at the same energy) done with the NRQED Lagrangian.  
+
+However, it is key while doing so to establish a strict relationship between the single particle fields of NRQED and the relativistic fields (including particle and anti-particle) of QED.  This relationship may be found through the Fouldy-Wouthyusen transformation.
