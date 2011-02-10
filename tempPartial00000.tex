@@ -1,6 +1,6 @@
 %%This is a very basic article template.
 %%There is just one section and two subsections.
-\documentclass[11pt]{book}
+\documentclass[12pt]{book}
 
 \include{header}
 \pagenumbering{arabic}
@@ -49,7 +49,18 @@
 \newcommand{\A}{a}
 \newcommand{\Adag}{a'}
 
+
+\newcommand{\VertexEq}[2]{ \mbox{
+\begin{minipage}{1.6in}
+   \includegraphics[scale=0.8]{eps/#1} 
+\end{minipage}
+{ \large $	=	\hspace{2em} 	\large{#2} $ }
+} }
+
+
+\usepackage{setspace}
+\doublespacing
 \begin{document}
-\input{NRQED-Calculations}
+\input{Spin-half}
 
 \end{document}

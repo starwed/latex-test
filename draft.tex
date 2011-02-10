@@ -1,6 +1,6 @@
 %%This is a very basic article template.
 %%There is just one section and two subsections.
-\documentclass[11pt]{book}
+\documentclass[12pt]{book}
 
 \include{header}
 \pagenumbering{arabic}
@@ -36,6 +36,9 @@
 
 
 \newcommand{\smalldot}{\cdot}
+\newcommand{\sigdot}[1]{ \gv{\sigma} \hspace{-2pt} \cdot \hspace{-2pt} \v{#1} \,}
+\newcommand{\sigdotg}[1]{ \gv{\sigma} \hspace{-2pt} \cdot \hspace{-2pt} \gv{#1} \,}
+
 
 \newcommand{\gradE}{\grad}
 
@@ -49,9 +52,18 @@
 \newcommand{\A}{a}
 \newcommand{\Adag}{a'}
 
+
+\newcommand{\VertexEq}[2]{ \mbox{
+\begin{minipage}{1.6in}
+   \includegraphics[scale=0.8]{eps/#1} 
+\end{minipage}
+{ \large $	=	\hspace{2em} 	\large{#2} $ }
+} }
+
+
+\usepackage{setspace}
+\doublespacing
 \begin{document}
-
-
 
 
 \tableofcontents
@@ -59,6 +71,7 @@
 \include{Introduction}
 
 \include{NRQED}
+\include{Spin-half}
 
 \include{GeneralSpin}
 

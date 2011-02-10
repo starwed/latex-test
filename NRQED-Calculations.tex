@@ -120,7 +120,7 @@ The above can be simplified somewhat.  We choose our gauge such that $\nabla_i A
 \end{split}
 \eeq
 
-This may be compared with a relativistic calculation to fix the coefficients.  (Although it does not fix $c_{W_1}$ and $c_{W_2}$ separately.
+This may be compared with a relativistic calculation to fix the coefficients.  (Although of course it does not fix $c_{W_1}$ and $c_{W_2}$ separately.)
 
 
 
@@ -130,10 +130,12 @@ This may be compared with a relativistic calculation to fix the coefficients.  (
 
 %Two photon lagrangian
 \subsection{Two photon scattering in NRQED}
+The calculation above suffices to fix all coefficients in the NRQED Lagrangian needed to calculate corrections to the $g$-factor.  While there is a contribution that comes from a term with two electromagnetic fields, the coefficient of that term is still fixed by just considering the one-photon interaction, due to the necessity of the overall gauge-invariance of the term.
+
+Still, we {\it can} calculate the coefficient separately from an exact theory, so it would be good to be able to compare the results to make sure no surprises occur.  To that end it will be necessary to calculate a two-photon process, Compton scattering.
 
 
-
-We want to calculate the Compton scattering in the nonrelativistic theory.  We choose the gauge such that the photon polarisations obey $\A_0 = 0$.  In general we should consider both terms arising from two-photon vertices, and those from tree level diagrams of two one-photon vertices.  However, because of the approach we take in calculating the process from the relativistic Lagrangian, we only need the former terms.
+So, we want to calculate the Compton scattering in the nonrelativistic theory.  We choose the gauge such that the photon polarisations obey $\A_0 = 0$.  In general we should consider both terms arising from two-photon vertices, and those from tree level diagrams of two one-photon vertices.  However, because of the approach we take in calculating the process from the relativistic Lagrangian, we only need the former terms.  That is, we know how to separate contact terms (which arise from some combination of Z-diagrams and two-photon vertices in the relativistic theory) from the rest.
 
 Further, ultimately we only care about a few of these terms, ignoring terms which have both $\v{B}$ and $\v{A}$.
 
@@ -148,9 +150,11 @@ The remaining terms we're interested in are:
 \eeqa
 \normalsize
 
-If we want the scattering amplitude, we replace $\Psi$ with $\phi$, and contract $\v{A}$ with photon polarisations $\A$ and $\Adag$.  In the gauge chosen, $\v{E}(k) = -\partial_0 \v{\A} = i k_0 \v{\A}(k)$.
+The process we consider has an incoming photon with momentum $k$ and polarisation $\A$, and an outgoing photon with momentum $-k'$ and polarisation $\Adag$.  The charged particle has incoming momentum $p$ and outgoing $p'= p + k + k'$.
 
-Contracted with the photon of momentum $k$ we get $\v{E} \to i k_0 \v{\A}$, while with the photon of momentum $k'$ we have $\v{E} \to i k'_0 \v{\Adag}$.  So:
+As in the single-photon calculation, it is simply a matter of reading terms off the Lagrangian.  If we want the scattering amplitude, we replace $\Psi$ with $\phi$, and replace $\v{A}$ with photon polarisations $\A$ and $\Adag$.  In the gauge chosen, $\v{E}(k) = -\partial_0 \v{\A} = i k_0 \v{\A}(k)$.
+
+Contracted with the photon of momentum $k$ we get $\v{E} \to i k_0 \v{\A}$, while with the photon of momentum $k'$ we have $\v{E} \to i k'_0 \v{\Adag}$.  Both processes must be considered in calculating the scattering, so:
 \[
 	\v{A} \times \v{E} = - \v{A} \times (\partial_0 \v{A})
 		\to 
@@ -164,13 +168,14 @@ And
 \]
 So from the term in the Lagrangian 
 \[
- c^2_S \Psi^\dagger \frac{ e^2 \v{S} \smalldot ( \v{A} \times \v{E} - \v{E} \times \v{A} )}{8m^2} ) \Psi
+ c_S \Psi^\dagger \frac{ e^2 \v{S} \smalldot ( \v{A} \times \v{E} - \v{E} \times \v{A} )}{8m^2} ) \Psi
 \]
 we get in the scattering amplitude
 
 \[
-  -i c^2_S \phi^\dagger  \Big ( \frac{e^2}{4m^2}    i(k_0 - k_0')    \v{\A} \times \v{\Adag} \Big ) \phi
+  -i c_S \phi^\dagger  \Big ( \frac{e^2}{4m^2}    i(k_0 - k_0')    \v{\A} \times \v{\Adag} \Big ) \phi
 	=
-     c^2_S \frac{e^2}{4m^2} \phi^\dagger  \Big ( (k_0 - k_0')    \v{\A} \times \v{\Adag} \Big ) \phi
+     c_S \frac{e^2}{4m^2} \phi^\dagger  \Big ( (k_0 - k_0')    \v{\A} \times \v{\Adag} \Big ) \phi
 \]
 
+This is the only part of the amplitude we wanted to compare for reasons of consistency.

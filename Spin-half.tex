@@ -1,0 +1,188 @@
+\chapter{Spin one-half}
+
+%skeleton of calculation
+
+%define spinors and structures
+\subsection{Conventions}
+Spinors:
+
+\beq
+	\sr = \begin{pmatrix} \eta \\ \xi \end{pmatrix}
+\eeq
+
+\beqa
+	\eta &=& \left( 1  - \frac{\v{p}^2}{8m^2} \right ) w	\\
+	\xi &=& 	\frac{ \gv{\sigma} \cdot \v{p}}{2m} \left(1 - \frac{3\v{p}^2}{8m^2} \right ) w	\\
+\eeqa
+
+structures (in the useful represenation)
+\beq
+	\gamma^0 = \Mblock{1}{0}{-1}{0}
+\eeq
+
+\beq
+	\gamma^i = \Mblock{0}{\sigma_i}{-\sigma_i}{0}
+\eeq	
+\beq
+	\sigma^{\mu \nu} = i \frac{1}{2} [ \gamma^\mu, \gamma^\nu]
+\eeq
+
+\beq
+	[\gamma^0, \gamma^i] = 2 \gamma^0 \gamma^i = 2 \Mblock{0}{\sigma_i}{\sigma_i}{0} 
+\eeq
+
+
+\beq
+	\gamma^i \gamma^j = \Mblock{0}{\sigma_i}{-\sigma_i}{0} \Mblock{0}{\sigma_j}{-\sigma_j}{0}
+		=	\Mblock{ - \sigma_i \sigma_j}{0}{0}{ - \sigma_i \sigma_j}
+\eeq
+\beq
+	[\gamma^i, \gamma^j] = \Mblock{ [\sigma_j, \sigma_i]}{0}{0}{ [\sigma_j, \sigma_i]}
+		=	i\epsilon_{jik} \Mblock{ \sigma_k }{0}{0}{\sigma_k}
+		=	-i\epsilon_{ijk} \Mblock{ \sigma_k }{0}{0}{\sigma_k}
+\eeq
+
+\subsection{QED calculations}
+%First form
+First form:
+\beq
+	(p + p')^\mu \srb \sr  = (p + p')^\mu \left( \eta^\dagger \eta - \xi^\dagger \xi \right ) 
+\eeq
+
+\beq
+	= (p + p')^\mu \left \{
+		w^\dagger \left( 1 - \frac{ \v{p'}^2}{8m^2} \right )  \left( 1 - \frac{ \v{p}^2}{8m^2} \right ) w
+		- w^\dagger \left( \frac{ \gv{\sigma} \cdot \v{p'}}{2m} \frac{ \gv{\sigma} \cdot \v{p}}{2m} \right ) w \right \}
+\eeq 
+
+\beq
+	= (p + p')^\mu w^\dagger \left( 
+		1 -  \frac{ \v{p}^2 + \v{p'}^2}{8m^2} - \frac{ \gv{\sigma} \cdot \v{p'} \gv{\sigma} \cdot \v{p} }{4m^2} 
+		\right ) w
+\eeq
+
+
+Second form:
+For the term $\srb \gamma^\mu \sr$ it'll be necessary to treat the spatial/time-like indices separately.
+
+time-like
+\beq
+	\srb \gamma^0 u = u^\dagger u
+\eeq
+
+\beq
+	= \eta^\dagger \eta + \xi^\dagger \xi 
+\eeq
+
+\beq
+	= 	w^\dagger \left( 1 - \frac{ \v{p'}^2}{8m^2} \right )  \left( 1 - \frac{ \v{p}^2}{8m^2} \right ) w
+		+ w^\dagger \left( \frac{ \gv{\sigma} \cdot \v{p'}}{2m} \frac{ \gv{\sigma} \cdot \v{p}}{2m} \right ) w 
+\eeq
+
+\beq
+	=	 w^\dagger \left( 
+		1 -  \frac{ \v{p}^2 + \v{p'}^2}{8m^2} + \frac{ \gv{\sigma} \cdot \v{p'} \gv{\sigma} \cdot \v{p} }{4m^2} 
+		\right ) w
+\eeq
+
+spatial
+\beq
+	\srb \gamma^i \sr = \sr^\dagger \gamma^0 \gamma^i \sr
+\eeq
+
+\beq
+	= \srb^\dagger \begin{pmatrix}
+		0 & \sigma_i \\ \sigma_i & 0 		
+	\end{pmatrix} \sr
+\eeq
+
+\beq
+	= \eta^\dagger \sigma_i \xi + \xi^\dagger \sigma_i \eta
+\eeq
+
+\beq
+	= w^\dagger \left\{
+		\left( 1 - \frac{ \v{p'}^2}{8m^2}   \right ) \sigma_k \left( 1 - \frac{3\v{p}^2}{8m^2} \right )
+			- \left( 1 - \frac{ 3\v{p'}^2}{8m^2} \right ) \sigma_k \left( 1 - \frac{\v{p}^2}{8m^2} \right )
+			-	\frac{ \gv{\sigma} \cdot \v{p'} \sigma_k \gv{\sigma} \cdot \v{p} }{4m^2}
+	\right\}
+\eeq
+
+
+Third type (tensor)
+\beq
+	\srb  \frac{i}{2m} q_j \sigma^{ij} \sr 
+		=  \frac{i \epsilon_{ijk} q_j}{2m} \srb \Mblock{0}{\sigma_k}{\sigma_k}{0} \sr
+\eeq
+		
+\beq
+	\frac{i \epsilon_{ijk} q_j}{2m} \left( \eta^\dagger \sigma_k \eta - \xi^\dagger \sigma_k \xi \right )
+\eeq
+
+\beq
+	\frac{i \epsilon_{ijk} q_j}{2m} w^\dagger \left \{
+		\left( 1 - \frac{\v{p'}^2}{8m^2} \right ) \sigma_k \left( 1 - \frac{\v{p'}^2}{8m^2} \right )- \frac{ \gv{\sigma} \cdot \v{p'} \sigma_k \gv{\sigma} \cdot \v{p} }{4m^2} w
+	\right \}
+\eeq
+
+Need triple sigma identity
+\beq
+	\sigma_a \sigma_b \sigma_c = \sigma_a (\delta_{bc} + i\epsilon_{bcd}\sigma_d)
+		=	\sigma_a \delta_{bc} - \sigma_b \delta_{ca} + \sigma_c \delta_{ab} + i \epsilon_{abc}	
+\eeq
+
+Then using above
+\beq
+	\srb  \frac{i}{2m} q_j \sigma^{ij} \sr 
+		= \frac{i \epsilon_{ijk} q_j}{2m} w^\dagger \left \{
+			\sigma_k \left( 1 - \frac{\v{p'}^2  + \v{p}^2}{8m^2} \right ) - \frac{ \gv{\sigma} \cdot (\v{p} + \v{p'})p_k - \sigma_k \v{p} \cdot \v{p'} + i \epsilon_{akc} q_a p_c }{4m^2} 
+		\right \} w 
+\eeq
+
+The 'time-like' part of the tensor term
+\beq
+	\srb  \frac{i}{2m} q_j \sigma^{0j} \sr
+		=	 - \frac{q_j}{2m} \srb \gamma^0 \gamma^j \sr 		
+ \eeq
+ 
+ \beq
+ 	=  - \frac{q_j}{2m} \sr^\dagger \gamma^j \sr
+ \eeq
+ 
+ \beq
+ 	= - \frac{q_j}{2m}  \left( \eta^\dagger \sigma_j \chi - \chi^\dagger \sigma_j \eta \right )
+ \eeq
+ 
+\beq
+	= - \frac{q_j}{2m}  w^\dagger \left \{
+		\left(1 - \frac{\v{p'}^2}{8m^2} \right )  \frac{ \sigma_j \gv{\sigma} \cdot \v{p} }{2m} \left(1 - \frac{3\v{p}^2}{8m^2} \right )
+		- \left(1 - \frac{3 \v{p'}^2}{8m^2} \right ) \frac{\gv{\sigma} \cdot \v{p'} \sigma_j  }{2m} \left(1 - \frac{\v{p}^2}{8m^2} \right )
+	\right \} w
+\eeq
+Dropping terms quadratic in q, all $p'$ can be written just as $p$.
+\beq
+	\approx - \frac{q_j}{2m}  w^\dagger \left \{
+		\frac{ \sigma_j \gv{\sigma} \cdot \v{p} - \gv{\sigma} \cdot \v{p} \sigma_j }{2m} \left(1 - \frac{\v{p}^2}{2m^2} \right )
+	\right \} w
+\eeq		
+
+\beq
+	=  \frac{q_j}{2m}  w^\dagger \left \{
+		\frac{ i\epsilon_{ijk}\sigma_k p_i  }{2m} \left(1 - \frac{\v{p}^2}{2m^2} \right )
+	\right \} w
+\eeq
+
+\beq
+	=  w^\dagger \left \{
+		\frac{ i\epsilon_{ijk} p_i q_j \sigma_k   }{4m^2} \left(1 - \frac{\v{p}^2}{2m^2} \right )
+	\right \} w
+\eeq
+
+			
+
+
+ \section{Fouldy-Wouthyusen approach}
+ 
+ 
+ 
+ 
