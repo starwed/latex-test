@@ -1,18 +1,18 @@
 \chapter{Spin one-half}
 
 %skeleton of calculation
-
+\section{Method of NRQED}
 %define spinors and structures
 \subsection{Conventions}
 Spinors:
 
 \beq
-	\sr = \begin{pmatrix} \eta \\ \xi \end{pmatrix}
+	\sr = \begin{pmatrix} \eta \\ \chi \end{pmatrix}
 \eeq
 
 \beqa
 	\eta &=& \left( 1  - \frac{\v{p}^2}{8m^2} \right ) w	\\
-	\xi &=& 	\frac{ \gv{\sigma} \cdot \v{p}}{2m} \left(1 - \frac{3\v{p}^2}{8m^2} \right ) w	\\
+	\chi &=& 	\frac{ \gv{\sigma} \cdot \v{p}}{2m} \left(1 - \frac{3\v{p}^2}{8m^2} \right ) w	\\
 \eeqa
 
 structures (in the useful represenation)
@@ -46,7 +46,7 @@ structures (in the useful represenation)
 %First form
 First form:
 \beq
-	(p + p')^\mu \srb \sr  = (p + p')^\mu \left( \eta^\dagger \eta - \xi^\dagger \xi \right ) 
+	(p + p')^\mu \srb \sr  = (p + p')^\mu \left( \eta^\dagger \eta - \chi^\dagger \chi \right ) 
 \eeq
 
 \beq
@@ -71,7 +71,7 @@ time-like
 \eeq
 
 \beq
-	= \eta^\dagger \eta + \xi^\dagger \xi 
+	= \eta^\dagger \eta + \chi^\dagger \chi 
 \eeq
 
 \beq
@@ -97,7 +97,7 @@ spatial
 \eeq
 
 \beq
-	= \eta^\dagger \sigma_i \xi + \xi^\dagger \sigma_i \eta
+	= \eta^\dagger \sigma_i \chi + \chi^\dagger \sigma_i \eta
 \eeq
 
 \beq
@@ -116,7 +116,7 @@ Third type (tensor)
 \eeq
 		
 \beq
-	\frac{i \epsilon_{ijk} q_j}{2m} \left( \eta^\dagger \sigma_k \eta - \xi^\dagger \sigma_k \xi \right )
+	\frac{i \epsilon_{ijk} q_j}{2m} \left( \eta^\dagger \sigma_k \eta - \chi^\dagger \sigma_k \chi \right )
 \eeq
 
 \beq
@@ -183,46 +183,80 @@ Dropping terms quadratic in q, all $p'$ can be written just as $p$.
 
  \section{Fouldy-Wouthyusen approach}
  
- 
+The goal is to derive a nonrelativistic Hamiltonian or Lagrangian starting from relativistic theory.  (Having obtained one, we can easily obtain the other, of course.)  One method is to take the relativistic equations of motion and use them to obtain a Schrodinger like equation.
 
-\section{Equations of motion}
+The starting point is the relativistic equations of motion, which can come from the Lagrangian of the relativistic theory.  Those equations can then be written in terms of the noncovariant quantities that appear in the nonrelativistic theory.  In doing so, the energy of the particle will now explicitly appear.
+
+The relativistic theory will contain not only the particle of interest (the electron) but also its anti-particle (the positron.)  The nonrelativistic theory should contain only the electron.  Before obtaining an expression for the nonrelativistic Hamiltonian it will be necessary to somehow disentangle the two fields.  This is impossible in the general case, but as long as the energy and momenta in question are nonrelativistic, can be accomplished to any desired order.
+
+Formally this is accomplished by the Foldy-Wouthyusen transformation, the result of which is that all operators are diagonal, the coupling between the particle and anti-particle suppressed to which ever order is desired.  However, practically the same result can be obtained by examining the normalisation of the two theory's particles.  By demanding that the Schrodinger like wave functions are appropriately normalized, the relationship between relativistic and nonrelativistic spinors can be established.
+
+The result of this procedure will be an equation for the energy of the electron, accurate at some order in the nonrelativistic expansion.  However, it will not perfectly replicate the predictions of the high energy theory.  Unlike the process of NRQED, it does not truly incorporate the high energy sector of the theory.
 
 
-The regular Dirac Lagrangian can be modified by including a term responsible for the anomalous magnetic moment.  The added term is $\mu' \bar{\Psi} \sigma^{\mu\nu}F_{\mu\nu} \Psi$, where $\mu' = \frac{g-2}{2}\mu_0$
 
-The Lagrangian then is
-\begin{eqnarray*}
+\subsection{Equations of motion}
+
+To reestablish the problem considered, the system to be examined is an electron placed in a loosely bound system with another charged particle, subject to an infinitesimal and constant magnetic field.  There will be, because of the bound system, an electric field acting on the electron as well as the external magnetic field.  When recoil effects are ignored, the electric field can just be taken as given.
+
+The corrections to the gyromagnetic ratio of the electron are to be established.  There are two small scales that appear in the problem, the velocity $v$ of the electron and the infinitesimally small magnetic field $eB$.  The precision desired requires terms of up to order $mv^4$ and $ (e/m)Bv^2$.
+
+The starting point will be the relativistic Lagrangian of Dirac.  However, remember that the technique to be used simply ignores behavior introduced by the high energy sector of the theory, even if it might effect the low energy behavior.  One such effect is corrections to the free gyromagnetic ratio of the electron, which first arise when one loop diagrams are considered.  Without such corrections the $g$-factor will be exactly $g=2$.
+
+Anticipating that there will actually be bound-state corrections proportional to $g-2$, it is necessary to somehow include this anomalous term.  The way to do so is to introduce a new local interaction into the Lagrangian, coming from the highly virtual processes which dress the electron vertex.  The Lagrangian to be used is, then
+\beqa
 \mathcal{L} &=&	
 	\bar{\Psi}(\cancel{p} - m)\Psi + \frac{1}{2} \mu' \bar{\Psi} \sigma^{\mu\nu}F_{\mu\nu} \Psi	
-\end{eqnarray*}
+\eeqa
+%TODO check \mu_0
+$\mu'$ is the correction to the classical moment $\mu_0 = \frac{e}{m}$, and is equal to $(g-2)/2 \mu_0$.
 
-The Euler-Lagrange equations give us
-\[
+
+From this Lagrangian the equations of motion of the particle may be obtained from the Euler-Lagrange method.  The Euler-Lagrange equation is
+\beq
+\pd{ \mathcal{L}}{{\bar{\Psi} } } - \partial_\mu \frac{\partial \mathcal{L}} {\partial (\partial_\mu {\bar{\Psi})} } 
+	= 0	
+\eeq
+
+In the Lagrangian above, we can consider that all differential operators act only on the right field $\Psi$.  (This freedom of choice comes from being able to rewrite the Lagrangian through integration by parts, without changing its physical meaning.)  So the second term in the Euler-Lagrange equation can be ignored, and after differentiating with respect to $\bar{\Psi}$ the following equation is obtained:
+\beq
+	(\cancel{p} - m + \frac{1}{2} \mu'  \sigma^{\mu\nu}F_{\mu\nu} )\Psi = 0	
+\eeq
+Writing explicitly in terms of the $\gamma$ matrices, this is
+\beq \label{eq:Sh:eom}
 	\left( (p_\mu- eA_\mu)\gamma^\mu -m + i\mu' \frac{1}{4}[ \gamma^\mu, \gamma^\nu]F_{\mu\nu} \right) \Psi
 		=0
-\]
-From this equation of motion we'll derive exact relations between the upper and lower components of $\Psi$.
+\eeq
+This equation of motion is invariant under Lorentz transformations.  It is written in terms of the Dirac bispinor $\Psi$, the four momentum $p_\mu$, external fields $A_\mu$ and $F_{\mu\nu}$, and the gamma matrices.  To apply in to a nonrelativistic problem, the very first step will be to rewrite it in terms of the sorts of quantities that appear in that domain: three-vectors and scalars.
 
-First we'll replace $F_{\mu\nu} \equiv \partial_\mu A_\nu - \partial_\nu A_\mu$ with terms involving the electric and magnetic fields.  We use the antisymmetry of $\sigma^{\mu\nu} \equiv \frac{1}{2}[\gamma^\mu, \gamma^\nu]$, and that we deal with time-independent fields.
+The scalars that appear will be $p_0$ and $A_0 = \Phi$.  The external fields $\v{E}$ and $\v{B}$ will appear explicitly, while the vector field $\v{A}$ will appear in the gauge-invariant operator $\gv{\pi} = \v{p} - e\v{A}$.  The gamma matrices can be written in terms of the Pauli spin matrices $\gv{\sigma}$.  Finally, the bispinor will be written in terms of its upper and lower components.
 
-\begin{eqnarray*}
+Of the terms that appear in \eqref{eq:Sh:eom}, all except the last are trivial to write in this manner.  To deal with that last term, the antisymmetric tensor $\sigma^{\mu\nu} =  \frac{1}{2}[\gamma^\mu, \gamma^\nu]$ needs to be written explicitly.
+
+Using the antisymmetry of $\sigma^{\mu\nu} \equiv $, and that we deal with time-independent fields:
+\beqa
 	  {[\gamma^0, \gamma^i]}
 		&=&  \begin{pmatrix}	0 & 2\sigma_i \\ 2\sigma_i & 0\end{pmatrix}	\\
 	  {[\gamma^i, \gamma^j ]}
-		&=&	 \begin{pmatrix}	-2i\epsilon_{ijk}\sigma_k & 0 \\ 0 & -2i\epsilon_{ijk}\sigma_k\end{pmatrix}	\\
+		&=&	 \begin{pmatrix}	-2i\epsilon_{ijk}\sigma_k & 0 \\ 0 & -2i\epsilon_{ijk}\sigma_k\end{pmatrix}
+\eeqa
+\beqa
 	F_{\mu\nu} \sigma^{\mu\nu} &=& F_{i}\sigma^{ij} - F_{0i}\sigma^{0i} 	- F_{i0}\sigma^{i0} +F_{00}\sigma^{00}	\\
 		&=&	F_{ij} \sigma^{ij} -2F_{0i} \sigma^{0i}	\\
 		&=&	2 \partial_i A_j \sigma^{ij} - 2\partial_i \Phi \sigma^{0i}	\\
 		&=&	-2i \begin{pmatrix} \sigdot{B} & 0 \\ 0 & \sigdot{B}\end{pmatrix}	
 			-2 \begin{pmatrix} 0 & \sigdot{E} \\ \sigdot{E} & 0 \end{pmatrix}	
-\end{eqnarray*}
+\eeqa
+
+The bispinor $\Psi$ is written in terms of upper and lower components
+\beq
+	\Psi = \begin{pmatrix} \eta \\ \chi \end{pmatrix}
+\eeq
 
 
+With these considerations, the \eqref{eq:Sh:eom} can be rewritten acting explicitly on the bispinor.
 
-
-
-Considering $\Psi = \begin{pmatrix} \phi \\ \chi \end{pmatrix}$ as a bispinor
-\[
+\beq \label{eq:Sh:matrixEOM}
 	\left\{
 		\begin{pmatrix}
 			p_0 - e\Phi	- m &	0	\\
@@ -238,61 +272,96 @@ Considering $\Psi = \begin{pmatrix} \phi \\ \chi \end{pmatrix}$ as a bispinor
 				0 & \sigdot{E} \\ \sigdot{E} & 0
 			\end{pmatrix}
 		\right ] 
-	\right\} \begin{pmatrix} \phi \\ \chi \end{pmatrix}
+	\right\} \begin{pmatrix} \eta \\ \chi \end{pmatrix}
 		= 0
-\]
-This gives rise to exact coupled equations for $\phi$ and $\chi$.
+\eeq
+This gives rise to exact coupled equations for $\eta$ and $\chi$.  So far this is in principle the same as the relativistic equation, only the form in which it is written is non covariant.
 
 \subsection{NR limit}
-We're interested in the nonrelativistic limit, in which we can treat the amplitude of $\chi$ as much smaller than $\phi$.  So we'll solve the coupled equations for $\phi$ to the desired order in $\frac{p}{m}$.  Here we're interested in finding the nonrelativistic Hamiltonian to $\mathcal{O}(mv^4)$.  We can also throw away terms proportional to $\mu'^2$, as well as terms nonlinear in the magnetic field.  In taking the relativistic limit we'll use the nonrelativistic energy $\epsilon = p_0 - m$.
 
+The particle under consideration is a nonrelativistic electron.  Roughly, the expectation is that $\eta$ corresponds to the electron field and $\chi$ to that of the positron.  The off-diagonal terms in the equation above represent some sort of mixing between the electron and positron: the electron wave function still has some small positron component, that decreases as momentum is decreased.    The off diagonal component that does {\it not} vanish at 0 momentum is proportional to $\mu'$, the term introduced to account for a high-energy process.
 
+The upshot is that although the equation above is really a set of coupled equations for $\eta$ and $\chi$, $\chi$ will be small compared to $\eta$ --- the very leading order diagonal term will indicate that $\chi \sim \sigdotg{\pi} \eta$.
 
-Considering the order of various types of terms, we can see that $\epsilon \sim mv^2$, $\Phi\sim mv^2$, $\v{\pi} \sim mv$, and $\v{E} \sim m^2v^3$.
+Because the off diagonal terms are small, the set of coupled equations may be solved perturbatively.  The particular quantity of interest is the nonrelativistic energy of the particle $\epsilon = p_0 - m$.  For a free particle, this would be
+\beq
+	\epsilon = p_0 - m \approx \frac{\v{p}^2}{2m} + \frac{\v{p}^4}{8m^3} + \mathcal{O}\left (\frac{\v{p}^6}{m^5} \right )
+\eeq  
 
-Under these approximations we first find $\chi$.
-\begin{eqnarray*}
-	\left( \epsilon + 2m - \mu' \sigdot{B} \right ) \chi &=& \left( \sigdotg{\pi} - i\sigdot{E} \right) \phi	\\
-	\chi &\approx&	\frac{1}{2m} \left ( 1- \frac{\epsilon - e\Phi - \mu' \sigdot{B}}{2m} \right ) (\sigdotg{\pi} - i\mu' \sigdot{E} )\phi
-\end{eqnarray*}
-Then, solving for $\epsilon\phi$,
-\begin{eqnarray*}
-	\epsilon \phi 	&=& (e\Phi - \mu' \sigdot{B} )\phi + (\sigdot{E} + \sigdotg{\pi}) \chi	\\
-					&\approx& \left \{
+In order to perform this perturbative analysis the order of various terms needs to be established.  It's evident that at leading order $\epsilon \sim mv^2$.  From earlier analysis,   $\Phi\sim mv^2$, $\v{\pi} \sim mv$, and $\v{E} \sim m^2v^3$.
+
+First, find an expression for $\chi$ in terms of $\eta$.  The second of the set of equations represented by \eqref{eq:Sh:matrixEOM} is
+\beq
+	(-p_0 + e\Phi - m) \chi + \sigdotg{\pi} \eta + \mu'( \sigdot{B} \chi - i \sigdot{E}  \eta)
+\eeq
+Writing $p_0 = \epsilon + m$, and grouping terms, the result is that
+\beq
+	\left( \epsilon + 2m - \mu' \sigdot{B} \right ) \chi = \left( \sigdotg{\pi} - i\sigdot{E} \right) \eta	
+\eeq
+It is necessary now to approximate $\chi$ in terms of $\eta$.  Because $\epsilon$ and $\abs{B}$ are smaller than $m$, and only second order terms are needed for the final result:
+\beq
+	\chi \approx	\frac{1}{2m} \left ( 1- \frac{\epsilon - e\Phi - \mu' \sigdot{B}}{2m} \right ) (\sigdotg{\pi} - i\mu' \sigdot{E} )\phi
+\eeq
+
+With this expression $\chi$ may be eliminated from the first of the set of equations (at least at the necessary order).  The resulting equation will only involve $\eta$, and so may be used to solve for $\epsilon \eta$.
+
+The original equation is
+\beq
+	(p_0 - e\Phi - m) \eta - \sigdotg{\pi} \chi + \mu'( \sigdot{B}\eta  - i \sigdot{E} \chi ) 
+\eeq
+So again using $p_0 - m = \epsilon$
+\beq
+	\epsilon \eta 	= (e\Phi - \mu' \sigdot{B} )\eta + (\sigdot{E} + \sigdotg{\pi}) \chi	
+\eeq
+Now the expression for $\chi$ in terms of $\eta$ may be used.
+\beq
+ 	\epsilon \eta \approx (e\Phi - \mu' \sigdot{B} )\eta + (\sigdot{E} + \sigdotg{\pi})  \frac{1}{2m} \left ( 1- \frac{\epsilon - e\Phi - \mu' \sigdot{B}}{2m} \right ) (\sigdotg{\pi} - i\mu' \sigdot{E} )\eta 
+\eeq				
+ 
+Writing the $1/m$ and $1/m^2$ terms separately:
+\beq
+\begin{split}				\epsilon \eta		\approx& \left \{
 		e\Phi - \mu' \sigdot{B} + \frac{ \exminus \explus}{2m}	\right. \\
-		&& \left. +\frac{1}{4m^2} \exminus (\mu' \sigdot{B} - [\epsilon - e\Phi]) \explus 	
-	\right \} \phi		\\
-		&=& \left \{
+		& \left. +\frac{1}{4m^2} \exminus (\mu' \sigdot{B} - [\epsilon - e\Phi]) \explus 	
+	\right \} \eta	
+\end{split}
+\eeq
+
+Several of the terms are of too high order to consider.  A term with both $E$ and $B$, for instance, will be of higher order than $(e/m)\abs{B} v^2$.  Likewise, a term of $E \Phi$ or $E \epsilon$ is also too small.  Dropping all such:
+\beq
+	\epsilon \eta \approx \left \{
 				e\Phi - \mu' \sigdot{B} + \frac{(\sigdotg{\pi})^2 - i\mu' [\sigdotg{\pi}, \sigdot{E}]}{2m}
 				+\frac{1}{4m^2} \sigdotg{\pi} (\mu' \sigdot{B} - [\epsilon - e\Phi]) \sigdotg{\pi} 
-			\right \} \phi
-\end{eqnarray*}
+			\right \} \eta
+\eeq
+This is an expression for the energy $\epsilon$ of the particle, in terms of operators.  This will yield the nonrelativistic Hamiltonian.  There is still some manipulation required, though, because the right hand side also contains $\epsilon$.  But since the leading order terms don't, it may be perturbatively solved for.  (The above expression could be simplified somewhat, using the properties of $\sigma$ matrices for instance, but for now it is more convenient to write it compactly.)
 
-We have an expression for the kinetic energy $\epsilon$ of the particle, in terms of operators.  This will give us the nonrelativistic Hamiltonian. Since the leading order term in H is $\mathcal{O}(mv^2)$, this suggests we split it into two parts: $H = H_0 + H_1 +\mathcal{O}(mv^6)$, where $H_1$ consists of only $\mathcal{O}(mv^4)$ terms.  
-As written our expression for $H_1$ contains $\epsilon$, so we'll have to solve for it perturbatively.
-
-Our two terms are
-\begin{eqnarray*}
+To that end, the Hamiltonian can be split into leading order and second order terms.  The leading order will be of $mv^2$ and $(e/m)B$, while the next order will be suppressed by an additional factor of $v^2$.  Because the magnetic field is infinitesimally small no $B^2$ terms are needed. 
+ Since the leading order term in H is $\mathcal{O}(mv^2)$, this suggests we split it into two parts: $H = H_0 + H_1 +\mathcal{O}(mv^6, (e/m) B v^4)$, where $H_1$ consists of only second order terms.
+\beqa
 	\hat{H_0} 
 			&=&  e\Phi - \mu' \sigdot{B} + \frac{ (\sigdotg{\pi})^2}{2m}	\\
 	\hat{H_1} 
 			&=& -\frac{i\mu'}{2m}  [\sigdotg{\pi}, \sigdot{E}]
 				+\frac{1}{4m^2} \sigdotg{\pi} (\mu' \sigdot{B} - [\epsilon - e\Phi]) \sigdotg{\pi} 
-\end{eqnarray*}	
-To eliminate $\epsilon$ from $H_1$
-\begin{eqnarray*}
-	\epsilon \phi
-			&=& \left(\hat{H_0} + \mathcal{O}(mv^4) \right)\phi 										\\
-			&=& \left(e\Phi - \mu' \sigdot{B} + \frac{ (\sigdotg{\pi})^2}{2m}	\right) \phi			\\
-	(\sigdotg{\pi})^2 (\epsilon - e\Phi) \phi		
-			&=&	(\sigdotg{\pi})^2 \left ( \frac{(\sigdotg{\pi})^2}{2m}- \mu' \sigdot{B} \right )		\\
-	\sigdotg{\pi} (\epsilon - e\Phi) \sigdotg{\pi}\phi
+\eeqa
+$H_1$ contains $\epsilon$, along with other terms of total order $mv^2$.  So to eliminate $\epsilon$ from $H_1$ it'll only be necessary to find it to leading order.
+\beqa
+	\epsilon \eta
+			&=& \left(\hat{H_0} + \mathcal{O}(mv^4) \right)\eta 										\\
+			&\approx& \left(e\Phi - \mu' \sigdot{B} + \frac{ (\sigdotg{\pi})^2}{2m}	\right) \eta			
+\eeqa
+The operators on the right hand side, operating on $\eta$, produce $\epsilon$.  The combination actually needed is $\sigdotg{\pi} \epsilon \sigdotg{\pi}$.  To that end, start with $\sigdotg{\pi}^2 \epsilon$ and use commutation relations.
+\beqa
+	(\sigdotg{\pi})^2 (\epsilon - e\Phi) \eta		
+			&=&	(\sigdotg{\pi})^2 \left ( \frac{(\sigdotg{\pi})^2}{2m}- \mu' \sigdot{B} \right )	\eta	\\
+	\sigdotg{\pi} (\epsilon - e\Phi) \sigdotg{\pi}\eta
 			&=&	\left( \frac{(\sigdotg{\pi})^4}{2m} 
 				- \mu' (\sigdotg{\pi})^2 \sigdot{B} 
-				- \sigdotg{\pi}[e\Phi, \sigdotg{\pi}]\right ) \phi
-\end{eqnarray*}
-So we can now write down $H_1$
-\[
+				- \sigdotg{\pi}[e\Phi, \sigdotg{\pi}]\right ) \eta
+\eeqa
+With this $\epsilon$ is eliminated, leaving:
+\beq
 	\hat{H}_1	=
 		-\frac{i\mu'}{2m}  [\sigdotg{\pi}, \sigdot{E}]
 		+\frac{1}{4m^2}\left(
@@ -301,20 +370,30 @@ So we can now write down $H_1$
 			+ \mu' (\sigdotg{\pi})^2 \sigdot{B} 
 			+ \sigdotg{\pi}[e\Phi, \sigdotg{\pi}]
 		\right)
-\]
-To simplify, we'll eliminate terms of second order in the magnetic field.  We'll also use the following identities:
-\begin{eqnarray*}
-\{ \sigdot{B}, \sigdot{p} \}	&=&		2\v{B}\cdot \v{p}	\\
-(\sigdotg{\pi})^2			&=&		\pi^2 - e\sigdot{B}		\\
-\end{eqnarray*} 
-\[	[\Phi, \sigdotg{\pi}]	= -i\sigdot{E} \]
-
-Then
-\[
+\eeq
+Some terms couple $A$ and $B$; they can be dropped.  Some simplification of the structures involving $\sigma$ matrices can be done.  To start with, simplify $(\sigdotg{\pi})^2$.
+\beq
+	(\sigdotg{\pi})^2 = \sigma_i \sigma_j \pi_i \pi_j = \pi^2 - i\epsilon_{ijk} \pi_i \pi_j \sigma_k
+\eeq
+Since $\v{p} \times \v{p} = \v{A} \times \v{A} = 0$, from $\gv{\pi} \times \gv{\pi}$ only the cross terms survive:
+\beq
+	(\sigdotg{\pi})^2 = \pi^2 - i e \epsilon_{ijk}(p_i A_j - A_i p_j) = \pi^2 - e \sigdot{B}
+\eeq
+Looking at the terms $\mu' \sigdotg{\pi} \sigdot{B} \sigdotg{\pi} + \mu' (\sigdotg{\pi})^2 \sigdot{B}$, they contain an anticommutator involving $B$ and $p$.  Because the magnetic field is assumed to be constant, $p$ and $B$ commute, so: 
+\beqa
+\{ \sigdot{B}, \sigdot{p} \}	&=&		B_i p_j \{\sigma_i, \sigma_j\}	\\
+		&=&	2\v{B}\cdot \v{p}	
+\eeqa
+The commutator of $\Phi$ and a derivative operator should give the electric field $E$:
+\beq
+	[ \Phi, \sigdotg{\pi} ]	= [ \Phi, p_i] \sigma_i = -iE_i \sigma_i = -i\sigdot{E} 
+\eeq
+Using these identities, the Hamiltonian can be expressed as:
+\beq
 	\hat{H_0} 
 			=  e\Phi - \mu' \sigdot{B} + \frac{ \pi^2}{2m} - \frac{e}{2m} \sigdot{B}	\\
-\]
-\[
+\eeq
+\beq
 	\hat{H}_1	=
 		- \frac{\pi^4}{8m^3}  
 		+ e\frac{p^2}{4m^3} \sigdot{B}
@@ -323,60 +402,71 @@ Then
 			\frac{ \sigdot{p} \v{B}\cdot \v{p} }{2m^2}
 			-\frac{i[\sigdotg{\pi}, \sigdot{E}]}{2m} 
 		\right )
-\]
+\eeq
+There are still some simplifications that can be made to terms quadratic in $\sigma$, but it'll be more convenient for now to keep $H$ written as is.
 
+\subsection{FW Transform}
 
-\section{FW Transform}
+To find a complete description of a single nonrelativistic particle in normal quantum mechanics, we must work in a basis where the lower component $\chi$ is truly negligible, at least at the desired order.  While there exists a formal technique for finding this Fouldy-Wouthyusen transformation, for our purposes we can simply demand that the wave function after transformation $\phis = (1 + \Delta)\eta$ obeys the normalization $\langle \phis, \phis \rangle = 1$.
 
-To find a complete description of a single nonrelativistic particle in normal quantum mechanics, we must work in a basis where the lower component $\chi$ is truly negligible, at least at the desired order.  While there exists a formal technique for finding this Fouldy-Wouthyusen transformation, for our purposes we can simply demand that the wave function after transformation $\phi_s = (1 + \Delta)\phi$ obeys the normalization $<\phi_s, \phi_s> = 1$.
-
-To find the necessary transformation, we can use our expression for $\chi$ in terms of $\phi$ to find the normalization
-\begin{eqnarray*}
-	\int d^3x (\phi^\dagger \phi + \chi^\dagger \chi) 	
-		&=& \int d^3x 	\left[ \phi^\dagger \phi + \left (\frac{\sigdotg{\pi}}{2m} \phi \right)^\dagger
-										   \left (\frac{\sigdotg{\pi}}{2m} \phi \right)
+To find the necessary transformation, we can use our expression for $\chi$ in terms of $\eta$ to find the normalization
+\beqa
+	\int d^3x (\eta^\dagger \eta + \chi^\dagger \chi) 	
+		&=& \int d^3x 	\left[ \eta^\dagger \phi + \left (\frac{\sigdotg{\pi}}{2m} \phi \right)^\dagger
+										   \left (\frac{\sigdotg{\pi}}{2m} \eta \right)
 						\right ]	\\
-		&=& \int d^3x 	\phi^\dagger \left[ 1 + \frac{ (\sigdotg{\pi})^2 }{4m^2} \right ] \phi
-\end{eqnarray*}
-
+		&=& \int d^3x 	\eta^\dagger \left[ 1 + \frac{ (\sigdotg{\pi})^2 }{4m^2} \right ] \eta
+\eeqa
 Since we know that $<\Psi, \Psi>=1$ this shows that if $\phi = \left( 1 - \frac{ (\sigdotg{\pi})^2 }{8m^2} \right )\phi$, the Schrodinger wave functions are properly normalized.
 
 
-We now need to find the form of $\hat{H}$ after this transformation:
-\begin{eqnarray*}
-\epsilon \phi = (\hat{H}_0 + \hat{H}_1) \phi \\ 
-\epsilon (1 - \frac{(\sigdotg{\pi})^2}{8m^2})\phi_S =  (\hat{H}_0 + \hat{H}_1) (1 - \frac{(\sigdotg{\pi})^2}{8m^2})\phi_S \\
-\epsilon \phi_S =  (1 + \frac{(\sigdotg{\pi})^2}{8m^2})(\hat{H}_0 + \hat{H}_1) (1 - \frac{(\sigdotg{\pi})^2}{8m^2})\phi_S \\
-\epsilon \phi_S = \left (  \hat{H}_0 + \frac{1}{8m^2}[(\sigdotg{\pi})^2, \hat{H}_0] + \hat{H}_1 \right )\phi_S \\
-\end{eqnarray*}
-
+We now need to find the form of $\hat{H}$ after this transformation.  For now work with the general form:
+\beq
+	\epsilon \eta = (\hat{H}_0 + \hat{H}_1) \eta 
+\eeq
+After changing to the Schrodinger like wave functions, this becomes:
+\beq
+	\epsilon \left (1 - \frac{(\sigdotg{\pi})^2}{8m^2} \right )\phi_S =  (\hat{H}_0 + \hat{H}_1) \left(1 - \frac{(\sigdotg{\pi})^2}{8m^2}\right)\phi_S 
+\eeq
+To the order needed the inverse of $1 + \sigdotg{\pi}^2 / 8m^2 $ is just $1 - \sigdotg{\pi}^2 / 8m^2 $, so eliminating that on the left hand side gives:
+\beq
+	\epsilon \phi_S =  (1 + \frac{(\sigdotg{\pi})^2}{8m^2})(\hat{H}_0 + \hat{H}_1) (1 - \frac{(\sigdotg{\pi})^2}{8m^2})\phi_S
+\eeq
+Since $H_1$ is already second order, these further corrections don't involve it directly.  Expressing the result as a commutator:
+\beq
+	\epsilon \phi_S = \left (  \hat{H}_0 + \frac{1}{8m^2}[(\sigdotg{\pi})^2, \hat{H}_0] + \hat{H}_1 \right )\phi_S 
+\eeq
 So under the FW transformation, the leading order term is unchanged, and the second order term is:
-$$ \hat{H}_1 \to \hat{H}_1' = \hat{H}_1 + \frac{1}{8m^2}[(\sigdotg{\pi})^2, \hat{H}_0] $$
+\beq
+	 \hat{H}_1 \to \hat{H}_1' = \hat{H}_1 + \frac{1}{8m^2}[(\sigdotg{\pi})^2, \hat{H}_0]
+\eeq
 
-$ [(\sigdotg{\pi})^2, \hat{H}_0] $ can be simplified.  
-$$[(\sigdotg{\pi})^2, \hat{H}_0] = [(\sigdotg{\pi})^2, e\Phi - \mu' \sigdot{B} + \frac {(\sigdotg{\pi})^2}{2m}]$$
+The final step is to simplify the commutator $ [(\sigdotg{\pi})^2, \hat{H}_0] $.
+  
+\beq [(\sigdotg{\pi})^2, \hat{H}_0] = [(\sigdotg{\pi})^2, e\Phi - \mu' \sigdot{B} + \frac {(\sigdotg{\pi})^2}{2m}] \eeq
 
-Obviously $(\sigdotg{\pi})^2$ commutes with itself, and since $\sigdot{B}$ is constant, that commutator also vanishes:
+Obviously $(\sigdotg{\pi})^2$ commutes with itself, so that term vanishes.  Since $\sigdot{B}$ is constant, that commutator will also disappear.  Writing $\sigdotg{\pi}$ as shown earlier:
 $$[(\sigdotg{\pi})^2, \mu' \sigdot{B}] =[\pi^2 - e \sigdot{B}, \mu'\sigdot{B}] = 0 $$
 
-Leaving:
-\begin{eqnarray*}
+
+The non-trivial part is the commutation of the derivative operators with the electric potential $\Phi$. 
+\beqa
 [(\sigdotg{\pi})^2, \hat{H}_0] &=& [(\sigdotg{\pi})^2, e\Phi] \\
 		&=&	e( \sigdotg{\pi}[\sigdotg{\pi},  \Phi] + [\sigdotg{\pi},  \Phi]\sigdotg{\pi}) \\
 		&=&	i e( \sigdotg{\pi} \sigdot{E} + \sigdot{E} \sigdotg{\pi} ) \\
-\end{eqnarray*}
-So,
-\begin{eqnarray*}
+\eeqa
+So, writing down the new $H_1'$:
+\beqa
 \hat{H}_1' 
 	&=&  \hat{H}_1 + \frac{i e}{8m^2}( \sigdotg{\pi} \sigdot{E} + \sigdot{E} \sigdotg{\pi} )	\\
 	&=&	 -\frac{\pi^4}{8m^3} + e \frac{p^2}{4m^3}\sigdot{B} - \frac{ie}{8m^2}[\sigdot{E},\sigdotg{\pi}]
 		 + \mu' \left( \frac{ (\sigdot{p}) (B \cdot p) }{2m^2} - \frac{i}{2m}[\sigdot{E},\sigdotg{\pi}] \right)
-\end{eqnarray*}
-
-
+\eeqa
 
 \subsection*{NR Hamiltonian}
-Now we'll write down the entire Hamiltonian, using $\mu' = \frac{g-2}{2}\mu_0 = \frac{g-2}{2}\frac{e}{2m} $.
+From the relativistic equations of motion, a nonrelativistic Hamiltonian was defined in terms of Schrodinger-like wave functions that conserve probability.  The final result may now be written down.  For comparison with other work, rather than writing in terms of $\mu'$, it will be written in terms of the gyromagnetic ratio $g$.  Because terms proportional to $g-2$ may enter seperately, it is convenient to express all $g$ dependent terms as linear combinations of $g$ and $g-2$. 
+
+So the entire Hamiltonian, using $\mu' = \frac{g-2}{2}\mu_0 = \frac{g-2}{2}\frac{e}{2m} $, is:
 \begin{eqnarray*}
 H	&=&
 		e\Phi  + \frac{ \pi^2}{2m} -\frac{\pi^4}{8m^3} - (1 + \frac{g-2}{2})\frac{e}{2m} \sigdot{B}	\\
