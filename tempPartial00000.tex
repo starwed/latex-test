@@ -63,9 +63,19 @@
 } }
 
 
+
+% shortcuts for the binspinors represented as vectors.  Used in spin-half.tex, imported from uv_bilinears.tex
+\newcommand{\uvec}[1]{ \begin{pmatrix} \varphi \\ \frac{\sigdot{#1}}{2m} \varphi \end{pmatrix} }
+\newcommand{\vvec}[1]{ \begin{pmatrix} \frac{\sigdot{#1}}{2m} \chi \\ \chi \end{pmatrix} }
+\newcommand{\udaggervec}[1]{ \begin{pmatrix} \varphi^\dagger & \frac{\sigdot{#1}}{2m} \varphi^\dagger \end{pmatrix} }
+\newcommand{\vdaggervec}[1]{ \begin{pmatrix} \frac{\sigdot{#1}}{2m}  \chi^\dagger & \chi^\dagger \end{pmatrix} }
+
+\newcommand{\ubar}{\bar{u}}
+\newcommand{\vbar}{\bar{v}}
+
 \usepackage{setspace}
 \doublespacing
 \begin{document}
-\input{Spin-half}
+\input{ComptonOneHalf}
 
 \end{document}

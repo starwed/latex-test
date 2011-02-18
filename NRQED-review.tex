@@ -11,7 +11,7 @@ The first workable relativistic theory of quantum mechanics came from Dirac.  By
 
 The relativistic theory necessitated the introduction of an infinite degrees of freedom.  Thus, wave functions had to be promoted to fields, and the first quantum field theory arose.  It was highly successful at predicting leading order quantities, but when attempting to use perturbation theory within this context, a number of infinities arose.
 
-To resolve this matter, QED and renormalization were developed in the late 1940s.  The key was in changing the parametrization from of the theory from ``bare'' values, to measured values at some particular energy scale.  So to completely define the theory one needed to write down not only the Lagrangian but also the renormalization point.  The coupling constants of the theory would depend upon this.  With this approach QED was enormously successful, producing very accurate predictions to such quantities as the anomolous magnetic moment.
+To resolve this matter, QED and renormalization were developed in the late 1940s.  The key was in changing the parametrization from of the theory from ``bare'' values, to measured values at some particular energy scale.  So to completely define the theory one needed to write down not only the Lagrangian but also the renormalization point.  The coupling constants of the theory would depend upon this.  With this approach QED was enormously successful, producing very accurate predictions to such quantities as the anomalous magnetic moment.
 
 There was much frustrating work to formulate a theory of the other interactions along the same lines.  During this work (such as that by Gell-man and Low) with these types of theories it became clear that there was structure to how the coupling constants behaved as the renormalization point changed.
 
@@ -330,21 +330,82 @@ Lets consider now the symmetries of each type of term.
 Given a collection of these blocks, then as long as the set as a whole isn't anti-Hermitian we can always simply add the Hermitian conjugate to form a Hermitian term.  This does reduce the number of independent terms.  Likewise, to make a term invariant under time-reversal a factor of $i$ can be appended.  However, there is no way to fix a term that is odd under parity, so that is the one hard constraint.  There can be no term $\v{B} \cdot \v{D}$, for instance, because it is not invariant under parity.
 
 
-To figure out how far down the hierarchy of terms we need to go for a particular calculation, we also need to establish the individual order of magnitude of each term.  This will allow us to eliminate all but a finite number of terms from consideration.  The example case is an electron in an atomic system, so $A_0$ is the Coulomb potential, and $\v{B}$ comes from the spin of the muon.
+So far these constraints still allow for an infinite number of terms.  But the greater the number of fields, or derivatives of fields, that exist in a term, the more strongly it will be suppressed.  Each additional power of energy will carry a factor of $1/m$ to ensure that the total dimension of the term is allowed.
+
+To figure out how far down the hierarchy of terms we need to go for a particular calculation, we also need to establish the individual order of magnitude of each term and ``building block''.  This will allow us to eliminate all but a finite number of terms from consideration.  The example case is an electron in an atomic system, so $A_0$ is the Coulomb potential, and $\v{B}$ comes from interaction with the nucleus, in this case a muon.
+
+.
 \beqa
 	\v{\partial} 	&\sim& mv	\\
 	\partial_t  	&\sim& mv^2	\\
 	eA_0			 &\sim& mv^2	\\
 	e\v{A}			 &\sim& mv^3	\\
-	e\v{E}			 &\sim& mv^3	\\
-	e\v{B}			 &\sim& mv^3	\\ 
+	e\v{E}			 &\sim& m^2 v^3	\\
+	e\v{B}			 &\sim& m^2 v^3	\\ 
 \eeqa
 
-The magnitudes of the fields can be readily derived from their atomic origin.  That the derivative operators have order of $p = mv$ when acting on the charged field is sensible, and the derivative of $A_0$ also gains a factor of $mv$.  The spin operator is order unity (when we have $\hbar=1$.)
+The magnitudes of the fields can be readily derived from their atomic origin.  The spin operator is order unity (when we have $\hbar=1$.)
+
+For the Coulomb potential, 
+\beq
+	e\Phi \sim \frac{Z\alpha}{r}
+\eeq
+For an atom, $1/r \sim mv = m (Z\alpha)$.  So the order of $e\Phi$ is $mv^2$.
+
+The electric field is the first derivative of $\Phi$, so 
+\beq
+	e E_i \sim \frac{Z\alpha}{r^3} r_i \sim m^2 (Z \alpha)^3 = m^2 v^3
+\eeq
+
+The magnetic field $B \sim$ %TODO finish
 
 
 
-Suppose we build the Lagrangian, including terms up to order $1/m^3$.  
+
+To be consistent with the Schrodinger equation, $\partial_t \sim mv^2$.
+
+When acting on the fermion wave functions, the spatial derivative will bring down a factor of $p$.  Upon the electromagnetic fields, it gives an overall $1/r$.  In both these cases, $\v{\partial}$ can be considered to be of order $mv$
+
+%END O OF M ESTIMATES
+
+
+Knowing both the order and symmetries of each building block, the NRQED Lagrangian can be explicitly constructed.
+
+It is the suppressing powers of $1/m$ that keep the number of terms to be considered finite.  A term with six derivatives like $D^6$ need not be considered, because it must appear in $\mathcal{L}_{NRQED}$ as $\v{D}^6 / 32m^5$.  So the first step is to consider what combination of such terms {\it are} allowed, if terms of higher order than $mv^4$ are discarded.  The only allowed spin structure is $\sigma$.
+
+The leading order terms appear at $mv^2$.  Since $E$ and $B$ are already too high order, the only available terms are $A_0$, $\partial_0$, and $D_i$.  
+Without spin, $A_0$ and $\partial_0$ appear by themselves.  A single power of $D_i$ has nothing to contract with, and two powers may only be contracted with each other.  So the spinless terms are
+\beq
+	eA_0, \;  \partial_0,  \; \frac{\v{D}^2}{2m}
+\eeq
+
+A single power of $D$ contracted with $\sigma$ is disallowed by parity, and something like $(\sigdot{D})^2$ is redundant, since quadratic terms in $\sigma$ reduce.  Only linear combinations of $\sigma$ need be considered.  None of the other ingredients have Lorentz indices, so no spin terms appear at this order.
+
+The next order of terms are $mv^3$.  This could be a single power of $E$, a single power of $B$, or three powers of $D$.  However, since $E$ and $D$ are both odd under parity, those terms are not allowed.  The only one left is a single power of $B$.  Since the index needs to be contracted with something, it must be the order unity spin matrix.  Thus, the only term allowed at this order is $\sigdot{B}$:
+\beq
+	\frac{e}{m}\sigdot{B}
+\eeq
+
+At order $mv^4$, there could be four powers of $D$, or a single power of $D$ accompanied by either $E$ or $B$.  However, something like $\v{B} \cdot \v{D}$ is forbidden by parity.  With four powers of $D$, the only way to contract them is as $D^4$.  With $E$ and $D$ there are two ways to contract them: either with $\delta_{ij}$ or with $\sigma_k \epsilon_{ijk}$.  In any case the resulting term must be Hermitian and invariant under time reversal, so the two terms are
+\beq
+	\frac{ \v{E} \cdot \v{D} - \v{D} \cdot \v{E} }{4m^2} , \; \frac{ i\epsilon_{ijk} (E_i D_j - D_i E_j) }{4m^2} 
+\eeq 
+
+Finally at order $mv^5$ there are more terms involving $B$.  Parity again terms involving only combinations of $E$ and $D$, but one power of $B$ and two powers of $D$ is allowed.  Because there are an odd number of indices, and contracting $\epsilon_{ijk}$ with two powers of $D$ is redundant (producing an $\mathcal{O}(mv^6)$ term $B^2$), all the terms will involve $\sigma_i$.
+
+The allowed combinations are
+\beq
+ \frac{ e \v{D}^2 \v{S} \cdot \v{B} + \v{S} \cdot \v{B} \v{D}^2 }{8m^3} ,  \;
+		\frac{e D_i (\v{S} \cdot \v{B}) D_i}{4m^3}	, 	\;
+	 \frac{ e [ (\v{S}\cdot \v{D})(\v{B} \cdot \v{D}) + (\v{B} \cdot \v{D})(\v{S}\cdot \v{D})]}{8m^3} 
+\eeq
+
+Of course in the special case where derivatives of $B$ vanish (i.e. $B$ commutes with $D$) then the first two terms become indistinguishable.  That is not the case here.
+
+
+
+%%%%%%%%%%%
+Now we have the Lagrangian, including terms up to order $1/m^3$.  
 
 What will the overall structure of the Lagrangian be?  There will be two fermion terms, four-fermion terms, and photon terms.  The photon terms are taken as just that of QED at leading order: $\frac{1}{2} (F^{mu\nu})^2$.  
 
@@ -398,7 +459,7 @@ To determine the coefficients of the two-fermion piece of the NRQED Lagrangian, 
 \end{minipage}
 $	=	\hspace{2em} 	 $
 \begin{minipage}{1.6in}
-   \includegraphics[scale=0.8]{eps/NRQED-static-coulomb-field} 
+   \includegraphics[scale=0.8]{eps/NRQED-static-coulomb-field}
 \end{minipage}
 $\hspace{2em}   +  \hspace{2em} $
 \begin{minipage}{1.6in}
@@ -426,7 +487,7 @@ or in terms of Pauli spinors instead, up to $1/m^3$
 	+ \frac{ie}{8m^3} (\v{p'}^2 + \v{p}^2 ) \gv{\sigma} \cdot \v{q} \times \v{A} \right ] \Psi
  \\& 	+F_2 \Psi^\dagger \left [ - \frac{ie}{2m} \gv{\sigma} \cdot \v{q} \times \v{A} 
 	+ \frac{ie}{16m^3}  (\v{p'}^2 + \v{p}^2 ) \gv{\sigma} \cdot \v{q} \times \v{A}
-	+ \frac{ie}{8m^3}  \gv{\sigma}\cdot \v{p'} \gv{\sigma} \cdot \v{q} \times \v{A} \gv{\sigma} \cdot \v{p} \right ] \Psi
+	+ \frac{ie}{8m^3}  (\gv{\sigma}\cdot \v{p'})( \gv{\sigma} \cdot \v{q} \times \v{A})( \gv{\sigma} \cdot \v{p})  \right ] \Psi
 \end{split}
 \eeq
 
@@ -438,15 +499,15 @@ For scattering off a static potential $A_0$
 \eeq
 Again expressing in terms of Pauli spinors
 \beq \begin{split}
-	=& F_1 \Psi^\dagger \left [e A^0 - \frac{e}{8m^2} \v{q}^2 + \frac{ie}{4m^2} \gv{\sigma} \cdot (\v{p'} \times \v{p} A^0 \right ] \Psi
-\\	& + F_2 \Psi^\dagger \left [ - \frac{e}{8m^2}  + \frac{ie}{4m^2} \gv{\sigma} \cdot (\v{p'} \times \v{p} A^0 \right ] \Psi		
+	=& F_1 \Psi^\dagger \left [e A^0 - \frac{e}{8m^2} \v{q}^2 + \frac{ie}{4m^2} \gv{\sigma} \cdot (\v{p'} \times \v{p}) A^0 \right ] \Psi
+\\	& + F_2 \Psi^\dagger \left [ - \frac{e}{8m^2}\v{q}^2  + \frac{ie}{4m^2} \gv{\sigma} \cdot (\v{p'} \times \v{p}) A^0 \right ] \Psi		
 \end{split}
 \eeq
 
 So the electron-external field scattering, as calculated in QED, has been expressed in terms of mostly nonrelativistic quantities.  There are still the form factors to expand, which depend on $q^2 = (q-0)^2 - \v{q}^2$.  But $q_0$ is of lower order than $\v{q}$, so the leading order corrections will involve only $\v{q}^2$.  They are
 
 \beqa
-	F_1(q^2) &=& 1 - \frac{ \alpha}{3\pi} \left [ \frac{ \v{q}^2}{m^2} \left( \ln\big(\frac{m}{\lambda}\big) \right ) \right ]	\\ 
+	F_1(q^2) &=& 1 - \frac{ \alpha}{3\pi} \left [ \frac{ \v{q}^2}{m^2} \left( \ln\frac{m}{\lambda} \right ) \right ]	\\ 
 	F_2(q^3) &=& a_e - \frac{\alpha}{\pi} \frac{\v{q}^2}{12m^2}	\\
 \eeqa 
 They contain an explicit dependence on the finite photon mass $\lambda$.

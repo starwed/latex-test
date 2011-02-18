@@ -1,0 +1,156 @@
+\section{The two-photon vertex of NRQED}
+%TODO cleanup notation
+In the NRQED Lagrangian, in addition to the terms involving the fermions interaction with a single photon, there are terms which represent the interaction of a fermion with two photons.  At the order needed, all such terms are fixed by gauge invariance.  There are terms, such as those involving $\v{E}^2$, that would are by themselves gauge invariant, but these occur at too high an order.  (The order of such a term would be $E^2 / m^3 \sim mv^6$.)
+
+So though the coefficients of concern are all fixed by considering just the one-photon interactions, they could also be fixed from considering two-photon interactions.  Since it {\it is} possible, it makes sense to do so, as a check of consistency.  In this section, the coefficients of two-photon terms in the NRQED Lagrangian will be fixed from QED calculations.
+
+As before, this will involve calculating some physical process in both QED and NRQED, and comparing the result.  The simplest two photon process to consider is Compton scattering.  By calculating Compton scattering in each theory, the coefficients desired will be obtained.
+
+This is not quite as straightforward as in the case of the one-photon scattering, for the following reason: while the one-photon scattering is a local interaction in both QED and NRQED, Compton scattering will involve some mix of local and non-local diagrams.  In QED, there are of course no local interactions between a fermion and two photons.  The situation is most readily stated diagrammatically.
+
+In QED, the leading order diagrams contributing to Compton scattering are:
+%TODO insert diagram
+
+While in NRQED, the following diagrams contribute to the scattering:
+%TODO insert NRQED diagrams
+
+In each set of diagrams, the vertices represent the {\it total} electron vertex.  For QED this is determined, as before, by the form factors, and for NRQED it is determined by the calculations of the previous section.
+
+Since the two amplitudes must be equal, in principle the process is this: First calculate the scattering amplitude in QED.  Then, calculate the contribution to the scattering amplitude coming from the tree diagrams I and II above.  Whatever discrepancy remains must be the value of the local two-photon vertex III.   
+
+The process of subtracting the one set of diagrams from the other could be slightly complicated, but luckily it turns out there is a simpler path.  By considering the physical origin of the local terms in NRQED, it will be possible to split the QED diagrams into local and non-local parts, where the latter can be shown to be equal to the non-local diagrams in NRQED.  Then, comparing the two scattering processes becomes much easier.
+
+\subsubsection{Z diagrams}
+The high energy theory (QED) doesn't contain any two-photon vertices, while the low energy theory (NRQED) does.  This is a general feature of effective field theories, that new types of local interactions arise.  The high energy theory can have intermediate states that are highly virtual, while the low energy theory doesn't.  Instead, as according to the uncertainty principle, intermediate states with extremely high energy can be considered to occur almost instantaneously, giving rise in the effective theory to local interactions.
+
+How does the local two-photon interaction arise in NRQED?  Of course there are an infinite number of contributions, but we'll consider just the leading order contributions.  These will come from the tree level two photon diagrams as shown above.  Compare the tree-level diagrams in the two theories: in addition to the vertices being different, so are the propagators.  The propagator in QED represents some admixture of the electron and positron field, while in NRQED it is only the electron.
+%%%%%%%%
+In both QED and NRQED, a process is calculated as the sum of a series of diagrams, representing an expansion in perturbation theory.  However, there is a difference btween the two in the nature of perturbation theory employed.
+
+In QED, at each vertex both energy and momentum is conserved.  But intermediate particles may be off mass-shell; that is it is no longer the case that for a particle of four-momentum $p$ and mass $m$ that $p^2 = m^2$.
+
+In NRQED, the old Rayleigh-Schrodinger perturbation theory is used.   All intermediate particles are on mass-shell.  But at the vertices (when represented diagrammatically), although momenta is conserved, energy is not.  
+
+\beq
+	\Delta =  \Sigma_\text{int} \frac{  \matrixel{\text{out} }{V}{\text{int}} \matrixel{\text{int} }{V}{\text{in}} }{E_\text{in} - E_\text{int}}
+	%\Delta = \frac{  \matrixel{A}{B}{C} }{E - E}
+\eeq
+
+
+The trick, then is to take the relativistic tree-level diagrams of QED and rewrite them in the language of  Rayleigh-Schrodinger before trying to compare them to NRQED.  In NRQED, only intermediate states involving electrons can be considered, but in QED intermediate states identified with positrons will appear as well.  It is {\it these} processes, involving a large violation of energy conservation, that will appear as contact terms in NRQED.  
+
+There are two diagrams in QED, and both can be dealt with in the same general way.  First consider the uncrossed diagram:
+%TODO insert diagram
+
+There are two tree level processes that can be considered in the old time-ordered perturbation theory.  The first corresponds to an incoming electron, which first absorbs a photon and then emits one.  The second, more complicated process, involves the creation of intermediate positron.  While a free electron travels along, an incoming photon decays into an electron and positron.  Then, the positron annihilates the incoming electron and emits the outgoing photon.  Because of the shape of this diagram, it is called a ``Z diagram.''
+
+In the Z-diagrams, the electrons and the photons are external, so the sum over the intermediate states is specifically the intermediate states of the positrons.  Likewise, the other diagrams are written as a sum over intermediate electron states.  But because of the rules of Rayleigh-Schrodinger perturbation theory, all these states are on mass shell.  And since the momenta here is fixed, the sum over intermediate states is a sum over spin states.
+
+So the original QED diagram should somehow split into two terms, one involving a sum over electron states and the other a sum over anti-particles.  
+
+%TODO insert diagram
+Call the intermediate momentum $\v{q}$.  The initial energy will be $q_0$, the intermediate energy will be that of the on mass shell particle, $E_q = \sqrt{\v{q}^2 + m^2 }$.
+\beq
+	(propagator)_q = i\frac{ \cancel{q} -m}{q^2 - m^2}  
+		= \frac{1}{\sqrt{\v{q}^2 + m^2} } \left(
+			\frac{ \Sigma \bar{u}(\v{q}) u(\v{q}) }  {q_0 - \sqrt{\v{q}^2 + m^2} }
+			+ \frac{ \Sigma \bar{v}(-\v{q}) v(-\v{q}) }  {q_0 + \sqrt{\v{q}^2 + m^2} }
+		\right )
+\eeq  
+
+This identity can be technically reproduced as follows.  First write the denominator of the propagator as
+\beq
+	i\frac{ \cancel{q} -m}{q^2 - m^2}   = i \frac{ \cancel{q} -m}{q_0^2 -(\v{q}^2 + m^2)}
+\eeq
+This could be factored into 
+\beq
+	q_0^2 -(\v{q}^2 + m^2) = (q_0 + \sqrt{\v{q}^2 + m^2})  (q_0 - \sqrt{\v{q}^2 + m^2})
+\eeq
+So it implies poles at $q_0 = \pm  \sqrt{\v{q}^2 + m^2}$.  There is one unique way of factoring the original propagator into the two poles:
+\beq
+	\frac{1}{2\sqrt{\v{q}^2 + m^2}}
+		\left(
+			\frac{ \gamma^0 \sqrt{\v{q}^2 + m^2} - \v{\gamma} \cdot \v{q} + m}{q_0 - \sqrt{\v{q}^2 + m^2}}
+			- \frac{ \gamma^0 \sqrt{\v{q}^2 + m^2} + \v{\gamma} \cdot \v{q} - m}{q_0 + \sqrt{\v{q}^2 + m^2}}
+		\right)
+\eeq
+The two numerators can be exactly equated to sums over polarisation states of electron and positron spinors:
+\beqa
+	\Sigma u(\v{p}) \bar{u}(\v{p}) &=& \gamma \cdot p + m	\\
+	\Sigma v(\v{p}) \bar{v}(\v{p}) &=& \gamma \cdot p - m	\\
+\eeqa
+These relations hold for particles which are on mass-shell.  That is exactly the case here.  But then, there is an assumption that the quantity $p_0$ above is the on mass-shell energy, $\sqrt{\v{p}^2 + m^2}$.
+
+So, noting that particles with momentum $\pm \v{q}$ have the same energy $\sqrt{\v{q}^2 + m^2}$ and that $q_0$ is the off-mass shell energy from the relativistic diagram, the propagator can be rewritten:
+\beq
+	\frac{1}{2\sqrt{\v{q}^2 + m^2}}
+		\left(
+			\frac{\Sigma u(\v{q}) \bar{u}(\v{q}) }{q_0 - \sqrt{\v{q}^2 + m^2}}
+			- \frac{  \Sigma v(-\v{q}) \bar{v}(-\v{q})}{q_0 + \sqrt{\v{q}^2 + m^2}}
+		\right)
+\eeq
+The numerators have now been put into exactly the forms expected for the regular- and Z-diagrams of old perturbation theory.  The denominators also correspond to the expected form of $E_\text{in} - E_\text{int}$.
+
+First consider the regular diagram.  The initial energy is $q_0$, since in relativistic theory the total energy at the vertex is conserved.  The intermediate energy is the on-mass shell energy of the electron: $\sqrt{\v{q}^2+ m^2}$.  Thus the denominator of $q_0 - \sqrt{\v{q}^2+ m^2}$ is that expected.
+
+Now consider the Z-diagram.  The initial energy is still $q_0$.  The intermediate energy is more complicated: there are two photons, two electrons, and a positron present.  The total combined energy is:
+\beq
+	E_\text{int} = p_0 + p'_0 + k_0 + k'_0 + \sqrt{\v{q}^2 + m^2} = 2q_0 +  \sqrt{\v{q}^2 + m^2}
+\eeq
+Then the difference $E_\text{in} - E_\text{int} = -q_0 - \sqrt{\v{q}^2 + m^2}$.  This correspons to the denominator found above, with the overall negative factor providing the relative minus sign.
+
+
+\subsubsection{Relation between NRQED and old perturbation theory}
+
+Now it remains to show that the regular (non-Z) diagrams of old perturbation theory correspond to the tree level diagrams of NRQED.  This is fairly straight forward, as both use Rayleigh-Schrodinger perturbation theory.
+  
+\subsubsection{Calculation of uv bilinears}
+
+
+
+\paragraph{Scalar bilinears}
+\beqa
+	\ubar(p')v(q)
+		&=&	\udaggervec{p'} \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} \vvec{q}	\\
+		&=&	\phi^\dagger \left( \frac{ \sigdot{q} - \sigdot{p'} }{2m} \right ) \chi	\\
+	\vbar(q)u(p)
+		&=&	\vdaggervec{q} \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} \uvec{p}	\\
+		&=&	\chi^\dagger \left( \frac{ \sigdot{q} - \sigdot{p} }{2m} \right ) \phi	\\
+\eeqa
+
+\paragraph{Vector bilinears}
+Treat $\mu=0$ and $\mu=i$ parts separately
+\beqa
+	\ubar(p') \gamma^0 v(q)
+		&=&	\udaggervec{p'} \vvec{q}	\\
+		&=&	\phi^\dagger \left( \frac{ \sigdot{q} + \sigdot{p'} }{2m} \right ) \chi	\\
+	\vbar{q} \gamma^0 u(p)
+		&=&	\vdaggervec{q} \uvec{p}	\\
+		&=&	\chi^\dagger \left( \frac{ \sigdot{q} + \sigdot{p} }{2m} \right ) \phi	\\
+	\ubar(p') \gamma^i v(q)
+		&=&	\udaggervec{p'} \begin{pmatrix} 0 & \sigma_i \\ \sigma_i & 0 \end{pmatrix} \vvec{q}	\\
+		&=&	\phi^\dagger \sigma_i \chi \\
+	\vbar(q) \gamma^i u(p)
+		&=&	\vdaggervec{q} \begin{pmatrix} 0 & \sigma_i \\ \sigma_i & 0 \end{pmatrix} \uvec{p}	\\
+		&=&	\chi^\dagger \sigma_i \phi 
+\eeqa
+
+
+\paragraph{Tensor bilinears}
+Treat $0i$ and $ij$ parts separately
+\beqa
+	\ubar(p') \sigma^{0i} v(q)
+		&=&	\udaggervec{p'} \begin{pmatrix} 0 & \sigma_i \\ -\sigma_i & 0  \end{pmatrix} \vvec{q}	\\
+		&=&	\phi^\dagger \sigma_i \chi	\\
+	\vbar(q) \sigma^{0i} u(p)
+		&=&	\vdaggervec{q} \begin{pmatrix} 0 & \sigma_i \\ -\sigma_i & 0  \end{pmatrix} \uvec{p}	\\
+		&=& - \chi^\dagger \sigma_i \phi	\\
+	\ubar(p') \sigma^{ij} v(q)
+		&=& 	-i\epsilon_{ijk}\udaggervec{p'} \begin{pmatrix} \sigma_k & 0 \\ 0 & \sigma_k  \end{pmatrix} \vvec{q}	\\
+		&=&	-i\epsilon_{ijk} \phi^\dagger \left( \frac{ \sigma_k \sigdot{q} + \sigdot{p'}\sigma_k }{2m} \right ) \chi	\\
+	\vbar(q) \sigma^{ij} u(p)
+		&=&	-i\epsilon_{ijk}\vdaggervec{q} \begin{pmatrix} \sigma_k & 0 \\ 0 & \sigma_k  \end{pmatrix}  \uvec{p}	\\
+		&=&	-i\epsilon_{ijk} \chi^\dagger \left( \frac{ \sigma_k \sigdot{p} + \sigdot{q}\sigma_k }{2m} \right) \phi
+\eeqa
+
+
