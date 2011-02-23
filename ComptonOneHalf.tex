@@ -9,10 +9,44 @@ As before, this will involve calculating some physical process in both QED and N
 This is not quite as straightforward as in the case of the one-photon scattering, for the following reason: while the one-photon scattering is a local interaction in both QED and NRQED, Compton scattering will involve some mix of local and non-local diagrams.  In QED, there are of course no local interactions between a fermion and two photons.  The situation is most readily stated diagrammatically.
 
 In QED, the leading order diagrams contributing to Compton scattering are:
-%TODO insert diagram
+
+\vspace{1em}
+ \mbox{
+\begin{minipage}{1.6in}
+   \includegraphics[scale=0.8]{eps/2photon-blob} 
+\end{minipage}
+$	=	\hspace{2em} 	 $
+\begin{minipage}{1.6in}
+   \includegraphics[scale=0.8]{eps/Tree-crossed}
+\end{minipage}
+$\hspace{2em}   +  \hspace{2em} $
+\begin{minipage}{1.6in}
+   \includegraphics[scale=0.8]{eps/Tree-uncrossed} 
+\end{minipage}
+} 
+\vspace{1em}
+
+
 
 While in NRQED, the following diagrams contribute to the scattering:
-%TODO insert NRQED diagrams
+
+\vspace{1em}
+ \mbox{
+\begin{minipage}{1.6in}
+   \includegraphics[scale=0.8]{eps/2photon-blob} 
+\end{minipage}
+$	=	\hspace{2em} 	 $
+\begin{minipage}{1.6in}
+   %\includegraphics[scale=0.8]{eps/Tree-crossed-square}
+\end{minipage}
+$\hspace{2em}   +  \hspace{2em} $
+\begin{minipage}{1.6in}
+   \includegraphics[scale=0.8]{eps/Tree-uncrossed-square} 
+\end{minipage}
+} 
+\vspace{1em}
+
+
 
 In each set of diagrams, the vertices represent the {\it total} electron vertex.  For QED this is determined, as before, by the form factors, and for NRQED it is determined by the calculations of the previous section.
 
@@ -40,7 +74,26 @@ In NRQED, the old Rayleigh-Schrodinger perturbation theory is used.   All interm
 The trick, then is to take the relativistic tree-level diagrams of QED and rewrite them in the language of  Rayleigh-Schrodinger before trying to compare them to NRQED.  In NRQED, only intermediate states involving electrons can be considered, but in QED intermediate states identified with positrons will appear as well.  It is {\it these} processes, involving a large violation of energy conservation, that will appear as contact terms in NRQED.  
 
 There are two diagrams in QED, and both can be dealt with in the same general way.  First consider the uncrossed diagram:
-%TODO insert diagram
+%TODO fix diagrams
+
+
+\vspace{1em}
+ \mbox{
+\begin{minipage}{1.6in}
+   \includegraphics[scale=0.8]{eps/Tree-uncrossed} 
+\end{minipage}
+$	 \hspace{2em} =		 $
+\begin{minipage}{1.6in}
+   \includegraphics[scale=0.8]{eps/Tree-uncrossed-square}
+\end{minipage}
+$\hspace{2em}   +  \hspace{2em} $
+\begin{minipage}{1.6in}
+   \includegraphics[scale=0.8]{eps/Zdiag} 
+\end{minipage}
+} 
+\vspace{1em}
+
+
 
 There are two tree level processes that can be considered in the old time-ordered perturbation theory.  The first corresponds to an incoming electron, which first absorbs a photon and then emits one.  The second, more complicated process, involves the creation of intermediate positron.  While a free electron travels along, an incoming photon decays into an electron and positron.  Then, the positron annihilates the incoming electron and emits the outgoing photon.  Because of the shape of this diagram, it is called a ``Z diagram.''
 
@@ -50,13 +103,23 @@ So the original QED diagram should somehow split into two terms, one involving a
 
 %TODO insert diagram
 Call the intermediate momentum $\v{q}$.  The initial energy will be $q_0$, the intermediate energy will be that of the on mass shell particle, $E_q = \sqrt{\v{q}^2 + m^2 }$.
-\beq
-	(propagator)_q = i\frac{ \cancel{q} -m}{q^2 - m^2}  
-		= \frac{1}{\sqrt{\v{q}^2 + m^2} } \left(
+
+
+\vspace{1em}
+ \mbox{
+\begin{minipage}{1in}
+   \includegraphics[scale=0.8]{eps/prop} 
+\end{minipage}
+$	=$ \hspace{1em} $	i\frac{ \cancel{q} -m}{q^2 - m^2}  
+		= i\frac{1}{\sqrt{\v{q}^2 + m^2} } \left(
 			\frac{ \Sigma \bar{u}(\v{q}) u(\v{q}) }  {q_0 - \sqrt{\v{q}^2 + m^2} }
 			+ \frac{ \Sigma \bar{v}(-\v{q}) v(-\v{q}) }  {q_0 + \sqrt{\v{q}^2 + m^2} }
-		\right )
-\eeq  
+		\right )	 $
+} 
+\vspace{1em}
+
+
+
 
 This identity can be technically reproduced as follows.  First write the denominator of the propagator as
 \beq
@@ -99,16 +162,121 @@ Now consider the Z-diagram.  The initial energy is still $q_0$.  The intermediat
 \eeq
 Then the difference $E_\text{in} - E_\text{int} = -q_0 - \sqrt{\v{q}^2 + m^2}$.  This correspons to the denominator found above, with the overall negative factor providing the relative minus sign.
 
+So rewriting the propagator into these two separate terms can be understood as how the fully relativistic process appears in old perturbation theory.  In a relativistic theory, intermediate states involving positrons must be accounted for.  For higher order QED diagrams more complicated processes will appear, but at the tree level only those discussed above are involved.  No approximations are involved --- the identity for the propagator is exact.  The form is more convenient for discussing nonrelativistic energies, but is still equivalent to the relativistic diagrams.
+
+%Four equations for each of the diagrams
+
+
+
+
 
 \subsubsection{Relation between NRQED and old perturbation theory}
+Now it is necessary to show how the diagrams in old perturbation theory relate to those of NRQED.  
 
-Now it remains to show that the regular (non-Z) diagrams of old perturbation theory correspond to the tree level diagrams of NRQED.  This is fairly straight forward, as both use Rayleigh-Schrodinger perturbation theory.
-  
+The normal diagrams can be easily interpreted as the product of vertices and the relativistic Rayleigh-Schrodinger propagator:
+%Equation with diagram on left, prodcut of verices on right
+
+\vspace{1em}
+ \mbox{
+\begin{minipage}{1.6in}
+   \includegraphics[scale=0.8]{eps/Tree-uncrossed} 
+\end{minipage}
+$	=	\hspace{2em} 	\Bigg( $
+\begin{minipage}{1.0in}
+   \includegraphics[scale=0.6]{eps/vertex-in}
+\end{minipage}
+$\Bigg ) \times \Bigg ($
+\begin{minipage}{0.8in}
+   \includegraphics[scale=0.9]{eps/prop} 
+\end{minipage}
+$\Bigg ) \times \Bigg ($\begin{minipage}{1.0in}
+   \includegraphics[scale=0.6]{eps/vertex-out} 
+\end{minipage}
+$\Bigg )$
+} 
+\vspace{1em}
+ 
+
+
+
+Where
+%Define each piece
+%Vertex in, prop, vertex out
+Recall that the total NRQED one-photon vertex was derived by comparing to the QED vertex, so necessarily
+\beq
+	\bar{u} \Gamma^0 u = \phi^\dagger V^0 \phi , \;  \bar{u} \Gamma^i u = \phi^\dagger V^i \phi
+\eeq 
+The propagator $1/(q_0 - \sqrt{m^2 + \v{q}^2})$ is equal to the total propagator in NRQED (including relativistic corrections).  So it really is the case that the two sets of diagrams are equivalent.  Whether the vertices are written in terms of NRQED or QED, the ultimate expression will be the same.
+
+It then follows that the contributions to the local contact term in NRQED come (at tree level) exactly from the Z-diagrams.  To calculate the contact terms to the order (in the nonrelativistic expansion) needed, the Z-diagrams need to be approximated just as the one-photon vertex diagrams were in the previous section.  Then the NRQED coefficients can be obtained by comparing the two calculations.  
+
+At nonrelativistic energies, it would be expected that the sum over intermediate states now does not resemble a propagator.  Because only terms involving up to one power of momentum need be kept, the square root term becomes simply $m$.  $q_0$, the total incoming energy, will involve both the electron and photon energy.  Depending on whether the crossed or uncrossed diagram is considered, it will be either $q_0 = p_0 + k_0$ or $q_0 = p_0 - k'_0$.  In either case, it will be $m$ at the leading order, with a first order correction due to the photon energy. 
+\beq
+	\frac{ \Sigma \bar{v}(-\v{q}) v(-\v{q}) }  {q_0 + \sqrt{\v{q}^2 + m^2} } 
+		\approx \frac{ \Sigma \bar{v}(-\v{q}) v(-\v{q}) }  {2m + (q_0-m) }
+\eeq
+Since $q_0-m << m$, this can then be written as 
+\beq
+		\approx  \left( 1 - \frac{q_0-m}{2m} \right ) \frac{ \Sigma \bar{v}(-\v{q}) v(-\v{q}) }  {2m}
+\eeq
+In this approximation, the two Z diagrams become
+
+
+\vspace{1em}
+ \mbox{
+\begin{minipage}{1.6in}
+   \includegraphics[scale=0.6]{eps/Zdiag} 
+\end{minipage}
+= \hspace{1em}
+$	
+\Sigma_{\text{spin}}
+\left( 1 - \frac{k_0}{2m} \right ) \frac{1}{2m} 
+	\bar{u}(\v{p'}) \gamma^\mu \epsilon^*_\mu(k') v_s(-\v{p} - \v{k}) \bar{v}_s(-\v{p} - \v{k}) \Gamma^\nu \epsilon_\nu(k) u(\v{p})
+$
+} 
+\vspace{1em}
+
+
+\vspace{1em}
+ \mbox{
+\begin{minipage}{1.6in}
+   \includegraphics[scale=0.6]{eps/Zdiag2} 
+\end{minipage}
+= \hspace{1em}
+$	
+\Sigma_{\text{spin}}
+\left( 1 + \frac{k'_0}{2m} \right ) \frac{1}{2m} 
+	\bar{u}(\v{p'}) \gamma^\mu \epsilon_\mu(k) v(\v{k'} - \v{p})_s \bar{v}_s(\v{k'} - \v{p}) \Gamma^\nu \epsilon^*_\nu(k') u(\v{p})
+$
+} 
+\vspace{1em}
+
+While the sums over intermediate states could also be expanded, it'll be easiest to calculate these in the above form.  The vertices will be the sum of particle-antiparticle bilinears, which can be calculated separately.
+
+
+
 \subsubsection{Calculation of uv bilinears}
+The bulk of the calculation has been reduced to finding the product of particle-antiparticle vertices.  As in the one-photon calculation, the vertices can be broken down into the sum of bilinears.  To compare to NRQED, it will be necessary to find the nonrelativistic expressions for these bilinears, just as before.  However, only terms of the leading order and suppressed by a single power of momenta need be kept, since the {\it product} of two bilinears is the final result.
 
+To calculate Compton scattering, the assumption of elasticity will no longer be applicable.  So it can no longer be assumed that the photon energy is zero.  And in fact conservation of energy is explicitly violated at the vertices.   
 
+The intermediate positron states will be labelled $\chi$ (and $\chi^\dagger$), and the incoming/outgoing electron states $\phi$ (and $\phi^\dagger$).  The incoming momentum is $p$, the outgoing $p'$, and the intermediate momentum (posessed by the anti-particle) will be called $q$.
 
+There are two types of vertices, coming from $\bar{v} \Gamma^\mu u$  and $\bar{u} \Gamma^\mu v$.  The general form of these must of course be related.
+\beq
+	\bar{v}(\v{q}) \Gamma^\mu u(\v{p})
+	 =	v^\dagger(\v{q}) \gamma^0 \Gamma^\mu u(\v{p})
+	 = \left[ u^\dagger(\v{p})  \Gamma^\mu{}^\dagger \gamma^0 v(\v{q}) \right ]^\dagger
+\eeq
+Using that $\gamma^0 \gamma^0 = I$.
+\beq
+	=  \left[ \bar{u}(\v{p}) \gamma^0  \Gamma^\mu{}^\dagger \gamma^0 v(\v{q}) \right ]^\dagger
+\eeq
+But all the bilinears are exactly defined such that the bilinears are Hermitian.  
+
+First start by calculating the scalar like bilinears.  
 \paragraph{Scalar bilinears}
+The scalar bilinear is straightforward:
 \beqa
 	\ubar(p')v(q)
 		&=&	\udaggervec{p'} \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} \vvec{q}	\\
@@ -119,7 +287,7 @@ Now it remains to show that the regular (non-Z) diagrams of old perturbation the
 \eeqa
 
 \paragraph{Vector bilinears}
-Treat $\mu=0$ and $\mu=i$ parts separately
+To calculate the vector like bilinears, treat the spatial and time-like components separately.  First the time-like:
 \beqa
 	\ubar(p') \gamma^0 v(q)
 		&=&	\udaggervec{p'} \vvec{q}	\\
@@ -127,6 +295,9 @@ Treat $\mu=0$ and $\mu=i$ parts separately
 	\vbar{q} \gamma^0 u(p)
 		&=&	\vdaggervec{q} \uvec{p}	\\
 		&=&	\chi^\dagger \left( \frac{ \sigdot{q} + \sigdot{p} }{2m} \right ) \phi	\\
+\eeqa
+Then the spatial:
+\beqa
 	\ubar(p') \gamma^i v(q)
 		&=&	\udaggervec{p'} \begin{pmatrix} 0 & \sigma_i \\ \sigma_i & 0 \end{pmatrix} \vvec{q}	\\
 		&=&	\phi^\dagger \sigma_i \chi \\
@@ -137,7 +308,7 @@ Treat $\mu=0$ and $\mu=i$ parts separately
 
 
 \paragraph{Tensor bilinears}
-Treat $0i$ and $ij$ parts separately
+First consider the part of the tensor bilinear with one spatial and one time-like index:
 \beqa
 	\ubar(p') \sigma^{0i} v(q)
 		&=&	\udaggervec{p'} \begin{pmatrix} 0 & \sigma_i \\ -\sigma_i & 0  \end{pmatrix} \vvec{q}	\\
@@ -145,6 +316,9 @@ Treat $0i$ and $ij$ parts separately
 	\vbar(q) \sigma^{0i} u(p)
 		&=&	\vdaggervec{q} \begin{pmatrix} 0 & \sigma_i \\ -\sigma_i & 0  \end{pmatrix} \uvec{p}	\\
 		&=& - \chi^\dagger \sigma_i \phi	\\
+\eeqa
+Then the part with two spatial indices:
+\beqa
 	\ubar(p') \sigma^{ij} v(q)
 		&=& 	-i\epsilon_{ijk}\udaggervec{p'} \begin{pmatrix} \sigma_k & 0 \\ 0 & \sigma_k  \end{pmatrix} \vvec{q}	\\
 		&=&	-i\epsilon_{ijk} \phi^\dagger \left( \frac{ \sigma_k \sigdot{q} + \sigdot{p'}\sigma_k }{2m} \right ) \chi	\\
