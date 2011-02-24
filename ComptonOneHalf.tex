@@ -260,7 +260,7 @@ The bulk of the calculation has been reduced to finding the product of particle-
 
 To calculate Compton scattering, the assumption of elasticity will no longer be applicable.  So it can no longer be assumed that the photon energy is zero.  And in fact conservation of energy is explicitly violated at the vertices.   
 
-The intermediate positron states will be labelled $\chi$ (and $\chi^\dagger$), and the incoming/outgoing electron states $\phi$ (and $\phi^\dagger$).  The incoming momentum is $p$, the outgoing $p'$, and the intermediate momentum (posessed by the anti-particle) will be called $q$.
+The intermediate positron states will be labelled $\chi$ (and $\chi^\dagger$), and the incoming/outgoing electron states $\phi$ (and $\phi^\dagger$).  The incoming momentum is $p$, the outgoing $p'$, and the intermediate momentum (possessed by the anti-particle) will be called $q$.
 
 There are two types of vertices, coming from $\bar{v} \Gamma^\mu u$  and $\bar{u} \Gamma^\mu v$.  The general form of these must of course be related.
 \beq
@@ -274,17 +274,8 @@ Using that $\gamma^0 \gamma^0 = I$.
 \eeq
 But all the bilinears are exactly defined such that the bilinears are Hermitian.  
 
-First start by calculating the scalar like bilinears.  
-\paragraph{Scalar bilinears}
-The scalar bilinear is straightforward:
-\beqa
-	\ubar(p')v(q)
-		&=&	\udaggervec{p'} \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} \vvec{q}	\\
-		&=&	\phi^\dagger \left( \frac{ \sigdot{q} - \sigdot{p'} }{2m} \right ) \chi	\\
-	\vbar(q)u(p)
-		&=&	\vdaggervec{q} \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} \uvec{p}	\\
-		&=&	\chi^\dagger \left( \frac{ \sigdot{q} - \sigdot{p} }{2m} \right ) \phi	\\
-\eeqa
+
+The interaction is a combination of the vector and tensor terms: $\Gamma^\mu(k) = F_1 \gamma^\mu + F_2 \frac{i k_\nu \sigma^{\mu\nu} }{2m}$.  These terms must be expressed nonrelativistically, including terms of up to one power of the momentum.  Higher order terms may be ignored.  So the bispinors themselves are needed only in the first approximation.
 
 \paragraph{Vector bilinears}
 To calculate the vector like bilinears, treat the spatial and time-like components separately.  First the time-like:
@@ -308,23 +299,266 @@ Then the spatial:
 
 
 \paragraph{Tensor bilinears}
+The tensor bilinear will always appear coupled with the photon momentum.  So only terms of order unity are needed.
 First consider the part of the tensor bilinear with one spatial and one time-like index:
 \beqa
 	\ubar(p') \sigma^{0i} v(q)
-		&=&	\udaggervec{p'} \begin{pmatrix} 0 & \sigma_i \\ -\sigma_i & 0  \end{pmatrix} \vvec{q}	\\
+		&=& i	\udaggervec{p'} \begin{pmatrix} 0 & \sigma_i \\ -\sigma_i & 0  \end{pmatrix} \vvec{q}	\\
 		&=&	\phi^\dagger \sigma_i \chi	\\
 	\vbar(q) \sigma^{0i} u(p)
-		&=&	\vdaggervec{q} \begin{pmatrix} 0 & \sigma_i \\ -\sigma_i & 0  \end{pmatrix} \uvec{p}	\\
-		&=& - \chi^\dagger \sigma_i \phi	\\
+		&=&	i \vdaggervec{q} \begin{pmatrix} 0 & \sigma_i \\ -\sigma_i & 0  \end{pmatrix} \uvec{p}	\\
+		&=& - i \chi^\dagger \sigma_i \phi	\\
 \eeqa
 Then the part with two spatial indices:
 \beqa
 	\ubar(p') \sigma^{ij} v(q)
-		&=& 	-i\epsilon_{ijk}\udaggervec{p'} \begin{pmatrix} \sigma_k & 0 \\ 0 & \sigma_k  \end{pmatrix} \vvec{q}	\\
-		&=&	-i\epsilon_{ijk} \phi^\dagger \left( \frac{ \sigma_k \sigdot{q} + \sigdot{p'}\sigma_k }{2m} \right ) \chi	\\
+		&=& 	\epsilon_{ijk}\udaggervec{p'} \begin{pmatrix} \sigma_k & 0 \\ 0 & \sigma_k  \end{pmatrix} \vvec{q}	\\
+		&=&	\epsilon_{ijk} \phi^\dagger \left( \frac{ \sigma_k \sigdot{q} + \sigdot{p'}\sigma_k }{2m} \right ) \chi	\\
 	\vbar(q) \sigma^{ij} u(p)
-		&=&	-i\epsilon_{ijk}\vdaggervec{q} \begin{pmatrix} \sigma_k & 0 \\ 0 & \sigma_k  \end{pmatrix}  \uvec{p}	\\
-		&=&	-i\epsilon_{ijk} \chi^\dagger \left( \frac{ \sigma_k \sigdot{p} + \sigdot{q}\sigma_k }{2m} \right) \phi
+		&=&	\epsilon_{ijk}\vdaggervec{q} \begin{pmatrix} \sigma_k & 0 \\ 0 & \sigma_k  \end{pmatrix}  \uvec{p}	\\
+		&=&	\epsilon_{ijk} \chi^\dagger \left( \frac{ \sigma_k \sigdot{p} + \sigdot{q}\sigma_k }{2m} \right) \phi
 \eeqa
+These terms will not contribute to the order desired.  So
+\beqa
+i \frac{q_\nu}{2m}\ubar(p') \sigma^{0\nu} v(q)
+	&= &	i \frac{q_j}{2m}\ubar(p') \sigma^{0j} v(q) \\
+	&\approx&	i \frac{q_j}{2m} \phi^\dagger \sigma_i \xi	
+\eeqa
+
+\beqa
+i \frac{q_\nu}{2m}\ubar(p') \sigma^{i\nu} v(q)
+	&= &	i \frac{q_j}{2m}\ubar(p') \sigma^{ij} v(q) \\
+	&\approx&	i \frac{q_j}{2m} 	
+\eeqa
+
+
+
+
+%%%%%% OLD
+
+
+First start by calculating the scalar like bilinears.  
+\paragraph{Scalar bilinears}
+The scalar bilinear is straightforward:
+\beqa
+	\ubar(p')v(q)
+		&=&	\udaggervec{p'} \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} \vvec{q}	\\
+		&=&	\phi^\dagger \left( \frac{ \sigdot{q} - \sigdot{p'} }{2m} \right ) \chi	\\
+	\vbar(q)u(p)
+		&=&	\vdaggervec{q} \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} \uvec{p}	\\
+		&=&	\chi^\dagger \left( \frac{ \sigdot{q} - \sigdot{p} }{2m} \right ) \phi	\\
+\eeqa
+
+\subsection{Nonrelativistic expressions for Z diagrams}
+\vspace{1em}
+ \mbox{
+\begin{minipage}{1.6in}
+   \includegraphics[scale=0.6]{eps/Zdiag} 
+\end{minipage}
+= \hspace{1em}
+$	
+\Sigma_{\text{spin}}
+\left( 1 - \frac{k_0}{2m} \right ) \frac{1}{2m} 
+	\bar{u}(\v{p'}) \gamma^\mu \epsilon^*_\mu(k') v_s(-\v{p} - \v{k}) \bar{v}_s(-\v{p} - \v{k}) \Gamma^\nu \epsilon_\nu(k) u(\v{p})
+$
+} 
+\vspace{1em}
+
+
+\vspace{1em}
+ \mbox{
+\begin{minipage}{1.6in}
+   \includegraphics[scale=0.6]{eps/Zdiag2} 
+\end{minipage}
+= \hspace{1em}
+$	
+\Sigma_{\text{spin}}
+\left( 1 + \frac{k'_0}{2m} \right ) \frac{1}{2m} 
+	\bar{u}(\v{p'}) \gamma^\mu \epsilon_\mu(k) v(\v{k'} - \v{p})_s \bar{v}_s(\v{k'} - \v{p}) \Gamma^\nu \epsilon^*_\nu(k') u(\v{p})
+$
+} 
+\vspace{1em}
+
+Looking at right hand sides, there are two types of terms to calculate:
+
+\beq \label{eq:Sh:uvGamma}
+	\bar{u}(\v{p'}) \Gamma^\mu(q) v(\gv{\ell}) \;  \text{and} \; \bar{u}(\gv{\ell}) \Gamma^\mu(q) v(\v{p})
+\eeq
+Here $\ell$ is the intermediate momentum of the positron, and $q$ is the momentum of the photon going into the vertex (either $k$ or $-k'$).  The form of $\Gamma$ is
+\beq
+	\Gamma^\mu(q) = F_1 \gamma^\mu + F_2 \frac{q_\nu \sigma^{\mu\nu}}{2m}
+\eeq
+To compare the Z diagrams to the contact terms of NRQED, first express the bilinears in the vertices of \eqref{eq:Sh:uvGamma} in terms of the nonrelativistic quantities.  This can be done for each of the two terms in $\Gamma^\mu$ separately.  The bispinors $u$ will be replaced by the spinor $\phi$, as before.  Now, the bispinor $v$ will be replaced by a spinor for a positron, which shall be called $\chi$.  In doing the expansion only terms up to $\mathcal{O}(1/m)$ need be kept.
+
+
+To calculate the vector like bilinears, treat the spatial and time-like components separately.  First $\mu=0$:
+\beqa
+	\ubar(p') \gamma^0 v(\ell)
+		&=&	\udaggervec{\v{p'}} \vvec{\v{q}}	\\
+		&=&	\phi^\dagger \left( \frac{ \sigdot{\ell} + \sigdot{p'} }{2m} \right ) \chi	\\
+	\vbar{\ell} \gamma^0 u(p)
+		&=&	\vdaggervec{\ell} \uvec{p}	\\
+		&=&	\chi^\dagger \left( \frac{ \sigdot{\ell} + \sigdot{p} }{2m} \right ) \phi	
+\eeqa
+Then $\mu=i$:
+\beqa
+	\ubar(p') \gamma^i v(\ell)
+		&=&	\udaggervec{p'} \begin{pmatrix} 0 & \sigma_i \\ \sigma_i & 0 \end{pmatrix} \vvec{\ell}	\\
+		&=&	\phi^\dagger \sigma_i \chi \\
+	\vbar(\ell) \gamma^i u(p)
+		&=&	\vdaggervec{\ell} \begin{pmatrix} 0 & \sigma_i \\ \sigma_i & 0 \end{pmatrix} \uvec{p}	\\
+		&=&	\chi^\dagger \sigma_i \phi 
+\eeqa
+
+In the tensor terms a factor of momentum $q_\nu$ appears.  The spatial part, $q_j$ is ``naturally raised" so $q_j = -(\v{q})_j$.  As before the two types of indices should be treated separately.  For $\mu=0$:
+
+\beqa
+	\frac{i q_\nu}{2m} \ubar(p') \sigma^{0 \nu} v(\ell) 
+		&=& \frac{i q_j}{2m} \ubar(p') \sigma^{0j} v(\ell) \\
+		&=& -\frac{q_j}{2m} \udaggervec{p'} \Mblock{0}{\sigma^i}{-\sigma^i}{0} \vvec{\ell}	\\
+		&=& \phi^\dagger \frac{ \sigdot{q}}{2m} \chi	\\
+	\frac{i q_\nu}{2m} \vbar(\ell) \sigma^{0 \nu} u(p) 
+		&=& \frac{i q_j}{2m} \vbar(\ell) \sigma^{0j} u(p) \\
+		&=& -\frac{q_j}{2m} \vbar{\ell} \Mblock{0}{\sigma^i}{-\sigma^i}{0} \uvec{p}	\\
+		&=& -\chi^\dagger \frac{ \sigdot{q}}{2m} \phi	\\
+\eeqa
+Then for $\mu=i$
+\beq
+	\frac{i q_\nu}{2m} \ubar(p') \sigma^{i \nu} v(\ell)
+	 	= \frac{i q_0}{2m} \ubar(p') \sigma^{i 0} v(\ell) + \frac{i q_j}{2m} \ubar(p') \sigma^{i j} v(\ell)	
+\eeq
+\beq
+	 = - \frac{i q_0}{2m}  \udaggervec{p'} \Mblock{0}{\sigma^i}{-\sigma^i}{0} \vvec{\ell} 	
+	 	+ \frac{i q_j}{2m}  \epsilon_{ijk}  \udaggervec{p'} \Mblock{\sigma^k}{0}{0}{\sigma^k} \vvec{\ell} \nonumber
+\eeq
+The second term will be of order $\mathcal{O}(1/m^2)$ and so can be neglected.  So 
+\beq
+	\frac{i q_\nu}{2m} \ubar(p') \sigma^{i \nu} v(\ell) 
+		= \phi^\dagger \frac{q_0 \sigma_i}{2m} \chi
+\eeq
+The complementary term is 
+\beq
+	\frac{i q_\nu}{2m} \vbar(\ell) \sigma^{i \nu} u(p)
+	 	= \frac{i q_0}{2m} \vbar(\ell) \sigma^{i 0} v(\ell) + \frac{i q_j}{2m} \ubar(p') \sigma^{i j} u(p)	
+\eeq
+Again,  the second term with $\sigma^{ij}$ has the same general structure and will be of order $1/m^2$.  So 
+\beqa
+		\frac{i q_\nu}{2m} \vbar(\ell) \sigma^{i \nu} u(p)
+	 &=&	\frac{i q_0}{2m} \vdaggervec{\ell} \Mblock{0}{\sigma^i}{-\sigma^i}{0} \uvec{p} 	\\
+	 &=&	- \chi^\dagger \frac{q _0 \sigma^i}{2m} \phi
+\eeqa
+
+Now the total vertices $\ubar \Gamma^\mu v$ can be expressed nonrelativistically:
+
+\beq
+	\ubar(p') \Gamma^0 v(\ell)  
+		=  \phi^\dagger(p') \left( F_1 \frac{ \sigdotg{\ell} + \sigdot{p'} }{2m} + F_2 \frac{ \sigdot{q} } {2m} \right ) \chi(\ell)
+\eeq
+
+\beq
+	\vbar(\ell) \Gamma^0 v(p)  
+		=  \chi^\dagger(p') \left( F_1 \frac{ \sigdotg{\ell} + \sigdot{p} }{2m} + F_2 \frac{ \sigdot{q} } {2m} \right ) \phi(\ell)
+\eeq
+	
+\beq
+	\ubar(p') \Gamma^i v(\ell)  
+		= \phi^\dagger \left( F_1 + F_2 \frac{q_0}{2m} \right) \sigma^i \chi
+\eeq
+			
+\beq
+	\vbar(\ell) \Gamma^i v(p)  
+		= \chi^\dagger \left( F_1 - F_2 \frac{q_0}{2m} \right) \sigma^i \phi
+\eeq			
+
+Returning to the Z diagrams, the structures $\Gamma^\mu$ appear contracted with the photon polarization.  Because a physical process is being calculated, the result should not depend on the gauge chosen.  So it will be easiest to choose the gauge where the photons are transverse and $\epsilon_0 = 0$.  Then $\Gamma \cdot \epsilon = - \gv{\Gamma} \cdot \gv{\epsilon}$.
+
+\vspace{1em}
+ \mbox{
+\begin{minipage}{1in}
+   \includegraphics[scale=0.4]{eps/Zdiag} 
+\end{minipage}
+= \hspace{0.5em}
+$
+\Sigma_{\text{spin}}
+\left( 1 - \frac{k_0}{2m} \right ) \frac{1}{2m} 
+	\left[ \phi^\dagger \left( F_1 + F_2 \frac{ -k'_0}{2m} \right ) \gv{\sigma} \cdot \gv{\epsilon}^*(k') \chi \right]
+	\left[ \epsilon_j(k) \chi^\dagger \left( F_1 - F_2 \frac{k_0}{2m} \right)  \gv{\sigma} \cdot  \gv{\epsilon}(k)   \phi \right ]	
+$
+} 
+\vspace{1em}
+The sum over intermediate spin spates just becomes the identity: $\Sigma_{\text{spin}} \chi^\dagger \chi = 1$. 
+\beq
+	= \frac{1}{2m} \left( 1 - \frac{k_0}{2m} \right ) \phi^\dagger \left[ 
+			\left( F_1 - F_2 \frac{k'_0}{2m} \right )
+			\left( F_1 - F_2 \frac{k_0}{2m} \right)
+			\gv{\sigma} \cdot \gv{\epsilon}^*(k')  \gv{\sigma} \cdot  \gv{\epsilon}(k)  
+		\right ] \phi
+\eeq
+	
+Since only terms up to order $1/m$ are needed, this can be simplified.  Also, in this approximation $k'_0 \approx k_0$, as the total conservation of energy implies $k'_0 - k_0 = p_0 - p'_0 \sim \v{p}^2/m^2$.  So for convenience everything will be written in terms of $k_0$.  
+
+\beq
+	= \frac{1}{2m}  \phi^\dagger \left[ 
+			\left( F_1^2 - F_1 [F_1 + 2 F_2 ] \frac{k_0}{2m} \right )
+			\gv{\sigma} \cdot \gv{\epsilon}^*(k')  \gv{\sigma} \cdot  \gv{\epsilon}(k)  
+		\right ] \phi
+\eeq
+
+
+\vspace{1em}
+ \mbox{
+\begin{minipage}{1in}
+   \includegraphics[scale=0.4]{eps/Zdiag2} 
+\end{minipage}
+= \hspace{0.5em}
+$	
+\Sigma_{\text{spin}}
+\left( 1 + \frac{k'_0}{2m} \right ) \frac{1}{2m} 
+	\left[ \phi^\dagger \left( F_1 + F_2 \frac{ k_0}{2m} \right ) \gv{\sigma} \cdot \gv{\epsilon}^(k) \chi \right]
+	\left[ \epsilon_j(k) \chi^\dagger \left( F_1 + F_2 \frac{k'_0}{2m} \right)  \gv{\sigma} \cdot  \gv{\epsilon}^*(k')   \phi \right ]	
+$
+} 
+\vspace{1em}
+After summing over spin states
+\beq
+	= \frac{1}{2m} \left( 1 + \frac{k'_0}{2m} \right ) \phi^\dagger \left[ 
+			\left( F_1 + F_2 \frac{k_0}{2m} \right )
+			\left( F_1 + F_2 \frac{k'_0}{2m} \right)
+			\gv{\sigma} \cdot \gv{\epsilon}^(k)  \gv{\sigma} \cdot  \gv{\epsilon}^*(k')  
+		\right ] \phi
+\eeq
+And then applying the same simplifications as before
+\beq
+	= \frac{1}{2m}  \phi^\dagger \left[ 
+			\left( F_1^2 + F_1 [F_1 + 2 F_2 ] \frac{k_0}{2m} \right )
+			\gv{\sigma} \cdot \gv{\epsilon}^(k)  \gv{\sigma} \cdot  \gv{\epsilon}^*(k')  
+		\right ] \phi
+\eeq
+
+The local interaction comes from the sum of the two diagrams.  Adding them together,
+
+%TODO add diagram?
+\beqa
+(\text{Sum of Z diagrams}) &=& \frac{1}{2m} \phi^\dagger \Bigg [
+	 \left( F_1^2 + F_1 [F_1 + 2 F_2 ] \frac{k_0}{2m} \right )
+			\gv{\sigma} \cdot \gv{\epsilon}^(k)  \gv{\sigma} \cdot  \gv{\epsilon}^*(k')  \\
+	&&+ 
+			\left( F_1^2 - F_1 [F_1 + 2 F_2 ] \frac{k_0}{2m} \right )
+			\gv{\sigma} \cdot \gv{\epsilon}^*(k')  \gv{\sigma} \cdot  \gv{\epsilon}(k)  
+		 \Bigg ] \phi	\\
+	&=&
+		\frac{F_1}{2m}  \phi^\dagger \Bigg [
+			F_1 \{ \gv{\sigma} \cdot \gv{\epsilon},   \gv{\sigma} \cdot  \gv{\epsilon}^* \}
+			+ (F_1 + 2F_2) \frac{k_0}{2m} [ \gv{\sigma} \cdot \gv{\epsilon},   \gv{\sigma} \cdot  \gv{\epsilon}^* ]
+		 \Bigg ] \phi	\\
+	&=&
+		\frac{F_1}{m}  \phi^\dagger \Bigg [
+			F_1  \gv{\epsilon} \cdot  \gv{\epsilon}^* 
+			+ (F_1 + 2F_2) \frac{k_0}{2m} \gv{\sigma} \cdot \gv{\epsilon} \times  \gv{\epsilon}^* 
+		 \Bigg ] \phi		 
+\eeqa
+		
+	
+
 
 
