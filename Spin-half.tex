@@ -4,18 +4,18 @@
 
 The goal is to obtain a nonrelativistic theory from the relativistic.  To that end it'll help to have a clear understanding of the structure of the two theories.
 
-\subsection{Relativistic}
+\subsection{Relativistic framework for spin one-half}
 In the relativistic theory, the electrons are part of a fermion field that also includes the positron anti-particle.  Since both are spin-1/2, each has two spin orientations.  There are, then, a total of four degrees of freedom. 
 
 The relativistic Lagrangian for the fermion fields is
 \beqa
 \mathcal{L} &=&	
-	\bar{\Psi}(p \cdot \gamma - e A \cdot \gamma - m)\Psi 
+	\bar{\Psi}(i \partial \cdot \gamma - e A \cdot \gamma - m)\Psi  - \frac{1}{4} F_{\mu\nu} F^{\mu\nu}
 \eeqa
 
-The fermion fields are $\Psi$, the photon field is $A$.  $p$ is the momentum operator, $m$ the particle's mass, and $e$ the electron's charge.  The $\gamma$ matrices mix the different components.  %TODO better explanation of gamma matrices
+The fermion fields are $\Psi$, the photon field is $A$.   $m$ is the particle's mass, and $e$ the electron's charge.  The $\gamma$ matrices mix the different components.  %TODO better explanation of gamma matrices
 
-It will be convenient to work in a representation which already suggests the nonrelativistic behavior.  At low momenta, it should be expected that the free electron and positron fields act approximately as independent fields.  This is exactly the case for the Dirac representation.    
+It will be convenient to work in a representation which already suggests the nonrelativistic behavior.  At low momenta, it should be expected that the free electron and positron fields act approximately as independent fields.  This is exactly the case for the Dirac representation.   In the rest frame, a free particle can be said to be definitively an electron or positron, and in the Dirac representation these correspond to the upper and lower parts of the bispinor.  
 
 In this representation, the gamma matrices are written
 \beq
@@ -26,12 +26,15 @@ In this representation, the gamma matrices are written
 	\gamma^i = \Mblock{0}{\sigma_i}{-\sigma_i}{0}
 \eeq	
 
+
+
+
 The gamma matrices by themselves do not form a complete basis for this space.  To find such a basis products of the matrices can be considered.  It will make sense to consider combinations such that bilinears are Hermitian.  
  
 
 There is the identity --- such bilinears transform as a scalar.
 
-Symmetric combinations are not considered because $\{ \gamma^\mu, \gamma^\nu = g^{\mu\nu}$.  The antisymmetric combinations are explicitly
+Symmetric combinations are not considered because $\{ \gamma^\mu, \gamma^\nu \}= g^{\mu\nu}$.  The antisymmetric combinations are explicitly
  \beqa
 	  {[\gamma^0, \gamma^i]}
 		&=&  2 \gamma^0 \gamma^i = \begin{pmatrix}	0 & 2\sigma_i \\ 2\sigma_i & 0\end{pmatrix}	\\
@@ -63,15 +66,15 @@ The product of each gamma matrix in turn gives a pseudo-scalar:
  	\gamma^5 \gamma^\mu 
  \eeq
  
- 
- 
-
-
-
-
 \beq
 	\sr = \begin{pmatrix} \eta \\ \chi \end{pmatrix}
 \eeq
+ 
+\subsection{Nonrelativistic framework for spin one-half}
+
+
+
+
 
 \beqa
 	\eta &=& \left( 1  - \frac{\v{p}^2}{8m^2} \right ) w	\\
@@ -80,11 +83,7 @@ The product of each gamma matrix in turn gives a pseudo-scalar:
 
 
 
-
-
-
-
- \section{Fouldy-Wouthyusen approach}
+ \section{Foldy-Wouthyusen approach}
  
 The goal is to derive a nonrelativistic Hamiltonian or Lagrangian starting from relativistic theory.  (Having obtained one, we can easily obtain the other, of course.)  One method is to take the relativistic equations of motion and use them to obtain a Schrodinger like equation.
 
@@ -106,13 +105,13 @@ The corrections to the gyromagnetic ratio of the electron are to be established.
 
 The starting point will be the relativistic Lagrangian of Dirac.  However, remember that the technique to be used simply ignores behavior introduced by the high energy sector of the theory, even if it might effect the low energy behavior.  One such effect is corrections to the free gyromagnetic ratio of the electron, which first arise when one loop diagrams are considered.  Without such corrections the $g$-factor will be exactly $g=2$.
 
-Anticipating that there will actually be bound-state corrections proportional to $g-2$, it is necessary to somehow include this anomalous term.  The way to do so is to introduce a new local interaction into the Lagrangian, coming from the highly virtual processes which dress the electron vertex.  The Lagrangian to be used is, then
+Knowing that there will actually be bound-state corrections proportional to $g-2$, it is necessary to somehow include this anomalous term.  The way to do so is to introduce a new local interaction into the Lagrangian, coming from the high energy radiative corrections which dress the electron vertex.  The Lagrangian to be used is, then
 \beqa
 \mathcal{L} &=&	
-	\bar{\Psi}(\cancel{p} - m)\Psi + \frac{1}{2} \mu' \bar{\Psi} \sigma^{\mu\nu}F_{\mu\nu} \Psi	
+	\bar{\Psi}(\cancel{D} - m)\Psi + \frac{1}{2} \mu' \bar{\Psi} \sigma^{\mu\nu}F_{\mu\nu} \Psi	
 \eeqa
 %TODO check \mu_0
-$\mu'$ is the correction to the classical moment $\mu_0 = \frac{e}{m}$, and is equal to $(g-2)/2 \mu_0$.
+$\mu'$ is the correction to the classical moment $\mu_0 = \frac{e}{2m}$, and is equal to $(g-2)/2 \mu_0$.
 
 
 From this Lagrangian the equations of motion of the particle may be obtained from the Euler-Lagrange method.  The Euler-Lagrange equation is
