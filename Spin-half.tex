@@ -66,6 +66,7 @@ The product of each gamma matrix in turn gives a pseudo-scalar:
  	\gamma^5 \gamma^\mu 
  \eeq
  
+
 \beq
 	\sr = \begin{pmatrix} \eta \\ \chi \end{pmatrix}
 \eeq
@@ -111,7 +112,7 @@ Knowing that there will actually be bound-state corrections proportional to $g-2
 	\bar{\Psi}(\cancel{D} - m)\Psi + \frac{1}{2} \mu' \bar{\Psi} \sigma^{\mu\nu}F_{\mu\nu} \Psi	
 \eeqa
 %TODO check \mu_0
-$\mu'$ is the correction to the classical moment $\mu_0 = \frac{e}{2m}$, and is equal to $(g-2)/2 \mu_0$.
+$\mu'$ is the correction to the classical moment $\mu_0 = \frac{e}{2m}$, and is equal to $(g-2)/2 \mu_0$.  $D$ is the long derivative $\partial + ieA$.
 
 
 From this Lagrangian the equations of motion of the particle may be obtained from the Euler-Lagrange method.  The Euler-Lagrange equation is
@@ -122,26 +123,20 @@ From this Lagrangian the equations of motion of the particle may be obtained fro
 
 In the Lagrangian above, we can consider that all differential operators act only on the right field $\Psi$.  (This freedom of choice comes from being able to rewrite the Lagrangian through integration by parts, without changing its physical meaning.)  So the second term in the Euler-Lagrange equation can be ignored, and after differentiating with respect to $\bar{\Psi}$ the following equation is obtained:
 \beq
-	(\cancel{p} - m + \frac{1}{2} \mu'  \sigma^{\mu\nu}F_{\mu\nu} )\Psi = 0	
+	(i\cancel{D} - m + \frac{1}{2} \mu'  \sigma^{\mu\nu}F_{\mu\nu} )\Psi = 0	
 \eeq
 Writing explicitly in terms of the $\gamma$ matrices, this is
 \beq \label{eq:Sh:eom}
-	\left( (p_\mu- eA_\mu)\gamma^\mu -m + i\mu' \frac{1}{4}[ \gamma^\mu, \gamma^\nu]F_{\mu\nu} \right) \Psi
+	\left( (i\partial_\mu- eA_\mu)\gamma^\mu -m + i\mu' \frac{1}{4}[ \gamma^\mu, \gamma^\nu]F_{\mu\nu} \right) \Psi
 		=0
 \eeq
-This equation of motion is invariant under Lorentz transformations.  It is written in terms of the Dirac bispinor $\Psi$, the four momentum $p_\mu$, external fields $A_\mu$ and $F_{\mu\nu}$, and the gamma matrices.  To apply in to a nonrelativistic problem, the very first step will be to rewrite it in terms of the sorts of quantities that appear in that domain: three-vectors and scalars.
+This equation of motion is invariant under Lorentz transformations.  It is written in terms of the Dirac bispinor $\Psi$, external fields $A_\mu$ and $F_{\mu\nu}$, and the gamma matrices.  To apply in to a nonrelativistic problem, the very first step will be to rewrite it in terms of the sorts of quantities that appear in that domain: three-vectors and scalars.
 
-The scalars that appear will be $p_0$ and $A_0 = \Phi$.  The external fields $\v{E}$ and $\v{B}$ will appear explicitly, while the vector field $\v{A}$ will appear in the gauge-invariant operator $\gv{\pi} = \v{p} - e\v{A}$.  The gamma matrices can be written in terms of the Pauli spin matrices $\gv{\sigma}$.  Finally, the bispinor will be written in terms of its upper and lower components.
+The scalars that appear will be $\partial_0= \partial_t$ and $A_0 = \Phi$.  The external fields $\v{E}$ and $\v{B}$ will appear explicitly, while the vector field $\v{A}$ will appear in the gauge-invariant operator $\gv{\pi} = \v{p} - e\v{A}$.  The gamma matrices can be written in terms of the Pauli spin matrices $\gv{\sigma}$.  Finally, the bispinor will be written in terms of its upper and lower components.
 
 Of the terms that appear in \eqref{eq:Sh:eom}, all except the last are trivial to write in this manner.  To deal with that last term, the antisymmetric tensor $\sigma^{\mu\nu} =  \frac{1}{2}[\gamma^\mu, \gamma^\nu]$ needs to be written explicitly.
 
 Using the antisymmetry of $\sigma^{\mu\nu} \equiv $, and that we deal with time-independent fields: %TODO fix sigma
-\beqa
-	  {[\gamma^0, \gamma^i]}
-		&=&  \begin{pmatrix}	0 & 2\sigma_i \\ 2\sigma_i & 0\end{pmatrix}	\\
-	  {[\gamma^i, \gamma^j ]}
-		&=&	 \begin{pmatrix}	-2i\epsilon_{ijk}\sigma_k & 0 \\ 0 & -2i\epsilon_{ijk}\sigma_k\end{pmatrix}
-\eeqa
 \beqa
 	F_{\mu\nu} \sigma^{\mu\nu} &=& F_{i}\sigma^{ij} - F_{0i}\sigma^{0i} 	- F_{i0}\sigma^{i0} +F_{00}\sigma^{00}	\\
 		&=&	F_{ij} \sigma^{ij} -2F_{0i} \sigma^{0i}	\\
@@ -150,9 +145,11 @@ Using the antisymmetry of $\sigma^{\mu\nu} \equiv $, and that we deal with time-
 			-2 \begin{pmatrix} 0 & \sigdot{E} \\ \sigdot{E} & 0 \end{pmatrix}	
 \eeqa
 
-The bispinor $\Psi$ is written in terms of upper and lower components
+So far the discussion has been in position space.  To work out the nonrelativistic form it will be easier to talk about th equations of motion directly in terms of energy and momentum.  So replace $i\partial_t$ with $p_0$, and $i\partial_i$ with $p_i$.  Likewise, replace the gauge invariant derivative  $iD_i = \pi_i = p_i - eA_i$.
+
+A solution of definite momentum $p$ to the equation is written in terms of upper and lower components
 \beq
-	\Psi = \begin{pmatrix} \eta \\ \chi \end{pmatrix}
+	u = \begin{pmatrix} \eta \\ \chi \end{pmatrix}
 \eeq
 
 
@@ -179,7 +176,7 @@ With these considerations, the \eqref{eq:Sh:eom} can be rewritten acting explici
 \eeq
 This gives rise to exact coupled equations for $\eta$ and $\chi$.  So far this is in principle the same as the relativistic equation, only the form in which it is written is non covariant.
 
-\subsection{NR limit}
+\subsection{Nonrelativistic limit}
 
 The particle under consideration is a nonrelativistic electron.  Roughly, the expectation is that $\eta$ corresponds to the electron field and $\chi$ to that of the positron.  The off-diagonal terms in the equation above represent some sort of mixing between the electron and positron: the electron wave function still has some small positron component, that decreases as momentum is decreased.    The off diagonal component that does {\it not} vanish at 0 momentum is proportional to $\mu'$, the term introduced to account for a high-energy process.
 
@@ -205,7 +202,7 @@ It is necessary now to approximate $\chi$ in terms of $\eta$.  Because $\epsilon
 	\chi \approx	\frac{1}{2m} \left ( 1- \frac{\epsilon - e\Phi - \mu' \sigdot{B}}{2m} \right ) (\sigdotg{\pi} - i\mu' \sigdot{E} )\phi
 \eeq
 
-With this expression $\chi$ may be eliminated from the first of the set of equations (at least at the necessary order).  The resulting equation will only involve $\eta$, and so may be used to solve for $\epsilon \eta$.
+With this expression $\chi$ may be eliminated from the first of the set of equations (at least at the necessary order).  The resulting equation will only involve $\eta$, and so may be used to solve for energy $\epsilon$ of  $\eta$.
 
 The original equation is
 \beq
@@ -307,11 +304,11 @@ Using these identities, the Hamiltonian can be expressed as:
 \eeq
 There are still some simplifications that can be made to terms quadratic in $\sigma$, but it'll be more convenient for now to keep $H$ written as is.
 
-\subsection{FW Transform}
+\subsection{Foldy-Wouthyusen Transform}
 
-To find a complete description of a single nonrelativistic particle in normal quantum mechanics, we must work in a basis where the lower component $\chi$ is truly negligible, at least at the desired order.  While there exists a formal technique for finding this Fouldy-Wouthyusen transformation, for our purposes we can simply demand that the wave function after transformation $\phis = (1 + \Delta)\eta$ obeys the normalization $\langle \phis, \phis \rangle = 1$.
+To find a complete description of a single nonrelativistic particle in normal quantum mechanics, we must work in a basis where the lower component $\chi$ is truly negligible, at least at the desired order.  While there exists a formal technique for finding this Foldy-Wouthyusen transformation, for our purposes we can simply demand that the wave function after transformation $\phis = (1 + \Delta)\eta$ obeys $\langle \phis, \phis \rangle = 1$.  This follows from the necessity of probability conservation.
 
-To find the necessary transformation, we can use our expression for $\chi$ in terms of $\eta$ to find the normalization
+To find the necessary transformation, we can use the relativistic current density, and demand it equal that of the nonrelativistic Schrodinger-like wave functions.   Using the expression for $\chi$ in terms of $\eta$:
 \beqa
 	\int d^3x (\eta^\dagger \eta + \chi^\dagger \chi) 	
 		&=& \int d^3x 	\left[ \eta^\dagger \phi + \left (\frac{\sigdotg{\pi}}{2m} \phi \right)^\dagger
@@ -319,7 +316,7 @@ To find the necessary transformation, we can use our expression for $\chi$ in te
 						\right ]	\\
 		&=& \int d^3x 	\eta^\dagger \left[ 1 + \frac{ (\sigdotg{\pi})^2 }{4m^2} \right ] \eta
 \eeqa
-Since we know that $\langle \Psi, \Psi \rangle=1$ this shows that if $\eta = \left( 1 - \frac{ (\sigdotg{\pi})^2 }{8m^2} \right )\phis$, the Schrodinger wave functions are properly normalized.
+Since we know that $\langle \phis, \phis \rangle=1$ this shows that if $\eta = \left( 1 - \frac{ (\sigdotg{\pi})^2 }{8m^2} \right )\phis$, the current conservation works out correctly.
 
 
 We now need to find the form of $\hat{H}$ after this transformation.  For now work with the general form:
@@ -365,7 +362,7 @@ So, writing down the new $H_1'$:
 		 + \mu' \left( \frac{ (\sigdot{p}) (B \cdot p) }{2m^2} - \frac{i}{2m}[\sigdot{E},\sigdotg{\pi}] \right)
 \eeqa
 
-\subsection*{NR Hamiltonian}
+\subsection*{Nonrelativistic Hamiltonian}
 From the relativistic equations of motion, a nonrelativistic Hamiltonian was defined in terms of Schrodinger-like wave functions that conserve probability.  The final result may now be written down.  For comparison with other work, rather than writing in terms of $\mu'$, it will be written in terms of the gyromagnetic ratio $g$.  Because terms proportional to $g-2$ may enter seperately, it is convenient to express all $g$ dependent terms as linear combinations of $g$ and $g-2$. 
 
 So the entire Hamiltonian, using $\mu' = \frac{g-2}{2}\mu_0 = \frac{g-2}{2}\frac{e}{2m} $, is:
@@ -405,7 +402,7 @@ H	&=&
 %define spinors and structures
 Instead of starting from the relativistic equations of motion and rewriting them in the form of a Schrodinger like equation, the method of NRQED can be employed.  The nonrelativistic Lagrangian can be written in the most general way, but ignoring all possible terms that will have too small a contribution to calculations.  The coefficients before each term will be unknown, but there is a straightforward method of fixing them.
 
-Within the realm of NRQEDs validity, it should produce the same predictions as NRQED.  The same physical process can be calculated in both frameworks, and then the results compared.  The calculation in QED will then fix the coefficients in NRQED.  In comparing the two calculations it will be necessary to write the QED results nonrelativisitcally, in the same manner as was done for the approach above.
+Within the realm of NRQEDs validity, it should produce the same predictions as QED.  The same physical process can be calculated in both frameworks, and then the results compared.  The calculation in QED will then fix the coefficients in NRQED.  In comparing the two calculations it will be necessary to write the QED results nonrelativisitcally, in the same manner as was done for the equation of motion.
 %TODO mention free vs. nonfree spinors?
 
 For spin one-half, up to the order desired, the form of the NRQED Lagrangian involving two fermion fields has been derived in the previous chapter.  It is
@@ -500,9 +497,9 @@ And writing in terms of the scalar and tensor:
 \eeq
 
 %TODO move this section up a bit?
-The momentum dependence can be uniquely written in terms of $q^2$.  The factors must be Lorentz invariant, so only such combinations of momenta can be considered.  From the momenta $p$ and $p'$, only three such quantities can be constructed.  But since the external fermions are on mass-shell, $p^2 = p'^2 = m^2$.  That leaves only $p \cdot p' = m^2 + p \cdot q$, and this can be related to $q^2$ by
-\beq	
-	q \cdot (2p + q) = (p' - p) \cdot (p' + p) = p'^2 - p^2 =0 \to q^2 = -\frac{1}{2} p \cdot q
+The momentum dependence can be uniquely written in terms of $q^2$.  The factors must be Lorentz invariant, so only such combinations of momenta can be considered.  From the momenta $p$ and $p'$, only three such quantities can be constructed.  But since the external fermions are on mass-shell, $p^2 = p'^2 = m^2$.  That leaves only $p \cdot p' = m^2 + p \cdot q$, and this can be related to $q^2$ by noting that since $p^2 = p'^2$,
+\beq
+	p^2 = p^2 + 2p\cdot q + q^2  \to q^2 = -\frac{1}{2} p \cdot q
 \eeq
 
 
@@ -827,7 +824,6 @@ The third combination is $	\Gamma^\mu = \frac{p^\mu  + p'^\mu }{2m} F_1(q^2) + i
 			\sigma_k - \frac{ \gv{\sigma} \cdot \v{p} p_k  }{2m^2} 
 		\right \} w 
 \end{split} \eeq
-
 
 
 \subsection{Calculation of Compton scattering in QED}

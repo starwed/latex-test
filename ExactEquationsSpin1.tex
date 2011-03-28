@@ -6,7 +6,6 @@
 	=	-\frac{1}{2} (D^\mu W^\nu - D^\nu W^\mu)^\dagger (D_\mu W_\nu - D_\nu W_\mu)
 		+ m^2 W^{\mu \dagger} W_\mu - i \lambda e  W^{\mu \dagger} W^\nu F_{\mu\nu}
 \eeq
-
 where as usual $D$ is the long derivative $D^\mu = \partial^\mu + ieA^\mu$.
 
 Obtain the equations of motion from the Euler-Lagrange equations:
@@ -29,7 +28,7 @@ Or equivalently, %TODO show this explicitly?
 \pd{ \mathcal{L} }{ [D_\gamma W^{\dagger \alpha}] }
 	&=& -\frac{1}{2} \pd{}{ [D_\gamma W^{\dagger \alpha}] }	 (D^\mu W^\nu - D^\nu W^\mu)^\dagger (D_\mu W_\nu - D_\nu W_\mu) 	\\
 	&=& -\frac{1}{2} ( g^{\mu \gamma} g^\nu_\alpha - g^{\nu\gamma} g^\mu_\alpha)(D_\mu W_\nu - D_\nu W_\mu)	\\
-	&=&  D_\alpha W^\gamma - D^\gamma W_\alpha \\
+	&=&  D_\alpha W^\gamma - D^\gamma W_\alpha 
 \eeqa
 
 
@@ -37,6 +36,9 @@ So the complete equation from Euler-Lagrange is
 \beq \label{eq:ELeq}
 		m^2 W_\alpha - i e \lambda W^\nu F_{\alpha \nu} + D_\mu (D^\mu W_\alpha - D_\alpha W^\mu) = 0
 \eeq
+
+
+
 
 This is a set of four coupled second order equations for the field $W$.  We rewrite as a set of first order equations by introducing a field $W_{\mu\nu} = D_\mu W_\nu - D_\nu W_\mu$.  So \eqref{eq:ELeq} becomes 
 \beq

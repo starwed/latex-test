@@ -1,0 +1,521 @@
+\chapter{Spin-one particles}
+
+\section{Spin-one Equations of Motion}
+
+The ultimate goal is to investigate the $g$-factor of bound particles of arbitrary spin.  In the previous section, two methods were reviewed for a spin-half particle: deriving the Hamiltonian from the equations of motion, and calculating the NRQED Lagrangian by comparing scattering diagrams.  
+
+Both of these methods can be employed anytime a Lagrangian is known for the particle.  The standard model contains charged spin-one particles, the W bosons.  So as a next step to investigating the behavior of general spin particles, both of the methods used for spin-half can be applied to the W.
+
+\subsection{Lagrangian for the W boson}
+The Lagrangian describing the interaction of the W boson with the photon field is
+
+%TODO label lagrangian  L_?  Also label modified L
+\beq
+\mathcal{L} 
+	=	-\frac{1}{2} (D^\mu W^\nu - D^\nu W^\mu)^\dagger (D_\mu W_\nu - D_\nu W_\mu)
+		+ m^2 W^{\mu \dagger} W_\mu - i e  W^{\mu \dagger} W^\nu F_{\mu\nu}
+\eeq
+
+This Lagrangian is part of a renormalizable theory.  If the free $g$-factor is calculated at tree level, it will be found that $g=2$.  Phenomenologically, behavior when $g \neq 2$ is interesting, so the Lagrangian can be modified to
+\beq \label{eq:S1:LagrangianAnom}
+\mathcal{L} 
+	=	-\frac{1}{2} (D^\mu W^\nu - D^\nu W^\mu)^\dagger (D_\mu W_\nu - D_\nu W_\mu)
+		+ m^2 W^{\mu \dagger} W_\mu - i [g-1] e  W^{\mu \dagger} W^\nu F_{\mu\nu}
+\eeq
+When $g=2$ the two Lagrangians are identical.  The contribution to the free $g$-factor comes from two separate terms, but modifying the other term would necessitate also modifying the kinetic terms of the Lagrangian.  %TODO explain in more detail?
+
+In this Lagrangian, $W_\mu$ is the charged boson field of mass $m$, and $A_\mu$ is the massless photon field.  Both are vector fields, but $W$ has three degrees complex of freedom and $A$ has two real degrees of freedom.    The electromagnetic field-strength tensor is $F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu$.  
+
+\subsection{Equations of motion}
+The goal is to obtain, from the relativistic Lagrangian, a nonrelativistic Schrodinger-like equation that gives the nonrelativistic Hamiltonian.  As before, with spin one-half, the path will be to first find the relativistic equations of motion, solve them for the relativistic energies of the particles, and then consider how the one-particle arises.
+
+
+If we call the six component bispinor $\Upsilon$, then the relativistic Hamiltonian will have the form $i \partial_0 \Upsilon = \hat{H} \Upsilon$, or explicitly writing the upper and lower components of the bispinor and the block structure of the Hamiltonian:
+\beq \label{eq:S1:formofH}
+	i \partial_0 \begin{pmatrix} \Upsilon_u \\ \Upsilon_\ell \end{pmatrix} 
+		= \begin{pmatrix} H_{11} & H_{12} \\ H_{21} & H_{22} \end{pmatrix} \begin{pmatrix} \Upsilon_u \\ \Upsilon_\ell \end{pmatrix}
+\eeq 
+
+
+Seeking an equation of this form, first the equations of motion are obtained using the Euler-Lagrange method:
+\beq
+	\pd{\mathcal{L}}{W^{\dagger \alpha}} - \partial_\mu \pd{ \mathcal{L} }{ [\partial_\mu W^{\dagger \alpha}] } = 0
+\eeq
+It is easiest to use integration by parts to have all derivative operators act to the right, upon $W$.  The equation of motion obtained is
+\beq \label{eq:S1:ELeq}
+		m^2 W_\alpha - i e [g-1] W^\nu F_{\alpha \nu} + D_\mu (D^\mu W_\alpha - D_\alpha W^\mu) = 0
+\eeq
+This is a set of four second order equations for $W_\mu$.  But \eqref{eq:S1:formofH} is a first order equation.  Second order equations may be transformed into first order by introducing additional fields.  So introduce the field $W_{\mu\nu} = D_\mu W_\nu - D_\nu W_\mu$.  Being antisymmetric, it has 6 components, in addition to the four components of $W_\mu$.  The resulting set of first order equations is
+\beq \label{eq:S1:ELeqA}
+	W_{\mu\nu} = D_\mu W_\nu - D_\nu W_\mu
+\eeq
+\beq \label{eq:S1:ELeqB}
+	m^2 W_\alpha - ie [g-1] W^\nu F_{\alpha \nu} + D^\mu W_{\mu \alpha} = 0	
+\eeq
+
+In addition to being first order, the Schrodinger like equation for a spin-one particle should involve a three component spinor.  It is obtained from a relativistic equation for a bispinor, with the upper and lower components each having three components.  So the ten total degrees of freedom above need to be reduced somehow.
+
+On inspection, it turns out that only six of the components are dynamic -- the other four occur only in equations which do not involve the time derivative.  $W_0$ is one such field, the other three are $W_{ij} = D_i W_j - D_j W_i$.  These four fields need not appear in any Schrodinger-like equation expressing the time evoluation of the fields, and so the necessary 6 components are obtained.
+
+%TODO look into factor of i in equation for \eta
+The six components that remain are $W_i$ and $W_{0i} = - W_{i0}$.  Eventually these need to be arranged in a bispinor, but note that $W_{i0}$ has a different mass dimension and different Hermiticity than $W_i$.  So define instead the field
+\beq
+	\eta_i = - \frac{i}{m} W_{0i}
+\eeq
+This is the quantity that will appear directly in the bispinor.  Note that in the momentum space and in the rest frame, that $\eta_i = - W_i$.  
+
+Now, express the equations of motion only in terms of $\eta_i$ and $W_i$, eliminating the other fields.  (As defined, $W_{0i} =  im\eta_i$.)  Three of the nondynamic fields can be replaced directly with
+\beq
+	W_{ij} = D_i W_j - D_j W_i
+\eeq
+To find $W_0$, consider the second equation of motion with $\alpha=0$, and solve for $W_0$. 
+\beq
+	m^2 W_0 - ie[g-1] W^\nu F_{0\nu} + D^\mu W_{\mu 0} = 0 
+\eeq
+\beq
+	m^2 W_0 - ie[g-1] W^j F_{0j} + D^j W_{j0} = 0
+\eeq
+\beq
+	W_0 = \frac{1}{m^2} \left( ie[g-1] W^j F_{0j} + D^j   i m \eta_j \right )
+\eeq
+
+The remaining equations of motion all somehow involve the time derivative.
+From
+\beq
+	W_{0i} = D_0 W_i - D_i W_0
+\eeq
+is obtained
+\beq \label{eq:S1:wA}
+	i m  \eta_i = D_0 W_i - D_i \frac{1}{m^2} \left( ie[g-1] W^j F_{0j} + D^j i m \eta_j \right ) 
+\eeq
+
+And from the \eqref{eq:S1:ELeqB} equation of motion with $\alpha=i$:
+\beq
+	m^2 W_i - ie [g-1] W^\nu F_{i \nu} + D^\mu W_{\mu i} = 0	
+\eeq
+\beq
+	m^2 W_i - ie[g-1] \left( W^0 F_{i0} + W^j F_{ij} \right ) 
+		+ D^0 W_{0i} + D^j W_{ji} =0
+\eeq
+
+\beq \label{eq:S1:etaA}
+	m^2 W_i - ie[g-1] \left( \frac{1}{m^2} \left( ie[g-1] W^j F_{0j} + D^j im \eta_j \right ) F_{i0} + W^j F_{ij} \right ) 
+		+ D^0 im \eta_i + D^j \left( D_i W_j - D_j W_i \right ) =0
+\eeq
+
+
+These can be solved for the quantities $D_0 \eta_i$ and $D_0 W_i$.
+
+
+To descend to the lower energy theory, it will be most useful to write everything in terms of three vectors.  Spatial vectors should be written with their indices naturally raised, while the derviative operator $\v{D}$ is naturally lowered.  The components of $F_{\mu\nu}$ in terms of three vectors are:
+\beq 
+	F_{0i} = -E_i = E^i , \; F_{ij} = -\epsilon_{ijk} B^k 
+\eeq
+
+Then \eqref{eq:S1:etaA} becomes
+\beq
+	m^2 W_i - \frac{e^2 [g-1]^2}{m^2} W^j E^j E^i
+		- \frac{e [g-1]}{m} D_j \eta^j E^i 
+		+ ie[g-1] \epsilon_{ijk} B^k W^j
+		+ D^0 (im\eta_i) + D^j (D_i W_j -  D_j W_i) = 0
+\eeq
+Or, writing all vector indices in the ``natural'' position, and writing contractions between such ``natural'' vectors as dot products,
+\beq
+	- m^2 W_i - \frac{e^2 [g-1]^2}{m^2}  E^i \v{E} \cdot \v{W}
+		- \frac{e [g-1]}{m} E^i  \v{D} \cdot \gv{\eta}
+		+ ie[g-1] \epsilon_{ijk} B^k W^j
+		- D^0 (im\eta^i) + D_i \v{D} \cdot \v{W} - \v{D}^2 W^i = 0 
+\eeq
+
+And likewise with \eqref{eq:S1:wA}
+\beq
+		i m  \eta_i = D_0 W_i - D_i \frac{1}{m^2} \left( ie[g-1] W^j E^j + D^j i m \eta_j \right )  
+\eeq
+which with natural indices is
+\beq
+		-i m  \eta^i = - D_0 W^i - D_i \frac{1}{m^2} \left( ie[g-1] \v{E} \cdot \v{W} +  i m  \v{D} \cdot \gv{\eta} \right ) 
+\eeq
+
+Next, solve for the quantities $iD_0 \eta^i$ and $iD_0 W^i$.
+
+\beq
+			i D_0 W^i  = - m  \eta^i  + D_i \frac{1}{m^2} \left( e[g-1] \v{E} \cdot \v{W} +   m  \v{D} \cdot \gv{\eta} \right ) 
+\eeq
+\beq \begin{split}
+ i D_0  \eta^i  = &  - m W_i - \frac{e^2 [g-1]^2}{m^3}  E^i \v{E} \cdot \v{W}
+		- \frac{e [g-1]}{m^2} E^i  \v{D} \cdot \gv{\eta}	\\
+		&+ \frac{ie[g-1]}{m} \epsilon_{ijk} B^k W^j
+		+ \frac{1}{m} \left( D_i \v{D} \cdot \v{W} - \v{D}^2 W^i \right ) 
+\end{split} \eeq
+
+Here are the desired equations for the dynamics of the $\eta$ and $W$.  However, they are still not in the desired form \eqref{eq:S1:formofH}, because it is not written in terms of operators acting directly upon the fields.  This is because the different components of the field are mixed.  These different components correspond to different spin states of the particle, so their mixing can be written as the action of spin space operators on the fields.  To explicitly disentangle the equations in this manner, it will be useful to first derive a couple of identities relating to these spin operators.
+
+\subsection{Spin identities}
+
+The spin matrix for a spin one particle can represented as:
+\beq
+	(S^k)_{ij} = - i\epsilon_{ijk}
+\eeq
+which leads to the following identities:
+\beq
+	(\v{a} \times \v{v})_i = -i (\v{S} \cdot \v{a})_{ij} v_j
+\eeq
+\beq
+	a_i (\v{b} \cdot \v{v}) = \{ \v{a} \cdot \v{b} \; \delta_{ij} - (S^k S^\ell)_{ij} a^\ell b^k \} v_j
+\eeq
+
+Using these identities
+
+
+\beq
+	i D^0 \v{W} = 
+		-\frac{1}{m^2} \{ \v{D} \cdot \v{E} - (\v{S} \cdot \v{E}) (\v{S} \cdot \v{D})	\} \v{W}
+		+ \frac{1}{m}\{ \v{D}^2 -  (\v{S} \cdot \v{D})^2 \} \gv{\eta} + m \gv{\eta}
+\eeq
+and for the other equation
+
+%TODO check order of D and E -- it matters!
+\beq
+	i D_0 \gv{\eta} = m \v{W} 
+			+ \frac{e^2 \lambda^2}{m^3} \{ \v{E}^2 - (\v{S} \cdot \v{E})^2 \} \v{W}
+			-\frac{1}{m^2} \{ \v{E} \cdot \v{D} - (\v{S} \cdot \v{E}) (\v{S} \cdot \v{D}) \} \gv{\eta}
+			+ \frac{ e \lambda}{m} (\v{S} \cdot \v{B} ) \v{W}
+			 - \frac{1}{m} (\v{S} \cdot \v{D})^2  \v{W}  
+\eeq
+
+\beq
+	i D_0 \gv{\eta} = \left(
+				m 
+				+ \frac{e^2 \lambda^2}{m^3} \{ \v{E}^2 - (\v{S} \cdot \v{E})^2 \} 
+				- \frac{ e \lambda}{m} (\v{S} \cdot \v{B} )
+				- \frac{1}{m} (\v{S} \cdot \v{D})^2 
+			\right ) \v{W} 
+			+\frac{1}{m^2} \{ \v{E} \cdot \v{D} - (\v{S} \cdot \v{E}) (\v{S} \cdot \v{D}) \} \gv{\eta}  
+\eeq
+
+Now that the equations are in the correct form, we can write them as follows:
+
+
+
+%%TODO This is the correct form, but go back and make sure equations leading up to this don't have sign errors
+%% Also, add the spin ids that produce the cross products.
+\beq \label{eq:S1:M}
+i D_0 \spinor{W}{\eta} = 
+	\Mblock
+	{ \lambda \frac{e}{m^2} \left [ \v{E} \cdot \v{D} - (\v{S} \cdot \v{E})( \v{S} \cdot \v{D}) + i \v{S} \cdot \v{E} \times \v{D} \right ] }
+		{m
+	-\frac{1}{m} (\v{S} \cdot \v{D})^2 
+	- \lambda \frac{e}{m} \v{S} \cdot \v{B}
+	+ \lambda^2 \frac{e^2}{m^3} \left [ \v{E}^2 - (\v{S} \cdot \v{E})^2 \right ]  }
+	{ m
+	- \frac{1}{m}\left [ \v{D}^2 - (\v{S} \cdot \v{D})^2 + e \v{S} \cdot \v{B} \right ]  }
+	{ - \lambda \frac{e}{m^2} \left [ \v{D} \cdot \v{E} - (\v{S} \cdot \v{D}) (\v{S} \cdot \v{E}) + i \v{S} \cdot \v{D} \times \v{E} \right ]  } \spinor{W}{\eta}
+\eeq
+
+This leads to a relativistic Hamiltonian, but not one of quite the right form.  The $\eta$ and $W$ do not correspond to the particle and antiparticle.  To see this consider the rest frame where $D_i =0$, then the two components have equal magnitude.  A transformation to a representation where the upper and lower components correspond to particle-antiparticle will be necessary.  Since it is not yet in the final desired form, call the bispinor
+ \beq
+ 	\Upsilon' = \spinor{\eta}{W}
+ \eeq
+
+Also, it is clear that the matrix on the right hand side is not Hermitian in the traditional sense, and so the Hamiltonian would not be either.  The necessary condition is that the Hamiltonian is Hermitian {\it with respect to the inner product}.  To discover what the inner product should look like, the electromagnetic current density of the charged particle will be investigated.  Before transforming representation, this matter of Hermiticity will be dealt with.
+
+
+\subsection{Current density }
+
+The inner product will take two wave functions and map them onto a scalar.  To be interpreted as a probability, the inner product must be Lorentz invariant.  In standard quantum mechanics the inner product is $\langle \xi, \chi \rangle = \int d^3x \, \xi^\dagger \chi$.  For the spinors $W$ and $\eta$ defined above, this will not be a Lorentz invariant quantity --- to discover such a quantity, consider electromagnetic current density.  Since $Q =  \int d^3x \, j_0$ is invariant, the form of $j_0$ it will suggest the correct form for the inner product.
+
+The conserved current can be derived from the Lagrangian \eqref{eq:S1:LagrangianAnom}.  The electromagnetic current corresponds to the transformation $ W_i \to e^{i \alpha}W_i $, which in infinitesimal form is:
+\beq
+	W_\mu \to W_\mu + i \alpha W_\mu, \;
+	W_\mu^\dagger \to W_\mu^\dagger - i \alpha W_\mu^{\dagger}
+\eeq
+
+The 4-current density will be:
+\beq
+	j^{\sigma} = -i \pd {\mathcal{L} }{W_{\mu, \sigma}} W_\mu  +  i\pd {\mathcal{L} }{W^\dagger_{\mu, \sigma}} W^\dagger_\mu
+\eeq
+
+Only one term in the Lagrangian contains derivatives of the field:
+\beqa
+ \pd {\mathcal{L} }{W_{\alpha, \sigma}} 
+		&=& \pd{}{W_{\alpha, \sigma}} \left \{ - \frac{1}{2} (D_\mu W_\nu - D_\nu W_\mu)^\dagger(D^\mu W^\nu - D^\nu W^\mu) \right \}\\
+		&=& - \frac{1}{2} (D_\mu W_\nu - D_\nu W_\mu)^\dagger (g_{\sigma \mu} g_{\alpha \nu} - g_{\sigma \nu}g_{\alpha \mu})\\
+		&=& - (D_\alpha W_\sigma - D_\sigma W_\alpha)^\dagger
+\eeqa
+Likewise:
+\beq	\pd {\mathcal{L} }{W_{\alpha, \sigma}^\dagger} 
+		= - (D_\alpha W_\sigma - D_\sigma W_\alpha)
+\eeq
+As before, define $W_{\mu \nu} =  D_\mu W_\nu - D_\nu W_\mu$; then the 4-current and charge density are:
+\beqa
+	j_\sigma &=& i W_{\sigma \mu}^\dagger W^{\mu} - i W_{\sigma \mu} {W^{\dagger}}^\mu \\
+	j_0 	&=& i W_{0 \mu}^\dagger W^{\mu} - i W_{0 \mu} {W^{\dagger}}^\mu \\
+		&=& i W_{0 i}^\dagger W^i - i W_{0 i} {W^{\dagger}}^i 
+\eeqa
+Where the last equality follows from the antisymmetry of $W_{\mu \nu}$.
+
+
+%FIXME check definition of \eta --- W_{i0} or W_{0i}
+Now, previously was defined $\eta_i = -i W_{i0}/m$.  In terms of this quantity, the current density is
+\beq \label{eq:S1:j0}
+	j_0 =  m (\eta_i^\dagger  W^i + \eta_i {W^\dagger}^i )
+\eeq
+Now the Hermiticity of the matrix above can be investigated in light of the inner product this suggests.
+
+\subsection{Hermiticity and the inner product}
+
+
+As already mentioned, it is clear from inspection that the matrix in \eqref{eq:S1:M} is not Hermitian in the standard sense.  (Of the operators in use, the only one which is not self adjoint is $D_i^\dagger = - D_i$.)  Noticing that 
+\beq
+	\left [ \v{E} \cdot \v{D} - (\v{S} \cdot \v{E})( \v{S} \cdot \v{D}) + i \v{S} \cdot \v{E} \times \v{D} \right]^\dagger 
+		= - \left [ \v{D} \cdot \v{E} - (\v{S} \cdot \v{D}) (\v{S} \cdot \v{E}) + i \v{S} \cdot \v{D} \times \v{E} \right ] 
+\eeq
+we can see that $H$ would have the general form 
+\beq
+	H = 
+\begin{pmatrix}
+	A	&	B	\\
+	C	&	A^\dagger
+\end{pmatrix}
+\eeq
+where the off diagonal blocks are Hermitian in the normal sense: $B^\dagger = B$ and $C^\dagger=C$.
+
+An operator is defined as Hermitian with respect to a particular inner product.  One generalisation of the normal inner product from quantum mechanics is found by allowing a weight matrix $M$ inserted between the wave functions:
+\beq
+	\langle \xi, \chi \rangle = \int d^3x \, \xi^\dagger M \chi
+\eeq
+
+In the usual product of quantum mechanics M would be the identity matrix, but here it differs.  Previously the conserved charge was derived.  Writing \eqref{eq:S1:j0} in the form $\Upsilon'^\dagger M \Upsilon'$
+\beq
+	j_0 = m [\eta^\dagger W + W^\dagger \eta] 
+		= 	m \begin{pmatrix} \eta^\dagger & W^\dagger \end{pmatrix}
+			\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}
+			\begin{pmatrix} \eta \\ W \end{pmatrix}
+\eeq
+so if the weight is defined as $M= \left( \begin{smallmatrix} 0 & 1 \\ 1 & 0 \end{smallmatrix} \right )$, the inner product $\langle \Upsilon', \Upsilon \rangle$ will be necessarily be conserved.
+
+An operator H is Hermitian with respect to this inner product if
+\beq
+ \langle H\xi, \chi \rangle = \langle \xi, H\chi \rangle \to
+		\int d^3x \xi^\dagger H^\dagger M \chi	=	\int d^3x \xi^\dagger M H \chi
+\eeq
+For this equality to hold, it is sufficient for $H^\dagger M = M H$.  With $M$ as above, and $H=\left( \begin{smallmatrix} A & B \\ C & D \end{smallmatrix} \right )$ this condition reduces to 
+\beq
+	\begin{pmatrix} A^\dagger & C^\dagger \\ B^\dagger & D^\dagger \end{pmatrix}
+	=\begin{pmatrix} D & C \\ B & A \end{pmatrix}
+\eeq
+The matrix in \eqref{eq:S1:M} fulfills exactly this requirement, and so is Hermitian with respect to this particular inner product.
+ 
+
+
+
+
+
+
+\subsection{Non-relativistic Hamiltonian}
+Now that the issue of hermiticity has been dealt with, it is time to find a non-relativistic Hamiltonian from the equation \eqref{eq:S1:M}.  First, write it explicitly as a Hamiltonian, replacing the derivative operator with $\gv{\pi} = \v{p} - e\v{A}$, so that $\v{D} = -i \gv{\pi}$. Then
+\small
+\beq \label{eq:S1:M}
+H' \Upsilon' = 
+	\Mblock
+	{ e\Phi + \lambda \frac{e}{m^2} \left [ -i \v{E} \cdot \gv{\pi} + i  (\v{S} \cdot \v{E})( \v{S} \cdot \gv{\pi}) +  \v{S} \cdot \v{E} \times \v{\pi} \right ] }
+		{m
+	+\frac{1}{m} (\v{S} \cdot \gv{\pi})^2 
+	- \lambda \frac{e}{m} \v{S} \cdot \v{B}
+	+ \lambda^2 \frac{e^2}{m^3} \left [ \v{E}^2 - (\v{S} \cdot \v{E})^2 \right ]  }
+	{ m
+	+ \frac{1}{m}\left [ \gv{\pi}^2 - (\v{S} \cdot \gv{\pi})^2 - e \v{S} \cdot \v{B} \right ]  }
+	{ e\Phi  - \lambda \frac{e}{m^2} \left [  - i\gv{\pi} \cdot \v{E} + i (\v{S} \cdot \gv{\pi}) (\v{S} \cdot \v{E}) +  \v{S} \cdot \gv{\pi} \times \v{E} \right ]  } \spinor{W}{\eta}
+\eeq
+ \normalsize  
+
+That equation is written in a representation where the particle and anti-particle states are not separated.  Even in the nonrelativistic limit, it strongly couples $\eta$ and $W$, because the off-diagonal terms are of $\mathcal{O}(m)$.  To descend to a nonrelativistic picture, it will be most convenient if the lower component of $\Upsilon$ is, in that limit, only weakly coupled to the upper.
+
+In the rest frame of the particle state (which should have $E=m$), $W = \eta$.  Then, if the lower component was defined to be $\Upsilon_\ell = \eta - W$, it would vanish in the rest frame and be small compared to $\Upsilon_u$ in any nonrelativistic frame.  The orthogonal upper component would then be $\Upsilon_u = \eta + W$.  For an anti-particle state in the rest frame ($E= - m$, $W= - \eta$) and the upper component vanishes.
+
+Implementing this transformation as a unitary transformation requires the matrix
+\beq
+U 	= \frac{1}{\sqrt {2}}
+\begin{pmatrix}
+1	&	1	\\
+1	&	-1	\\
+\end{pmatrix}
+\eeq
+
+\small
+(This transformation will transform the current to
+$	j_0 =  m (\Upsilon_u^\dagger \Upsilon_u  - \Upsilon_\ell^\dagger \Upsilon_\ell)		$
+and the weight M, used in the inner product, to
+$	M \to M' = U^\dagger M U = ( \begin{smallmatrix} 1 & 0 \\ 0 & -1 \end{smallmatrix})	$
+The transformed Hamiltonian will of course be Hermitian with respect to the transformed inner product.)
+\normalsize
+
+After implementing this transformation, $H' \to H = U^\dagger H' U $.  The Hamiltonian still contains off-diagonal elements, so the Schrodinger-like equation represents a pair of coupled equations for the upper and lower components of $\gv{\Upsilon}$.  But the off-diagonal terms are small, so $\Upsilon_\ell$ can be considered small compared to $\Upsilon_u$. Solving for $\Upsilon_\ell$ in terms of $\Upsilon_u$ and the block components of $H$: 
+
+\begin{eqnarray*}
+	E \Upsilon_\ell &=& 	H_{21} \Upsilon_u + H_{22} \Upsilon_\ell \\
+	\Upsilon_\ell 	&=& 	(E - H_{22})^{-1} H_{21} \Upsilon_u
+\end{eqnarray*}
+
+This gives the exact formula:
+\begin{eqnarray*}
+	E \Upsilon_u 	&=&		\left( H_{11} + H_{12}[E-H_{22}]^{-1} H_{21} \right) \Upsilon_u
+\end{eqnarray*}
+
+However, we only need corrections to the magnetic moment of order $v^2$. This means we only need the Hamiltonian to at most order $mv^4$ or $(e/m) B v^2$.  Examining the leading order terms of the matrix H, the diagonal elements are order m while the off-diagonal elements are order $mv^2$ or $(e/m) B$.  To leading order the term $[E-H_{22}]^{-1}=\frac{1}{2m}$. So we'll need $H_{11}$ to $\mathcal{O}(v^4, (e/m)Bv^2)$, and $H_{12}$, $H_{21}$, and $[E-H_{22}]^{-1}$ each to only the leading order.
+
+
+\[	E \Upsilon_u 	=		\left( H_{11} + \frac{1}{2m}H_{12} H_{21} + \mathcal{O}(mv^6)\right) \Upsilon_u \]
+
+The needed terms of H are, after performing the transformation:
+\beqa
+	H_{11} 	&=& H'_{11} + H'_{12} + H'_{21} + H'_{22}	\\
+			&\approx& m + e\Phi + \frac{\pi^2}{2m} - \frac{g}{2}\frac{e}{m} \v{S} \cdot \v{B}	\\
+			&& - i (g-1)\frac{e}{2m^2} 
+				 \left [ 
+					\v{E} \cdot \gv{\pi} - (\v{S} \cdot \v{E})( \v{S} \cdot \gv{\pi}) + i \v{S} \cdot \v{E} \times \gv{\pi}
+					- \gv{\pi} \cdot \v{E} + (\v{S} \cdot \gv{\pi}) (\v{S} \cdot \v{E}) - i \v{S} \cdot \gv{\pi} \times \v{E} 
+				\right ]	\\
+	H_{12} 	&=&  H'_{11} - H'_{12} + H'_{21} - H'_{22}	\\
+			&\approx& -  \frac{\pi^2}{2m} + \frac{1}{m}(\v{S} \cdot \gv{\pi})^2 - \frac{g-2}{2}\frac{e}{m} \v{S} \cdot \v{B}
+				\\
+	H_{21}  &=&  H'_{11} + H'_{12} - H'_{21} - H'_{22}	\\
+			&\approx&  \frac{\pi^2}{2m} - \frac{1}{m}(\v{S} \cdot \gv{\pi})^2 + \frac{g-2}{2}\frac{e}{m} \v{S} \cdot \v{B}
+\eeqa
+
+The product $H_{12}H_{21}$ is calculated in the appendix.  To first order in the magnetic field strength the result \eqref{eq:A:crossterm} is:
+\beq
+ \frac{1}{2m}H_{12}H_{21}	= 	-\frac{1}{2m^3}\left( 
+				\frac{ \gv{\pi}^4 } {4}  -  e \v{p}^2  \v{S} \cdot \v{B}   
+				-\frac{g-2}{2}e (\v{S} \cdot \v{p}) (\v{B} \cdot \v{p})
+			\right)
+\eeq
+So finally, the direct expression for $E \Upsilon_u$ is:
+\beqa	E \Upsilon_u 
+		&=&\left \{ m + e\Phi + \frac{\pi^2}{2m} - \frac{g}{2}\frac{e}{m} \v{S} \cdot \v{B}
+			- \frac{\pi^4 } {8m^3}  
+			+ \frac{ e \v{p}^2  (\v{S} \cdot \v{B}) }{2m^3}
+			+ (g-2)\frac{e}{4m^3} (\v{S} \cdot \v{p}) (\v{B} \cdot \v{p})
+				 \right .	\\
+		&&	\left . 
+			+ (g-1)\frac{ie}{2m^2}  \left [ 
+					\v{E} \cdot \gv{\pi} - (\v{S} \cdot \v{E}) (\v{S} \cdot \gv{\pi}) + i \v{S} \cdot \v{E} \times \gv{\pi}
+					- \gv{\pi} \cdot \v{E} + (\v{S} \cdot \gv{\pi}) (\v{S} \cdot \v{E}) - i \v{S} \cdot \gv{\pi} \times \v{E} 
+			\right ]			
+			\right \}\Upsilon_u
+\eeqa
+The complicated expression in square brackets can be cleaned up a bit:
+
+\begin{eqnarray*}
+\v{E} \cdot \gv{\pi} - \gv{\pi} \cdot \v{E}
+	&=&	[E_i, \pi_i]			\\
+	&=&	[E_i, -i\partial_i]	\\
+	&=&	i(\partial_i E_i)		\\
+(\v{S} \cdot \v{E}) (\v{S} \cdot \gv{\pi}) - (\v{S} \cdot \gv{\pi}) (\v{S} \cdot \v{E})
+	&=&	S_i S_j E_i \pi_j - S_i S_j \pi_i E_j						\\
+	&=&	(S_i S_j) (E_i \pi_j - E_j \pi_i - [\pi_i, E_j])					\\
+	&=&	[S_i, S_j](E_i \pi_j) - (S_i S_j)(-i \nabla_i E_j)				\\
+	&=&	(i\epsilon_{ijk}S_k)E_j \pi_i -  (S_i S_j)(-i \nabla_i E_j)		\\
+	&=&	i \v{S} \cdot \v{E} \times \gv{\pi} + i S_i S_j \nabla_i E_j)	\\
+(\v{E} \times \gv{\pi} - \gv{\pi} \times \v{E})_k
+	&=&	\epsilon_{ijk}(E_i \pi_j - \pi_i E_j)		\\
+	&=&	\epsilon_{ijk}(E_i \pi_j + \pi_j E_i)		\\
+	&=&	\epsilon_{ijk}(2 E_i \pi_j + [\pi_i, E_j])	\\
+	&=&	2 \epsilon_{ijk} E_i \pi_j				\\
+	&=&	2 (\v{E} \times \gv{\pi})_k
+\end{eqnarray*}
+
+Using these identities and collecting terms, and then writing everything in terms of $g$, $g-2$
+\begin{eqnarray*}
+	E \Upsilon_u 
+		&=&\left\{ m + e\Phi + \frac{\pi^2}{2m} - \frac{\pi^4 } {8m^3}
+			- \frac{e}{m} \v{S} \cdot \v{B} \left ( \frac{g}{2} - \frac{p^2}{2m^2} \right )
+			+ (g-2)\frac{e}{4m^3} (\v{S} \cdot \v{p}) (\v{B} \cdot \v{p})	\right. \\
+		&&	\left.
+			- (g-1)\frac{e}{2m^2} 
+				\left [ 
+					\v{\nabla} \cdot \v{E} 
+					- S_i S_j \nabla_i E_j +\v{S} \cdot \v{E} \times \gv{\pi}
+				\right ]
+			\right\}\Upsilon_u	\\
+		&=& \left\{ m + e\Phi + \frac{\pi^2}{2m} - \frac{\pi^4 } {8m^3}
+			- \frac{g}{2}\frac{e}{m} \v{S} \cdot \v{B} \left ( 1 - \frac{p^2}{2m^2} \right )
+			- \frac{g-2}{2} \frac{e}{m} \frac{p^2}{2m^2} \v{S} \cdot \v{B} 
+			+ (g-2)\frac{e}{4m^3} (\v{S} \cdot \v{p}) (\v{B} \cdot \v{p})	\right.	\\
+		&&	\left.
+			- \left ( \frac{g}{2} + \frac{g-2}{2} \right) \frac{e}{2m^2} 
+				\left [ 
+					\v{\nabla} \cdot \v{E} 
+					- S_i S_j \nabla_i E_j +\v{S} \cdot \v{E} \times \gv{\pi}
+				\right ]
+			\right\}\Upsilon_u
+\end{eqnarray*}
+			
+This is a Hamiltonian for the upper component of the bispinor, as desired.  In the spin-half case, the Foldy-Wouthyusen transformation was necessary, going to a representation where all the physics up to the desired order is contained in the single spinor equation.  However, to the needed order, it can be shown that the Hamiltonian above is correct.
+
+
+\subsection{Schrodinger-like wave functions}
+It is necessary to establish a connection between the upper component of the spinor $\Upsilon_u$ and the Schrodinger-like wave function $\phis$.  Because the lower component of the bispinor is small but nonzero, it is not necessarily true that the above equation accurately captures the physics.  As in spin-half, transformation to a basis where the lower component is truly negligible might be necessary.
+
+However, here it can be shown that such a transformation will have no effect at the desired order.  The transformation U would have the form::
+ $U = e^{iS} $ where S is Hermitian.  Because the Hamiltonian is diagonal at leading order, S must be small, and the transformation will affect $\Upsilon_u$ as
+\begin{eqnarray*} 
+\Upsilon_u \to \phis = (1 + \Delta)\Upsilon_u 
+\end{eqnarray*}
+where $\Delta$ is some small operator.  The probability density must be unaffected by this change, so:
+On the one hand, with $\Upsilon_\ell = \epsilon \Upsilon_u$, $ \epsilon \sim \mathcal{O}(v^2) $
+
+\beqa
+\int d^3 x (\Upsilon_u^\dagger \Upsilon_u - {\Upsilon^\dagger}_\ell \Upsilon_\ell)  
+	&=& \int d^3 x (\Upsilon_u^\dagger \Upsilon_u - (\epsilon {\Upsilon_u})^\dagger \epsilon \Upsilon_u) \\
+	&=& \int d^3 x \Upsilon_u^\dagger (1 + \mathcal{O}(v^4)) \Upsilon_u
+\eeqa
+
+And on the other hand:
+\beqa
+ \int d^3 x \phis^{\dagger} \phis 
+	&=& \int d^3 x ([1 + \Delta] \Upsilon_u)^\dagger (1+\Delta)\Upsilon_u \\
+\eeqa
+
+Comparing the two, it can be seen that $\Delta$ must be no larger than $\mathcal{O}(v^4)$.  Now considering the new equation for $\phis$:
+\beqa
+(E -m)\Upsilon_u 	
+	&=&	\left(H_{11} +  \frac{1}{2m}H_{12} H_{21} \right) \Upsilon_u\\
+(E-m)(1-\Delta)\phis
+	&=&	\left(H_{11} +  \frac{1}{2m}H_{12} H_{21} \right) (1-\Delta) \phis\\
+(E-m)\phis
+	&=&	(1 + \Delta)\left(H_{11} +  \frac{1}{2m}H_{12} H_{21} \right) (1-\Delta) \phis
+\eeqa
+
+Since $H \sim \mathcal{O}(mv^2)$ and $\Delta \sim \mathcal{O}(v^4)$, to $\mathcal{O}(v^4)$, $\phis$ obeys exactly the same equation as $\Upsilon_u$:
+\beqa
+(E -m)\phis
+	&=&  \left ( H_{11} +  \frac{1}{2m} H_{12} H_{21}  \right ) \phis  \\
+\eeqa
+
+
+Because it obeys the same equation, it then follows that the Hamiltonian for $\phis$ is just that already found for $\Upsilon_u$:
+\beqa
+	E \phis
+		&=&\left\{ m + e\Phi + \frac{\pi^2}{2m} - \frac{\pi^4 } {8m^3}
+			- \frac{e}{m} \v{S} \cdot \v{B} \left ( \frac{g}{2} - \frac{p^2}{2m^2} \right )
+			+ (g-2)\frac{e}{4m^3} (\v{S} \cdot \v{p}) (\v{B} \cdot \v{p})	\right. \\
+		&&	\left.
+			- (g-1)\frac{e}{2m^2} 
+				\left [ 
+					\v{\nabla} \cdot \v{E} 
+					- S_i S_j \nabla_i E_j +\v{S} \cdot \v{E} \times \gv{\pi}
+				\right ]
+			\right\}\Upsilon_u	\\
+		&=& \left\{ m + e\Phi + \frac{\pi^2}{2m} - \frac{\pi^4 } {8m^3}
+			- \frac{g}{2}\frac{e}{m} \v{S} \cdot \v{B} \left ( 1 - \frac{p^2}{2m^2} \right )
+			- \frac{g-2}{2} \frac{e}{m} \frac{p^2}{2m^2} \v{S} \cdot \v{B} 
+			+ (g-2)\frac{e}{4m^3} (\v{S} \cdot \v{p}) (\v{B} \cdot \v{p})	\right.	\\
+		&&	\left.
+			- \left ( \frac{g}{2} + \frac{g-2}{2} \right) \frac{e}{2m^2} 
+				\left [ 
+					\v{\nabla} \cdot \v{E} 
+					- S_i S_j \nabla_i E_j +\v{S} \cdot \v{E} \times \gv{\pi}
+				\right ]
+			\right\}\phis
+\eeqa

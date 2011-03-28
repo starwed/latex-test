@@ -51,8 +51,10 @@
 
 \newcommand{\Sb}{\bar{S}}
 
-\newcommand{\A}{a}
-\newcommand{\Adag}{a'}
+\newcommand{\A}{\epsilon}
+\newcommand{\Adag}{\epsilon'}
+\newcommand{\W}{\omega}
+\newcommand{\Wdag}{\omega^*}
 
 
 \newcommand{\VertexEq}[2]{ \mbox{
@@ -71,11 +73,27 @@
 \newcommand{\vdaggervec}[1]{ \begin{pmatrix} \frac{\sigdot{#1}}{2m}  \chi^\dagger & \chi^\dagger \end{pmatrix} }
 
 \newcommand{\ubar}{\bar{u}}
-\newcommand{\vbar}{\bar{v}}
+\newcommand{\vbar}{\bar{v}}%
+
+
+%% Commands from spin1-diagrams
+\newcommand{\snote}[1]{}
+\newcommand{\qp}{q^{(+)}{}}
+\newcommand{\qm}{q^{(-)}{}}
+ \newcommand{\E}[1]{ \sqrt{ m^2 + \v{#1}^2 } }
+% % \newcommand{\E}[1]{ E_{#1} }
+ \newcommand{\diracdelta}[1]{ \delta^{(3)}(#1) }
+ \newcommand{\epin}[1]{ \epsilon_{#1}(p) }
+ \newcommand{\epout}[1]{ \epsilon^*_{#1}(p') }
+\newcommand{\omin}[1]{ \omega_{#1}(p) }
+ \newcommand{\omout}[1]{ \omega^*_{#1}(p') }
+
 
 \usepackage{setspace}
 \doublespacing
 \begin{document}
+ 	
+
 
 
 \tableofcontents
@@ -86,10 +104,11 @@
 \include{Spin-half}
 
 
-%\include{ExactEquationsSpin1}
-%\include{NRQED}
-%\include{GeneralSpin}
+\include{SpinOne-Equations}
+\include{Spin1-Diagrams}
+\include{NRQED}
+\include{GeneralSpin}
 
-%\include{appendix}
+\include{appendix}
 
 \end{document}

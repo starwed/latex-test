@@ -29,24 +29,24 @@ Let us review how the process of renormalization works when a theory {\it is} re
 The QED Lagrangian defined at some cut-off is:
 \beq
 	\mathcal{L}_0 = 
-		\bar{\Psi} \left( i \partial \cdot \gamma - e_0 A \cdot \gamma - m_0 \right) \Psi - \frac{1}{2} (F^{\mu\nu})^2 
+		\bar{\Psi} \left( i \partial \cdot \gamma - e_0 A \cdot \gamma - m_0 \right) \Psi - \frac{1}{4} F^{\mu\nu}) F^{\mu\nu} 
 \eeq 
 and additionally the cut-off regulator $\Lambda_0$.  
 
 In calculating a process without a cut-off, all intermediate states must be summed over.  When kinematics do not strictly dictate the intermediate momenta of some particles, this means integrating over an infinite range.  This is exactly the case with an internal loop (as it described in the language of Feynman diagrams), and is what caused the infinities that plauged initial attempts to formulate relativistic quantum mechanics. 
 
-By introducing a cut-off, the integrals only take place over a bounded domain of momenta, and are thus finite.  The seeming cost is that physical quantities should not depend upon this arbitrary cut-off $\Lambda_0$.  Still, the parameters can be fixed by comparing with experiment.  This theory will then produce results correct up to some terms of $\mathcal{O}(1/\Lambda_0^2)$.
+By introducing a cut-off, the integrals only take place over a bounded domain of momenta, and are thus finite.  The cost is that physical quantities should not depend upon this arbitrary cut-off $\Lambda_0$.  Still, the parameters can be fixed by comparing with experiment.  This theory will then produce results correct up to some terms of $\mathcal{O}(1/\Lambda_0^2)$.
 
-There are two parameters: the bare mass $m_0$ and the bare charge $e_0$.  These parameters are determined from experiment.  Two processes can be calculated (such as electron-electron scattering and the electron scattering off some external field), compared to the experimental measurements, and thus the parameters fixed.
+There are two parameters: the mass $m_0$ and the bare charge $e_0$.  These parameters are determined from experiment.  Two processes can be calculated (such as electron-electron scattering and the electron scattering off some external field), compared to the experimental measurements, and thus the parameters fixed.
 
-Handed this theory with this high cut-off $\Lambda_0$, it is possible to reformulate it in terms of a new, lower cut-off $\Lambda$.  The new theory will hold valid for processes where the external momenta are much less than $\Lambda$.	
+Handed this theory with a high cut-off $\Lambda_0$, it is possible to reformulate it in terms of a new, lower cut-off $\Lambda$.  The new theory will hold valid for processes where the external momenta are much less than $\Lambda$.	
 
 By introducing this lower cut-off, high energy virtual processes are eliminated from the theory.  Rather than being explicitly included, their effects will implicitly be included by corrections to the parameters of the theory.
 
-These corrections can be calculated from the old theory.  Before loop-integrals over momenta ran from $0$ to the old cut-ff $\Lambda_0$.  In the new theory, they will run from $0$ to $\Lambda$.  Clearly the difference between the two calculations will be an integral from $\Lambda$ to $\Lambda_0$.  Importantly, because $\Lambda$ is taken to be greater than the energy of any process considered, so will the loop momentum in that sector of the integral.
+These corrections can be calculated from the original theory.  Before, loop-integrals over momenta ran from $0$ to the old cut-off $\Lambda_0$.  In the new theory, they will run from $0$ to $\Lambda$.  Clearly the difference between the two calculations will be an integral from $\Lambda$ to $\Lambda_0$.  Importantly, because $\Lambda$ is taken to be greater than the energy of any process considered, so will the loop momentum in that sector of the integral.
 
 %TODO insert diagram of vertex correction
-First consider the calculation of the electron vertex.  Call the original value $T$, which will have contributions from several diagrams.  On such contribution is from the diagram (INSERT).  Call this contribution $T^{(a)}$.  
+First consider the calculation of the electron vertex.  Call the original value $T$, which will have contributions from several diagrams.  On such contribution is from the one loop diagram, where a photon is exchanged between the fermion line before and after the interaction.  Call this contribution $T^{(a)}$.  
 
 In the original $\mathcal{L}_0$ theory the contribution would be
 \beq
@@ -115,7 +115,7 @@ There are indeed corrections to $m_0$, coming from the electron self-energy.  An
 The Lagrangian valid with the new cut-off $\Lambda$ can be written in terms of the old as:
 \beq
 	\mathcal{L}_\Lambda = 
-		\bar{\Psi} \left( i \partial \cdot \gamma - e_\Lambda A \cdot \gamma - m_\Lambda \right) \Psi - \frac{1}{2} (F^{\mu\nu})^2 
+		\bar{\Psi} \left( i \partial \cdot \gamma - e_\Lambda A \cdot \gamma - m_\Lambda \right) \Psi - \frac{1}{4} F^{\mu\nu}F_{\mu\nu} 
 \eeq 
 where the constants are
 \beqa
@@ -219,7 +219,7 @@ There are techniques of doing this, but clearly it becomes trickier to easily so
 \beq  E = \frac{ (Z\mu\alpha)^2}{m_i} \eeq
 further complicating the process of calculating the contributions of a given order.
 
-Well, QED is a high energy theory, while calculations should be easiest in a low energy theory formulated for this nonrelativistic regime.  What is desired is a theory that lives at the appropriate scale, and thus avoids the business of summing infinite numbers of diagrams, but never-the-less incorporates all the effects of high energy physics.
+Well, QED is a high energy theory, while calculations should be easiest in a low energy theory formulated for this nonrelativistic regime.  What is desired is a theory that lives at the appropriate scale, thus avoiding the business of summing infinite numbers of diagrams, but never-the-less incorporating all the relevant effects of high energy physics.
 
 Of course, an effective field theory has exactly these characteristics.  The procedure is as follows.  First write down the most general Lagrangian that obeys the symmetries of the theory.  Of course here, in going from the high energy theory to the effective nonrelativistic, Lorentz symmetry is no longer required.  
 
@@ -235,7 +235,7 @@ As sketched in the previous section, to work with bound state problems it is sim
 
 If the goal is to derive a nonrelativistic Lagrangian or Hamiltonian for the system, one approach is to start from the Dirac equation and find a way to express it nonrelativistically.
 
-One such approach is the Foldy-Wouthuyesen-Tani transformation.  Consider the Dirac Lagrangian:
+One such approach is the Foldy-Wouthuyesen-Tani transformation.  Consider the Dirac Lagrangian for an electron:
 
 \beq
 	\mathcal{L}_{\text{Dirac}} = 
@@ -244,14 +244,13 @@ One such approach is the Foldy-Wouthuyesen-Tani transformation.  Consider the Di
 		
 If the system is nonrelativistic, then one of the important consequences is that electrons and positrons behave pretty much as independent particles.  A representation can be chosen such that the upper and lower components of the bispinors $\Psi$ are roughly equivalent to the electron and positron spinors.  There will be some mixing, and it is the FWT transformation that finds a form for the bispinors in such a way that all the operators above become diagonal.  Then, the upper and lower components are completely separated, and one can easily treat them as separate fields.
 
-Technically this is impossible when an external field $A_{\text{ext}}$ is present.  However, a basis where the mixing between ``particle'' and ``anti-particle'' is arbitrarily small may be found perturbatively.  The result will be an expansion in terms of $\abs{\v{p}} / m$, that relates the original upper and lower components to the desired ``Shrodinger-like'' spinors.
+Technically this is impossible when an external field $A_{\text{ext}}$ is present.  However, a basis where the mixing between ``particle'' and ``anti-particle'' is arbitrarily small may be found perturbatively.  The result will be an expansion in terms of $\abs{\v{p}} / m$, that relates the original upper and lower components to the desired ``Schrodinger-like'' spinors.
 
 The second order result will be, for a Dirac bispinor $u$ with upper and lower components $\phi$ and $\xi$:
 \beqa
 	u &=& \begin{pmatrix}\phi \\ \chi \end{pmatrix} = \begin{pmatrix} (1-\frac{p^2}{8m^2} ) \phi_s \\ \frac{\sigma \cdot p }{2m} (1 - \frac{3p^2}{8m^2} ) \phi_s \end{pmatrix}
 \eeqa
-An important feature here is that the lower component is suppressed compared to the upper, by a factor of $\sigma \cdot p / 2m$.  But the overall normalisation must stay the same.  This can actually be used to find the correct relations between relativistic and nonrelativistic wave functions without formally performing the transformation.  
-
+An important feature here is that the lower component is suppressed compared to the upper, by a factor of $\sigma \cdot p / 2m$.  Conservation of probability demands that, for a Schroginer-like wave function, $\int \phis^\dagger \phis = 1$.  By demanding equality with the relativistic probability density $\ubar \gamma^0 u$ the above form can be derived, without performing the actual transformation.
 
 Once this is accomplished, the Lagrangian may be rewritten directly in terms of, say, the electron spinor.  The relativistic bispinor has been replaced by a two-component nonrelativistic spinor.  Additionally, all the other terms can be rewritten in terms of Galilean three vectors and scalars instead of Lorentz 4-vectors.  The result is a manifestly nonrelativistic expression.  
 
@@ -313,13 +312,13 @@ In order to perform any comparison with QED, it is first necessary to catalogue 
 
 What are the building blocks at our disposal?  Each term will have two electron fields, possibly the external electromagnetic field, and derivatives of either type of field.  There can also be mixing between the spin-space of the fermion fields.
 
-The first constraint to apply is gauge-invariance.  If only gauge invariant combinations are allowed, then instead of any mixture of derivatives and fields, only the long derivate $D = \partial + ieA$ is allowed, along with $E$, $B$ and their derivatives.
+The first constraint to apply is gauge-invariance.  If only gauge invariant combinations are allowed, then instead of any mixture of derivatives and fields, only the long derivative $D = \partial + ieA$ is allowed, along with $E$, $B$ and their derivatives.
 
 The operators that mix spin for the spin-$1/2$ electron are just the Pauli spin matrices $\sigma_i$.  Together with the identity they form a basis for the space of Hermitian spin-operators, so no quadratic terms in spin can appear.  Those can be directly reduced with the identity $\sigma_i \sigma_j = \delta_{ij} + i\epsilon_{ijk} S_k$.
 
 Many of these ``blocks" are written as three-vectors.  For Galilean invariance to hold, there can be no dangling indices --- all terms must be contracted, either with each other or the anti-symmetric tensor $\epsilon_{ijk}$.
 
-Lets consider now the symmetries of each type of term.
+Consider now the symmetries of each type of term.
 \begin{itemize}
   \item The electric field is Hermitian, odd under parity and even under time reversal.  
   \item The magnetic field is Hermitian, even under parity and odd under time reversal
@@ -341,7 +340,7 @@ To figure out how far down the hierarchy of terms we need to go for a particular
 	eA_0			 &\sim& mv^2	\\
 	e\v{A}			 &\sim& mv^3	\\
 	e\v{E}			 &\sim& m^2 v^3	\\
-	e\v{B}			 &\sim& m^2 v^3	\\ 
+	e\v{B}			 &\sim& m^2 v^4	\\ 
 \eeqa
 
 The magnitudes of the fields can be readily derived from their atomic origin.  The spin operator is order unity (when we have $\hbar=1$.)
@@ -357,10 +356,15 @@ The electric field is the first derivative of $\Phi$, so
 	e E_i \sim \frac{Z\alpha}{r^3} r_i \sim m^2 (Z \alpha)^3 = m^2 v^3
 \eeq
 
-The magnetic field $B \sim$ %TODO finish
+There are two sources for a magnetic field acting on the electron. The first is the spin-orbit coupling, a result of a spinning particle moving in an electric field.  There is also a spin-spin coupling between the spins of the nucleus and electron, but here it is the weaker of the two effects.
 
+The order of the magnetic field can be found by considering a simple nonrelativistic approximation.  Consider a shift to the frame of the electron.  It then sees the nucleus moving along at speed $v$.  This predicts a magnetic field of 
+\beq
+	B = q \frac{\v{v} \times \v{r}}{r^3}  = \v{v} \times \v{E} 
+\eeq
+Now, this is not truly accurate, because relativistic effects are ignored.  However, they do not change the overall order, so $B$ must go as $m^2v^4$.
 
-
+Since $B$ is the derivative of $\v{A}$, $A$ is of order $mv^3$.
 
 To be consistent with the Schrodinger equation, $\partial_t \sim mv^2$.
 
@@ -379,19 +383,26 @@ Without spin, $A_0$ and $\partial_0$ appear by themselves.  A single power of $D
 	eA_0, \;  \partial_0,  \; \frac{\v{D}^2}{2m}
 \eeq
 
-A single power of $D$ contracted with $\sigma$ is disallowed by parity, and something like $(\sigdot{D})^2$ is redundant, since quadratic terms in $\sigma$ reduce.  Only linear combinations of $\sigma$ need be considered.  None of the other ingredients have Lorentz indices, so no spin terms appear at this order.
+A single power of $D$ contracted with $\sigma$ is disallowed by parity, and something like $(\sigdot{D})^2$ is redundant, since quadratic terms in $\sigma$ reduce.  Only linear combinations of $\sigma$ need be considered.  None of the other ingredients have vector indices, so no spin terms appear at this order.
 
-The next order of terms are $mv^3$.  This could be a single power of $E$, a single power of $B$, or three powers of $D$.  However, since $E$ and $D$ are both odd under parity, those terms are not allowed.  The only one left is a single power of $B$.  Since the index needs to be contracted with something, it must be the order unity spin matrix.  Thus, the only term allowed at this order is $\sigdot{B}$:
+The next order of terms are $mv^3$.  This could be a single power of $E$ or three powers of $D$.  However, since $E$ and $D$ are both odd under parity, those terms are not allowed, and nothing arises at this order.
+
+
+
+The only one left is a single power of $B$.  Since the index needs to be contracted with something, it must be the order unity spin matrix.  Thus, the only term allowed at this order is $\sigdot{B}$:
 \beq
 	\frac{e}{m}\sigdot{B}
 \eeq
 
-At order $mv^4$, there could be four powers of $D$, or a single power of $D$ accompanied by either $E$ or $B$.  However, something like $\v{B} \cdot \v{D}$ is forbidden by parity.  With four powers of $D$, the only way to contract them is as $D^4$.  With $E$ and $D$ there are two ways to contract them: either with $\delta_{ij}$ or with $\sigma_k \epsilon_{ijk}$.  In any case the resulting term must be Hermitian and invariant under time reversal, so the two terms are
+At the next order, something like $\v{B} \cdot \v{D}$ is forbidden by parity.
+
+At order $mv^4$, there could be four powers of $D$, or a single power of $D$ accompanied by $E$.    With four powers of $D$, the only way to contract them is as $D^4$.  With $E$ and $D$ there are two ways to contract them: either with $\delta_{ij}$ or with $\sigma_k \epsilon_{ijk}$.  In any case the resulting term must be Hermitian and invariant under time reversal, so the two terms are
 \beq
 	\frac{ \v{E} \cdot \v{D} - \v{D} \cdot \v{E} }{4m^2} , \; \frac{ i\epsilon_{ijk} (E_i D_j - D_i E_j) }{4m^2} 
 \eeq 
 
-Finally at order $mv^5$ there are more terms involving $B$.  Parity again terms involving only combinations of $E$ and $D$, but one power of $B$ and two powers of $D$ is allowed.  Because there are an odd number of indices, and contracting $\epsilon_{ijk}$ with two powers of $D$ is redundant (producing an $\mathcal{O}(mv^6)$ term $B^2$), all the terms will involve $\sigma_i$.
+
+Finally at order $1/m^3$ there are more terms involving $B$.  One power of $B$ and two powers of $D$ is allowed.  Because there are an odd number of indices, and contracting $\epsilon_{ijk}$ with two powers of $D$ is redundant (producing an $\mathcal{O}(mv^6)$ term $B^2$), all the terms will involve $\sigma_i$.
 
 The allowed combinations are
 \beq
@@ -407,7 +418,7 @@ Of course in the special case where derivatives of $B$ vanish (i.e. $B$ commutes
 %%%%%%%%%%%
 Now we have the Lagrangian, including terms up to order $1/m^3$.  
 
-What will the overall structure of the Lagrangian be?  There will be two fermion terms, four-fermion terms, and photon terms.  The photon terms are taken as just that of QED at leading order: $\frac{1}{2} (F^{mu\nu})^2$.  
+What will the overall structure of the Lagrangian be?  There will be two fermion terms, four-fermion terms, and photon terms.  The photon terms are taken as just that of QED at leading order: $\frac{1}{4} F^{\mu\nu}F_{\mu\nu}$.  
 
 Now examine the two-fermion part in more detail.  It will include kinetic terms that are not renormalized and thus need no coefficients.  The leading order terms will go as $1/m$, and there will then be corrections coming from additional terms.
 
@@ -482,12 +493,12 @@ or in terms of Pauli spinors instead, up to $1/m^3$
 
 \beq
 \begin{split}
-=& 	F_1 \Psi^\dagger \left[
+=& 	F_1 \phis^\dagger \left[
 	- \frac{e}{2m} (\v{p'} + \v{p} ) \cdot \v{A} - \frac{ie}{2m} \gv{\sigma} \cdot \v{q} \times \v{A}
-	+ \frac{ie}{8m^3} (\v{p'}^2 + \v{p}^2 ) \gv{\sigma} \cdot \v{q} \times \v{A} \right ] \Psi
- \\& 	+F_2 \Psi^\dagger \left [ - \frac{ie}{2m} \gv{\sigma} \cdot \v{q} \times \v{A} 
+	+ \frac{ie}{8m^3} (\v{p'}^2 + \v{p}^2 ) \gv{\sigma} \cdot \v{q} \times \v{A} \right ] \phis
+ \\& 	+F_2 \phis^\dagger \left [ - \frac{ie}{2m} \gv{\sigma} \cdot \v{q} \times \v{A} 
 	+ \frac{ie}{16m^3}  (\v{p'}^2 + \v{p}^2 ) \gv{\sigma} \cdot \v{q} \times \v{A}
-	+ \frac{ie}{8m^3}  (\gv{\sigma}\cdot \v{p'})( \gv{\sigma} \cdot \v{q} \times \v{A})( \gv{\sigma} \cdot \v{p})  \right ] \Psi
+	+ \frac{ie}{8m^3}  (\gv{\sigma}\cdot \v{p'})( \gv{\sigma} \cdot \v{q} \times \v{A})( \gv{\sigma} \cdot \v{p})  \right ] \phis
 \end{split}
 \eeq
 
@@ -499,8 +510,8 @@ For scattering off a static potential $A_0$
 \eeq
 Again expressing in terms of Pauli spinors
 \beq \begin{split}
-	=& F_1 \Psi^\dagger \left [e A^0 - \frac{e}{8m^2} \v{q}^2 + \frac{ie}{4m^2} \gv{\sigma} \cdot (\v{p'} \times \v{p}) A^0 \right ] \Psi
-\\	& + F_2 \Psi^\dagger \left [ - \frac{e}{8m^2}\v{q}^2  + \frac{ie}{4m^2} \gv{\sigma} \cdot (\v{p'} \times \v{p}) A^0 \right ] \Psi		
+	=& F_1 \phis^\dagger \left [e A^0 - \frac{e}{8m^2} \v{q}^2 + \frac{ie}{4m^2} \gv{\sigma} \cdot (\v{p'} \times \v{p}) A^0 \right ] \phis
+\\	& + F_2 \phis^\dagger \left [ - \frac{e}{8m^2}\v{q}^2  + \frac{ie}{4m^2} \gv{\sigma} \cdot (\v{p'} \times \v{p}) A^0 \right ] \phis		
 \end{split}
 \eeq
 
