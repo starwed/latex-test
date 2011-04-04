@@ -145,7 +145,7 @@ Using the antisymmetry of $\sigma^{\mu\nu} \equiv $, and that we deal with time-
 			-2 \begin{pmatrix} 0 & \sigdot{E} \\ \sigdot{E} & 0 \end{pmatrix}	
 \eeqa
 
-So far the discussion has been in position space.  To work out the nonrelativistic form it will be easier to talk about th equations of motion directly in terms of energy and momentum.  So replace $i\partial_t$ with $p_0$, and $i\partial_i$ with $p_i$.  Likewise, replace the gauge invariant derivative  $iD_i = \pi_i = p_i - eA_i$.
+So far the discussion has been in position space.  To work out the nonrelativistic form it will be easier to talk about the equations of motion directly in terms of energy and momentum.  So replace $i\partial_t$ with $p_0$, and $i\partial_i$ with $p_i$.  Likewise, replace the gauge invariant derivative  $iD_i = \pi_i = p_i - eA_i$.
 
 A solution of definite momentum $p$ to the equation is written in terms of upper and lower components
 \beq
@@ -678,7 +678,7 @@ Using that identity,
 		\right \} w 
 \eeq
 
-This can be further simplified by combining the like terms $\sigma_k (\v{p'}^2 + \v{p}^2 ) + 2 \sigma_k \v{p} \cdot \v{p'} = \sigma_k \v{q}^2$.
+This can be further simplified by combining the like terms $\sigma_k (\v{p'}^2 + \v{p}^2 ) - 2 \sigma_k \v{p} \cdot \v{p'} = \sigma_k \v{q}^2$.
 \beq
 	\srb  \frac{i}{2m} q_j \sigma^{ij} \sr 
 		= \frac{i \epsilon_{ijk} q_j}{2m} w^\dagger \left \{
@@ -807,10 +807,10 @@ Now turning to the coupling with $\v{A}$.  The first has $	\Gamma^\mu = \gamma^\
 The second is	$\Gamma^\mu = \gamma^\mu [F_1(q^2) + F_2(q^2) ]  -  \frac{p^\mu  + p'^\mu }{2m}F_2 (q^2)$.  Using \eqref{eq:Sh:Vi} and \eqref{eq:Sh:Si}:
 \beq \begin{split}
 	A_i \srb \gamma^i \sr = & 
-		A_i F_1 w^\dagger \left\{
+		A_i [F_1 + F_2] w^\dagger \left\{
 		\frac{ p_i + p'_i - \epsilon_{ijk} q_j \sigma_k }{2m} \left( 1 -\frac{ \v{p}^2}{2m^2} \right )
 	\right\} w
-	\\& + F_2 \frac{(p + p')^i}{2m} w^\dagger \left( 
+	\\& - F_2 \frac{(p + p')^i}{2m} w^\dagger \left( 
 		1 -  \frac{ \v{p}^2  +2 \v{p} \cdot \v{p'} +  \v{p'}}{8m^2} - \frac{i\gv{\sigma} \cdot \v{q} \times \v{p} }{4m^2} 
 		\right ) w
 \end{split} \eeq
@@ -824,7 +824,6 @@ The third combination is $	\Gamma^\mu = \frac{p^\mu  + p'^\mu }{2m} F_1(q^2) + i
 			\sigma_k - \frac{ \gv{\sigma} \cdot \v{p} p_k  }{2m^2} 
 		\right \} w 
 \end{split} \eeq
-
 
 \subsection{Calculation of Compton scattering in QED}
 The relevant terms in the NRQED Lagrangian can all be fixed by the previous calculation of scattering off an external field, because even though there are terms involving two powers of the photon field, the requirement of gauge invariance means they share a coefficient with one photon terms.  However, for reasons of self consistency it would be good to check that the coefficients really do work out the same if calculated independently.

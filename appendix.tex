@@ -359,6 +359,13 @@ Now
  	&=& \v{p}^2 \v{S} \cdot \v{B} - (\delta_{ij} S_k + \delta_{kj} S_i	) p_i p_j B_k	\\
  	&=& - (\v{S} \cdot \v{p}) (\v{B} \cdot \v{p})
 \end{eqnarray*}
+So
+\beq \label{eq:A:SBanticom}
+	\left \{ \frac{\v{p}^2}{2} - (\v{S} \cdot \v{p})^2, \v{S} \cdot \v{B} \right \}
+	 =
+	 - (\v{S} \cdot \v{p}) (\v{B} \cdot \v{p})
+\eeq
+
 \subsubsection*{Result}
 At last, the final result is that, to the order we care about 
 \beq \label{eq:A:crossterm}
@@ -367,3 +374,64 @@ At last, the final result is that, to the order we care about
 		 -\frac{g-2}{2}\frac{e}{m} (\v{S} \cdot \v{p}) (\v{B} \cdot \v{p})
 \eeq
 
+
+
+
+
+\section{Spin identity}
+The product of two spin-1 matrices is
+
+Our representation defines the spin matrices as follows:
+$${(S_k)}_{ij}=-i \epsilon_{ijk}$$
+
+
+
+The product of two such spin matrices is given by:
+\begin{eqnarray*}
+{(S_k S_\ell)}_{ij} 
+	& = & {(S_k)}_{ia} {(S_\ell)}_{aj} \\
+	& = & -\epsilon_{iak} \epsilon_{aj\ell} \\
+	& = & (\delta_{k\ell} \delta_{ij} - \delta_{kj} \delta_{\ell i} )
+\end{eqnarray*}
+
+We can use this to write some pair of vector components $u_i v_j$ as a matrix structure.  Contract both sides of the above identity with $v_k$ and $u_\ell$.  The result is
+\[
+	[(\v{S} \cdot \v{v} )(\v{S} \cdot \v{u})]_{ij}
+		= \v{u} \cdot \v{v} \delta_{ij} - u_i v_j 
+\]
+or equivalently
+\[
+	u_i v_j = \v{u} \cdot \v{v} \delta_{ij}  - [(\v{S} \cdot \v{v} )(\v{S} \cdot \v{u})]_{ij}
+\]
+The indices on the second term on the write refer to the indices of the product of spin matrices.  We will use this identity frequently in the following form:
+\[
+	(\v{W^\dagger} \cdot \v{v} )( \v{u} \cdot \v{W} )
+		=	\v{W^\dagger} \left[ \v{u} \cdot \v{v} - (\v{S} \cdot \v{u} )(\v{S} \cdot \v{v}) \right ] \v{W}
+\]
+(Note that the vector dotted into $W^\dagger$ appears dotted with right-most spin matrix.)
+
+
+\section{Anticommutator identity}
+\begin{eqnarray*}
+\left \{ \frac{\v{p}^2}{2} - (\v{S} \cdot \v{p})^2, \v{S} \cdot \v{B} \right \}
+	&=&	 \v{p}^2 \v{S} \cdot \v{B} - [(\v{S} \cdot \v{p})^2 \v{S} \cdot \v{B} + \v{S} \cdot \v{B} (\v{S} \cdot \v{p})^2  ]	\\
+	&=&	 \v{p}^2 \v{S} \cdot \v{B} - (S_i S_j S_k + S_k S_j S_i) p_i p_j B_k
+\end{eqnarray*}
+
+To simplify that triple product of spin matrices, we can use their explicit form:
+\begin{eqnarray*}
+	(S_i S_j S_k )_{ab}
+		&=&	i\epsilon_{aci}\epsilon_{cdj}\epsilon_{dbk}	\\
+		&=&	i(\delta_{id} \delta_{aj} - \delta_{ij} \delta_{ad})\epsilon_{dbk}	\\
+		&=&	i(\delta_{aj} \epsilon_{ibk} - \delta_{ij} \epsilon_{abk})		\\
+	(S_i S_j S_k + S_k S_j S_i)_{ab}
+		&=& i(\delta_aj \epsilon_{ibk} + \delta_{aj} \epsilon_{kbi} -\delta_{ij} \epsilon_{abk} -\delta{kj}\epsilon_{abi})	\\
+		&=& -i(\delta_{ij} \epsilon_{abk} + \delta_{kj} \epsilon_{abi})	\\
+		&=&	\delta_{ij} {(S_k)}_{ab} + \delta_{kj} {(S_i)}_{ab}	
+\end{eqnarray*}
+Now 
+\begin{eqnarray*}
+ \v{p}^2 \v{S} \cdot \v{B} - (S_i S_j S_k + S_k S_j S_i) p_i p_j B_k
+ 	&=& \v{p}^2 \v{S} \cdot \v{B} - (\delta_{ij} S_k + \delta_{kj} S_i	) p_i p_j B_k	\\
+ 	&=& - (\v{S} \cdot \v{p}) (\v{B} \cdot \v{p})
+\end{eqnarray*}
