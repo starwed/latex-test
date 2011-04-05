@@ -825,6 +825,142 @@ The third combination is $	\Gamma^\mu = \frac{p^\mu  + p'^\mu }{2m} F_1(q^2) + i
 		\right \} w 
 \end{split} \eeq
 
+
+
+\subsection{Amplitude in NRQED for scattering off an external field}
+Earlier, the Lagrangian \eqref{eq:nr:L-half} for spin one-half particles was calculated.  To calculate the scattering off an external field in this theory, only those terms that include one power of the electromagnetic field are needed.  Call that part of the Lagrangian containing such terms $\mathcal{L}_A$.  This set of terms need not, by themselves, be gauge invariant.  However, previously care was taken to group terms in a gauge invariant way.  So first the terms of $\mathcal{L}_A$ must be disentangled from the gauge invariant terms (involving one or more powers of $\v{D}$).
+
+
+
+First take the kinetic terms, involving simple powers of $\v{D}$.  $\v{D} = \grad - ie\v{A}$, so
+\beq
+	\v{D}^2 = (\nabla_i - ieA_i)(\nabla_i - ieA_i)
+\eeq
+It is a mixture of terms with two, one, or no powers of the external field $A$.  If just the terms with one power of $\v{A}$ are included, what remains is
+\beq
+	-ie( A_i \nabla_i + A_i \nabla_i = -ie \{A_i, \nabla_i\}
+\eeq
+So from $\v{D}^2/ 2m$ emerges, in $\mathcal{L}_A$,  $-ie \{\nabla_i, A_i\}/2m$ in  $\mathcal{L}_A$.
+
+The second kinetic term is $\v{D}^4$:
+\beq
+	\v{D}^4 = (\nabla_i - ieA_i)(\nabla_i - ieA_i) (\nabla_j - ieA_j)(\nabla_j - ieA_j)
+\eeq
+or
+\beq
+	\v{D}^4 = ( \grad^2 - ie \{A_i, \nabla_i\} - e^2 \v{A}^2)( \grad^2 - ie \{A_j, \nabla_j\} - e^2 \v{A}^2)
+\eeq
+Keeping again only the terms with a single power of $A$, what remains may be expressed as the double anti-commutator
+\beq
+	-ie \{ \grad^2, \{\nabla_i, A_i \} \} 
+\eeq
+
+There are then several terms involving one or more powers of $D$ combined with either $E$ or $B$.  Since only terms with a single power of the field are of interest, in all such terms $\v{D}$ may be replaced with $\grad$.
+
+
+
+So finally, writing all such terms from the original Lagrangian involved in scattering off an external field leaves:
+\small
+\beq 
+\label{eq:Sh:nrL-A}
+\begin{split} 
+\mathcal{L}_A = \fnrb \Bigg (  -eA_0 
+		&- ie  \frac{ \{\nabla_i, A_i \} }{2m} -ie \frac{ \{\grad^2, \{\nabla_i, A_i \}  \} }{8m^3} 
+		+ c_F e \frac{\v{S} \smalldot \v{B}} {2m}   	
+		+ c_D \frac{ e(\v{\grad} \smalldot \v{E} - \v{E} \smalldot \v{\grad} ) }{8m^2}	
+			\\&	+ c^{1}_S \frac{ ie \v{S} \smalldot ( \v{\grad} \times \v{E} - \v{E} \times \v{\grad} )}{8m^2}
+		+ c_{W_1} \frac{ e [ \v{\grad}^2 (\v{S} \smalldot \v{B} ) + (\v{S} \smalldot \v{B} ) \v{\grad}^2] }{8m^3}	
+		\\& - c_{W_2} \frac{ e \nabla^i (\v{S} \smalldot \v{B} ) \nabla^i }{4m^3}
+		+ c_{p'p} \frac{ e [ (\v{S} \smalldot \v{\grad}) (\v{B} \smalldot \v{\grad}) + (\v{B} \smalldot \v{\grad})(\v{S} \smalldot \v{\grad}) }{8m^3} \Bigg )\fnr
+\end{split} \eeq
+\normalsize
+
+
+
+\subsubsection{Calculation of one photon scattering}
+
+
+
+The form Lagrangian that will account for all interactions with a single photon is now established.  From this, the idea is to calculate a particular process: scattering off an external field, with incoming momentum $\v{p}$, outgoing $\v{p'}$, and $\v{q} = \v{p'} - \v{p}$. 
+One diagram could be associated with each term in \eqref{eq:Sh:nrL-A}, but the total amplitude is just going to be the sum of all these one-photon vertices.  These of course can just be read off directly from the Lagrangian.
+
+It is necessary to switch to the language of momentum space.  The recipe is this: replace the fields $\Psi$ with the spinors $\phi$, and any operator $\grad$ acting will become $i\v{p}$ if it acts on the right, $i\v{p'}$ if it is to the left.
+
+The terms originating from $D^2$ are:
+\beq
+	- ie  \frac{ \{\nabla_i, A_i \} }{2m} 
+\eeq
+which in position space become
+\beq
+	e \frac{ \v{A} \cdot (\v{p} + \v{p'}) }{2m} 
+\eeq
+
+While the terms arising from $D^4$
+\beq
+-ie \frac{ \{\grad^2, \{\nabla_i, A_i \}  \} }{8m^3} 
+\eeq
+become
+\beq
+- e \frac{ \v{A} \cdot (\v{p} + \v{p'}) (\v{p'}^2 + \v{p}^2 ) }{8m^3} 
+\eeq
+
+
+Some of the expressions involving $\grad$ and $\v{E}$ can be simplified.  Because $E_i = -\partial_i \Phi$
+\beq
+	\v{\grad} \times \v{E} - \v{E} \times \v{\grad} =  - 2 \v{E} \times \v{\grad}
+\eeq
+And also
+\beq
+\v{\grad} \smalldot \v{E} - \v{E} \smalldot \v{\grad} = (\partial_i E_i)
+\eeq
+
+
+After all these considerations, the total scattering amplitude off an external field may be written down, before any assumptions are applied:
+
+
+
+ \mbox{
+\begin{minipage}{1.0in}
+   \includegraphics[scale=0.5]{eps/blob-wave} 
+\end{minipage}
+=
+\begin{minipage}{1.6in}
+\scriptsize
+\beq
+\begin{split}
+	 ie\wnrb \Bigg(& - A_0 +    \frac{ \v{A} \cdot (\v{p} + \v{p'}) }{2m} 
+		- \frac{  \v{A} \cdot (\v{p} + \v{p'}) \v{p}^2 + \v{p'}^2 \v{A} \cdot (\v{p} + \v{p'}) }{8m^3} 
+	\\&	+ c_F  \frac{\v{S} \smalldot \v{B}} {2m}   	
+		+ c_D \frac{ ( \partial_i E_i ) }{8m^2}	
+		+ c^{1}_S \frac{  \v{E} \times \v{p} }{4m^2}
+		- c_{W_1}  \frac{  (\v{S} \smalldot \v{B} ) (\v{p}^2 + \v{p'}^2)  }{8m^3}
+	\\&	+ c_{W_2} \frac{  (\v{S} \smalldot \v{B} ) (\v{p} \cdot \v{p'}) }{4m^3}
+		-  c_{p'p} \frac{  (\v{S} \smalldot \v{p'}) (\v{B} \smalldot \v{p}) + (\v{B} \smalldot \v{p'}) (\v{S} \smalldot \v{p}) }{8m^3} \Bigg )\wnr
+\end{split}
+\eeq 
+
+\end{minipage}
+}
+
+
+
+This can be simplified somewhat.  Choose the gauge such that $\nabla_i A_i = 0$.  If elastic scattering is specified, then kinematics dictate that $\v{p'}^2 = \v{p}^2$.   Finally, if $\v{B}$ is constant, the $c_W$ terms become indistinguishable, since $[ \nabla_i, B_j] = 0$.    (It is only this last assumption that costs any information, since it becomes impossible to determine $c_{W_1}$ and $c_{W_2}$ separately. )  Then the scattering amplitude, as calculated from $\mathcal{L}_{NRQED}$, is:
+
+\beq 
+\begin{split} \label{eq:nrqedScatter}
+	iM =&
+		ie\wnrb \Bigg(  -A_0 +  \frac{ \v{A} \cdot \v{p} }{m} - \frac{  (\v{A} \cdot \v{p}) \v{p}^2   }{2m^3} 
+		+ c_F  \frac{\v{S} \smalldot \v{B}} {2m}   	
+		+ c_D \frac{ ( \partial_i E_i ) }{8m^2}	
+		\\&	+ c^{1}_S \frac{  \v{E} \times \v{p} }{4m^2}
+		- (c_{W_1} -c_{W_2}) \frac{   (\v{S} \smalldot \v{B} ) \v{p}^2  }{4m^3}	
+		-  c_{p'p} \frac{   (\v{S} \smalldot \v{p}) (\v{B} \smalldot \v{p})  }{4m^3} \Bigg )\wnr 
+\end{split}
+\eeq
+
+
+
+
 \subsection{Calculation of Compton scattering in QED}
 The relevant terms in the NRQED Lagrangian can all be fixed by the previous calculation of scattering off an external field, because even though there are terms involving two powers of the photon field, the requirement of gauge invariance means they share a coefficient with one photon terms.  However, for reasons of self consistency it would be good to check that the coefficients really do work out the same if calculated independently.
 

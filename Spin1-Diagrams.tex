@@ -291,7 +291,7 @@ and call the second
 %%% G independant one-photon terms
 \subsection{Nonrelativistic expression for $M_q$}
 
-Having written the vertex as the sum of two terms, the strategy for each will be the same: first write in terms of $\W_i$ and then in terms of $\phis$.  Because the different components of $\W_i$ will be mixed up, as before it will be necessary to introduce spin matrices to express them as operators sandwiched between $\W^\dagger$ and $\W$.  After expressing in terms of $\phis$ it will be necessary to express the amplitudes in terms of $B$ and $E$ where possible.
+Having written the amplitude as the sum of two terms, they must be cast in a form that can readily be compared with the NRQED result.  So, in terms of operators acting between $\phis^\dagger$ and $\phis$, and involving Galilean vectors and scalars.  The general strategy for each will be the same: first write in terms of $\W_i$ and then in terms of $\phis$.  Because the different components of $\W_i$ will be mixed up, as before it will be necessary to introduce spin matrices to express them as operators sandwiched between $\W^\dagger$ and $\W$.  Finally, derivatives of $A_\mu$ should be written in terms of $\v{E}$ and $\v{B}$ where possible.
 
 
 
@@ -304,7 +304,7 @@ The first term is
 	&=&	ie [(p + p')\cdot A] \gv{\W}^\dagger (p')  \left(  
 			\frac{ \v{p} \cdot \v{p}' - (\v{S} \cdot \v{p})( \v{S} \cdot \v{p}') }{p_0^2}  -1 \right) \gv{\W}(p)
 \eeqa
-Since it is assumed that $q_0=0$, it follows that $p'_0 = p_0$.  In terms of the wave functions $\phis$ this becomes
+Since it is assumed that $q_0=0$, it follows that $p'_0 = p_0$.  In terms of the wave functions $\phis$ the above becomes
 \beq
 \Mq \approx 	-ie \frac{(p + p')\cdot A}{2p_0} \phis^\dagger
 		\left( 1 + \frac{\v{p'}^2 - (\v{S}\cdot \v{p'})^2 }{2m^2} \right) 
@@ -312,8 +312,7 @@ Since it is assumed that $q_0=0$, it follows that $p'_0 = p_0$.  In terms of the
 		\left( 1 + \frac{\v{p}^2 - (\v{S}\cdot \v{p})^2 }{2m^2} \right)
 	\phis
 \eeq
-
-Simplifying to the order needed
+Simplifying this to the order needed
 \beqa
 \Mq &\approx&	-ie \frac{(p + p')\cdot A}{2p_0} \phi^\dagger
 		\left( 1  + \frac{1}{2m^2} \left \{ \v{q} \cdot \v{p}' - (\v{S} \cdot \v{q})( \v{S} \cdot \v{p'})
@@ -327,21 +326,21 @@ Simplifying to the order needed
 	 \right )\phi
 \eeqa
 
-Expanding the outside term, (again using $p'_0 = p_0$)
+The outside factor involves a Lorentz dot product, and should be expressed in terms of Galilean quantities.  Again using that $p_0 = p'_0$:
 \beq
 	\frac{(p + p')\cdot A}{2p_0} = \frac{2p_0}{2p_0} A_0 - \frac{(\v{p} + \v{p'})\cdot \v{A} }{2p_0}
 		= A_0 -  \frac{(\v{p} + \v{p'})\cdot \v{A} }{2p_0}
 \eeq
 
 
-We can simplify 
+Applying this to $M_q$, the result is:
 \beq
 \Mq = 	-ie  \phi^\dagger(p') \left( A_0  + \frac{A_0}{2m^2}( \v{q}^2 + i \v{S} \cdot \v{p} \times \v{q} - (\v{S} \cdot \v{q})^2 )
 	- \frac{(\v{p} + \v{p'})\cdot \v{A} }{2p_0}
 	- \frac{(\v{p} + \v{p'})\cdot \v{A} }{2m} \frac{i \v{S} \cdot \v{p} \times \v{q}}{2m^2} \right ) \phi(p)
 \eeq
 
-Remember that we want to write this in terms the external field and its derivatives in position space.  So we Fourier transform such that the transferred momentum $\v{q}$ becomes a derivative on the external field.  The prescription is $\v{q} \to -i \grad$.  
+The NRQED result for the amplitude was written in position terms of $E$ and $B$, so it is necessary to express this result in the same sense.  A Fourier transform dictates that the transferred momentum $\v{q}$ becomes a derivative on the external field.  The prescription is $\v{q} \to -i \grad$.  The gauge has been chosen such that $E$ depends on $A_0$ terms only, and $B$ only upon $A_i$.  So it makes sense to consider such terms separately. 
 
 %%% A_0 terms
 \subsubsection{Transformation of $A_0$ terms in $\Mq$}
@@ -352,6 +351,7 @@ A_0( \v{q}^2 + i \v{S} \cdot \v{p} \times \v{q} - (\v{S} \cdot \v{q})^2 )
 \eeq
 
 %%% A_i terms
+%FIXME redundancy: this needs to refer back to some previous section
 \subsubsection{Transformation of $\v{A}$ terms in $\Mq$}
 %TODO probably this identity is developed elsewhere, refer back to it.
 The only term with derivatives of $\v{A}$ has the form $(\v{p} + \v{p'})\cdot \v{A}  (\v{S} \cdot \v{p} \times i\v{q})$.  The relation between this and the field $B$ is nonobvious.  First, it is convenient to develop an identity for $iq_i (\v{p} + \v{p'}) \cdot \v{A}$.  Using $\epsilon_{ijk} B_k = i(q_i A_j - q_j A_i)$:
@@ -387,21 +387,20 @@ For the case of a constant $\v{B}$, any terms of the type $q_i B_j$ vanish.  So 
 \subsubsection{Total contribution of from $\Mq$ } 
 
 So the first term in the vertex produces the following contribution to the scattering amplitude.
-\beq 
-	ie \omin{\mu} \omout{\nu}  g^{\mu\nu} (p + p')\cdot A \to 
-\eeq
-\beq
-	 -ie \phi^\dagger(p') \left( A_0  + \frac{1}{2m^2}\{ \grad \cdot \v{E} -  \v{S} \cdot \v{p} \times \v{E} - S_i S_j \grad_i E_j \}
-	- \frac{\v{p}\cdot \v{A} }{p_0}
-	+ \frac{1}{2m^3}\{ \v{p}^2 \v{S} \cdot \v{B} -  (\v{S} \cdot  \v{p})( \v{B} \cdot \v{p}) \} \right )\phi(p)
+\beq  \begin{split}
+	\Mq = ie \omin{\mu} \omout{\nu}  g^{\mu\nu} (p + p')\cdot A \to &
+	 -ie \phi^\dagger(p') \Big ( A_0  + \frac{1}{2m^2}\{ \grad \cdot \v{E} -  \v{S} \cdot \v{p} \times \v{E} - S_i S_j \grad_i E_j \}
+	\\& - \frac{\v{p}\cdot \v{A} }{p_0}
+	+ \frac{1}{2m^3}\{ \v{p}^2 \v{S} \cdot \v{B} -  (\v{S} \cdot  \v{p})( \v{B} \cdot \v{p}) \} \Big )\phi(p)
+\end{split}
 \eeq
 
 
 \subsection{Nonrelativistic expression for $\Mg$}
 The second term looks like the external polarisations contracted with something like $F_{\mu\nu}$:
-\[
-	ie\ \omin{\mu} \omout{\nu} [g] ( q^\nu A^\mu - q^\mu A^\nu ) 	
-\]
+\beq
+	\Mg = ie\ \omin{\mu} \omout{\nu} [g] ( q^\nu A^\mu - q^\mu A^\nu ) 	
+\eeq
 \subsubsection{General tensor type term}
 Before calculating the specific term in question, consider the general type of term $\omout{\nu} \omin{\mu} u^\nu v^\mu$.  This should be expressed as a matrix element between the vector part of the polarization $\W$. 
 \beqa
@@ -433,7 +432,7 @@ Before calculating the specific term in question, consider the general type of t
 Now that identity can be used to calculate $\Mg$ with $q_0=0$ (and thus $p'_0 = p_0)$.
 
 \beqa
-+ie g \W'_\nu \W_\mu (q^\nu A^\mu - q^\mu A^\nu)
+\Mg
 	&=&	+ie g\gv{\W'}^\dagger \Bigg(
 			-\frac{A_0}{p_0} \left\{ \v{p} \cdot \v{q} - (\v{p} \cdot \v{S}) (\v{q} \cdot \v{S}) \right\}
 			+ \frac{A_0}{p_0} \left\{ \v{q} \cdot \v{p'} - (\v{q} \cdot \v{S}) (\v{p'} \cdot \v{S}) \right\}
@@ -446,34 +445,38 @@ Now that identity can be used to calculate $\Mg$ with $q_0=0$ (and thus $p'_0 = 
 		\right\} \gv{\W}
 \eeqa
 
-Now we express the polarization vectors in terms of the spinor $\phi$.  The first term above has $A_0$, the second $\v{A}$.
-
+Next replace $\W$ with $\phis$ and rewrite in terms of $E$ and $B$.  Again, it makes sense to treat terms with $A_0$ and $A_i$ separately. 
 %%% A_0 terms
 \subsubsection{Transformation of $A_0$ terms in $\Mg$}
-The first term coupled to $A_0$ is already second order, so we can just use $\v{\W} \to \frac{1}{\sqrt{2m}}\phi$
-\[
-	ie g\phi^\dagger(\v{p'})   \frac{A_0}{2m^2} \left( \v{q}^2 - (\v{q} \cdot \v{S} )^2 + i\v{S} \cdot \v{p} \times \v{q} \right) \phi (\v{p})
-\]
-This is exactly the same structure that arose in the previous term, that which had no dependence on $g$.  In terms of E it is
-\[
+The first term coupled to $A_0$ is already second order, so only the first order approximation for $\W$ is needed: $\v{\W} \approx \frac{1}{\sqrt{2m}}\phi$
+\beq
+	\Mg^E = ie g\phi^\dagger(\v{p'})   \frac{A_0}{2m^2} \left( \v{q}^2 - (\v{q} \cdot \v{S} )^2 + i\v{S} \cdot \v{p} \times \v{q} \right) \phi (\v{p})
+\eeq
+This is exactly the same structure that arose in working with $\Mq$.  From \eqref{eq:S1:A0Transforms} it is:
+\beq
+\Mg^E = 
  ie g \frac{1}{2m^2}\phi^\dagger(\v{p'})  ( \grad \cdot \v{E} -  \v{S} \cdot \v{p} \times \v{E} - S_i S_j \grad_i E_j ) \phi (\v{p})
-\]
+\eeq
 
 %%% A_i terms
 \subsubsection{Transformation of $\v{A}$ terms in $\Mg$}
-The second term  is  $-ie g\gv{\W^\dagger} [\v{A} \cdot \v{S}, \v{q} \cdot \v{S}] \gv{\W}$.  The commutator is:
-\beqa
+The second term  is  $\Mg^B = -ie g\gv{\W^\dagger} [\v{A} \cdot \v{S}, \v{q} \cdot \v{S}] \gv{\W}$.  The commutator is:
+\beq
 [\v{A} \cdot \v{S}, \v{q} \cdot \v{S}]
-	&=&	A_i q_j [S_i, S_j]	\\
-	&=&	A_i q_j (i\epsilon_{ijk} S_k)	\\
-	&=&	- \v{S} \cdot i\v{q} \times \v{A}	\\
+	=	A_i q_j [S_i, S_j]	
+	=	A_i q_j (i\epsilon_{ijk} S_k)	
+	=	- \v{S} \cdot i\v{q} \times \v{A}	
+\eeq
+In terms of $B$ this yields
+\beqa
+- \v{S} \cdot i\v{q} \times \v{A}
 	&\to&	- \v{S} \cdot \grad \times \v{A} 	\\
-	&=&	-\v{S} \cdot \v{B}	\\
+	&=&	-\v{S} \cdot \v{B}	
 \eeqa
 So the whole thing is $ieg \gv{\W^\dagger} (\v{S} \cdot \v{B}) \gv{\W}$.  This is first order so corrections to this term, coming from the expression for $\W$ in terms of $\phi$, are needed.
 
 \beq
- ieg\gv{\W^\dagger} (\v{S} \cdot \v{B}) \gv{\W} \to
+ \Mg^B = ieg\gv{\W^\dagger} (\v{S} \cdot \v{B}) \gv{\W} \to
 	ieg \frac{1}{2p_0} \phi^\dagger
 		\left( 1 + \frac{\v{p'}^2 - [\v{S}\cdot \v{p'}]^2 }{2m^2} \right) 
 		\v{S} \cdot \v{B}
@@ -484,12 +487,12 @@ So the whole thing is $ieg \gv{\W^\dagger} (\v{S} \cdot \v{B}) \gv{\W}$.  This i
 
 Since the $B$ field is constant, all terms with $q$ vanish, so the above reduces to
 \beq
-	=  ieg \frac{1}{2p_0} \phi^\dagger	\left(  
+\Mg^B	=  ieg \frac{1}{2p_0} \phi^\dagger	\left(  
 		\v{S} \cdot \v{B} +  \v{S} \cdot \v{B} \frac{p^2}{2m^2} + \frac{1}{2m^2}\left\{ \v{S} \cdot \v{B}, \frac{\v{p}^2}{2} - [\v{S}\cdot \v{p}]^2 \right\}_+	\right ) \phi
 \eeq
 Expanding $\frac{1}{2p_0} = \frac{1}{2m}(1 - \frac{\v{p}^2}{2m^2} )$ eliminates the second term:
 \beq
-	=  ieg \frac{1}{2m} \phi^\dagger	\left(  
+	\Mg^B =  ieg \frac{1}{2m} \phi^\dagger	\left(  
 		\v{S} \cdot \v{B}  + \frac{1}{2m^2}\left\{ \v{S} \cdot \v{B}, \frac{\v{p}^2}{2} - [\v{S}\cdot \v{p}]^2 \right\}_+	\right ) \phi
 \eeq
 
@@ -502,13 +505,16 @@ This anticommutator actually occurred as part of the previous calculation of the
 \eeq
 Using that, the part of $\Mg$ which contains $\v{A}$ reduces to 
 \beq
-	ieg \frac{1}{2m}\phi^\dagger \left( \v{S} \cdot \v{B} - \frac{(\v{S} \cdot \v{p})( \v{B} \cdot \v{p})}{2m^2}  \right) \phi
+\Mg^B = 	ieg \frac{1}{2m}\phi^\dagger \left( \v{S} \cdot \v{B} - \frac{(\v{S} \cdot \v{p})( \v{B} \cdot \v{p})}{2m^2}  \right) \phi
 \eeq
 
 \subsubsection{Total contribution of $\Mg$}
 Now the total contribution of the second $g$-dependent term to the scattering amplitude is:
 \beq
-ieg \frac{1}{2m}\phi^\dagger \left ( \v{S} \cdot \v{B} - \frac{(\v{S} \cdot \v{p})( \v{B} \cdot \v{p})}{2m^2}  + \frac{1}{m} \left\{ \grad \cdot \v{E} -  \v{S} \cdot \v{p} \times \v{E} - S_i S_j \grad_i E_j \right \} \right ) \phi
+\begin{split}
+\Mg	=	ieg \frac{1}{2m}\phi^\dagger \Big ( \v{S} \cdot \v{B} - \frac{(\v{S} \cdot \v{p})( \v{B} \cdot \v{p})}{2m^2}  
+		+ \frac{1}{m} \left\{ \grad \cdot \v{E} -  \v{S} \cdot \v{p} \times \v{E} - S_i S_j \grad_i E_j \right \} \Big ) \phi
+\end{split}
 \eeq
 
 
@@ -518,34 +524,34 @@ ieg \frac{1}{2m}\phi^\dagger \left ( \v{S} \cdot \v{B} - \frac{(\v{S} \cdot \v{p
 Having expressed each of the terms, the total scattering amplitude, as calculated in the relativistic theory, is found simply by adding them together.  (Elastic scattering off an external field, with constant $\v{B}$.)
 
 First consider the terms related to the electric field/potential:
-\[ 
-M_E = 	-ie\phi^\dagger \left( A_0  - (g-1)  \frac{1}{2m^2} \{ \grad \cdot \v{E} -  \v{S} \cdot \v{p} \times \v{E} - S_i S_j \grad_i E_j \} \right) \phi
-\]
+\beq
+M^E =  	-ie\phi^\dagger \left( A_0  - (g-1)  \frac{1}{2m^2} \{ \grad \cdot \v{E} -  \v{S} \cdot \v{p} \times \v{E} - S_i S_j \grad_i E_j \} \right) \phi
+\eeq
 The terms with bare $\v{A}$:
-\[
-M_A = ie\phi^\dagger \left( \frac{\v{p}\cdot \v{A} }{p_0}\right ) \phi 
+\beq
+M^A = ie\phi^\dagger \left( \frac{\v{p}\cdot \v{A} }{p_0}\right ) \phi 
 	\approx
 ie\phi^\dagger \left( \frac{\v{p}\cdot \v{A} }{m} - \frac{\v{p}\cdot \v{A} \v{p}^2}{2m^3}\right ) \phi 
-\]
+\eeq
 
 Then the terms with $B$ in them:
-\[
-M_B = 	i\frac{e}{2m}\phi^\dagger \left(  
+\beq
+M^B = 	i\frac{e}{2m}\phi^\dagger \left(  
 		g \v{S} \cdot \v{B} -  \v{S} \cdot \v{B} \frac{\v{p}^2}{m^2}
 		-\frac{g-2}{4m^2}(\v{S} \cdot \v{p} )( \v{B} \cdot \v{p})
 	\right ) \phi
-\]
-
-So the whole thing is:
-
+\eeq
+So to the desired order, the amplitude for scattering off an external field, as calculated from relativistic theory, is
 \beq \label{eq:S1:MRel}
-iM_{REL} = -ie \phi^\dagger \Big (
+\begin{split}
+iM_{REL} =& -ie \phi^\dagger \Big (
 		 A_0  - \frac{\v{p}\cdot \v{A} }{m} + \frac{\v{p}\cdot \v{A} \v{p}^2}{2m^3}
 		- \frac{g-1}{2m^3}\{ \grad \cdot \v{E} -  \v{S} \cdot \v{p} \times \v{E} - S_i S_j \grad_i E_j \}
-		- g\frac{1}{2m} \v{S} \cdot \v{B}
+		\\& - g\frac{1}{2m} \v{S} \cdot \v{B}
 		+ \v{S} \cdot \v{B} \frac{\v{p}^2}{2m^3}
 		+ \frac{g-2}{4m^3}(\v{S} \cdot \v{p} )( \v{B} \cdot \v{p})
 	\Big ) \phi
+\end{split}
 \eeq
 
 
@@ -553,9 +559,11 @@ iM_{REL} = -ie \phi^\dagger \Big (
 \section{Compton scattering in the relativistic theory}
 
 
-The previous calculation is enough to fix all the coefficients of the NRQED lagrangian.  Just like for spin one-half, however, calculating the the coefficients of some two-photon terms will help check the consistency of the approach.  As before, the two photon coefficients may be fixed by calculating the amplitude for Compton scattering in the relativistic theory.  
+The previous calculation is enough to fix all the coefficients of the NRQED lagrangian.  Just like for spin one-half, however, calculating the the coefficients of some two-photon terms will help check the consistency of the approach.  And as before, the two photon coefficients may be fixed by calculating the amplitude for Compton scattering in the relativistic theory.  
 
-There are two types of contributions, one from the fundamental two-photon vertex and the other from the combination of two one-photon vertices.  Two-photon contact terms in the Lagrangian will have an additional symmetry factor of 1/2 compared to the expression for the vertex.  There are two principle ways this calculation differs from the similar calculation in spin one-half: a two photon local term exists in the relativistic theory, and the propagator carries vector indices rather than being written in terms of matrix operators.
+In the spin one-half case, there was only one type of electromagnetic vertex, representing the interaction of a single photon with an electron line.  So the process of Compton scattering (at the leading orders) was determined entirely by diagrams composed of this vertex.  In the spin one Lagrangian, however, there are also four particle vertices involving two photons. 
+
+So here there are two types of contributions, one from the fundamental two-photon vertex and the other from the combination of two one-photon vertices.  Two-photon contact terms in the Lagrangian will have an additional symmetry factor of 1/2 compared to the expression for the vertex. 
 
 \begin{minipage}{1in}
    \includegraphics[scale=0.7]{eps/blob1} 
@@ -574,16 +582,14 @@ $+$
 \end{minipage}
 
 
-In this calculation we say the incoming charged particle has momentum $p$, the outgoing, momentum $p'$.  We define both photon momenta $k$ and $k'$ going \emph{into} the vertex or vertices.  Charged particle polarisations are $\W$, while photon polarisations are $\A$.
+To define conventions for this calculation, say that the incoming charged particle has momentum $p$, and the outgoing, momentum $p'$.  Define both photon momenta $k$ and $k'$ going \emph{into} the vertex or vertices.  Charged particle polarisations are $\W$, while photon polarisations are $\A$.
 
-Once we've calculated the scattering amplitude we need to relate it to the NRQED vertices.  The first step will be to write all terms "sandwiched" between $\W^\dagger$ and $\W$.  Some terms will already be proportional to $\gv{\W^\dagger} \cdot \gv{\W}$.  But there will be others of the form $[\gv{\W^\dagger} \cdot \v{u}] [\v{v} \cdot \gv{\W}]$.  To deal with these we introduce the spin matrices $\v{S}$, and use the identity:
+Once scattering amplitude has been calculated in terms of relativistic quantities, it must be compared to the NRQED vertices.  The process is the same as for the calculation of the one-photon process.  First, write all terms "sandwiched" between $\W^\dagger$ and $\W$.  Some terms will already be proportional to $\gv{\W^\dagger} \cdot \gv{\W}$.  But there will be others of the form $[\gv{\W^\dagger} \cdot \v{u}] [\v{v} \cdot \gv{\W}]$.  To deal with these the spin matrices $\v{S}$ are introduced, with the identity:
 \[
 	(\gv{\W^\dagger} \cdot \v{u}) (\v{v} \cdot \gv{\W}) = \W^\dagger_a \left( \delta_{ab} \v{u} \cdot \v{v} - v_i u_j\{S_i S_j\}_{ab}  \right) \W_b
 \]
 
-
-Once written in this form, the recipe will then be to replace photon polarisations $\A$ with the external field $A$.  We choose the gauge where $\A=0$, so the field $\v{E}$ comes from	$ik_0 \A_0(k) \to \v{E}$, while the bare polarisation $\v{\A}(k) \to \v{A}$.
-
+%TODO is this too redundant?
 The charged particle polarisations must be replaced by the Schrodinger-like wave functions $\phi$.  Consistent with the calculations for the one-photon terms, the prescription is:
 \[
 	\gv{\W}(p) \to \frac{1}{\sqrt{2m}}\left( 1 + \frac{\v{p}^2}{4m^2} - \frac{ [\v{S}\cdot \v{p}]^2 } {2m^2} \right)\phis(\v{p})
@@ -596,13 +602,16 @@ The charged particle polarisations must be replaced by the Schrodinger-like wave
 
 %TODO add diagram?
 The relativistic two-photon vertex is
-\[
+
+\VertexEq{two-photon-fundamental}{
  -i e^2 ( 2 g^{\mu\nu} g^{\alpha \beta} - g^{\mu \beta} g^{\nu \alpha} - g^{\mu \alpha} g^{\nu \beta} )
-\]
-If we contract with the photon and charged particle polarisations, we get
-\[
+}
+
+The contribution of this diagram to Compton scattering is, contracting with the photon and charged particle polarisations:
+\beq
+\Mcontact = 
 	 -i e^2( 2[\W^\dagger \cdot \W][\Adag \cdot \A] - [\W^\dagger \cdot \A] [ \W \cdot \Adag]  -[\W^\dagger \cdot \Adag] [ \W \cdot \A] )
-\]
+\eeq
 
 %TODO fix middle terms
 %Expanding this, using the identity $\W_0 = \frac{\gv{\W} \cdot \v{p}}{p_0}$, and keoming only the needed order:
@@ -616,68 +625,67 @@ If we contract with the photon and charged particle polarisations, we get
 
 
 
-If we choose a gauge where $\A_0 = 0$ and use the identity $\W_0 = \frac{\gv{\W} \cdot \v{p}}{p_0}$ then we find that the above is, to the order needed:
-\[
- -2 i e^2 (\gv{\W^\dagger} \cdot \gv{\W}) (\v{\A}' \cdot \v{\A}) 
+In calculating a physical process, the result will not depend upon the gauge.  To simplify the calculation, choose a gauge where $\A_0 = 0$ and use the identity $\W_0 = \frac{\gv{\W} \cdot \v{p}}{p_0}$.  Then the above reduces to
+\beq
+\Mcontact =  -2 i e^2 (\gv{\W^\dagger} \cdot \gv{\W}) (\v{\A}' \cdot \v{\A}) 
 	+  i e^2 (\gv{\W^\dagger} \cdot  \v{\A}) (\v{\Adag} \cdot \gv{\W})	
 	+  i e^2 (\gv{\W^\dagger} \cdot  \v{\Adag}) (\v{\A} \cdot \gv{\W})	
-\]
+\eeq
 
 
 
 \subsection{Terms arising from two vertex diagrams}
 
-The diagrams with two vertices contribute not just to the point-like interaction, but also the part of the scattering amplitude corresponding to two vertex diagrams in NRQED.  We eliminate these terms by decomposing the relativistic propagator, and then calculate the contribution of what remains.
+The diagrams with two vertices contribute not just to the point-like interaction, but also the part of the scattering amplitude corresponding to two vertex diagrams in NRQED.  By decomposing the relativistic propagator, the local and nonlocal terms can be separated.  This is exactly analogous to what was done for the spin one-half case, but the structure of both  the propagator and the sums over intermediate states differ.  
 
 %Main calculation
 \subsubsection{Dealing with the relativistic propagator}
 
-We will decompose the relativistic propagator into the sum of two pole terms and a constant term.  The numerators of the two pole terms are usefully expressed as a sum over intermediate states.  This will involve a sum over polarisations, which if $a$ indexes the three orthogonal polarisation states, obey for some on-shell momentum $\ell$:
-\[
+The relativistic propagator will be decomposed into the sum of two pole terms and a constant term.  The numerators of the two pole terms are usefully expressed as a sum over intermediate on-shell states i.e. a sum over polarisations. If $a$ indexes the three orthogonal polarisation states, and $\ell$ is some on-shell momentum, then this sum is
+\beq
 	\sum_a \W_a^\mu(\ell) \W_a^\nu(\ell) = \frac{\ell^\mu \ell^\nu}{m^2} - g^{\mu\nu} 
-\]
-It's convenient to define for some arbitrary (not necessarily on mass shell) momentum $k$
-\[
+\eeq
+It's convenient to define for some arbitrary (\emph{not} necessarily on mass shell) momentum $k$
+\beq
   G^{\mu\nu}(k) = g^{\mu\nu} - \frac{k^\mu k^\nu}{m^2}
-\]
+\eeq
 
-We expect the two pole terms to represent two nonrelativistic interactions.  Therefore, it will be convenient to express these with the four-momentum of the intermediate particle states.   
+The idea is that the two parts of the propagator with poles represent two types of processses, one involving intermediate particles, the other intermediate anti-particles.  These particles are to be considered on-shell, so it is useful to define Lorentz four vectors which represent the momentum of on-shell particles and anti-particles.  For the particles, let $\qp = (\sqrt{\v{q}^2+m^2}, \v{q})$.   And for the antiparticles, let $\qm = (-\sqrt{\v{q}^2+m^2}, \v{q})$.  Also define $E_q = \sqrt{\v{q}^2+m^2}$.
 
-Define for the particles $\qp = (\sqrt{\v{q}^2+m^2}, \v{q})$ and for the antiparticles $\qm = (-\sqrt{\v{q}^2+m^2}, \v{q})$.  Also define $E_q = \sqrt{\v{q}^2+m^2}$.
-
-The relativistic propagator is
-\[
+The relativistic propagator to be decomposed is
+\beq
 	i\frac{  \frac{q^\mu q^\nu}{m^2} - g^{\mu\nu} }{q^2 - m^2} = \frac{ - i G^{\mu\nu}(q) }{q^2 - m^2}
-\]
+\eeq
 
-We wish to write it as the sum of two pole terms and a constant which we'll call $x^{\mu\nu}$.
+Here $q$ is no on mass-shell.  This will be written as the sum of two pole terms, having as their numerator a sum over intermediate on mass-shell states.  In comparison to the spin one-half case, there will be an additional constant which for now can be called $x^{\mu\nu}$.
 \[
 	\frac{ -i G^{\mu\nu}(q) }{q^2 - m^2} = \frac{1}{2 \E{q}} \left(  \frac{ -i G^{\mu\nu}(\qp)  }{q_0 - \E{q} } - \frac{ -i G^{\mu\nu}(\qm)  }{q_0 + \E{q} } \right) + i x^{\mu\nu}
 \]
 
-By explicit calculation we see that $x^{\mu\nu}=1/m^2$ when $\mu=\nu=0$, but is zero otherwise.  So $x^{\mu\nu} = g^{\mu0} g^{\nu0} /m^2$, and we write the relativistic propagator as
+Explicit calculation shows that $x^{\mu\nu}=1/m^2$ when $\mu=\nu=0$, but is zero otherwise.  So $x^{\mu\nu} = g^{\mu0} g^{\nu0} /m^2$, and the relativistic propagator can be written as
 \[
 	\frac{ -i G^{\mu\nu}(q) }{q^2 - m^2} = \frac{i}{2 \E{q}} \left(  \frac{ -G^{\mu\nu}(\qp)  }{q_0 - \E{q} } - \frac{ -G^{\mu\nu}(\qm)  }{q_0 + \E{q} } \right) + i\frac{g^{\mu0} g^{\nu0}}{m^2}
 \]
 
 %Relevancy
-The reason we're doing this decomposition is that we only need the part of the propagator which gives rise to the point-like interaction we're after.  Other contributions to the scattering amplitude in the nonrelativistic theory come from diagrams involving two one-photon vertices.  At our order these are exactly the $1/(q_0 - \E{q})$ terms.  So we can obtain the point-like interactions by simply dropping these terms.  We still need to also approximate whatever remains to the order needed.
+The reason for this decomposition is that only the part of the propagator which gives rise to the point-like interaction is needed.  Other contributions to the scattering amplitude in the nonrelativistic theory come from diagrams involving two one-photon vertices.  At the necessary order these are exactly the $1/(q_0 - \E{q})$ terms.  So the point-like interactions can be obtained by simply dropping these terms.  After this, rewriting the amplitude in terms of nonrelativistic quantities will still be necessary.
 
-Define the needed part $P^{\mu\nu}$ as outlined above.
 
-\[
+From the full propagator, define the needed part $P^{\mu\nu}$ as outlined above.
+
+\beq
 	P^{\mu\nu} =    \frac{i}{2 \E{q}} \frac{ G^{\mu\nu}(\qm)  }{q_0 + \E{q} } + i\frac{g^{\mu0} g^{\nu0}}{m^2}
-\]
-
+\eeq
+This is just the propagator without the nonlocal terms.
 %Approximation
 
-We only need the leading order terms and those with one additional power of momentum.  So $E_q  \approx m$.  $q_0$ is the off-mass shell energy of the propagator, but we know that in this nonrelativistic scenario it will be close to $m$.  So write $q_0 + E_q \approx 2m + [q_0-m]$ and then use that $[q_0-m]$ is small.
+All that is needed for the final result are the leading order terms, and those with one additional power of momentum.  So $E_q  \approx m$.  $q_0$ is the off-mass shell energy of the propagator, but in this nonrelativistic scenario it will be close to $m$.  So write $q_0 + E_q \approx 2m + [q_0-m]$ and then use that $[q_0-m]$ is small.
 \[
 	P^{\mu\nu} \approx   \frac{1}{2m} \frac{i G^{\mu\nu}(\qm)  }{2m + [q_0-m]} + i\frac{g^{\mu0} g^{\nu0}}{m^2}
 			\approx \left( 1 - \frac{[q_0-m]}{2m} \right )\frac{ i G^{\mu\nu}(\qm)  }{4m^2} + i \frac{g^{\mu0} g^{\nu0}}{m^2}
 \]
 
-Consider now $G^{\mu\nu}(\qm) = g^{\mu\nu} - \frac{\qm^\mu \qm^\nu}{m^2}$.  Using $\qm_0 \approx -m$ we find:
+Consider now $G^{\mu\nu}(\qm) = g^{\mu\nu} - \frac{\qm^\mu \qm^\nu}{m^2}$.  Using $\qm_0 \approx -m$ it follows that
 
 \[
 	G^{00} = (1 - \frac{\qm^0 \qm^0}{m^2} \approx  0
@@ -692,9 +700,9 @@ Consider now $G^{\mu\nu}(\qm) = g^{\mu\nu} - \frac{\qm^\mu \qm^\nu}{m^2}$.  Usin
 	G^{ij} = \delta^{ij} - \frac{\qm^i \qm^j}{m^2} \approx \delta^{ij}
 \]
 
-So now we can write down $P^{\mu\nu}$ to the order needed.
+So the different components fo $P^{\mu\nu}$ are, to the order needed.
 
-\beqa
+\beqa \label{eq:S1:Pvalues}
  P^{00} &=& \frac{i}{m^2} 	\\
  P^{0i} &=& P^{i0} = i\frac{  q^i  }{4m^3}		\\
  P^{ij} &=& - \left(1 - \frac{q_0 - m}{2m} \right )\frac{i \delta^{ij} }{4m^2} 	
@@ -703,12 +711,11 @@ So now we can write down $P^{\mu\nu}$ to the order needed.
 
 \subsubsection{Vertex calculations}
 
-We have two diagrams, crossed and uncrossed.  Each consists of a propagator and two vertices contracted with external fields.  We just considered how to handle the propagator; we replace it with the above quantities $P^{\mu\nu}$.  Now we deal with the vertices.  
+There are two tree diagarms, crossed and uncrossed.  Each consists of a propagator and two vertices contracted with external fields.  In the previous section the propagator was considered; the result is that it may simply be replaced by the above quantities $P^{\mu\nu}$ to compare with the local vertices of NRQED.    Now the part of the calculation involving the vertices is considered.
 
+Use $V$ and $\overline{V}$ to represent the vertices of the uncrossed diagram, and $U$, $\overline{U}$ for the crossed.  These can be defined in terms of vertex diagrams, the external lines contracted with polarisations.
 
-We'll use $V$ and $\overline{V}$ to represent the vertices of the uncrossed diagram, and $U$, $\overline{U}$ for the crossed.  We can define these in terms of vertex diagrams, the external lines contracted with polarisations.
-
-
+%FIXME diagarms -- wrong polarisation states
 $V_\lambda = $
 \begin{minipage}{1in}
    \includegraphics[scale=0.7]{eps/V-lambda} 
@@ -731,7 +738,7 @@ $\overline{U}_\rho = $
    \includegraphics[scale=0.7]{eps/U-bar-rho} 
 \end{minipage}
 
-With the above definitions we see that the point-like interactions, taken from the two diagrams, will be
+With the above definitions it is clear that the point-like interactions, taken from the two diagrams, will be
 
 \begin{minipage}{1in}
    \includegraphics[scale=1]{eps/uncrossed-small} 
@@ -745,7 +752,7 @@ $ \to \overline{U}_\rho P^{\rho \lambda}(p+k') U_\lambda$
 
 
 
-We only need terms one past leading order to find the $\v{S} \cdot \v{E} \times \v{A}$ term.  We'll tabulate the first two orders of each vertex for time and spatial components separately.  
+Only terms one past leading order are needed to fix the coefficient of the $\v{S} \cdot \v{E} \times \v{A}$ term in NRQED.  So tabulate the first two orders of each vertex for time and spatial components separately.  
 
 
 
@@ -756,97 +763,107 @@ The basic vertex inside $V_\lambda$ is, with incoming particle momentum $p^\mu$,
 	ie[ g^{\mu\lambda}(2p + k)^\alpha - g^{\lambda \alpha} (p + [g]k)^\mu - g^{\alpha \mu} (p-[g-1]k)^\lambda ]
 \]
 
-Contracted with external charged particle and photon polarizations $\W_\mu$ and $\A_\alpha(k)$ we get:
+Contracted with external charged particle and photon polarizations $\W_\mu$ and $\A_\alpha(k)$ gives:
 \[
 	V_\lambda = ie[\W^\lambda (2p + k) \cdot \A - \A^\lambda (p+[g]k) \cdot \W - \A \cdot \W (p-[g-1]k)^\lambda ]
 \]
   
-We can obtain the other three vertices simply by substituting the appropriate momenta and polarisations.  For instance, the similar vertex for outgoing momentum $(p+k)^\rho = (p' - k')^\rho$, photon $k'$, and final momentum $p'$ is
+The other three vertices can be obtained simply by substituting the appropriate momenta and polarisations.  For instance, the similar vertex for outgoing momentum $(p+k)^\rho = (p' - k')^\rho$, photon $k'$, and final momentum $p'$ is
 
 \[
 	\overline{V}_\rho = ie[\W^{\dagger\rho} (2p' - k') \cdot \Adag - \A^\rho (p'-[g]k') \cdot \W^\dagger  - \Adag \cdot \W^\dagger  (p'+[g-1]k')^\rho ]
 \]
-We can obtain $\overline{V}_\rho$ just by substituting $\W^\dagger$ for $\W$, and $p'$ for $p$, and $-k'$ for $k$.  We'll only need to explicitly do the calculation for $V_\lambda$, since all four have the same form.
+So $\overline{V}_\rho$ can be obtained by just substituting $\W^\dagger$ for $\W$, $p'$ for $p$, and $-k'$ for $k$.  With this in mind, only the calculation for $V_\lambda$ need be explicitly performed, since all four have the same form.
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Calculation of $V_\lambda$}
-We have chosen our gauge such that $\A_0=0$, which will help simplify the calculation.  We also only need the first two orders.
+In calculating the two photon vertex, the gauge was chosen such that $\A_0=0$.  This will help simplify the calculation.  Also, only the first two orders are needed.
 
-The leading order terms must have only the time-component of the charged particles momentum: the on mass-shell $p_0 = p'_0 \approx m$.  Corrections to $p_0$ do not enter at our level of approximation for the two photon diagrams. 
+The leading order terms must have only the time-component of the charged particles momentum: the on mass-shell $p_0 = p'_0 \approx m$.  Corrections to $p_0$ do not enter at the necessary level of approximation for the two photon diagrams. 
 
-The next order terms have exactly one power of external momentum $\v{p}$ or photon momentum $\v{k}$, $\v{k'}$ or $k_0$, $k'_0$.  Any term containing $\W_0$ is of at least this order, since $\W^0(p) \approx \frac{\gv{\W} \cdot \v{p}}{m}$.
+The next to leading order terms have exactly one power of external momentum $\v{p}$ or photon momentum $\v{k}$, $\v{k'}$ or $k_0$, $k'_0$.  Any term containing $\W_0$ is of at least this order, since $\W^0(p) \approx \frac{\gv{\W} \cdot \v{p}}{m}$.
 
-Anyway, now we'll calculate the terms explicitly.
-
+With these considerations, the vertex $V$ can now be explicitly calculated, treating $V_0$ and $V_i$ separately.
 
 \paragraph{The $V_0$ term}
-Consider first the time-component of $V$: 
-$V_0 = ie[\W^0 (2p + k) \cdot \A - \A^0 (p+[g]k) \cdot \W - \A \cdot \W (p-[g-1]k)^0 ]$
+Consider first the time-component of $V$.  It has three parts --- label them $T_0^N$.
+\beq 
+	V_0 = ie[ \underbrace{\W^0 (2p + k) \cdot \A }_I 
+			- \underbrace{\A^0 (p+[g]k) \cdot \W }_{II}
+			- \underbrace{\A \cdot \W (p-[g-1]k)^0}_{III} ]
+\eeq	
 
-%Term 1
 Up to some outer factor the first term is then $\W^0 (2p + k) \cdot \A$.  Since $\W^0 =\frac{\gv{\W} \cdot \v{p}}{m}$ this becomes
-\[
-\W^0 (2p + k) \cdot \A = \frac{\gv{\W} \cdot \v{p}}{m} (2p + k) \cdot \A  = 2 \frac{\gv{\W} \cdot \v{p}}{m} p_0  \A_0 + \mathcal{O}(\frac{p^2}{m})
-\]
+\beq
+T_0^I = \W^0 (2p + k) \cdot \A = \frac{\gv{\W} \cdot \v{p}}{m} (2p + k) \cdot \A  = 2 \frac{\gv{\W} \cdot \v{p}}{m} p_0  \A_0 + \mathcal{O}(\frac{p^2}{m})
+\eeq
 
-The spatial component of $\A$ only appears with an additional power of momentum and so is too high order, and the $\A_0$ term vanishes in the chosen gauge.  So this term doesn't contribute at all to our result:
-\[
-\W^0 (2p + k) \cdot \A \sim \mathcal{O}(\frac{p^2}{m})
-\]
+The spatial component of $\A$ only appears with an additional power of momentum and so is too high order, and the $\A_0$ term vanishes in the chosen gauge.  So this term doesn't actually contribute at all to the result:
+\beq
+T^{I}_0 = \W^0 (2p + k) \cdot \A \sim \mathcal{O}(\frac{p^2}{m})
+\eeq
 
 %Term 2
-The next term goes as $ -\A^0 (p+[g]k) \cdot \W$.   Obviously with our choice of gauge this doesn't contribute either.
+The second term goes as $ -\A^0 (p+[g]k) \cdot \W$.   Obviously with the choice of gauge this doesn't contribute either.
+\beq
+	T^{II}_0 = 0
+\eeq	
 % (Unneeded calculation in this gauge) Expanding the dot product we can use that $p \cdot \W = 0$ leaving only $k \cdot \W = -\v{k} \cdot \gv{\W}$.
 %\[	-\A_0 (2k) \cdot \W = 2 \A_0 \v{k} \cdot \gv{\W} \]
 
 %Term 3
-The final term here is $- \A \cdot \W (p-[g-1]k)^0 $  Expanding the dot product and again using our choice of gauge we get
-\[
-	- \A \cdot \W (p-[g-1]k)^0   \approx - (\A_0 \W_0  - \v{\A} \cdot \gv{\W} ) (m - [g-1]k_0) = (m-[g-1]k_0)\v{\A} \cdot \gv{\W}
-\]
+The final term here is $- \A \cdot \W (p-[g-1]k)^0 $  Expanding the dot product and again using the choice of gauge
+\beq
+	T^{III}_0 = - \A \cdot \W (p-[g-1]k)^0   \approx - (\A_0 \W_0  - \v{\A} \cdot \gv{\W} ) (m - [g-1]k_0) = (m-[g-1]k_0)\v{\A} \cdot \gv{\W}
+\eeq
 
 %Sum
-So the total from the $\lambda=0$ vertex is just 
-\[
+That is the only contribution to the $\lambda=0$ vertex, so the total is just 
+\beq \label{eq:S1:V0vertex}
 	V_0 = ie(m-[g-1]k_0)\v{\A} \cdot \gv{\W}
-\]
+\eeq
 
 \paragraph{The $V_i$ term}
-Now we look at the spatial component: $V_i = ie[\W^i (2p + k) \cdot \A - \A^i (p+[g]k) \cdot \W - \A \cdot \W (p-[g-1]k)^i ]$
+Now look at the spatial component, which again has three parts which can be labelled $T^N_i$.
+\beq
+ V_i = ie[ \underbrace{\W^i (2p + k) \cdot \A}_I
+ 	 - \underbrace{\A^i (p+[g]k) \cdot \W}_{II}
+ 	  - \underbrace{\A \cdot \W (p-[g-1]k)^i}_{III} ]
+\eeq
 
 % Term 1
-In the first term we get simply
-\[
-	\W^i (2p + k) \cdot \A = \W^i ([2m + k_0]\A_0 - [2\v{p} + \v{k}] \cdot \v{\A} ]) 
-\]
+The first term is simply
+\beq
+	T_i^I = \W^i (2p + k) \cdot \A = \W^i ([2m + k_0]\A_0 - [2\v{p} + \v{k}] \cdot \v{\A} ]) 
+\eeq
 
 Which after applying the gauge conditions becomes
-\[
-	\W^i (2p + k) \cdot \A =  - 2 (\v{p} \cdot \v{\A} ) \W^i 
-\]
+\beq
+	T_i^I =  \W^i (2p + k) \cdot \A =  - 2 (\v{p} \cdot \v{\A} ) \W^i 
+\eeq
 
 %Term 2 \v{A} \cdot \gv{\W}	
-For the second term $- \A^i (p+2k) \cdot \W$ we again use that $p \cdot \W=0$ so 
-\[
-	- \A^i (p+[g]k) \cdot \W \approx g \A^i \v{k} \cdot \gv{\W} 
-\]
+For the second term $- \A^i (p+2k) \cdot \W$, again use that $p \cdot \W=0$ so 
+\beq
+	T_i^{II} = - \A^i (p+[g]k) \cdot \W \approx g \A^i \v{k} \cdot \gv{\W} 
+\eeq
 %Term 3
-And in the third term $ - \A \cdot \W (p-[g-1]k)^i$ the $\A_0$ term is of too high order (irregardless of the gauge), leaving
-\[
-	- \A \cdot \W (p-[g-1]k)^i \approx \v{\A} \cdot \gv{\W} (p-[g-1]k)^i
-\]	
-All terms together give
-\[
+And in the third term $ - \A \cdot \W (p-[g-1]k)^i$, the $\A_0$ term is of too high order (irregardless of the gauge), leaving
+\beq
+	T_i^{III} = - \A \cdot \W (p-[g-1]k)^i \approx \v{\A} \cdot \gv{\W} (p-[g-1]k)^i
+\eeq
+All three terms together give
+\beq \label{eq:S1:Vivertex}
 V_i = ie\left( [g]\v{k} \cdot \gv{\W} \A^i - 2\v{p} \cdot \v{\A} \W^i + \v{\A} \cdot \gv{\W} [p - [g-1]k]^i \right )
-\]
+\eeq
 
 \paragraph{Tabulation of results}
 
-We could (and I did) perform parallel calculations for the second vertex, but we can also note that it has exactly the same form, with the recipe being that $p \to p'$, $k \to -k'$, $\W \to \W^\dagger$.  Similar considerations work for $U$, where the only difference is that because of the crossed lines, we just swap $k$, $k'$.
+So of course parallel calculations for the other vertices could be done, as previously mentioned it is easier to note that they have the same general for.  To obtain $\overline{V}$ the recipe is that $p \to p'$, $k \to -k'$, $\W \to \W^\dagger$.  Similar considerations work for $U$, where the only difference is that because of the crossed lines, $k$ and $k'$ are swapped.
 
-So if we consider $V$ as a function of $p$, $k$ and $\W$: $V_\mu(p, k, \W)$ then 
+If $V$ is considered as a function of $p$, $k$ and $\W$: $V_\mu(p, k, \W)$,  then 
 \beqa
 	\overline{V}_\mu &=& V_\mu(p', -k',  \W^\dagger)	\\
 	U_\mu &=& V_\mu(p, k',  \W)			\\
@@ -857,9 +874,9 @@ So if we consider $V$ as a function of $p$, $k$ and $\W$: $V_\mu(p, k, \W)$ then
 
 
 
-We want only the first two orders: write $X^{(1)}$ to indicate a leading order terms, $X^{(2)}$ to indicate next to leading order terms.
+Only the first two orders are needed, so for each type of vertex write $X^{(1)}$ to indicate a leading order terms, and $X^{(2)}$ to indicate next to leading order terms.
 
-For the first vertex
+The vertex $V$ was explicitly calculated, the results are
 \beqa
 	V_0^{(1)} &=&	i e m \v{\A} \cdot \gv{\W}			\\
 	V_0^{(2)} &=&	-i e [g-1] k_0  \v{\A} \cdot \gv{\W} 	\\
@@ -867,7 +884,7 @@ For the first vertex
 	V_i^{(2)} &=&	 ie\left( [g]\v{k} \cdot \gv{\W} A^i - 2\v{p} \cdot \v{\A} \W^i + \v{\A} \cdot \gv{\W} [p - [g-1]k]^i \right )	\\
 \eeqa
 
-And for the second
+$\overline{V}$ is obtained from $V$ as explained above:
 \beqa
 	\overline{V}_0^{(1)} &=&	i e m \v{\Adag} \cdot \gv{\W^\dagger}			\\
 	\overline{V}_0^{(2)} &=&	i e [g-1] k'_0 \v{\Adag} \cdot \gv{\W^\dagger}			\\
@@ -876,8 +893,7 @@ And for the second
 				+ \v{\Adag} \cdot \gv{\W^\dagger} [p' + [g-1]k']^i )	\\
 \eeqa
 
-Using $U$ to denote the vertices of the crossed diagram.
-
+Using $U$ to denote the vertices of the crossed diagram, the first is:
 \beqa
 	U_0^{(1)} &=&	i e m \v{\Adag} \cdot \gv{\W}			\\
 	U_0^{(2)} &=&	-i e [g-1] k'_0  \v{\Adag} \cdot \gv{\W} 	\\
@@ -885,7 +901,7 @@ Using $U$ to denote the vertices of the crossed diagram.
 	U_i^{(2)} &=&	 i e \left( [g]\v{k'} \cdot \gv{\W} \Adag^i - 2\v{p} \cdot \v{\Adag} \W^i + \v{\Adag} \cdot \gv{\W} [p - [g-1]k']^i \right )	\\
 \eeqa
 
-And for the second
+And for the second:
 \beqa
 	\overline{U}_{0}^{(1)} &=&	i e m \v{\A} \cdot \gv{\W^\dagger}			\\
 	\overline{U}_{0}^{(2)} &=&	i e [g-1] k_0 \v{\A} \cdot \gv{\W^\dagger}			\\
@@ -893,16 +909,16 @@ And for the second
 	\overline{U}_{i}^{(2)} &=&	i e ( -[g]\v{k} \cdot \gv{\W^\dagger} {\A}^i - 2\v{p'} \cdot \v{\A} \W^{\dagger^i}
 				+ \v{\A} \cdot \gv{\W^\dagger} [p' + [g-1]k]^i )	\\
 \eeqa
-We also write again the possibly relevant propagator terms $P^{\lambda \rho}(q)$.
+In addition to the vertices, the final result will involve the propagator terms which were, as previously derived:
 \beqa
  P^{00} &=& \frac{i}{m^2} 	\\
  P^{0i} &=& P^{i0} = i\frac{  q^i  }{4m^3}		\\
  P^{ij} &=& - \left(1 - \frac{q_0 - m}{2m} \right )\frac{i \delta^{ij} }{4m^2} 	
 \eeqa
-Where $q = p+k$ for the uncrossed diagrams, and $q = p+k'$ for crossed.  For our particular result only $P_{00}$ will contribute, though.  And since at the needed order only the pure contact term contributes, the momentum dependence of the propagator doesn't show up in the final result.
+Above, $q = p+k$ for the uncrossed diagrams, and $q = p+k'$ for crossed.  It turns out that for this particular calculation, only $P_{00}$ will contribute.  And since at the needed order only the pure contact term contributes, the momentum dependence of the propagator doesn't show up in the final result.
 
  
-From the above pieces we can calculate the point-like terms which arise from the two-vertex diagram.  Including both crossed and uncrossed diagrams:
+From the above pieces can be calculated the point-like terms which arise from the two-vertex diagram.  Including both crossed and uncrossed diagrams, the contact part that arises is:
 
 \begin{minipage}{1in}
    \includegraphics[scale=1]{eps/uncrossed-small} 
@@ -917,7 +933,7 @@ $
 
 \subsection{Two vertex contribution}
 
-We can now calculate relevant contributions to the scattering amplitude from the two vertex diagrams.
+Each piece has been calculated, it is now just a matter of putting it all together.
 \subsubsection{Leading order}
 The leading order term from uncrossed diagrams will be $V_\lambda^{(1)} P^{\lambda \rho} \overline{V}_\rho^{(1)}$, or
 \beqa
@@ -925,25 +941,25 @@ V_{\lambda=0}^{(1)} P^{00} \overline{V}_{0}^{(1)} + V_{i}^{(1)} P^{ij} \overline
 	&=&	-e^2 m^2 \gv{\W^\dagger} \cdot \v{\Adag} \frac{i}{m^2}\v{\A} \cdot \gv{\W} + 0 	\\
 	&=& -i e^2  (\gv{\W^\dagger} \cdot \v{\Adag} ) ( \v{\A} \cdot \gv{\W})  \\
 \eeqa
-From crossed diagrams
+The leading order from the crossed diagrams is
 \beqa
 U_{0}^{(1)} P^{00} \overline{U}_{0}^{(1)} + U_{i}^{(1)} P^{ij} \overline{U}_{j}^{(1)}	
 	&=& - i e^2 (\gv{\W^\dagger} \cdot \v{\A} ) ( \v{\Adag} \cdot \gv{\W} ) \\
 \eeqa
 
 So the total contribution is
-\[
+\beq {eq:S1:trees0}
 - i e^2 (\gv{\W^\dagger} \cdot \v{\A}) ( \v{\Adag} \cdot \gv{\W}) - i e^2 (\gv{\W^\dagger} \cdot \v{\Adag}) ( \v{\A} \cdot \gv{\W})
-\]
+\eeq
 
 \subsubsection{Contributions to $\v{E} \times \v{A}$ terms}
-The particular coefficient we care about in the NRQED Lagrangian contains $k_0 \v{A}(k)$.
+The particular coefficient in the NRQED Lagrangian to check contains $k_0 \v{A}(k)$.
 
-Looking at the above list we see only the second order terms $V^{(2)}_0$ will contribute to this coefficient.
-\[
+Looking above, from the uncrossed diagrams only the second order terms $V^{(2)}_0$ will contribute to this coefficient.
+\beq
 V_{\lambda=0}^{(1)} P^{00} \overline{V}_{\rho=0}^{(2)} + V_{\lambda=2}^{(1)} P^{00} \overline{V}_{\rho=0}^{(1)}	
-\]
-This is
+\eeq
+So the uncrossed contribution is
 \[
 - e^2 \left(  [m \v{\A} \cdot \gv{\W} ] \frac{i}{m^2} [(g-1)k'_0 \v{\Adag} \cdot \gv{\W^\dagger} ] -  [ (g-1)k_0  \v{\A} \cdot \gv{\W} ]\frac{i}{m^2} [m \v{\Adag} \cdot \gv{\W^\dagger}] \right )
 	=
@@ -964,33 +980,33 @@ U_{\lambda=0}^{(1)} P^{00} \overline{U}_{\rho=0}^{(2)} + U_{\lambda=2}^{(1)} P^{
 \]
 
 So the total contribution is
-\[
+\beq 
 	-ie^2 (g-1) \frac{ k_0 - k'_0}{m} \left( [\v{\A} \cdot \gv{\W^\dagger}] [\v{\Adag} \cdot \gv{\W} ] -  [\v{\Adag} \cdot \gv{\W^\dagger}] [\v{\A} \cdot \gv{\W} ] \right )
-\]
+\eeq
 
 
 
-
-We can put this in the form of a matrix element using the previously derived identity
+%TODO refer back instead of restating
+This can put this in the form of a matrix element using the previously derived identity
 \[(\v{W^\dagger} \cdot \v{v} )( \v{u} \cdot \v{W} )= W^\dagger_a \left[ \v{u} \cdot \v{v} \delta_{ab} - (\v{S}_{ac} \cdot \v{u})(\v{S}_{cb} \cdot \v{v}) \right ] W_b\] 
 
 
-Understanding that the wave functions $\W$ are contracted only with the spin structure, we write now
+Understanding that the wave functions $\W$ are contracted only with the spin structure, the result can be written
 \[
 		  -i (g-1)e^2  \frac{ k_0 - k'_0}{m} \W^\dagger \left( \v{\Adag} \cdot \v{\A} - (\v{S} \cdot \v{\Adag}) (\v{S} \cdot \v{\A})  -\v{\A} \cdot \v{\Adag} + \v{S} \cdot \v{\A} \v{S} \cdot \v{\Adag} \right ) \W
 \]
 Which after simplification is
-\[
-	-i  e^2 (g-1) \frac{ k_0 - k'_0}{m} \W^\dagger \left(  [\v{S} \cdot \v{\A}, \v{S} \cdot \v{\Adag}] \right ) \W
+\beq \label{eq:S1:trees1}
+\Mtrees = 	-i  e^2 (g-1) \frac{ k_0 - k'_0}{m} \W^\dagger \left(  [\v{S} \cdot \v{\A}, \v{S} \cdot \v{\Adag}] \right ) \W
 =
 	e^2 (g-1) \frac{ k_0 - k'_0}{m} \W^\dagger  \left( \v{S} \cdot \v{\A} \times \v{\Adag} \right ) \W
-\]
+\eeq
 
 
 
 %%%%%%%%%%%%%%%%%%%% SUM OF two-photon vertex and two one-photon vertices   %%%%%%%%%%%%%%%%%%%%%%%%5
 \subsection{Sum of two-photon vertex and two-vertex tree diagrams}
-Now we'll find the total scattering amplitude to the order we need.  (One power of $\frac{p}{m}$ past leading order.) 
+Now the scattering amplitude, less terms of nonlocal origin, can be written to the needed order.  (One power of $\frac{p}{m}$ past leading order.) 
 
 First consider just the leading order terms.  The contribution from the fundamental two-photon vertex is:
 \[
@@ -1014,7 +1030,7 @@ which in terms of the spinors $\phi$ would be
 \]
 
 
-Then consider terms which implicitly will fix $\v{E}$.  The fundamental vertex contains no terms with $\v{E}$ in them, so the only term is from the two-vertex diagrams:
+Then consider terms which implicitly will fix those parts of the NRQED Lagrangian involving $\v{E}\times \v{A}$.  The fundamental vertex contains no terms corresponding to $\v{E}$, so the only term is from the two-vertex diagrams:
 \[
  e^2 (g-1) \frac{ k_0 - k'_0}{m} \W^\dagger  \left( \v{S} \cdot \v{\A} \times \v{\Adag} \right ) \W
 \]
@@ -1033,9 +1049,9 @@ Which in terms of $\phi$ is just
 
 \subsection{Comparison with relativistic result (one photon)}
 
-Having calculated the same process in both the relativistic theory and in our NRQED effective theory, we can compare the two amplitudes and fix the coefficients.
+Having calculated the same process in both the relativistic theory and in our NRQED effective theory, the two amplitudes can be compared, and the coefficients fixed.
 
-The NRQED amplitude for scattering off an external is 
+The NRQED amplitude for scattering off an external field is 
 \beqa
 	iM &=&
 		ie\phi^\dagger \Bigg( - A_0 +   \frac{ \v{A} \cdot \v{p} }{m} - \frac{  (\v{A} \cdot \v{p}) \v{p}^2   }{2m^3} 
@@ -1060,9 +1076,9 @@ iM_{REL} = -ie \phi^\dagger \Big (
 \eeq
 
 
-We should rewrite term $\grad \cdot \v{E}  - S_i S_j \grad_i E_j$ using the quadropole moment tensor $Q_{ij} = \frac{1}{2} ( S_i S_j + S_j S_i - \frac{2}{3}\v{S}^2 )$.
+The term $\grad \cdot \v{E}  - S_i S_j \grad_i E_j$ should be rewritten using the quadrupole moment tensor $Q_{ij} = \frac{1}{2} ( S_i S_j + S_j S_i - \frac{2}{3}\v{S}^2 )$.
 
-Remember that $\nabla_i E_j$ is actually symmetric under exchange of $i$ and $j$.  Then we can write
+Remember that $\nabla_i E_j$ is actually symmetric under exchange of $i$ and $j$.  Then
 \[
 	S_i S_j \nabla_i E_j = \frac{1}{2} (S_i S_j + S_j S_i) = (Q_{ij} + \frac{1}{3} \v{S}^2 \delta_{ij}) \nabla_i E_j
 \]
@@ -1092,7 +1108,7 @@ Comparing the two, the coefficients are:
 
 
 \subsection{Comparison with relativistic result (two photon)}
-From the relativistic theory, we calculated the scattering amplitude of the same process:
+From the relativistic theory, the local contributions to Compton scattering were calculated. 
 \[
 iM_{REL} = 
  \frac{e^2}{2m^2} (g-1) ( k_0 - k'_0 ) \phi^\dagger  \left( \v{S} \cdot \v{\A} \times \v{\Adag} \right ) \phi

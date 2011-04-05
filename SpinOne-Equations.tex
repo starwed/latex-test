@@ -200,17 +200,20 @@ Now that the equations are in the correct form, we can write them as follows:
 %%TODO This is the correct form, but go back and make sure equations leading up to this don't have sign errors
 %% Also, add the spin ids that produce the cross products.
 \beq \label{eq:S1:M}
-i D_0 \spinor{W}{\eta} = 
-	\Mblock
-	{ \lambda \frac{e}{m^2} \left [ \v{E} \cdot \v{D} - (\v{S} \cdot \v{E})( \v{S} \cdot \v{D}) + i \v{S} \cdot \v{E} \times \v{D} \right ] }
-		{m
-	-\frac{1}{m} (\v{S} \cdot \v{D})^2 
-	- \lambda \frac{e}{m} \v{S} \cdot \v{B}
-	+ \lambda^2 \frac{e^2}{m^3} \left [ \v{E}^2 - (\v{S} \cdot \v{E})^2 \right ]  }
-	{ m
-	- \frac{1}{m}\left [ \v{D}^2 - (\v{S} \cdot \v{D})^2 + e \v{S} \cdot \v{B} \right ]  }
-	{ - \lambda \frac{e}{m^2} \left [ \v{D} \cdot \v{E} - (\v{S} \cdot \v{D}) (\v{S} \cdot \v{E}) + i \v{S} \cdot \v{D} \times \v{E} \right ]  } \spinor{W}{\eta}
+	i D_0 \spinor{W}{\eta} = \Mblock{ M_{11} }{M_{12}}{M_{21}}{M_{22} }\spinor{W}{\eta}
 \eeq
+Where the components of $M$ are
+\beqa
+M_{11} &=&  [g-1] \frac{e}{m^2} \left [ \v{E} \cdot \v{D} - (\v{S} \cdot \v{E})( \v{S} \cdot \v{D}) + i \v{S} \cdot \v{E} \times \v{D} \right ] 	\\
+M_{12}	&=&		m
+	-\frac{1}{m} (\v{S} \cdot \v{D})^2 
+	- [g-1] \frac{e}{m} \v{S} \cdot \v{B}
+	+ [g-1]^2 \frac{e^2}{m^3} \left [ \v{E}^2 - (\v{S} \cdot \v{E})^2 \right ]  	\\
+M_{21} &=& 
+	 m	- \frac{1}{m}\left [ \v{D}^2 - (\v{S} \cdot \v{D})^2 + e \v{S} \cdot \v{B} \right ]		\\
+M_{22} &=&  
+	 - [g-1] \frac{e}{m^2} \left [ \v{D} \cdot \v{E} - (\v{S} \cdot \v{D}) (\v{S} \cdot \v{E}) + i \v{S} \cdot \v{D} \times \v{E} \right ]   
+\eeqa
 
 This leads to a relativistic Hamiltonian, but not one of quite the right form.  The $\eta$ and $W$ do not correspond to the particle and antiparticle.  To see this consider the rest frame where $D_i =0$, then the two components have equal magnitude.  A transformation to a representation where the upper and lower components correspond to particle-antiparticle will be necessary.  Since it is not yet in the final desired form, call the bispinor
  \beq
@@ -270,7 +273,7 @@ As already mentioned, it is clear from inspection that the matrix in \eqref{eq:S
 	\left [ \v{E} \cdot \v{D} - (\v{S} \cdot \v{E})( \v{S} \cdot \v{D}) + i \v{S} \cdot \v{E} \times \v{D} \right]^\dagger 
 		= - \left [ \v{D} \cdot \v{E} - (\v{S} \cdot \v{D}) (\v{S} \cdot \v{E}) + i \v{S} \cdot \v{D} \times \v{E} \right ] 
 \eeq
-we can see that $H$ would have the general form 
+it can be seen that $H$ would have the general form 
 \beq
 	H = 
 \begin{pmatrix}
@@ -280,26 +283,26 @@ we can see that $H$ would have the general form
 \eeq
 where the off diagonal blocks are Hermitian in the normal sense: $B^\dagger = B$ and $C^\dagger=C$.
 
-An operator is defined as Hermitian with respect to a particular inner product.  One generalisation of the normal inner product from quantum mechanics is found by allowing a weight matrix $M$ inserted between the wave functions:
+An operator is defined as Hermitian with respect to a particular inner product.  One generalisation of the normal inner product from quantum mechanics is found by allowing a weight matrix $\weight$ inserted between the wave functions:
 \beq
-	\langle \xi, \chi \rangle = \int d^3x \, \xi^\dagger M \chi
+	\langle \xi, \chi \rangle = \int d^3x \, \xi^\dagger \weight \chi
 \eeq
 
-In the usual product of quantum mechanics M would be the identity matrix, but here it differs.  Previously the conserved charge was derived.  Writing \eqref{eq:S1:j0} in the form $\Upsilon'^\dagger M \Upsilon'$
+In the usual product of quantum mechanics $\weight$ would be the identity matrix, but here it differs.  Previously the conserved charge was derived.  Writing \eqref{eq:S1:j0} in the form $\Upsilon'^\dagger \weight \Upsilon'$
 \beq
 	j_0 = m [\eta^\dagger W + W^\dagger \eta] 
 		= 	m \begin{pmatrix} \eta^\dagger & W^\dagger \end{pmatrix}
 			\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}
 			\begin{pmatrix} \eta \\ W \end{pmatrix}
 \eeq
-so if the weight is defined as $M= \left( \begin{smallmatrix} 0 & 1 \\ 1 & 0 \end{smallmatrix} \right )$, the inner product $\langle \Upsilon', \Upsilon \rangle$ will be necessarily be conserved.
+so if the weight is defined as $\weight= \left( \begin{smallmatrix} 0 & 1 \\ 1 & 0 \end{smallmatrix} \right )$, the inner product $\langle \Upsilon', \Upsilon \rangle$ will be necessarily be conserved.
 
 An operator H is Hermitian with respect to this inner product if
 \beq
  \langle H\xi, \chi \rangle = \langle \xi, H\chi \rangle \to
-		\int d^3x \xi^\dagger H^\dagger M \chi	=	\int d^3x \xi^\dagger M H \chi
+		\int d^3x \xi^\dagger H^\dagger \weight \chi	=	\int d^3x \xi^\dagger \weight H \chi
 \eeq
-For this equality to hold, it is sufficient for $H^\dagger M = M H$.  With $M$ as above, and $H=\left( \begin{smallmatrix} A & B \\ C & D \end{smallmatrix} \right )$ this condition reduces to 
+For this equality to hold, it is sufficient for $H^\dagger \weight = \weight H$.  With $\weight$ as above, and $H=\left( \begin{smallmatrix} A & B \\ C & D \end{smallmatrix} \right )$ this condition reduces to 
 \beq
 	\begin{pmatrix} A^\dagger & C^\dagger \\ B^\dagger & D^\dagger \end{pmatrix}
 	=\begin{pmatrix} D & C \\ B & A \end{pmatrix}
@@ -313,20 +316,25 @@ The matrix in \eqref{eq:S1:M} fulfills exactly this requirement, and so is Hermi
 
 
 \subsection{Non-relativistic Hamiltonian}
-Now that the issue of hermiticity has been dealt with, it is time to find a non-relativistic Hamiltonian from the equation \eqref{eq:S1:M}.  First, write it explicitly as a Hamiltonian, replacing the derivative operator with $\gv{\pi} = \v{p} - e\v{A}$, so that $\v{D} = -i \gv{\pi}$. Then
+Now that the issue of hermiticity has been dealt with, it is time to find a non-relativistic Hamiltonian from the equation \eqref{eq:S1:M}.  First, write it explicitly as a Hamiltonian, replacing the derivative operator with $\gv{\pi} = \v{p} - e\v{A}$, so that $\v{D} = -i \gv{\pi}$. Then if
 \small
 \beq \label{eq:S1:M}
 H' \Upsilon' = 
-	\Mblock
-	{ e\Phi + \lambda \frac{e}{m^2} \left [ -i \v{E} \cdot \gv{\pi} + i  (\v{S} \cdot \v{E})( \v{S} \cdot \gv{\pi}) +  \v{S} \cdot \v{E} \times \v{\pi} \right ] }
-		{m
-	+\frac{1}{m} (\v{S} \cdot \gv{\pi})^2 
-	- \lambda \frac{e}{m} \v{S} \cdot \v{B}
-	+ \lambda^2 \frac{e^2}{m^3} \left [ \v{E}^2 - (\v{S} \cdot \v{E})^2 \right ]  }
-	{ m
-	+ \frac{1}{m}\left [ \gv{\pi}^2 - (\v{S} \cdot \gv{\pi})^2 - e \v{S} \cdot \v{B} \right ]  }
-	{ e\Phi  - \lambda \frac{e}{m^2} \left [  - i\gv{\pi} \cdot \v{E} + i (\v{S} \cdot \gv{\pi}) (\v{S} \cdot \v{E}) +  \v{S} \cdot \gv{\pi} \times \v{E} \right ]  } \spinor{W}{\eta}
+\Mblock{ H'_{11} }{H'_{12}} { H'_{21} } {H'_{22} } \spinor{W}{\eta}
 \eeq
+Then
+\beqa
+H'_{11} &=&
+	 e\Phi + [g-1] \frac{e}{m^2} \left [ -i \v{E} \cdot \gv{\pi} + i  (\v{S} \cdot \v{E})( \v{S} \cdot \gv{\pi}) +  \v{S} \cdot \v{E} \times \v{\pi} \right ] 	\\
+H'_{12} &=&
+		m	+\frac{1}{m} (\v{S} \cdot \gv{\pi})^2 
+	- [g-1] \frac{e}{m} \v{S} \cdot \v{B}
+	+ [g-1]^2 \frac{e^2}{m^3} \left [ \v{E}^2 - (\v{S} \cdot \v{E})^2 \right ]  \\
+H'_{21} &=&	 m
+	+ \frac{1}{m}\left [ \gv{\pi}^2 - (\v{S} \cdot \gv{\pi})^2 - e \v{S} \cdot \v{B} \right ]  \\
+H'_{22} &=&
+	 e\Phi  - [g-1] \frac{e}{m^2} \left [  - i\gv{\pi} \cdot \v{E} + i (\v{S} \cdot \gv{\pi}) (\v{S} \cdot \v{E}) +  \v{S} \cdot \gv{\pi} \times \v{E} \right ]   
+\eeqa
  \normalsize  
 
 That equation is written in a representation where the particle and anti-particle states are not separated.  Even in the nonrelativistic limit, it strongly couples $\eta$ and $W$, because the off-diagonal terms are of $\mathcal{O}(m)$.  To descend to a nonrelativistic picture, it will be most convenient if the lower component of $\Upsilon$ is, in that limit, only weakly coupled to the upper.

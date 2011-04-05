@@ -1,0 +1,154 @@
+
+\section{ Allowed terms}
+
+
+We wish to evaluate the magnetic moment of a bound particle.  What terms of the NRQED Hamiltonian do we need in order to do so?
+
+We treat the Hamiltonian as an exact part plus a perturbation:
+\[
+	H = H_0 + V;  H_0 = H_0 = e\Phi + \frac{p^2}{2m} 
+\]
+
+To correctly apply perturbation theory $V$ should be small compared to $H_0$, and this will be true here.  We have two energy scales: the kinetic energy of the particle $mv^2$ and a scale associated with the magnetic field $\frac{eB}{m}$.  The electric potential is $e\Phi \sim mv^2$ and derivatives thereof are $ \frac{eE}{m} \sim mv^3$, $\frac{e\partial_i \partial_j \Phi}{m^2} \sim mv^4$.
+	
+We want to calculate first order corrections to the magnetic moment, which will be of order $\frac{eB}{m}v^2$.
+
+For first order perturbation theory, we will then need terms explicitly of order $\frac{eB}{m}$,  $\frac{eB}{m}v^2$.
+
+We must also consider second order perturbation theory, whose contributions look like
+\[
+	\Delta \epsilon  = \frac{ \matrixel{0}{V}{n} \matrixel{n}{V}{0} }{E_n - E_0}
+\]
+
+The denominator is order $mv^2$, so we need terms in the numerator of up to $m \frac{B}{m} v^4$.  These terms arise as the product of two matrix elements, one of which is leading order in $\frac{B}{m}$, the other the leading order terms which do not contain B: $mv^4$.
+
+We can thus conceptually divide all the needed terms in the potential into three categories
+
+\beqa
+	V_I &\sim& \frac{B}{m}	\\
+	V_{II} &\sim& mv^4	\\
+	V_{III} &\sim& \frac{B}{m} v^2	\\
+\eeqa
+
+
+With an exhaustive list of allowed terms in the Hamiltonian up to this order, we can examine what terms contribute to the magnetic moment.
+
+\[V_{I} = a_1 \frac{e}{m} \v{S} \cdot \v{B} + \frac{e}{m} ( \v{p} \cdot \v{A} + \v{A} \cdot \v{p} ) \]
+
+\[V_{II} = \frac{p^4}{8m^3} + a_2 \frac{e}{m^2} \left [ \{S_i, S_j\} - \frac{2}{3} S^2 \delta_{ij} \right ] \partial_i E_j +  a_3 \frac{e}{m^2} S_i E_j p_k \epsilon_{ijk}    \] 
+
+\begin{eqnarray*}
+ V_{III} &=& 
+		e\frac{p^2 ( \v{p} \cdot \v{A} + \v{A} \cdot \v{p}) + (\v{p} \cdot \v{A} + \v{A} \cdot \v{p})p^2}{8m^3}
+		+  a_3 \frac{e^2}{m^2} S_i  E_j A_k \epsilon_{ijk}	\\
+	&&	+ a_4 \frac{e}{m} \v{S} \cdot \v{B} \frac{p^2}{2m} 
+		+ a_5 \frac{e}{m} \frac{ (\v{S} \cdot \v{p}) (\v{B} \cdot \v{p})}{2m^2}
+\end{eqnarray*}
+
+
+To evaluate the matrix elements of these operators we will need to abandon generality and consider our specific case, where $\v{E}$ is the Coulomb field. 
+\[	\v{E} = -\frac{Ze}{4\pi} \frac{\v{r}}{r^3}	\]
+
+For a constant $\v{B}$, we also chose a particularly convenient form for $\v{A}$:
+\[	\v{A} = \frac{1}{2}\v{B} \times \v{r}		\]
+We can take the direction of the magnetic field to be along the z axis, so that the term $\v{S} \cdot \v{B}$ is diagonal in spin space.
+
+\subsection*{First order perturbation}
+The first order perturbation term to the ground state energy is
+\[	\Delta^{(0)}_0 = \matrixel{n}{V}{n}	\]
+
+
+\begin{eqnarray*}  
+H_{S \cdot B} &=& - \frac{e}{m} \left\{
+				g \v{S} \cdot \v{B} \left ( 1 - \frac{p^2}{2m^2} \right )
+				+ (g-2) \v{S} \cdot \v{B} \frac{p^2}{2m^2}
+				- (g-2) \frac{ (\v{S} \cdot \v{p}) (\v{B} \cdot \v{p})}{2m^2}
+				+ \frac{e}{m} \left(\frac{g}{2} + \frac{g-2}{2} \right)  \v{S} \cdot \v{E} \times \v{A}
+			\right\}	
+\end{eqnarray*}
+With our definition of E and B, $\v{S} \cdot \v{E} \times \v{A} = - \frac{Ze}{8\pi} \frac{1}{r^3} \v{S} \cdot \v{r} \times [\v{B} \times \v{r}]$.
+
+
+We take the matrix elements of these terms in the ground state.  The spherical symmetry of the unperturbed state dictates that $\avg{\frac{r_i r_j}{r^3}}=\delta_{ij}\frac{1}{3}\avg{\frac{1}{r}}$.
+Using these identities, we find that:
+\begin{eqnarray*}
+\avg{\v{S} \cdot \v{B} p^2} 
+	&=& \v{S} \cdot \v{B} \avg{p^2}	\\
+ \avg{\frac{1}{r^3} \v{S} \cdot \v{r} \times (\v{B} \times \v{r})}
+	&=&	\avg{\frac{1}{r^3} S_k R_i B_l r_m \epsilon_{jlm} \epsilon_{ijk}}	\\
+	&=&	\avg{ \frac{1}{r} \v{S} \cdot \v{B}  - \frac{1}{r^3} B_i S_j r_i r_j }	\\
+	&=&	\v{S} \cdot \v{B} \avg{\frac{1}{r}} - B_i S_j \avg{\frac{r_i r_j}{r^3}}	\\
+	&=&	\v{S} \cdot \v{B}(\avg{\frac{1}{r}} - \frac{1}{3}\avg{\frac{1}{r}})	\\
+	&=&	\frac{2}{3} \v{S} \cdot \v{B}\avg{\frac{1}{r}}\\
+\avg{ (\v{S} \cdot \v{p}) (\v{B} \cdot \v{p}) }
+	&=&	\avg{ S_i B_j p_i p_j }	\\
+	&=&	S_i B_j \avg{p_i p_j}	\\
+	&=&	S_i B_j \delta_{ij} \frac{\avg{p^2}}{3}  \\
+	&=&	 \v{S} \cdot \v{B} \frac{\avg{p^2}}{3}
+\end{eqnarray*}
+
+For the ground state, $\avg{\frac{1}{r} }= mZ\alpha$, $\avg{p^2} = (mZ\alpha)^2$.  So 
+\begin{eqnarray*}  
+\avg{H_{S \cdot B} }
+	&=& - \frac{e}{m} \v{S} \cdot \v{B} 
+		\left ( 1 - \frac{\avg{p^2}}{2m^2}  + \frac{Ze^2}{6m}\avg{\frac{1}{r}}\right )	\\
+	&=&  - \frac{e}{m} \v{S} \cdot \v{B} \left (1 - \frac{ (Z \alpha)^2}{2} +\frac{(Z\alpha)^2}{6} \right )	\\
+	&=&  - \frac{e}{m} \v{S} \cdot \v{B} \left (1 - \frac{(Z\alpha)^2}{3} \right )	\\
+\end{eqnarray*}
+
+
+\subsection*{Second order perturbation}
+We want the second order correction to the ground state energy level.  First we consider matrix elements between the ground level and excited levels, and show that none contribute to the magnetic moment.  Then we consider degenerate levels with differing spin, but it will turn out that such matrix elements also vanish.
+
+Given that we throw away terms quadratic in the magnetic field, and of order greater than $mv^4$ or $\frac{B}{m}v^2$, the only terms contributing to second order in perturbation theory are
+
+\[ \Delta^{(1)} E_0 = -2\Sigma_{m \neq 0} \frac {\matrixel{0}{V_{I}}{m} \matrixel{m}{V_{III}}{0}} { E_m - E_0 }	\]
+
+Now, since the term $\v{S} \cdot \v{B}$ contains only constants and spin space operators, it clearly doesn't connect different energy levels.  So $\matrixel{0}{\v{S} \cdot \v{B}}{m} = 0$.
+
+The term $\matrixel{0}{\v{p} \cdot \v{A} + \v{A} \cdot \v{p}}{m}$ does contain position space operators, but will vanish due to symmetry considerations.
+
+\begin{eqnarray*}
+ \v{p} \cdot \v{A} + \v{A} \cdot \v{p} 
+	&=&	p_i (r_j B_k \epsilon_{ijk} ) + (r_j B_k \epsilon_{ijk}) p_i	\\
+	&=&	[p_i, r_j] B_k \epsilon{ijk} + 2 B_k r_j p_i  \epsilon_{ijk}	\\
+	&=&	2 B_k r_j p_i  \epsilon_{ijk}
+\end{eqnarray*}
+However, $ r_j p_i \epsilon_{ijk}$ is proportional to the angular momentum operator $L_k$.  When acting on the spherically symmetric ground state, this operator must vanish.
+
+Therefore, for any excited state m, $\matrixel{m}{V_{I}}{0}$ vanishes.  Now we must consider the matrix element between two degenerate ground level states of differing spin.
+
+\subsection{Degenerate}
+Clearly any term not involving spin operators will not connect states of differing spin.  Likewise, with our convention that we label spin states by their projection along the direction of the magnetic field, the operator $\v{S} \cdot \v{B} = S_3 B_3$ is also diagonal in spin space.
+
+The remaining terms involving spin operators are:
+\[	 -\frac{e}{2m^2} ( S_i E_j (p_k - eA_k) \epsilon_{ijk} - S_i S_j \partial_i E_j) \]
+By the same reasoning used above, $E_j p_k \epsilon_{ijk}$ is proportional to $L_i$, which will vanish when acting on the ground state.
+
+Now consider the term containing $S_i E_j A_k \epsilon_{ijk}$.  Using the specific gauge chosen, and the particular form of $\v{E}$, it will be proportional to 
+
+\begin{eqnarray*}
+S_i \left( \frac{r_j}{r^3} \right) (r_l B_m \epsilon_{lmk}) \epsilon_{ijk}
+	&=&	\frac{1}{r^3} S_i r_j r_l B_m (\delta_{li} \delta_{mj} - \delta_{lj} \delta_{mi} )	\\
+	&=&	\frac{1}{r^3} (S_i r_i r_j B_j - S_i B_i r_j r_j)
+\end{eqnarray*}	
+
+Between two ground state wave functions $\avg{\frac{r_i r_j}{r^3}}=\delta_{ij}\frac{1}{3}\avg{\frac{1}{r}}$.  So after averaging over position space (but not yet calculating the spin part) the above reduces to
+\[	 
+	\frac{1}{r} (S_i \delta_{ij} B_j - S_i B_i \delta_{jj})
+	= -2 \v{S} \cdot \v{B} \avg{\frac{1}{r}}
+\]
+Which is again diagonal in spin space.
+
+The last term to consider contains the position space operator $\partial_i E_j$.  The expectation value of this in the ground state must be something proportional to $\delta_{ij}$.  Then the operator $S_i S_j$ in spin space will be proportional to $S^2$.  So this term too is diagonal in spin space.
+
+Term by term we have shown that the potential does not connect any two ground level states of different spin.  Thus, degenerate perturbation theory is not needed.
+
+So the result of first order perturbation theory stands as our final result:
+\[ \avg{H_{S \cdot B} }
+	=  - \frac{e}{m} \v{S} \cdot \v{B} \left (1 - \frac{(Z\alpha)^2}{3} \right )			 
+\]
+
+
+
+\end{document}
