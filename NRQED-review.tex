@@ -332,16 +332,15 @@ Given a collection of these blocks, then as long as the set as a whole isn't ant
 So far these constraints still allow for an infinite number of terms.  But the greater the number of fields, or derivatives of fields, that exist in a term, the more strongly it will be suppressed.  Each additional power of energy will carry a factor of $1/m$ to ensure that the total dimension of the term is allowed.
 
 To figure out how far down the hierarchy of terms we need to go for a particular calculation, we also need to establish the individual order of magnitude of each term and ``building block''.  This will allow us to eliminate all but a finite number of terms from consideration.  The example case is an electron in an atomic system, so $A_0$ is the Coulomb potential, and $\v{B}$ comes from interaction with the nucleus, in this case a muon.
+\begin{xalignat*}{2}
+	\gv{\partial} 	&\sim mv
+	& \partial_t  	&\sim mv^2	\\
+	eA_0				 &\sim mv^2	
+	& e\v{A}			 &\sim mv^3	\\
+	e\v{E}				 &\sim m^2 v^3	
+	& e\v{B}			 &\sim m^2 v^4	 
+\end{xalignat*}
 
-.
-\beqa
-	\v{\partial} 	&\sim& mv	\\
-	\partial_t  	&\sim& mv^2	\\
-	eA_0			 &\sim& mv^2	\\
-	e\v{A}			 &\sim& mv^3	\\
-	e\v{E}			 &\sim& m^2 v^3	\\
-	e\v{B}			 &\sim& m^2 v^4	\\ 
-\eeqa
 
 The magnitudes of the fields can be readily derived from their atomic origin.  The spin operator is order unity (when we have $\hbar=1$.)
 

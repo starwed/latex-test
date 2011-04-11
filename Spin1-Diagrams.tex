@@ -68,8 +68,8 @@ This structure is related to the quadrupole moment, so label the coefficient $c_
 \subsection{Scattering off external field in NRQED}
 With the Lagrangian in hand, the amplitude for the charged particle scattering off an external field can be calculated.  At the tree level (which is the only level contributing to the final calculation) the process involves just a single photon.  So consider those terms in the NRQED Lagrangian which contain one power of the external field.  
 
-%FIXME add eqref to spin one-half lagrangian
-This calculation is largely the same as that for spin one-half, with the only change being the addition of the quadrupole term.  Augmented by this term, the Lagrangian \eqref{eq:??} becomes 
+
+This calculation is largely the same as that for spin one-half, with the only change being the addition of the quadrupole term.  Augmented by this term, the Lagrangian \eqref{eq:Sh:nrL-2f} becomes 
 \small
 \beqa
 \mathcal{L}_A &=& \Psi^\dagger (  -eA_0- ie  \frac{ \{\nabla_i, A_i \} }{2m} -ie \frac{ \{\grad^2, \{\nabla_i, A_i \}  \} }{8m^3} 
@@ -351,33 +351,9 @@ A_0( \v{q}^2 + i \v{S} \cdot \v{p} \times \v{q} - (\v{S} \cdot \v{q})^2 )
 \eeq
 
 %%% A_i terms
-%FIXME redundancy: this needs to refer back to some previous section
 \subsubsection{Transformation of $\v{A}$ terms in $\Mq$}
-%TODO probably this identity is developed elsewhere, refer back to it.
-The only term with derivatives of $\v{A}$ has the form $(\v{p} + \v{p'})\cdot \v{A}  (\v{S} \cdot \v{p} \times i\v{q})$.  The relation between this and the field $B$ is nonobvious.  First, it is convenient to develop an identity for $iq_i (\v{p} + \v{p'}) \cdot \v{A}$.  Using $\epsilon_{ijk} B_k = i(q_i A_j - q_j A_i)$:
-\beq
-	(p + p')_i \epsilon_{ijk} B_k = (p + p')_i  \left( i q_i A_j - i q_j A_i \right )
-\eeq
-There are additional conditions coming from the fact that this is elastic scattering.  Since in this case $ ( \v{p'} + \v{p}) \cdot \v{q} = \v{p'}^2 - \v{p}^2 = 0$, the $(p+p')_i q_i$ term vanishes, leaving
-\beq
-	(p + p')_i \epsilon_{ijk} B_k = -i (p + p')_i q_j A_i = -i q_j(\v{p} + \v{p'}) \cdot \v{A} 
-\eeq
-
-This gives the identity
-\beq
-i q_j (\v{p} + \v{p'}) \cdot \v{A}  =  - \epsilon_{ijk} (p + p')_i  B_k
-\eeq
-This identity helps reduce the more complicated term:
-\beqa
-(\v{p} + \v{p'}) \cdot \v{A} ( \v{S} \cdot \v{p} \times i\v{q} )
-	&=&	 S_i p_j  \epsilon_{ijk} [i q_k (\v{p} + \v{p'}) \cdot \v{A} ]	\\
-	&=&	- S_i p_j \epsilon_{ijk} [ \epsilon_{\ell k m} (p + p')_\ell B_ m]	\\
-	&=&	 S_i p_j \epsilon_{ijk} [ \epsilon_{\ell m k} (p + p')_\ell B_ m]	\\
-	&=&	S_i p_j (p+p')_\ell B_m [\delta_{i \ell} \delta_{jm} - \delta_{i m} \delta_{j \ell}]	\\
-	&=&	\v{S} \cdot  (\v{p} + \v{p'}) \v{B} \cdot \v{p} - \v{S} \cdot \v{B} (\v{p} + \v{p'}) \cdot \v{p}
-\eeqa
-For the case of a constant $\v{B}$, any terms of the type $q_i B_j$ vanish.  So the above reduces to
-\beq
+The only term with derivatives of $\v{A}$ has the form $(\v{p} + \v{p'})\cdot \v{A}  (\v{S} \cdot \v{p} \times i\v{q})$.  This was worked out in \eqref{eq:Sh:A-p-id}, with the result (replacing $\sigma$ with $S$)
+\beq  
 (\v{p} + \v{p'}) \cdot \v{A}  (\v{S} \cdot \v{p} \times i\v{q} )
 	= 2 \{  (\v{S} \cdot  \v{p})( \v{B} \cdot \v{p}) - \v{p}^2 \v{S} \cdot \v{B} \}
 \eeq
@@ -715,7 +691,7 @@ There are two tree diagarms, crossed and uncrossed.  Each consists of a propagat
 
 Use $V$ and $\overline{V}$ to represent the vertices of the uncrossed diagram, and $U$, $\overline{U}$ for the crossed.  These can be defined in terms of vertex diagrams, the external lines contracted with polarisations.
 
-%FIXME diagarms -- wrong polarisation states
+%FIXME diagrams -- wrong polarisation states
 $V_\lambda = $
 \begin{minipage}{1in}
    \includegraphics[scale=0.7]{eps/V-lambda} 

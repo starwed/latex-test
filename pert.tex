@@ -1,5 +1,5 @@
 
-\section{ Allowed terms}
+\section{Allowed terms}
 
 
 We wish to evaluate the magnetic moment of a bound particle.  What terms of the NRQED Hamiltonian do we need in order to do so?
@@ -150,5 +150,19 @@ So the result of first order perturbation theory stands as our final result:
 \]
 
 
-
-\end{document}
+%%%%%%%%%%%%
+\subsection*{Magnetic Moment}
+Now we'll keep only those terms which contribute to the magnetic moment, using $\gv{\pi} = \v{p} - e\v{A}$
+\begin{eqnarray*}
+H_{S\cdot B}	&=&
+		 \left(\frac{g-2}{2} + 	\frac{g}{2}\right)\frac{e^2}{2m^2} \v{S} \cdot \v{E} \times \v{A}
+		+  (g-2)\frac{e}{4m^2} (\v{S} \cdot \v{p}) (\v{p} \cdot \v{B})
+		-  \frac{e}{m}\left [\frac{g}{2}\left(1 - \frac{p^2}{2m^2}\right) + \frac{g-2}{2}\frac{p^2}{2m^2} \right] \v{S} 		\cdot \v{B}		\\
+	&=&		-\frac{e}{2m} \left\{
+			g \left(1 - \frac{p^2}{2m^2}\right)  \v{S} \cdot \v{B}	
+			+(g-2) \frac{p^2}{2m^2} \v{S} \cdot \v{B}	
+			-(g-2) \frac{ (\v{S} \cdot \v{p}) (\v{p} \cdot \v{B})}{2m^2}
+			-\frac{e}{m} \left(\frac{g-2}{2} + 	\frac{g}{2}\right) \v{S} \cdot \v{E} \times \v{A}
+		\right\}
+\end{eqnarray*}
+This exactly matches with what was found before.

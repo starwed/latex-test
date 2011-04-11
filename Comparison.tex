@@ -1,55 +1,59 @@
 
-
-
 \subsection{Comparison with relativistic result}
 
-Having calculated the same process in both the relativistic theory and in our NRQED effective theory, we can compare the two amplitudes and fix the coefficients.
+Having calculated the same process in both the relativistic theory and in the NRQED effective theory, the two amplitudes can be compared, thus fixing the coefficients of NRQED.
 
 The NRQED amplitude \eqref{eq:nrqedScatter} is
-\beqa
-	iM &=&
+\beq
+\begin{split}
+	iM =
 		ie\phi^\dagger \Bigg( - A_0 +   \frac{ \v{A} \cdot \v{p} }{m} - \frac{  (\v{A} \cdot \v{p}) \v{p}^2   }{2m^3} 
 		+ c_F  \frac{\v{S} \smalldot \v{B}} {2m}   	
 		+ c_D \frac{ ( \partial_i E_i ) }{8m^2}	
 		+ c_Q \frac{ Q_{ij} ( \partial_i E_j ) }{8m^2}	
-	\\&&	+ c^{1}_S \frac{  \v{E} \times \v{p} }{4m^2}
+	\\	+ c^{1}_S \frac{  \v{E} \times \v{p} }{4m^2}
 		- (c_{W_1} -c_{W_2}) \frac{   (\v{S} \smalldot \v{B} ) \v{p}^2  }{4m^3}	
 		-  c_{p'p} \frac{   (\v{S} \smalldot \v{p}) (\v{B} \smalldot \v{p})  }{4m^3} \Bigg )\phi
-\eeqa
+\end{split}
+\eeq
 
 
 
 While the relativistic amplitude was
-\[
+\beq
+\begin{split}
 iM_{REL} = -ie \phi^\dagger \Big (
 		 A_0  - \frac{\v{p}\cdot \v{A} }{m} + \frac{\v{p}\cdot \v{A} \v{p}^2}{2m^3}
 		- \frac{g-1}{2m^3}\{ \grad \cdot \v{E} -  \v{S} \cdot \v{p} \times \v{E} - S_i S_j \grad_i E_j \}
-		- g\frac{1}{2m} \v{S} \cdot \v{B}
+		\\ - g\frac{1}{2m} \v{S} \cdot \v{B}
 		+ \v{S} \cdot \v{B} \frac{\v{p}^2}{2m^3}
 		+ \frac{g-2}{4m^3}(\v{S} \cdot \v{p} )( \v{B} \cdot \v{p})
 	\Big ) \phi
-\]
+\end{split}
+\eeq
 
 
-We should rewrite term $\grad \cdot \v{E}  - S_i S_j \grad_i E_j$ using the quadropole moment tensor $Q_{ij} = \frac{1}{2} ( S_i S_j + S_j S_i - \frac{2}{3}\v{S}^2 )$.
+The term $\grad \cdot \v{E}  - S_i S_j \grad_i E_j$ should be rewritten using the quadrupole moment tensor $Q_{ij} = \frac{1}{2} ( S_i S_j + S_j S_i - \frac{2}{3}\v{S}^2 )$.
 
-Remember that $\nabla_i E_j$ is actually symmetric under exchange of $i$ and $j$.  Then we can write
+Remembering that $\nabla_i E_j$ is actually symmetric under exchange of $i$ and $j$, 
 \[
 	S_i S_j \nabla_i E_j = \frac{1}{2} (S_i S_j + S_j S_i) = (Q_{ij} + \frac{1}{3} \v{S}^2 \delta_{ij}) \nabla_i E_j
 \]
 \[
-	= Q_ij \nabla_i E_j + \frac{2}{3} \grad \cdot \v{E}
+	= Q_{ij} \nabla_i E_j + \frac{2}{3} \grad \cdot \v{E}
 \]
-Written using this identity, the relativistic amplitude is
-\[
+Written in that form, 
+\beq
+\begin{split}
 iM_{REL} = -ie \phi^\dagger \Big (
 		 A_0  - \frac{\v{p}\cdot \v{A} }{m} + \frac{\v{p}\cdot \v{A} \v{p}^2}{2m^3}
 		- \frac{g-1}{2m^3}\{ \frac{1}{3}\grad \cdot \v{E} -  \v{S} \cdot \v{p} \times \v{E} - Q_{ij} \grad_i E_j \}
-		- g\frac{1}{2m} \v{S} \cdot \v{B}
+		\\ - g\frac{1}{2m} \v{S} \cdot \v{B}
 		+ \v{S} \cdot \v{B} \frac{\v{p}^2}{2m^3}
 		+ \frac{g-2}{4m^3}(\v{S} \cdot \v{p} )( \v{B} \cdot \v{p})
 	\Big ) \phi
-\]
+\end{split}
+\eeq
 
 
 Comparing the two, the coefficients are:

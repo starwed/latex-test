@@ -1,3 +1,5 @@
+\tableofcontents
+
 \chapter{Spin one-half}
 
 \section{Structure of spin one-half theory}
@@ -10,10 +12,10 @@ In the relativistic theory, the electrons are part of a fermion field that also 
 The relativistic Lagrangian for the fermion fields is
 \beqa
 \mathcal{L} &=&	
-	\bar{\Psi}(i \partial \cdot \gamma - e A \cdot \gamma - m)\Psi  - \frac{1}{4} F_{\mu\nu} F^{\mu\nu}
+	\Psigbar(i \partial \cdot \gamma - e A \cdot \gamma - m)\Psig  - \frac{1}{4} F_{\mu\nu} F^{\mu\nu}
 \eeqa
 
-The fermion fields are $\Psi$, the photon field is $A$.   $m$ is the particle's mass, and $e$ the electron's charge.  The $\gamma$ matrices mix the different components.  %TODO better explanation of gamma matrices
+The fermion fields are $\Psig$ ($\Psi$ being reserved for the fermion fields in the nonrelativistic theory), the photon field is $A$.   $m$ is the particle's mass, and $e$ the electron's charge.  The $\gamma$ matrices mix the different components.  %TODO better explanation of gamma matrices
 
 It will be convenient to work in a representation which already suggests the nonrelativistic behavior.  At low momenta, it should be expected that the free electron and positron fields act approximately as independent fields.  This is exactly the case for the Dirac representation.   In the rest frame, a free particle can be said to be definitively an electron or positron, and in the Dirac representation these correspond to the upper and lower parts of the bispinor.  
 
@@ -66,14 +68,18 @@ The product of each gamma matrix in turn gives a pseudo-scalar:
  	\gamma^5 \gamma^\mu 
  \eeq
  
-
+ 
+ 
+Solutions of the Dirac equation in momentum space are the spinors $\sr$.  They have four degrees of freedom, and can be treated as a bispinor consisting of an upper and lower spinor.  In the chiral basis the upper and lower components have opposite helicity; in the Dirac basis, opposite charge.
 \beq
 	\sr = \begin{pmatrix} \eta \\ \chi \end{pmatrix}
 \eeq
+
+
+
  
 \subsection{Nonrelativistic framework for spin one-half}
-
-
+The nonrelativistic theory describes a single particle, without its oppositely charged antiparticle.  
 
 
 
@@ -154,7 +160,6 @@ A solution of definite momentum $p$ to the equation is written in terms of upper
 
 
 With these considerations, the \eqref{eq:Sh:eom} can be rewritten acting explicitly on the bispinor.
-
 \beq \label{eq:Sh:matrixEOM}
 	\left\{
 		\begin{pmatrix}
@@ -429,7 +434,7 @@ Obviously not every term goes this same way.  The term with $\v{S} \cdot \v{B}$,
 
 To fix these terms, some physical process must be chosen.  For the one photon terms, scattering off an external field will be calculated.  For the two photon terms, Compton scattering will be used.
 
-\subsection{Calculation of electron scattering off external field in QED}
+\section{Calculation of electron scattering off external field in QED}
 %First form
 To fix all the terms in the NRQED Lagrangian which have a single power of the photon field, it suffices to calculate the scattering of an electron off an external field, as represented (in QED) by the diagram
 
@@ -510,38 +515,38 @@ Given that there exist these three ways to write the vertex, there are three way
 and no matter which way $\Gamma^\mu$ is written, a nonrelativistic expansion in terms of $\phis$ will be needed.  For now an agnostic approach will be taken, and the expressions for each of the three possible bilinears found.
 
 
-\subsubsection{Nonrelativistic expressions for the bilinears}
+\subsection{Nonrelativistic expressions for the bilinears}
 To compare with the NRQED scattering amplitude, everything needs to be written with consistent language.  We start with the relativistic bilinears, each of which behaves like a four vector, and appears in the amplitude dotted with the external field $A$.  Any dot products $a \cdot b$ should instead be written as $a_0 b_0 - \v{a} \cdot \v{b}$.  To this end, it might be necessary to treat the spatial and time-like components of the four-vector bilinears separately.
 
 The bispinors $u$ will be first written in terms of upper and lower components $\eta$, $\chi$, and then in terms of the nonrelativistic wave spinors $w$.  The relationship between the two sets are
-\beqa
-	\eta(p) &=& \left( 1 - \frac{\v{p}^2}{8m^2} \right ) w(p)	\\
-	\chi(p)	&=& \frac{ \sigdot{p} }{2m} \left(1  - \frac{3\v{p}^2}{8m^2} \right ) w(p)
-\eeqa
+\begin{eqnarray}
+	\label{eq:Sh:eta-w} \eta(p) &=& \left( 1 - \frac{\v{p}^2}{8m^2} \right ) w(p)	\\
+	\label{eq:Sh:chi-w}  \chi(p)	&=& \frac{ \sigdot{p} }{2m} \left(1  - \frac{3\v{p}^2}{8m^2} \right ) w(p)
+\end{eqnarray}
 In writing in terms of the upper and lower components,  the explicit expressions of the $\gamma$ matrices, as well as $\sigma^{\mu\nu}$ will be needed.  
 
 Of course the above expressions for the spinors in terms of $w$ is approximate.  In the NRQED Lagrangian, the terms we wish to fix involve $A_0$ with up to two powers of momentum (such as $\grad \cdot \v{E}$), and $A_i$ with up to three (as in $\sigdot{B} \v{p}^2$).  Because only the case of a constant magnetic field is needed, in any term which will explicitly contain $B$ higher derivatives may be ignored.  Throwing away unneeded terms, whatever is left can be used to calculate the scattering amplitude and compare with NRQED.
 
 This same general procedure will be followed for each of the bilinears.
 
-\paragraph{Scalar bilinear:}
+\subsubsection{Terms involving the scalar bilinear}
 Start with the first bilinear, a scalar coupled with a momentum four-vector.  Rewrite it in terms of $\eta$ and $\chi$.
 \beq
 	(p + p')^\mu \srb \sr  = (p + p')^\mu \left( \eta^\dagger \eta - \chi^\dagger \chi \right ) 
 \eeq
-Now express in terms of $w$
+Now express in terms of $w$, replacing $\eta$ and $\chi$ according to \eqref{eq:Sh:eta-w} and \eqref{eq:Sh:chi-w}.
 \beq
-	= (p + p')^\mu \left \{
+	(p + p')^\mu \srb \sr = (p + p')^\mu \left \{
 		w^\dagger \left( 1 - \frac{ \v{p'}^2}{8m^2} \right )  \left( 1 - \frac{ \v{p}^2}{8m^2} \right ) w
 		- w^\dagger \left( \frac{ \gv{\sigma} \cdot \v{p'}}{2m} \frac{ \gv{\sigma} \cdot \v{p}}{2m} \right ) w \right \}
 \eeq 
-And finally drop terms beyond the order that we need.
+Combining the terms, and dropping terms beyond the order needed:
 \beq
-	= (p + p')^\mu w^\dagger \left( 
+	(p + p')^\mu \srb \sr = (p + p')^\mu w^\dagger \left( 
 		1 -  \frac{ \v{p}^2 + \v{p'}^2}{8m^2} - \frac{ \gv{\sigma} \cdot \v{p'} \gv{\sigma} \cdot \v{p} }{4m^2} 
 		\right ) w
 \eeq
-Simplifying $\sigdot{p'} \sigdot{p} = \v{p} \cdot \v{p'} + i\gv{\sigma} \cdot \v{q} \times \v{p}$.
+The term quadartic in $\sigma$ can be simplified, using $\sigdot{p'} \sigdot{p} = \v{p} \cdot \v{p'} + i\gv{\sigma} \cdot \v{q} \times \v{p}$.
 \beq \label{eq:Sh:Si}
 	(p + p')^\mu \srb \sr  = (p + p')^\mu w^\dagger \left( 
 		1 -  \frac{ \v{p}^2  +2 \v{p} \cdot \v{p'} +  \v{p'}}{8m^2} - \frac{i\gv{\sigma} \cdot \v{q} \times \v{p} }{4m^2} 
@@ -558,7 +563,7 @@ Approximating the relativistic energies gives $p_0 = m + \v{p}^2 / (2m) $.  So
 \beq
 	p_0 + p'_0 \approx 2m + \frac{ \v{p}^2 + \v{p'}^2 }{2m} = 2m\left( 1 +  \frac{ \v{p}^2 + \v{p'}^2 }{4m^2} \right )
 \eeq
-Then using this correction to the leading order term
+Then using this correction to the leading order term gives the time like component:
 \beq
 	(p + p')^0 \srb \sr  = 2m  w^\dagger \left( 
 		1 +  \frac{ \v{p}^2   - 2 \v{p} \cdot \v{p'} +  \v{p'} }{8m^2} - \frac{i\gv{\sigma} \cdot \v{q} \times \v{p} }{4m^2} 
@@ -571,7 +576,9 @@ Then using this correction to the leading order term
 \eeq
 
 
-\paragraph{Vector bilinear:}
+
+
+\subsubsection{Terms involving the vector bilinear}
 For the term $\srb \gamma^\mu \sr$ it'll be necessary to treat the spatial/time-like indices separately, since they have different spinor structure.
 
 The time-like part is:
@@ -647,7 +654,7 @@ So finally
 
 
 
-\paragraph{Tensor term:}
+\subsubsection{Terms involving the tensor bilinear}
 The tensor term is subject to an additional simplification.  Because the process under considering is elastic scattering off an external static field, terms involving $q_0$ can be dropped.  Under this approximation $q_\nu \sigma^{\mu\nu} \approx  q_j \sigma^{\mu j}$.
 
 Dealing first with the case where $\mu=i$, write the tensor structure explicitly as a matrix:  
@@ -743,91 +750,194 @@ One term above vanishes because of symmetry
 \eeq
 
 
+\subsubsection{Contraction of bilinears with $A_0$}
+The scattering amplitude is composed of bilinears coupled to the field $A$.  The transferred momentum $\v{q}$ becomes a derivative of this field, $\v{q} \to -i\grad$ or equivalently $\grad \to i\v{q}$.  Before finally writing down the full vertex, the coupling of $A$ and the bilinears should be worked out, including appropriate transformations involving $\v{q}$.
+
+First consider terms with $A_0(q)$.  The relation between $\v{q}$ and $\v{E}$ is that $\v{E} = - \grad A_0 = i\v{q} A_0$.  Terms quadratic in $q$ give $\v{q}^2 A_0 = -\grad^2 A_0 =  \grad \cdot \v{E}$.
+
+
+The term with $A_0$ coupled with the scalar bilinear \eqref{eq:Sh:S0} gives
+\beqaL  \label{eq:Sh:SA0}
+	eA_0  (p + p')^0 \srb \sr &\approx&
+		eA_0 w^\dagger \left( 
+		1 +  \frac{ \v{q}^2 }{8m^2} - \frac{i\gv{\sigma} \cdot \v{q} \times \v{p} }{4m^2} 
+		\right ) w	\\
+	& \approx &
+			 w^\dagger \left( 
+				eA_0  +  \frac{ e \grad \cdot \v{E} }{8m^2} - \frac{e \gv{\sigma} \cdot \v{E} \times \v{p} }{4m^2} 
+				\right ) w
+\eeqaL
+The term involving the vector bilinear term \eqref{eq:Sh:V0} is
+\beqaL    \label{eq:Sh:VA0}
+	eA_0 \srb \gamma^0 u &=& 
+			eA_0 w^\dagger \left( 
+		1 -  \frac{ \v{q}^2 }{8m^2} + \frac{i \gv{\sigma} \cdot \v{q} \times \v{p} }{4m^2} 
+		\right ) w	\\
+	&=& 
+		 w^\dagger \left( 
+		eA_0  - \frac{ e \grad \cdot \v{E} }{8m^2} + \frac{ e\gv{\sigma} \cdot \v{E} \times \v{p} }{4m^2} 
+		\right ) w
+\eeqaL
+
+The third type of term, with the tensor bilinear appearing:
+\beqaL  \label{eq:Sh:TA0}
+e A_0 \srb  \frac{i}{2m} q_j \sigma^{0j} \sr
+	&=&  - e A_0 w^\dagger \left \{
+			\frac{  \v{q}^2  }{4m^2} 
+			- \frac{  i\gv{\sigma} \cdot \v{q} \times \v{p}   }{2m^2} 
+	\right \} w	\\
+	&=&  -   w^\dagger \left \{
+			\frac{e  \grad \cdot \v{E} }{4m^2} - \frac{e \gv{\sigma} \cdot \v{E} \times \v{p} }{2m^2} 
+	\right \} w
+\eeqaL
+
+\subsubsection{Contraction of bilinears with $A_i$}
+
+Terms with $\v{A}$ and $\v{q}$ give rise to terms with $\v{B} = \grad \times \v{A}$.  There are some that are simple to transform, containing $\epsilon_{ijk} iq_i A_j \to B_k$.  In others, the way $B$ arises is less clear.  
+
+Consider the expression $(\v{p} + \v{p'})\cdot \v{A}  (\gv{\sigma} \cdot \v{p} \times i\v{q})$.  Kinematic constraints will help in expressing this term.  First, it is convenient to develop an identity for $iq_i (\v{p} + \v{p'}) \cdot \v{A}$.  Using $\epsilon_{ijk} B_k = i(q_i A_j - q_j A_i)$:
+\beq
+	(p + p')_i \epsilon_{ijk} B_k = (p + p')_i  \left( i q_i A_j - i q_j A_i \right )
+\eeq
+There are additional conditions coming from the fact that this is elastic scattering.  Since in this case $ ( \v{p'} + \v{p}) \cdot \v{q} = \v{p'}^2 - \v{p}^2 = 0$, the $(p+p')_i q_i$ term vanishes, leaving
+\beq
+	(p + p')_i \epsilon_{ijk} B_k = -i (p + p')_i q_j A_i = -i q_j(\v{p} + \v{p'}) \cdot \v{A} 
+\eeq
+
+This gives the identity
+\beq \label{eq:Sh:pqA}
+i q_j (\v{p} + \v{p'}) \cdot \v{A}  =  - \epsilon_{ijk} (p + p')_i  B_k
+\eeq
+This identity helps reduce the more complicated term:
+\beqa
+(\v{p} + \v{p'}) \cdot \v{A} ( \gv{\sigma} \cdot \v{p} \times i\v{q} )
+	&=&	 \sigma_i p_j  \epsilon_{ijk} [i q_k (\v{p} + \v{p'}) \cdot \v{A} ]	\\
+	&=&	- \sigma_i p_j \epsilon_{ijk} [ \epsilon_{\ell k m} (p + p')_\ell B_ m]	\\
+	&=&	 \sigma_i p_j \epsilon_{ijk} [ \epsilon_{\ell m k} (p + p')_\ell B_ m]	\\
+	&=&	\sigma_i p_j (p+p')_\ell B_m [\delta_{i \ell} \delta_{jm} - \delta_{i m} \delta_{j \ell}]	\\
+	&=&	\gv{\sigma} \cdot  (\v{p} + \v{p'}) \v{B} \cdot \v{p} - \gv{\sigma} \cdot \v{B} (\v{p} + \v{p'}) \cdot \v{p}
+\eeqa
+For the case of a constant $\v{B}$, any terms of the type $q_i B_j$ vanish.  So the above reduces to
+\beq \label{eq:Sh:A-p-id}
+(\v{p} + \v{p'}) \cdot \v{A}  (\gv{\sigma} \cdot \v{p} \times i\v{q} )
+	= 2 \{  (\gv{\sigma} \cdot  \v{p})( \v{B} \cdot \v{p}) - \v{p}^2 \gv{\sigma} \cdot \v{B} \}
+\eeq
+
+Now consider $A_i$ coupled with each of the particular bilinear expressions.  (Remember that here $A_i = -\v{A}_i$.)  With the term involving a scalar bilinear \eqref{eq:Sh:Si}
+\beqaL \label{eq:Sh:SAi}
+	\frac{A_i (p + p')^i}{2m} \srb \sr  &=& - \frac{\v{A} \cdot (\v{p} + \v{p'} ) }{2m} w^\dagger \left( 
+		1 -  \frac{ \v{p}^2  +2 \v{p} \cdot \v{p'} +  \v{p'}}{8m^2} - \frac{i\gv{\sigma} \cdot \v{q} \times \v{p} }{4m^2} 
+		\right ) w	\\
+	 &=&	- w^\dagger  \left [ \frac{e \v{A} \cdot (\v{p} + \v{p'} ) }{2m} \left(1 - \frac{\v{p}^2}{4m^2} \right )  \right ]w^\dagger 
+	- w^\dagger  \left [  \frac{ 	 e (\gv{\sigma} \cdot  \v{p})( \v{B} \cdot \v{p}) - e \v{p}^2 \gv{\sigma} \cdot \v{B} }{4m^2} \right ] w \nonumber
+\eeqaL
+The term involving a vector bilinear coupled to $A_i$ comes from \eqref{eq:Sh:Vi}
+\beqaL \label{eq:Sh:VAi}
+A_i \srb \gamma^i \sr  &=& w^\dagger \left\{
+		A_i \frac{ p_i + p'_i - \epsilon_{ijk} q_j \sigma_k }{2m} \left( 1 -\frac{ \v{p}^2}{2m^2} \right )
+	\right\} w \\
+	&=&- w^\dagger \left \{
+		 \frac{ \v{A} \cdot (\v{p} + \v{p'}) + \gv{\sigma} \cdot \v{B} }{2m} \left(1 - \frac{\v{p}}{2m^2} \right ) 
+	\right\} w
+\eeqaL
+Finally the term with a tensor gives
+\beqaL  \label{eq:Sh:TAi}
+	A_i \srb  \frac{i}{2m} q_j \sigma^{ij} \sr 
+		&=& \frac{i \epsilon_{ijk} A_i q_j}{2m} w^\dagger \left \{
+			\sigma_k - \frac{ \gv{\sigma} \cdot \v{p} p_k  }{2m^2} 
+		\right \} w \\ 
+		&=&  - w^\dagger \left \{ 
+				\frac{ \gv{\sigma} \cdot \v{B} }{2m} - \frac{ (\gv{\sigma} \cdot \v{p}) (\v{B} \cdot \v{p}) }{4m^2}
+			\right \} w
+\eeqaL
+
 % Start of comparison
-\paragraph{Full vertex}
+\subsubsection{Full vertex}
 
 Now that the three bilinears have been calculated, the complete scattering amplitude can be written down.  Each of the three forms should prove equivalent.  To simplify comparison, the coupling to $A_0$ and $A_i$ can be treated separately.
 
-The first has $	\Gamma^\mu = \gamma^\mu F_1(q^2) + i \frac{\sigma^{\mu\nu}q_\nu}{2m} F_2 (q^2)$.  Using \eqref{eq:Sh:V0} and \eqref{eq:Sh:T0}
+The first has $	\Gamma^\mu = \gamma^\mu F_1(q^2) + i \frac{\sigma^{\mu\nu}q_\nu}{2m} F_2 (q^2)$.  Using \eqref{eq:Sh:VA0} and \eqref{eq:Sh:TA0}
 \beq
-	A_0 \srb  \Gamma^0 \sr = 
-		A_0 F_1   w^\dagger \left( 
-		1 -  \frac{ \v{q}^2 }{8m^2} + \frac{i \gv{\sigma} \cdot \v{q} \times \v{p} }{4m^2} 
+	eA_0 \srb  \Gamma^0 \sr = 
+		 F_1   w^\dagger \left( 
+		eA_0  - \frac{ e \grad \cdot \v{E} }{8m^2} + \frac{ e\gv{\sigma} \cdot \v{E} \times \v{p} }{4m^2} 
 		\right ) w
-		- A_0 F_2 w^\dagger \left \{
-			\frac{  \v{q}^2  }{4m^2} 
-			- \frac{  i\gv{\sigma} \cdot \v{q} \times \v{p}   }{2m^2} 
+		- F_2    w^\dagger \left \{
+			\frac{e  \grad \cdot \v{E} }{4m^2} - \frac{e \gv{\sigma} \cdot \v{E} \times \v{p} }{2m^2} 
 	\right \} w
 \eeq
-The second is	$\Gamma^\mu = \gamma^\mu [F_1(q^2) + F_2(q^2) ]  -  \frac{p^\mu  + p'^\mu }{2m}F_2 (q^2)$.  Using \eqref{eq:Sh:V0} and \eqref{eq:Sh:S0}.
+The second is	$\Gamma^\mu = \gamma^\mu [F_1(q^2) + F_2(q^2) ]  -  \frac{p^\mu  + p'^\mu }{2m}F_2 (q^2)$.  Using \eqref{eq:Sh:VA0} and \eqref{eq:Sh:SA0}.
 \beq
-	A_0 \srb  \Gamma^0 \sr = 
-		A_0 (F_1 + F_2)   w^\dagger \left( 
-		1 -  \frac{ \v{q}^2 }{8m^2} + \frac{i \gv{\sigma} \cdot \v{q} \times \v{p} }{4m^2} 
+	eA_0 \srb  \Gamma^0 \sr = 
+		 (F_1 + F_2)  w^\dagger \left( 
+		eA_0  - \frac{ e \grad \cdot \v{E} }{8m^2} + \frac{ e\gv{\sigma} \cdot \v{E} \times \v{p} }{4m^2} 
 		\right ) w
-		- A_0 F_2   w^\dagger \left( 
-		1 +  \frac{ \v{q}^2 }{8m^2} - \frac{i\gv{\sigma} \cdot \v{q} \times \v{p} }{4m^2} 
+		- F_2   w^\dagger \left( 
+		eA_0  +  \frac{ e \grad \cdot \v{E} }{8m^2} - \frac{e \gv{\sigma} \cdot \v{E} \times \v{p} }{4m^2} 
 		\right ) w
 \eeq
-The third combination is $	\Gamma^\mu = \frac{p^\mu  + p'^\mu }{2m} F_1(q^2) + i \frac{\sigma^{\mu\nu}q_\nu}{2m} [F_1(q^2) + F_2(q^2) ] $.  Using \eqref{eq:Sh:S0} and \eqref{eq:Sh:T0}
+The third combination is $	\Gamma^\mu = \frac{p^\mu  + p'^\mu }{2m} F_1(q^2) + i \frac{\sigma^{\mu\nu}q_\nu}{2m} [F_1(q^2) + F_2(q^2) ] $.  Using \eqref{eq:Sh:SA0} and \eqref{eq:Sh:TA0}
 \beq
 	 A_0 \srb  \Gamma^0 \sr = 
 		F_1 w^\dagger \left( 
-		1 +  \frac{ \v{q}^2 }{8m^2} - \frac{i\gv{\sigma} \cdot \v{q} \times \v{p} }{4m^2} 
+		eA_0  +  \frac{ e \grad \cdot \v{E} }{8m^2} - \frac{e \gv{\sigma} \cdot \v{E} \times \v{p} }{4m^2} 
 		\right ) w
-		- [F_1 + F_2]  w^\dagger \left \{
-			\frac{  \v{q}^2  }{4m^2} 
-			- \frac{  i\gv{\sigma} \cdot \v{q} \times \v{p}   }{2m^2} 
+		- [F_1 + F_2] w^\dagger \left \{
+			\frac{e  \grad \cdot \v{E} }{4m^2} - \frac{e \gv{\sigma} \cdot \v{E} \times \v{p} }{2m^2} 
 	\right \} w
 \eeq
 Taking any of these three results and collecting like terms gives the result:
 \beq
-		A_0  w^\dagger \left(  
-			F_1 
+		 A_0 \srb  \Gamma^0 \sr = w^\dagger \left(  
+			F_1  eA_0
 			+ [F_1 + 2 F_2] \left [ 
-				\frac{i \gv{\sigma} \cdot \v{q} \times \v{p} }{4m^2} 
-				-  \frac{ \v{q}^2 }{8m^2}
+				\frac{e \gv{\sigma} \cdot \v{E} \times \v{p} }{4m^2}  - \frac{e  \grad \cdot \v{E} }{8m^2}
 			\right ]
 		\right ) w
 \eeq
-So the calculations are at least consistant with the Gordon identity.
+So the calculations are at least consistent with the Gordon identity.
 
-Now turning to the coupling with $\v{A}$.  The first has $	\Gamma^\mu = \gamma^\mu F_1(q^2) + i \frac{\sigma^{\mu\nu}q_\nu}{2m} F_2 (q^2)$.  Using \eqref{eq:Sh:Vi} and \eqref{eq:Sh:Ti}
+Now turning to the coupling with $\v{A}$.  The first has $	\Gamma^\mu = \gamma^\mu F_1(q^2) + i \frac{\sigma^{\mu\nu}q_\nu}{2m} F_2 (q^2)$.  Using \eqref{eq:Sh:VAi} and \eqref{eq:Sh:TAi}
 \beq
 \begin{split}
-	A_i \srb \gamma^i \sr = & 
-		F_1 w^\dagger \left\{
-		\frac{ p_i + p'_i - \epsilon_{ijk} q_j \sigma_k }{2m} \left( 1 -\frac{ \v{p}^2}{2m^2} \right )
+	e A_i \srb \Gamma^i \sr = & 
+		 - e F_1 w^\dagger \left \{
+		 \frac{ \v{A} \cdot (\v{p} + \v{p'}) + \gv{\sigma} \cdot \v{B} }{2m} \left(1 - \frac{\v{p}}{2m^2} \right ) 
 	\right\} w
-	\\& + F_2 \frac{i \epsilon_{ijk} q_j}{2m} w^\dagger \left \{
-			\sigma_k \left( 1 - \frac{\v{q}^2}{8m^2} \right ) - \frac{ \gv{\sigma} \cdot (\v{p} + \v{p'})p_k + i \epsilon_{akc} q_a p_c }{4m^2} 
-		\right \} w
+	\\& - e F_2  w^\dagger \left \{ \frac{ \gv{\sigma} \cdot \v{B} }{2m} - \frac{ (\gv{\sigma} \cdot \v{p}) (\v{B} \cdot \v{p}) }{4m^2}
+			\right \} w
 \end{split}
 \eeq
-The second is	$\Gamma^\mu = \gamma^\mu [F_1(q^2) + F_2(q^2) ]  -  \frac{p^\mu  + p'^\mu }{2m}F_2 (q^2)$.  Using \eqref{eq:Sh:Vi} and \eqref{eq:Sh:Si}:
+The second is	$\Gamma^\mu = \gamma^\mu [F_1(q^2) + F_2(q^2) ]  -  \frac{p^\mu  + p'^\mu }{2m}F_2 (q^2)$.  Using \eqref{eq:Sh:VAi} and \eqref{eq:Sh:SAi}:
 \beq \begin{split}
-	A_i \srb \gamma^i \sr = & 
-		A_i [F_1 + F_2] w^\dagger \left\{
-		\frac{ p_i + p'_i - \epsilon_{ijk} q_j \sigma_k }{2m} \left( 1 -\frac{ \v{p}^2}{2m^2} \right )
+	e A_i \srb \Gamma^i \sr = & 
+		- e [F_1 + F_2] w^\dagger \left \{
+		 \frac{  \v{A} \cdot (\v{p} + \v{p'}) +  \gv{\sigma} \cdot \v{B} }{2m} \left(1 - \frac{\v{p}}{2m^2} \right ) 
 	\right\} w
-	\\& - F_2 \frac{(p + p')^i}{2m} w^\dagger \left( 
-		1 -  \frac{ \v{p}^2  +2 \v{p} \cdot \v{p'} +  \v{p'}}{8m^2} - \frac{i\gv{\sigma} \cdot \v{q} \times \v{p} }{4m^2} 
-		\right ) w
+	\\& + e F_2 w^\dagger  \left [ \frac{e \v{A} \cdot (\v{p} + \v{p'} ) }{2m} \left(1 - \frac{\v{p}^2}{4m^2} \right )  \right ]w^\dagger 
+	+ eF_2 w^\dagger  \left [  \frac{ 	 e (\gv{\sigma} \cdot  \v{p})( \v{B} \cdot \v{p}) - e \v{p}^2 \gv{\sigma} \cdot \v{B} }{4m^2} \right ] w
 \end{split} \eeq
-The third combination is $	\Gamma^\mu = \frac{p^\mu  + p'^\mu }{2m} F_1(q^2) + i \frac{\sigma^{\mu\nu}q_\nu}{2m} [F_1(q^2) + F_2(q^2) ] $.  Using \eqref{eq:Sh:Si} and \eqref{eq:Sh:Ti}
+The third combination is $\Gamma^\mu = \frac{p^\mu  + p'^\mu }{2m} F_1(q^2) + i \frac{\sigma^{\mu\nu}q_\nu}{2m} [F_1(q^2) + F_2(q^2) ] $.  Using \eqref{eq:Sh:SAi} and \eqref{eq:Sh:TAi}
 \beq \begin{split}
-	A_i \srb \gamma^i \sr = & 
-		A_i F_1 \frac{p^i + p'^i}{2m} w^\dagger \left( 
-			1 -  \frac{ \v{p}^2  +2 \v{p} \cdot \v{p'} +  \v{p'}}{8m^2} - \frac{i\gv{\sigma} \cdot \v{q} \times \v{p} }{4m^2} 
-			\right ) w
-	\\&	+ A_i (F_1 + F_2)  \frac{i \epsilon_{ijk} q_j}{2m} w^\dagger \left \{
-			\sigma_k - \frac{ \gv{\sigma} \cdot \v{p} p_k  }{2m^2} 
-		\right \} w 
+	e A_i \srb \Gamma^i \sr = & 
+		 e F_1 w^\dagger  \left [ \frac{e \v{A} \cdot (\v{p} + \v{p'} ) }{2m} \left(1 - \frac{\v{p}^2}{4m^2} \right )  \right ]w^\dagger
+		 + e F_1 w^\dagger  \left [  \frac{ (\gv{\sigma} \cdot  \v{p})( \v{B} \cdot \v{p}) - e \v{p}^2 \gv{\sigma} \cdot \v{B} }{4m^2} \right ] w
+	\\&	-[F_1 + F_2] w^\dagger \left \{ \frac{ \gv{\sigma} \cdot \v{B} }{2m} - \frac{ (\gv{\sigma} \cdot \v{p}) (\v{B} \cdot \v{p}) }{4m^2}
+			\right \} w
 \end{split} \eeq
 
+For any of these paths, the total result is that
+\beq \begin{split}
+	e A_i \srb \Gamma^i \sr =  w^\dagger \Bigg \{
+		- \frac{ e\v{A} \cdot (\v{p} + \v{p'} ) }{2m} \left( 1 - \frac{\v{p}^2}{2m^2} \right )
+		- [F_1 + F_2] \frac{ e \gv{\sigma} \cdot \v{B} }{2m} 
+	\\	+ F_1 \frac{ e \gv{\sigma} \cdot \v{B} \v{p}^2 }{4m^3} 
+		+ F_2 \frac{ (\gv{\sigma} \cdot \v{p}) (\v{B} \cdot \v{p}) }{4m^2}
+	\Bigg \} w
+\end{split}
+\eeq
 
-
-\subsection{Amplitude in NRQED for scattering off an external field}
+\section{Amplitude in NRQED for scattering off an external field}
 Earlier, the Lagrangian \eqref{eq:nr:L-half} for spin one-half particles was calculated.  To calculate the scattering off an external field in this theory, only those terms that include one power of the electromagnetic field are needed.  Call that part of the Lagrangian containing such terms $\mathcal{L}_A$.  This set of terms need not, by themselves, be gauge invariant.  However, previously care was taken to group terms in a gauge invariant way.  So first the terms of $\mathcal{L}_A$ must be disentangled from the gauge invariant terms (involving one or more powers of $\v{D}$).
 
 
@@ -961,7 +1071,7 @@ This can be simplified somewhat.  Choose the gauge such that $\nabla_i A_i = 0$.
 
 
 
-\subsection{Calculation of Compton scattering in QED}
+\section{Calculation of Compton scattering in QED}
 The relevant terms in the NRQED Lagrangian can all be fixed by the previous calculation of scattering off an external field, because even though there are terms involving two powers of the photon field, the requirement of gauge invariance means they share a coefficient with one photon terms.  However, for reasons of self consistency it would be good to check that the coefficients really do work out the same if calculated independently.
 
 The easiest process to calculate involving two photons will be Compton scattering.   
