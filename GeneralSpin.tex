@@ -225,12 +225,87 @@ In terms of the original rest frame spinors, the components of $\Psig'$ are
 	\phi =  \cosh \left( \frac{\gv{\Sigma} \cdot \gv{\rapidity} }{2} \right ) \xi_0
 \eeq
 
-%Sign confusion compared to original equation again
+%TODO consider: Sign confusion compared to original equation again?
 \beq \label{eq:chiDef}
 	\chi =  \sinh \left( \frac{\gv{\Sigma} \cdot \gv{\rapidity} }{2} \right ) \xi_0
 \eeq
 
 
+\subsection{Properties of $\gv{\Sigma}$ }
+
+The matrices $\Sigma_i$ act on wave functions with $p+q$ indices.  If we treat the two sets of indices as two seperate spaces, with spins $\frac{p}{2}, \frac{q}{2}$ respectively, we can write it as the sum of those spaces spin operators: $\Sigma_i = 2(S^P_i - S^Q_i)$.  We can then write the total spin operator as $S^I_i = S^P_i + S^Q_i$.  (The case of spin one-half is degenerate: $\Sigma_i =  2 S_i = \sigma_i $.)
+
+Because the two spaces are orthogonal, $[S^P_i, S^Q_j]=0$.  Using that and the above definitions, the algebra of these matrices is found.  
+\beq \label{eq:Sg:comSSig}
+	[S^I_i, \Sigma_j] = i\epsilon_{ijk}\Sigma_k
+\eeq
+\beq \label{eq:Sg:comSigSig}
+	[\Sigma_i, \Sigma_j] = 4i\epsilon_{ijk}S^I_k
+\eeq
+
+Wave functions of definite spin are also eigenfunctions of $\Sigma^2$ and $\Sigma \cdot S^I$.  This can be shown by calculating various scalar quantities:
+\beqa
+	{S^P}^2 &=& \frac{p}{2} ( \frac{p}{2} + 1)	\\
+	{S^Q}^2 &=& \frac{q}{2} ( \frac{q}{2} + 1)	\\
+	(S^I)^2 	&=& \frac{p+q}{2} ( \frac{p+q}{2} + 1 )	\\
+		&=& \frac{p}{2} (\frac{p}{2} + 1) + \frac{q}{2}(\frac{q}{2} + 1 ) + 2 \frac{pq}{4}	\\
+		&=& {S^P}^2 + 2\frac{pq}{4} + {S^Q}^2	\\
+	 {S^P} \cdot {S^Q} &=& \frac{pq}{4}	\\
+	\Sigma ^2 &=& 4(S^P - S^Q)^2	\\
+		&=&	4({S^P}^2 + {S^Q}^2 - 2 S^P \cdot S^Q)	\\
+		&=& 	4\left(
+				\frac{p}{2} ( \frac{p}{2} + 1)
+				+\frac{q}{2} ( \frac{q}{2} + 1)
+				- \frac{pq}{2}
+			\right )	\\
+		&=&	p^2 + q^2 - 2pq + 2(p + q)	\\
+		&=& 	(p-q)^2 + 2(p+q)	\\
+	\Sigma \cdot S &=& 2 (S^P - S_Q) \cdot (S^P + S_Q)	\\
+		&=& 2 (S^P)^2 - 2 (S^Q)^2	\\
+		&=&	\frac{1}{2} ( p^2 - q^2 + p - q )	\\
+\eeqa
+
+Expressing these in terms of $I= \frac{p+q}{2}$ and $\Delta = p-q$ we can write
+\beqa
+	S^2 		&=&	I(I+1)	\\
+	\Sigma^2	&=&	4I + \Delta	\\
+	\Sigma \cdot S	&=&	\frac{\Delta}{2} ( 2I + 1)	\\
+\eeqa
+
+%TODO write properly in terms of matrix elements and so forth
+It will eventually be necessary to take the matrix element of terms containing $\Sigma_i \Sigma_j$ in the nonrelativistic theory.  These must be expressible in terms of the spin operator's matrix element, because that operator spans that space.  Considering the traceless and symmetric structure, it must be proportional to the simlilar structure composed of spin matrices.
+\beqa
+	\avg{\Sigma_i \Sigma_j + \Sigma_j \Sigma_i - \frac{2}{3} \delta_{ij} \gv{\Sigma}^2}
+		&=&	\lambda \avg{ \left \{ I_i I_j + I_j I_i - \frac{2}{3} \delta_{ij} \v{I}^2 \right\} }	\\
+\eeqa
+To determine the constant $\lambda$, consider the zz component of the tensor structure acting on a wave function with all spin projected in the z direction.  Then $I_3 \to \frac{p+q}{2} = I$, and $\Sigma_3 \to p-q = \Delta$, giving
+\beqa
+	2 \Delta^2 - \frac{2}{3} (4I + \Delta) 
+		&=& \lambda  \left \{ 2 I^2 -\frac{2}{3} (I^2 + I) \right \}	\\
+		&=& \lambda \frac{2}{3}I(2I - 1 )
+\eeqa
+For integer spin $\Delta = 0$, giving
+\beqa
+	-\frac{8}{3} I &=& \lambda_1 \frac{2}{3}I (2I -1)	\\
+	\lambda_1 &=& -\frac{4}{2I-1}	\\
+\eeqa
+For half spin we have $\Delta = 1$ 
+\beqa
+	\frac{4}{3} (1  - 2I) &=& \lambda_{\frac{1}{2}}	 \frac{2}{3}I (2I -1)	\\
+	\lambda_{\frac{1}{2}} &=&-\frac{4}{2I}	\\
+\eeqa
+
+
+
+\subsection{Bilinears in the relativistic theory}
+Recall that in the case of spin one-half it was possible to catalogue a complete set of field bilinears with definite Lorentz transformation properties.  The structure of the electron vertex was necessarily expressible in terms of those bilinears.  These bilinears were built out of the $4\times 4$ $\gamma^\mu$ matrices, which were themselves built out of $2 \times 2$ $\sigma$ matrices.
+
+What is the generalisation of these bilinears for the case of genearl spin?  The fields have been written as bispinors, with upper and lower components spinors with transformation properties defined above.  Whereas in the case of spin one-half $\{ \mathcal{I}, \sigma_i\}$ formed a basis for operators acting on these spinors, here more complicated quantities built out of $S$ and $\Sigma$ are allowed.
+
+It is still possible to write down a set of bilinears with definite transformation properties.  The greater the spin (and thus the degrees of freedom of the spinors) the larger their number and rank.  However, for the purposes of constructing the electromagnetic current and then calculating its nonrelativistic limit, only bilinears of up to rank 2 tensors need be considered.
+
+In the appendix \ref{chap:bilinear} the transformations of various bilinears are worked out.  There are two necessary for constructing the electromagnetic current; the simple scalar $\Psigbar \Psi$ and the tensor $\Psigbar \TensBi_{\mu\nu} \Psig$.
+ 
 
 %Section on bilinear transforms
 %\input{bilinear_transforms}
@@ -368,7 +443,7 @@ Above the bispinors were written terms of $\phi_s$, so those identities can be u
 
 \subsubsection{Scalar bilinear}
 %FIXME  proper reference to sigma commutator
-Calculating the scalar bilinear is just straightforward substitution and expansion.  To express the commutator of $\Sigma$ operators, the identity \eqref{??} is needed.
+Calculating the scalar bilinear is just straightforward substitution and expansion.  To express the commutator of $\Sigma$ operators, the identity \eqref{eq:Sg:comSigSig} is needed.
 \beqa
 \Psigbar^\dagger(p') \Psig(p)
 	&=&	\phi^\dagger \phi - \chi^\dagger \chi	\\
