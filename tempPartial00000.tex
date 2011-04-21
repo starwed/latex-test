@@ -6,6 +6,10 @@
 \pagenumbering{arabic}
 \numberwithin{equation}{section}
 %NEW COMMANDS
+
+\newcommand{\hC}{^{12}C^{5+} }
+\newcommand{\hO}{^{16}O^{7+} }
+
 \newcommand{\beqa}{\begin{eqnarray*} }
 \newcommand{\eeqa}{\end{eqnarray*} }
 \newcommand{\beq}{\begin{equation} }
@@ -24,6 +28,10 @@
 \newcommand{\phis}{\phi_S}
 \newcommand{\wnr}{\phi_S}
 \newcommand{\wnrb}{\phi_S^\dagger}
+
+%Temp command to make it easy to replace all those Ws in spin half QED work
+\newcommand{\wx}{\phis}
+\newcommand{\wxd}{\phis^\dagger}
 
 %nonrelativistic fields
 \newcommand{\fnr}{\Psi}
@@ -110,10 +118,10 @@
 \newcommand{\omin}[1]{ \omega_{#1}(p) }
  \newcommand{\omout}[1]{ \omega^*_{#1}(p') }
 
-
+ 
 \usepackage{setspace}
 \doublespacing
 \begin{document}
-\input{NRQED-review}
+\input{Introduction}
 
 \end{document}

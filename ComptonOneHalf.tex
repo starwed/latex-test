@@ -430,25 +430,43 @@ And then applying the same simplifications as before
 The local interaction comes from the sum of the two diagrams.  Adding them together,
 
 %TODO add diagram?
-\beqa
-(\text{Sum of Z diagrams}) &=& \frac{1}{2m} \phi^\dagger \Bigg [
+\mbox{
+\begin{minipage}{0.6in}
+   \includegraphics[scale=0.2]{eps/Zdiag} 
+\end{minipage}
++
+\begin{minipage}{0.6in}
+   \includegraphics[scale=0.2]{eps/Zdiag2} 
+\end{minipage}
+\begin{minipage}{2in}
+\begin{equation*}
+=
+\begin{split}
+ & \frac{1}{2m} \phi^\dagger \Bigg [
 	 \left( F_1^2 + F_1 [F_1 + 2 F_2 ] \frac{k_0}{2m} \right )
 			\gv{\sigma} \cdot \gv{\epsilon}^(k)  \gv{\sigma} \cdot  \gv{\epsilon}^*(k')  \\
-	&&+ 
+	&+ 
 			\left( F_1^2 - F_1 [F_1 + 2 F_2 ] \frac{k_0}{2m} \right )
 			\gv{\sigma} \cdot \gv{\epsilon}^*(k')  \gv{\sigma} \cdot  \gv{\epsilon}(k)  
-		 \Bigg ] \phi	\\
-	&=&
+		 \Bigg ] \phi	
+\end{split}
+\end{equation*}
+\end{minipage}
+}
+\beq
+\begin{split}
+=&
 		\frac{F_1}{2m}  \phi^\dagger \Bigg [
 			F_1 \{ \gv{\sigma} \cdot \gv{\epsilon},   \gv{\sigma} \cdot  \gv{\epsilon}^* \}
 			+ (F_1 + 2F_2) \frac{k_0}{2m} [ \gv{\sigma} \cdot \gv{\epsilon},   \gv{\sigma} \cdot  \gv{\epsilon}^* ]
 		 \Bigg ] \phi	\\
-	&=&
+	=&
 		\frac{F_1}{m}  \phi^\dagger \Bigg [
 			F_1  \gv{\epsilon} \cdot  \gv{\epsilon}^* 
 			+ (F_1 + 2F_2) \frac{k_0}{2m} \gv{\sigma} \cdot \gv{\epsilon} \times  \gv{\epsilon}^* 
-		 \Bigg ] \phi		 
-\eeqa
+		 \Bigg ] \phi
+\end{split}
+\eeq
 It now remains to calculate the same amplitude in NRQED and compare.
 		
 \subsection{Compton scattering in NRQED}

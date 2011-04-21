@@ -520,8 +520,8 @@ To compare with the NRQED scattering amplitude, everything needs to be written w
 
 The bispinors $u$ will be first written in terms of upper and lower components $\eta$, $\chi$, and then in terms of the nonrelativistic wave spinors $w$.  The relationship between the two sets are
 \begin{eqnarray}
-	\label{eq:Sh:eta-w} \eta(p) &=& \left( 1 - \frac{\v{p}^2}{8m^2} \right ) w(p)	\\
-	\label{eq:Sh:chi-w}  \chi(p)	&=& \frac{ \sigdot{p} }{2m} \left(1  - \frac{3\v{p}^2}{8m^2} \right ) w(p)
+	\label{eq:Sh:eta-w} \eta(p) &=& \left( 1 - \frac{\v{p}^2}{8m^2} \right ) \wx(p)	\\
+	\label{eq:Sh:chi-w}  \chi(p)	&=& \frac{ \sigdot{p} }{2m} \left(1  - \frac{3\v{p}^2}{8m^2} \right ) \wx(p)
 \end{eqnarray}
 In writing in terms of the upper and lower components,  the explicit expressions of the $\gamma$ matrices, as well as $\sigma^{\mu\nu}$ will be needed.  
 
@@ -534,30 +534,30 @@ Start with the first bilinear, a scalar coupled with a momentum four-vector.  Re
 \beq
 	(p + p')^\mu \srb \sr  = (p + p')^\mu \left( \eta^\dagger \eta - \chi^\dagger \chi \right ) 
 \eeq
-Now express in terms of $w$, replacing $\eta$ and $\chi$ according to \eqref{eq:Sh:eta-w} and \eqref{eq:Sh:chi-w}.
+Now express in terms of $\wx$, replacing $\eta$ and $\chi$ according to \eqref{eq:Sh:eta-w} and \eqref{eq:Sh:chi-w}.
 \beq
 	(p + p')^\mu \srb \sr = (p + p')^\mu \left \{
-		w^\dagger \left( 1 - \frac{ \v{p'}^2}{8m^2} \right )  \left( 1 - \frac{ \v{p}^2}{8m^2} \right ) w
-		- w^\dagger \left( \frac{ \gv{\sigma} \cdot \v{p'}}{2m} \frac{ \gv{\sigma} \cdot \v{p}}{2m} \right ) w \right \}
+		\wxd \left( 1 - \frac{ \v{p'}^2}{8m^2} \right )  \left( 1 - \frac{ \v{p}^2}{8m^2} \right ) \wx
+		- \wxd \left( \frac{ \gv{\sigma} \cdot \v{p'}}{2m} \frac{ \gv{\sigma} \cdot \v{p}}{2m} \right ) \wx \right \}
 \eeq 
 Combining the terms, and dropping terms beyond the order needed:
 \beq
-	(p + p')^\mu \srb \sr = (p + p')^\mu w^\dagger \left( 
+	(p + p')^\mu \srb \sr = (p + p')^\mu \wxd \left( 
 		1 -  \frac{ \v{p}^2 + \v{p'}^2}{8m^2} - \frac{ \gv{\sigma} \cdot \v{p'} \gv{\sigma} \cdot \v{p} }{4m^2} 
-		\right ) w
+		\right ) \wx
 \eeq
-The term quadartic in $\sigma$ can be simplified, using $\sigdot{p'} \sigdot{p} = \v{p} \cdot \v{p'} + i\gv{\sigma} \cdot \v{q} \times \v{p}$.
+The term quadratic in $\sigma$ can be simplified, using $\sigdot{p'} \sigdot{p} = \v{p} \cdot \v{p'} + i\gv{\sigma} \cdot \v{q} \times \v{p}$.
 \beq \label{eq:Sh:Si}
-	(p + p')^\mu \srb \sr  = (p + p')^\mu w^\dagger \left( 
+	(p + p')^\mu \srb \sr  = (p + p')^\mu \wxd \left( 
 		1 -  \frac{ \v{p}^2  +2 \v{p} \cdot \v{p'} +  \v{p'}}{8m^2} - \frac{i\gv{\sigma} \cdot \v{q} \times \v{p} }{4m^2} 
-		\right ) w
+		\right ) \wx
 \eeq
 
 The spatial part is straightforward, but the time-like part is 
 \beq
-	(p + p')^0 \srb \sr  = (p + p')_0 w^\dagger \left( 
+	(p + p')^0 \srb \sr  = (p + p')_0 \wxd \left( 
 		1 -  \frac{ \v{p}^2  +2 \v{p} \cdot \v{p'} +  \v{p'}^2 }{8m^2} - \frac{i\gv{\sigma} \cdot \v{q} \times \v{p} }{4m^2} 
-		\right ) w
+		\right ) \wx
 \eeq
 Approximating the relativistic energies gives $p_0 = m + \v{p}^2 / (2m) $.  So
 \beq
@@ -565,14 +565,14 @@ Approximating the relativistic energies gives $p_0 = m + \v{p}^2 / (2m) $.  So
 \eeq
 Then using this correction to the leading order term gives the time like component:
 \beq
-	(p + p')^0 \srb \sr  = 2m  w^\dagger \left( 
+	(p + p')^0 \srb \sr  = 2m  \wxd \left( 
 		1 +  \frac{ \v{p}^2   - 2 \v{p} \cdot \v{p'} +  \v{p'} }{8m^2} - \frac{i\gv{\sigma} \cdot \v{q} \times \v{p} }{4m^2} 
-		\right ) w
+		\right ) \wx
 \eeq
 \beq \label{eq:Sh:S0}
-	(p + p')^0 \srb \sr  \approx 2m  w^\dagger \left( 
+	(p + p')^0 \srb \sr  \approx 2m  \wxd \left( 
 		1 +  \frac{ \v{q}^2 }{8m^2} - \frac{i\gv{\sigma} \cdot \v{q} \times \v{p} }{4m^2} 
-		\right ) w
+		\right ) \wx
 \eeq
 
 
@@ -589,23 +589,23 @@ which in terms of $\eta$ and $\chi$ is just
 \beq
 	= \eta^\dagger \eta + \chi^\dagger \chi 
 \eeq
-Then rewritten with $w$
+Then rewritten with $\wx$
 \beq
-	= 	w^\dagger \left( 1 - \frac{ \v{p'}^2}{8m^2} \right )  \left( 1 - \frac{ \v{p}^2}{8m^2} \right ) w
-		+ w^\dagger \left( \frac{ \gv{\sigma} \cdot \v{p'}}{2m} \frac{ \gv{\sigma} \cdot \v{p}}{2m} \right ) w 
+	= 	\wxd \left( 1 - \frac{ \v{p'}^2}{8m^2} \right )  \left( 1 - \frac{ \v{p}^2}{8m^2} \right ) \wx
+		+ \wxd \left( \frac{ \gv{\sigma} \cdot \v{p'}}{2m} \frac{ \gv{\sigma} \cdot \v{p}}{2m} \right ) \wx 
 \eeq
 Which is, at the order needed
 \beq
-	=	 w^\dagger \left( 
+	=	 \wxd \left( 
 		1 -  \frac{ \v{p}^2 + \v{p'}^2}{8m^2} + \frac{ \gv{\sigma} \cdot \v{p'} \gv{\sigma} \cdot \v{p} }{4m^2} 
-		\right ) w
+		\right ) \wx
 \eeq
 Simplifying the last term, using $\sigma_i \sigma_j = \delta_{ij} + i\epsilon_{ijk}\sigma_k$, gives
 \beq \label{eq:Sh:V0}
 	\srb \gamma^0 u = 
-			w^\dagger \left( 
+			\wxd \left( 
 		1 -  \frac{ \v{q}^2 }{8m^2} + \frac{i \gv{\sigma} \cdot \v{q} \times \v{p} }{4m^2} 
-		\right ) w
+		\right ) \wx
 \eeq
 
 
@@ -628,28 +628,28 @@ which in terms of spinors is
 \eeq
 Replacing the spinors with $w$ gives
 \beq
-	= w^\dagger \left\{
+	= \wxd \left\{
 		\left( 1 - \frac{ \v{p'}^2}{8m^2}   \right ) \frac{ \sigma_i \sigdot{p} }{2m} \left( 1 - \frac{3\v{p}^2}{8m^2} \right )
 			+ \left( 1 - \frac{ 3\v{p'}^2}{8m^2} \right )  \frac{  \sigdot{p'} \sigma_i }{2m} \left( 1 - \frac{\v{p}^2}{8m^2} \right )
-	\right\} w
+	\right\} \wx
 \eeq
 Using $\v{p'}^2 = \v{p}^2$ gives
 \beq
-	= w^\dagger \left\{
+	= \wxd \left\{
 		\frac{ \sigma_i \sigdot{p}  + \sigdot{p'} \sigma_i }{2m} \left( 1 -\frac{ \v{p}^2}{2m^2} \right )
-	\right\} w
+	\right\} \wx
 \eeq
 Then $\sigma_i \sigma_j = \delta_{ij} + i\epsilon_{ijk} \sigma_k$
 \beq
-	= w^\dagger \left\{
+	= \wxd \left\{
 		\frac{ p_i + \epsilon_{ijk} p_j \sigma_k + p'_i  + \epsilon_{jik} p'_j \sigma_k }{2m} \left( 1 -\frac{ \v{p}^2}{2m^2} \right )
-	\right\} w
+	\right\} \wx
 \eeq
 So finally
 \beq \label{eq:Sh:Vi}
-	\srb \gamma^i \sr  = w^\dagger \left\{
+	\srb \gamma^i \sr  = \wxd \left\{
 		\frac{ p_i + p'_i - \epsilon_{ijk} q_j \sigma_k }{2m} \left( 1 -\frac{ \v{p}^2}{2m^2} \right )
-	\right\} w
+	\right\} \wx
 \eeq
 
 
@@ -666,10 +666,10 @@ Write in terms of spinors
 \beq
 	= \frac{i \epsilon_{ijk} q_j}{2m} \left( \eta^\dagger \sigma_k \eta - \chi^\dagger \sigma_k \chi \right )
 \eeq
-And then in terms of $w$
+And then in terms of $\wx$
 \beq
-	= \frac{i \epsilon_{ijk} q_j}{2m} w^\dagger \left \{
-		\left( 1 - \frac{\v{p'}^2}{8m^2} \right ) \sigma_k \left( 1 - \frac{\v{p'}^2}{8m^2} \right )- \frac{ \gv{\sigma} \cdot \v{p'} \sigma_k \gv{\sigma} \cdot \v{p} }{4m^2} w
+	= \frac{i \epsilon_{ijk} q_j}{2m} \wxd \left \{
+		\left( 1 - \frac{\v{p'}^2}{8m^2} \right ) \sigma_k \left( 1 - \frac{\v{p'}^2}{8m^2} \right )- \frac{ \gv{\sigma} \cdot \v{p'} \sigma_k \gv{\sigma} \cdot \v{p} }{4m^2} \wx
 	\right \}
 \eeq
 There now appears a term with a triple product of $\sigma$ matrices.  That can be simplified with the following expression:
@@ -680,24 +680,24 @@ There now appears a term with a triple product of $\sigma$ matrices.  That can b
 Using that identity, 
 \beq
 	\srb  \frac{i}{2m} q_j \sigma^{ij} \sr 
-		= \frac{i \epsilon_{ijk} q_j}{2m} w^\dagger \left \{
+		= \frac{i \epsilon_{ijk} q_j}{2m} \wxd \left \{
 			\sigma_k \left( 1 - \frac{\v{p'}^2  + \v{p}^2}{8m^2} \right ) - \frac{ \gv{\sigma} \cdot (\v{p} + \v{p'})p_k - \sigma_k \v{p} \cdot \v{p'} + i \epsilon_{akc} q_a p_c }{4m^2} 
-		\right \} w 
+		\right \} \wx
 \eeq
 
 This can be further simplified by combining the like terms $\sigma_k (\v{p'}^2 + \v{p}^2 ) - 2 \sigma_k \v{p} \cdot \v{p'} = \sigma_k \v{q}^2$.
 \beq
 	\srb  \frac{i}{2m} q_j \sigma^{ij} \sr 
-		= \frac{i \epsilon_{ijk} q_j}{2m} w^\dagger \left \{
+		= \frac{i \epsilon_{ijk} q_j}{2m} \wxd \left \{
 			\sigma_k \left( 1 - \frac{\v{q}^2}{8m^2} \right ) - \frac{ \gv{\sigma} \cdot (\v{p} + \v{p'})p_k + i \epsilon_{akc} q_a p_c }{4m^2} 
-		\right \} w 
+		\right \} \wx
 \eeq
 Now it is necessary to consider exactly what derivatives of the field $A_i$ are to be kept.  The assumption is that $B$ is constant and so $\partial_i B_j = 0$.  Contracted with $A_i$ above, $\epsilon_{ijk} A_i q_j \sim B_k$.  So besides the leading factor, no terms with $q$ are needed.  Applying this simplification,
 \beq \label{eq:Sh:Ti}
 	\srb  \frac{i}{2m} q_j \sigma^{ij} \sr 
-		= \frac{i \epsilon_{ijk} q_j}{2m} w^\dagger \left \{
+		= \frac{i \epsilon_{ijk} q_j}{2m} \wxd \left \{
 			\sigma_k - \frac{ \gv{\sigma} \cdot \v{p} p_k  }{2m^2} 
-		\right \} w 
+		\right \} \wx
 \eeq
 
 
@@ -721,32 +721,32 @@ Explicitly in matrix form
  \eeq
  And then in terms of $w$:
 \beq
-	=  \frac{q^j}{2m}  w^\dagger \left \{
+	=  \frac{q^j}{2m}  \wxd \left \{
 		\left(1 - \frac{\v{p'}^2}{8m^2} \right )  \frac{ \sigma_j \gv{\sigma} \cdot \v{p} }{2m} \left(1 - \frac{3\v{p}^2}{8m^2} \right )
 		- \left(1 - \frac{3 \v{p'}^2}{8m^2} \right ) \frac{\gv{\sigma} \cdot \v{p'} \sigma_j  }{2m} \left(1 - \frac{\v{p}^2}{8m^2} \right )
-	\right \} w
+	\right \} \wx
 \eeq
 
 This bilinear is contracted with $A_0$, and so actually, only terms involving two additional powers of momenta need be kept.
 \beq
-	=  \frac{q^j}{2m}  w^\dagger \left \{
+	=  \frac{q^j}{2m}  \wxd \left \{
 		  \frac{ \sigma_j \gv{\sigma} \cdot \v{p} }{2m} 
 		-  \frac{\gv{\sigma} \cdot \v{p'} \sigma_j  }{2m} 
-	\right \} w
+	\right \} \wx
 \eeq
 or simplifying using the commutator of $\sigma$ matrices
 \beq 
-	=   \frac{q^j}{2m}  w^\dagger \left \{
+	=   \frac{q^j}{2m}  \wxd \left \{
 		\frac{ 2 i\epsilon_{jik} p_i \sigma_k  - q_i - i\epsilon_{ijk} q_j \sigma_k }{2m} 
-	\right \} w
+	\right \} \wx
 \eeq
 One term above vanishes because of symmetry
 \beq \label{eq:Sh:T0}
 \srb  \frac{i}{2m} q_j \sigma^{0j} \sr
-	=  -  w^\dagger \left \{
+	=  -  \wxd \left \{
 			\frac{  \v{q}^2  }{4m^2} 
 			- \frac{  i\gv{\sigma} \cdot \v{q} \times \v{p}   }{2m^2} 
-	\right \} w
+	\right \} \wx
 \eeq
 
 
@@ -759,36 +759,36 @@ First consider terms with $A_0(q)$.  The relation between $\v{q}$ and $\v{E}$ is
 The term with $A_0$ coupled with the scalar bilinear \eqref{eq:Sh:S0} gives
 \beqaL  \label{eq:Sh:SA0}
 	eA_0  (p + p')^0 \srb \sr &\approx&
-		eA_0 w^\dagger \left( 
+		eA_0 \wxd \left( 
 		1 +  \frac{ \v{q}^2 }{8m^2} - \frac{i\gv{\sigma} \cdot \v{q} \times \v{p} }{4m^2} 
-		\right ) w	\\
+		\right ) \wx	\\
 	& \approx &
-			 w^\dagger \left( 
+			 \wxd \left( 
 				eA_0  +  \frac{ e \grad \cdot \v{E} }{8m^2} - \frac{e \gv{\sigma} \cdot \v{E} \times \v{p} }{4m^2} 
-				\right ) w
+				\right ) \wx
 \eeqaL
 The term involving the vector bilinear term \eqref{eq:Sh:V0} is
 \beqaL    \label{eq:Sh:VA0}
 	eA_0 \srb \gamma^0 u &=& 
-			eA_0 w^\dagger \left( 
+			eA_0 \wxd \left( 
 		1 -  \frac{ \v{q}^2 }{8m^2} + \frac{i \gv{\sigma} \cdot \v{q} \times \v{p} }{4m^2} 
-		\right ) w	\\
+		\right ) \wx	\\
 	&=& 
-		 w^\dagger \left( 
+		 \wxd \left( 
 		eA_0  - \frac{ e \grad \cdot \v{E} }{8m^2} + \frac{ e\gv{\sigma} \cdot \v{E} \times \v{p} }{4m^2} 
-		\right ) w
+		\right ) \wx
 \eeqaL
 
 The third type of term, with the tensor bilinear appearing:
 \beqaL  \label{eq:Sh:TA0}
 e A_0 \srb  \frac{i}{2m} q_j \sigma^{0j} \sr
-	&=&  - e A_0 w^\dagger \left \{
+	&=&  - e A_0 \wxd\left \{
 			\frac{  \v{q}^2  }{4m^2} 
 			- \frac{  i\gv{\sigma} \cdot \v{q} \times \v{p}   }{2m^2} 
-	\right \} w	\\
-	&=&  -   w^\dagger \left \{
+	\right \} \wx	\\
+	&=&  -   \wxd \left \{
 			\frac{e  \grad \cdot \v{E} }{4m^2} - \frac{e \gv{\sigma} \cdot \v{E} \times \v{p} }{2m^2} 
-	\right \} w
+	\right \} \wx
 \eeqaL
 
 \subsubsection{Contraction of bilinears with $A_i$}
@@ -825,30 +825,30 @@ For the case of a constant $\v{B}$, any terms of the type $q_i B_j$ vanish.  So 
 
 Now consider $A_i$ coupled with each of the particular bilinear expressions.  (Remember that here $A_i = -\v{A}_i$.)  With the term involving a scalar bilinear \eqref{eq:Sh:Si}
 \beqaL \label{eq:Sh:SAi}
-	\frac{A_i (p + p')^i}{2m} \srb \sr  &=& - \frac{\v{A} \cdot (\v{p} + \v{p'} ) }{2m} w^\dagger \left( 
+	\frac{A_i (p + p')^i}{2m} \srb \sr  &=& - \frac{\v{A} \cdot (\v{p} + \v{p'} ) }{2m} \wxd \left( 
 		1 -  \frac{ \v{p}^2  +2 \v{p} \cdot \v{p'} +  \v{p'}}{8m^2} - \frac{i\gv{\sigma} \cdot \v{q} \times \v{p} }{4m^2} 
-		\right ) w	\\
-	 &=&	- w^\dagger  \left [ \frac{e \v{A} \cdot (\v{p} + \v{p'} ) }{2m} \left(1 - \frac{\v{p}^2}{4m^2} \right )  \right ]w^\dagger 
-	- w^\dagger  \left [  \frac{ 	 e (\gv{\sigma} \cdot  \v{p})( \v{B} \cdot \v{p}) - e \v{p}^2 \gv{\sigma} \cdot \v{B} }{4m^2} \right ] w \nonumber
+		\right ) \wx	\\
+	 &=&	- \wxd  \left [ \frac{e \v{A} \cdot (\v{p} + \v{p'} ) }{2m} \left(1 - \frac{\v{p}^2}{4m^2} \right )  \right ] \wx
+	- \wxd  \left [  \frac{ 	 e (\gv{\sigma} \cdot  \v{p})( \v{B} \cdot \v{p}) - e \v{p}^2 \gv{\sigma} \cdot \v{B} }{4m^2} \right ] \wx \nonumber
 \eeqaL
 The term involving a vector bilinear coupled to $A_i$ comes from \eqref{eq:Sh:Vi}
 \beqaL \label{eq:Sh:VAi}
-A_i \srb \gamma^i \sr  &=& w^\dagger \left\{
+A_i \srb \gamma^i \sr  &=& \wxd \left\{
 		A_i \frac{ p_i + p'_i - \epsilon_{ijk} q_j \sigma_k }{2m} \left( 1 -\frac{ \v{p}^2}{2m^2} \right )
-	\right\} w \\
-	&=&- w^\dagger \left \{
+	\right\} \wx \\
+	&=&- \wxd \left \{
 		 \frac{ \v{A} \cdot (\v{p} + \v{p'}) + \gv{\sigma} \cdot \v{B} }{2m} \left(1 - \frac{\v{p}}{2m^2} \right ) 
-	\right\} w
+	\right\} \wx
 \eeqaL
 Finally the term with a tensor gives
 \beqaL  \label{eq:Sh:TAi}
 	A_i \srb  \frac{i}{2m} q_j \sigma^{ij} \sr 
-		&=& \frac{i \epsilon_{ijk} A_i q_j}{2m} w^\dagger \left \{
+		&=& \frac{i \epsilon_{ijk} A_i q_j}{2m} \wxd \left \{
 			\sigma_k - \frac{ \gv{\sigma} \cdot \v{p} p_k  }{2m^2} 
-		\right \} w \\ 
-		&=&  - w^\dagger \left \{ 
+		\right \} \wx \\ 
+		&=&  - \wxd \left \{ 
 				\frac{ \gv{\sigma} \cdot \v{B} }{2m} - \frac{ (\gv{\sigma} \cdot \v{p}) (\v{B} \cdot \v{p}) }{4m^2}
-			\right \} w
+			\right \} \wx
 \eeqaL
 
 % Start of comparison
@@ -859,41 +859,41 @@ Now that the three bilinears have been calculated, the complete scattering ampli
 The first has $	\Gamma^\mu = \gamma^\mu F_1(q^2) + i \frac{\sigma^{\mu\nu}q_\nu}{2m} F_2 (q^2)$.  Using \eqref{eq:Sh:VA0} and \eqref{eq:Sh:TA0}
 \beq
 	eA_0 \srb  \Gamma^0 \sr = 
-		 F_1   w^\dagger \left( 
+		 F_1   \wxd \left( 
 		eA_0  - \frac{ e \grad \cdot \v{E} }{8m^2} + \frac{ e\gv{\sigma} \cdot \v{E} \times \v{p} }{4m^2} 
-		\right ) w
-		- F_2    w^\dagger \left \{
+		\right ) \wx
+		- F_2    \wxd \left \{
 			\frac{e  \grad \cdot \v{E} }{4m^2} - \frac{e \gv{\sigma} \cdot \v{E} \times \v{p} }{2m^2} 
-	\right \} w
+	\right \} \wx
 \eeq
 The second is	$\Gamma^\mu = \gamma^\mu [F_1(q^2) + F_2(q^2) ]  -  \frac{p^\mu  + p'^\mu }{2m}F_2 (q^2)$.  Using \eqref{eq:Sh:VA0} and \eqref{eq:Sh:SA0}.
 \beq
 	eA_0 \srb  \Gamma^0 \sr = 
-		 (F_1 + F_2)  w^\dagger \left( 
+		 (F_1 + F_2)  \wxd \left( 
 		eA_0  - \frac{ e \grad \cdot \v{E} }{8m^2} + \frac{ e\gv{\sigma} \cdot \v{E} \times \v{p} }{4m^2} 
-		\right ) w
-		- F_2   w^\dagger \left( 
+		\right ) \wx
+		- F_2   \wxd \left( 
 		eA_0  +  \frac{ e \grad \cdot \v{E} }{8m^2} - \frac{e \gv{\sigma} \cdot \v{E} \times \v{p} }{4m^2} 
-		\right ) w
+		\right ) \wx
 \eeq
 The third combination is $	\Gamma^\mu = \frac{p^\mu  + p'^\mu }{2m} F_1(q^2) + i \frac{\sigma^{\mu\nu}q_\nu}{2m} [F_1(q^2) + F_2(q^2) ] $.  Using \eqref{eq:Sh:SA0} and \eqref{eq:Sh:TA0}
 \beq
 	 A_0 \srb  \Gamma^0 \sr = 
-		F_1 w^\dagger \left( 
+		F_1 \wxd \left( 
 		eA_0  +  \frac{ e \grad \cdot \v{E} }{8m^2} - \frac{e \gv{\sigma} \cdot \v{E} \times \v{p} }{4m^2} 
-		\right ) w
-		- [F_1 + F_2] w^\dagger \left \{
+		\right ) \wx
+		- [F_1 + F_2] \wxd \left \{
 			\frac{e  \grad \cdot \v{E} }{4m^2} - \frac{e \gv{\sigma} \cdot \v{E} \times \v{p} }{2m^2} 
-	\right \} w
+	\right \} \wx
 \eeq
 Taking any of these three results and collecting like terms gives the result:
 \beq
-		 A_0 \srb  \Gamma^0 \sr = w^\dagger \left(  
+		 A_0 \srb  \Gamma^0 \sr = \wxd \left(  
 			F_1  eA_0
 			+ [F_1 + 2 F_2] \left [ 
 				\frac{e \gv{\sigma} \cdot \v{E} \times \v{p} }{4m^2}  - \frac{e  \grad \cdot \v{E} }{8m^2}
 			\right ]
-		\right ) w
+		\right ) \wx
 \eeq
 So the calculations are at least consistent with the Gordon identity.
 
@@ -901,39 +901,39 @@ Now turning to the coupling with $\v{A}$.  The first has $	\Gamma^\mu = \gamma^\
 \beq
 \begin{split}
 	e A_i \srb \Gamma^i \sr = & 
-		 - e F_1 w^\dagger \left \{
+		 - e F_1 \wxd \left \{
 		 \frac{ \v{A} \cdot (\v{p} + \v{p'}) + \gv{\sigma} \cdot \v{B} }{2m} \left(1 - \frac{\v{p}}{2m^2} \right ) 
-	\right\} w
-	\\& - e F_2  w^\dagger \left \{ \frac{ \gv{\sigma} \cdot \v{B} }{2m} - \frac{ (\gv{\sigma} \cdot \v{p}) (\v{B} \cdot \v{p}) }{4m^2}
-			\right \} w
+	\right\} \wx
+	\\& - e F_2  \wxd \left \{ \frac{ \gv{\sigma} \cdot \v{B} }{2m} - \frac{ (\gv{\sigma} \cdot \v{p}) (\v{B} \cdot \v{p}) }{4m^2}
+			\right \} \wx
 \end{split}
 \eeq
 The second is	$\Gamma^\mu = \gamma^\mu [F_1(q^2) + F_2(q^2) ]  -  \frac{p^\mu  + p'^\mu }{2m}F_2 (q^2)$.  Using \eqref{eq:Sh:VAi} and \eqref{eq:Sh:SAi}:
 \beq \begin{split}
 	e A_i \srb \Gamma^i \sr = & 
-		- e [F_1 + F_2] w^\dagger \left \{
+		- e [F_1 + F_2] \wxd \left \{
 		 \frac{  \v{A} \cdot (\v{p} + \v{p'}) +  \gv{\sigma} \cdot \v{B} }{2m} \left(1 - \frac{\v{p}}{2m^2} \right ) 
-	\right\} w
-	\\& + e F_2 w^\dagger  \left [ \frac{e \v{A} \cdot (\v{p} + \v{p'} ) }{2m} \left(1 - \frac{\v{p}^2}{4m^2} \right )  \right ]w^\dagger 
-	+ eF_2 w^\dagger  \left [  \frac{ 	 e (\gv{\sigma} \cdot  \v{p})( \v{B} \cdot \v{p}) - e \v{p}^2 \gv{\sigma} \cdot \v{B} }{4m^2} \right ] w
+	\right\} \wx
+	\\& + e F_2 \wxd  \left [ \frac{e \v{A} \cdot (\v{p} + \v{p'} ) }{2m} \left(1 - \frac{\v{p}^2}{4m^2} \right )  \right ] \wx
+	+ eF_2 \wxd  \left [  \frac{ 	 e (\gv{\sigma} \cdot  \v{p})( \v{B} \cdot \v{p}) - e \v{p}^2 \gv{\sigma} \cdot \v{B} }{4m^2} \right ] \wx
 \end{split} \eeq
 The third combination is $\Gamma^\mu = \frac{p^\mu  + p'^\mu }{2m} F_1(q^2) + i \frac{\sigma^{\mu\nu}q_\nu}{2m} [F_1(q^2) + F_2(q^2) ] $.  Using \eqref{eq:Sh:SAi} and \eqref{eq:Sh:TAi}
 \beq \begin{split}
 	e A_i \srb \Gamma^i \sr = & 
-		 e F_1 w^\dagger  \left [ \frac{e \v{A} \cdot (\v{p} + \v{p'} ) }{2m} \left(1 - \frac{\v{p}^2}{4m^2} \right )  \right ]w^\dagger
-		 + e F_1 w^\dagger  \left [  \frac{ (\gv{\sigma} \cdot  \v{p})( \v{B} \cdot \v{p}) - e \v{p}^2 \gv{\sigma} \cdot \v{B} }{4m^2} \right ] w
-	\\&	-[F_1 + F_2] w^\dagger \left \{ \frac{ \gv{\sigma} \cdot \v{B} }{2m} - \frac{ (\gv{\sigma} \cdot \v{p}) (\v{B} \cdot \v{p}) }{4m^2}
-			\right \} w
+		 e F_1 \wxd  \left [ \frac{e \v{A} \cdot (\v{p} + \v{p'} ) }{2m} \left(1 - \frac{\v{p}^2}{4m^2} \right )  \right ] \wx
+		 + e F_1 \wxd  \left [  \frac{ (\gv{\sigma} \cdot  \v{p})( \v{B} \cdot \v{p}) - e \v{p}^2 \gv{\sigma} \cdot \v{B} }{4m^2} \right ] \wx
+	\\&	-[F_1 + F_2] \wxd \left \{ \frac{ \gv{\sigma} \cdot \v{B} }{2m} - \frac{ (\gv{\sigma} \cdot \v{p}) (\v{B} \cdot \v{p}) }{4m^2}
+			\right \} \wx
 \end{split} \eeq
 
 For any of these paths, the total result is that
 \beq \begin{split}
-	e A_i \srb \Gamma^i \sr =  w^\dagger \Bigg \{
+	e A_i \srb \Gamma^i \sr =  \wxd \Bigg \{
 		- \frac{ e\v{A} \cdot (\v{p} + \v{p'} ) }{2m} \left( 1 - \frac{\v{p}^2}{2m^2} \right )
 		- [F_1 + F_2] \frac{ e \gv{\sigma} \cdot \v{B} }{2m} 
 	\\	+ F_1 \frac{ e \gv{\sigma} \cdot \v{B} \v{p}^2 }{4m^3} 
 		+ F_2 \frac{ (\gv{\sigma} \cdot \v{p}) (\v{B} \cdot \v{p}) }{4m^2}
-	\Bigg \} w
+	\Bigg \} \wx
 \end{split}
 \eeq
 
