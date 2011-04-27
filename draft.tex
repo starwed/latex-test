@@ -18,7 +18,7 @@
 \newcommand{\eeqB}{\end{equation*}}
 
 \newcommand{\beqaL}{\begin{eqnarray} }
-\newcommand{\eeqaL}{\end{eqnarray} }
+\newcommand{\eeqaL}{ \end{eqnarray} }
 % macros used for consistency
 \newcommand{\Psibar}{\bar{\Psi}}
 \newcommand{\rapidity}{\phi}
@@ -123,8 +123,11 @@
 \doublespacing
 \begin{document}
  
-
+ 
 \tableofcontents
+
+
+
 
 \include{Introduction}
 \include{NRQED-review}
@@ -139,5 +142,10 @@
 \include{Conclusions}
 %\include{pert}
 \include{appendix}
+
+\cite{Eides:1997sq}
+
+\bibliographystyle{alpha}
+\bibliography{refs}
 
 \end{document}
