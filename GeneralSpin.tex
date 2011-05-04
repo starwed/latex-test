@@ -1,5 +1,5 @@
 
-\chapter{Particles of arbitrary spin}
+\chapter{Arbitrary spin: Calculation of nonrelativistic Hamiltonian}
 
 %name? 
 Above, two particular relativistic theories have been considered: those sectors of QED involving spin half and spin one particles.  A nonrelativistic theory for each was derived in two ways, each starting from the relativistic Lagrangian; once by solving the equations of motion, the other by comparing scattering amplitudes so as to determine NRQED coefficients.
@@ -262,22 +262,22 @@ Wave functions of definite spin are also eigenfunctions of $\Sigma^2$ and $\Sigm
 		&=& 	(p-q)^2 + 2(p+q)	\\
 	\Sigma \cdot S &=& 2 (S^P - S_Q) \cdot (S^P + S_Q)	\\
 		&=& 2 (S^P)^2 - 2 (S^Q)^2	\\
-		&=&	\frac{1}{2} ( p^2 - q^2 + p - q )	\\
+		&=&	\frac{1}{2} ( p^2 - q^2 + p - q )	
 \eeqa
 
 Expressing these in terms of $I= \frac{p+q}{2}$ and $\Delta = p-q$ we can write
-\beqa
+\begin{eqnarray} 
 	S^2 		&=&	I(I+1)	\\
-	\Sigma^2	&=&	4I + \Delta	\\
-	\Sigma \cdot S	&=&	\frac{\Delta}{2} ( 2I + 1)	\\
-\eeqa
+	\Sigma^2	&=&	4I + \Delta	 \label{eq:Sg:SigScalars}  \\
+	\Sigma \cdot S	&=&	\frac{\Delta}{2} ( 2I + 1)	
+\end{eqnarray}
 
 %TODO write properly in terms of matrix elements and so forth
-It will eventually be necessary to take the matrix element of terms containing $\Sigma_i \Sigma_j$ in the nonrelativistic theory.  These must be expressible in terms of the spin operator's matrix element, because that operator spans that space.  Considering the traceless and symmetric structure, it must be proportional to the simlilar structure composed of spin matrices.
-\beqa
+It will eventually be necessary to take the matrix element of terms containing $\Sigma_i \Sigma_j$ in the nonrelativistic theory.  These must be expressible in terms of the spin operator's matrix element, because that operator spans that space.  Considering the traceless and symmetric structure, it must be proportional to the similar structure composed of spin matrices.
+\beq \label{eq:Sg:SigTens}
 	\avg{\Sigma_i \Sigma_j + \Sigma_j \Sigma_i - \frac{2}{3} \delta_{ij} \gv{\Sigma}^2}
-		&=&	\lambda \avg{ \left \{ I_i I_j + I_j I_i - \frac{2}{3} \delta_{ij} \v{I}^2 \right\} }	\\
-\eeqa
+		=	\lambda \avg{ \left \{ I_i I_j + I_j I_i - \frac{2}{3} \delta_{ij} \v{I}^2 \right\} }	
+\eeq
 To determine the constant $\lambda$, consider the zz component of the tensor structure acting on a wave function with all spin projected in the z direction.  Then $I_3 \to \frac{p+q}{2} = I$, and $\Sigma_3 \to p-q = \Delta$, giving
 \beqa
 	2 \Delta^2 - \frac{2}{3} (4I + \Delta) 
@@ -300,13 +300,22 @@ For half spin we have $\Delta = 1$
 \subsection{Bilinears in the relativistic theory}
 Recall that in the case of spin one-half it was possible to catalogue a complete set of field bilinears with definite Lorentz transformation properties.  The structure of the electron vertex was necessarily expressible in terms of those bilinears.  These bilinears were built out of the $4\times 4$ $\gamma^\mu$ matrices, which were themselves built out of $2 \times 2$ $\sigma$ matrices.
 
-What is the generalisation of these bilinears for the case of genearl spin?  The fields have been written as bispinors, with upper and lower components spinors with transformation properties defined above.  Whereas in the case of spin one-half $\{ \mathcal{I}, \sigma_i\}$ formed a basis for operators acting on these spinors, here more complicated quantities built out of $S$ and $\Sigma$ are allowed.
+What is the generalisation of these bilinears for the case of general spin?  The fields have been written as bispinors, with upper and lower components spinors with transformation properties defined above.  Whereas in the case of spin one-half $\{ \mathcal{I}, \sigma_i\}$ formed a basis for operators acting on these spinors, here more complicated quantities built out of $S$ and $\Sigma$ are allowed.
 
 It is still possible to write down a set of bilinears with definite transformation properties.  The greater the spin (and thus the degrees of freedom of the spinors) the larger their number and rank.  However, for the purposes of constructing the electromagnetic current and then calculating its nonrelativistic limit, only bilinears of up to rank 2 tensors need be considered.
 
-In the appendix \ref{chap:bilinear} the transformations of various bilinears are worked out.  There are two necessary for constructing the electromagnetic current; the simple scalar $\Psigbar \Psi$ and the tensor $\Psigbar \TensBi_{\mu\nu} \Psig$.
- 
+In the appendix \ref{chap:bilinear} the transformations of various bilinears are worked out.  There are two necessary for constructing the electromagnetic current; the simple scalar $\Psigbar \Psi$ and the antisymmetric tensor $\Psigbar \TensBi_{\mu\nu} \Psig$.
 
+The tensor structure is defined by
+
+\beq
+	\Sigma_{ij} = -2 i \epsilon_{ijk} \Mblock{S_k}{0}{0}{S_k}
+\eeq
+\beq
+	\Sigma_{0i} = \Mblock{0}{\Sigma_i}{\Sigma_i}{0}
+\eeq
+ 
+For the case of spin one-half, where $2S_i = \Sigma_i = \sigma_i$, this reduces to the familiar anti-symmetric tensor $\sigma_{\mu\nu} = [\Gamma_\mu, \Gamma_\nu]
 %Section on bilinear transforms
 %\input{bilinear_transforms}
 
@@ -349,6 +358,7 @@ The form factors might have quite complicated dependence on $q$, but these corre
 	j^\mu =  e \frac{p^\mu + p'^\mu}{2m} \Psigbar^\dagger \Psig +   e g \frac{q_\nu}{2m} \Psigbar^\dagger \TensBi^{\mu\nu} \Psig
 \eeq
 
+%FIXME discuss how only two terms ``really'' exist, since there are only two independant vectors .. ..
 %TODO Actually show this formally: that the two types of antisymmetric tensors aren't truly different
 %The tensor bilinear $\Psigbar^\dagger T^{\mu\nu} \Psig$ itself has some free parameters.  However, it'll turn out that, when computing actual nonrelativistic amplitudes, the two types of anti-symmetric tensors collapse into the same general form.
 
@@ -654,6 +664,8 @@ With the expressions for both $j_0$ \eqref{eq:nrJ0} and $\v{j}$ \eqref{eq:nrJi} 
 \eeq  
 
 
+
+
 To compare to the NRQED result, as much as possible terms should be expressed in gauge invariant quantities $\v{B}$ and $\v{E}$.  The relations between these fields and $A_\mu$ in position space and the equivalent equation in momentum space are:
 %FIXME add reference to gauge
 \beq
@@ -719,11 +731,53 @@ From this it can be seen that $F_m$ is actually $g/2$, so in such terms
 \eeqB
 
 The complete expression for the amplitude is
-\beq \label{eq:fullScatter}
+\beq \label{eq:Sg:fullScatterSigma}
   \begin{split} M= 	e \phis^\dagger  \Bigg \{
 		A_0 - \frac{g-1}{2m^2}\left( \v{S} \cdot \v{E} \times \v{p} + \frac{1}{4}\Sigma_i \Sigma_j \partial_i E_j \right)
-		 \frac{ \v{p} \cdot \v{A} }{m} 
+		+ \frac{ \v{p} \cdot \v{A} }{m} 
 			\\ - [g-1] \frac{ (\v{B} \cdot \v{p} )(\v{S} \cdot \v{p})}{m^2} 
+				- \v{S} \cdot \v{B} \frac{ \v{p}^2 }{m^2} - \frac{g}{2m} \v{S} \cdot \v{B} 
+	\Bigg \} \phis
+\end{split}
+\eeq
+
+
+There is one last vestige of the relativistic notation: the structures $\Sigma_i$ are not appropriate for comparing to the nonrelativistic theory.  In a previous section, identities were developed for scalars and symmetric, traceless tensors built out of $\Sigma$.  So first, express $\Sigma_i \Sigma_j$ in such terms:
+
+\beq
+	\Sigma_i \Sigma_j \partial_i E_j 
+		=	\frac{1}{2} \partial_i E_j (\Sigma_i \Sigma_j + \Sigma_j \Sigma_i - \frac{2}{3} \delta_{ij} \gv{\Sigma}^2) 
+			+ \frac{1}{3} \grad \cdot \v{E} \Sigma^2
+\eeq
+
+Then using  \eqref{eq:Sg:SigTens}, this may be written
+\beq
+	\Sigma_i \Sigma_j \partial_i E_j 
+		= \frac{1}{3} \grad \cdot \v{E} \Sigma^2
+			- \frac{\lambda}{2} \partial_i E_j (S_i S_j + S_j S_i - \frac{2}{3} \v{S}^2 ) 
+		= \frac{1}{3} \grad \cdot \v{E} \Sigma^2
+			- \frac{\lambda}{2} \partial_i E_j Q_{ij}
+\eeq
+The spin dependence found in \eqref{eq:Sg:SigScalars} and \eqref{eq:Sg:SigTens} is most easily written separately for integer and half-integer cases.
+
+For integer spin 
+\beqa
+	(\Sigma^2)_{1} = 4I		&\hspace{4em}&	\lambda_1 = -\frac{4}{2I-1}	
+\eeqa
+While for half-integer 
+\beqa
+	(\Sigma^2)_{\frac{1}{2}} = 4I+1		&\hspace{4em}&	\lambda_{\frac{1}{2}} = -\frac{4}{2I}	
+\eeqa
+
+Where $I$ is the magnitude of the particle's spin.
+
+
+\beq \label{eq:Sg:fullScatter}
+  \begin{split} M= 	e \phis^\dagger  \Bigg \{
+		A_0 
+		+ \frac{ \v{p} \cdot \v{A} }{m}
+		- \frac{g-1}{2m^2}\left( \v{S} \cdot \v{E} \times \v{p} + \frac{\Sigma^2}{12} \grad \cdot \v{E} + \frac{\lambda}{8}Q_{ij} \right)
+		\\ - [g-1] \frac{ (\v{B} \cdot \v{p} )(\v{S} \cdot \v{p})}{m^2} 
 				- \v{S} \cdot \v{B} \frac{ \v{p}^2 }{m^2} - \frac{g}{2m} \v{S} \cdot \v{B} 
 	\Bigg \} \phis
 \end{split}

@@ -470,11 +470,11 @@ The local interaction comes from the sum of the two diagrams.  Adding them toget
 It now remains to calculate the same amplitude in NRQED and compare.
 		
 \subsection{Compton scattering in NRQED}
-We want to calculate the Compton scattering in the nonrelativistic theory.  We choose the gauge such that the photon polarisations obey $\epsilon_0 = 0$.  In general we should consider both terms arising from two-photon vertices, and those from tree level diagrams of two one-photon vertices.  However, because of the approach we take in calculating the process from the relativistic Lagrangian, we only need the former terms.  That is, we know how to separate contact terms (which arise from some combination of Z-diagrams in the relativistic theory) from the rest.
+The idea is to calculate the Compton scattering in the nonrelativistic theory.  The gauge is chosen such that the photon polarisations obey $\epsilon_0 = 0$.  In general, both terms arising from two-photon vertices, and those from tree level diagrams of two one-photon vertices, should be considered.  However, because of the approach taken in calculating the process from the relativistic Lagrangian, only the former terms are needed.  That is, contact terms (which arise from some combination of Z-diagrams in the relativistic theory)  are separated from the rest.  
 
-Further, ultimately we only care about a few of these terms, ignoring terms which have both $\v{B}$ and $\v{A}$.
+Further, ultimately only a few of these terms are relevant -- terms which have both $\v{B}$ and $\v{A}$ can be ignored.
 
-The remaining terms we're interested in are:
+The remaining terms of interest are:
 \scriptsize
 \beqa
 	\mathcal{L}_{A^2} &=& \Psi^\dagger ( - \frac{e^2 \v{A}^2}{2m}  - e^2 \frac{ \{ \grad^2, \v{A}^2 \} 
@@ -487,7 +487,7 @@ The process considered has an incoming photon with momentum $k$ and polarisation
 
 As in the single-photon calculation, it is simply a matter of reading terms off the Lagrangian.  To find the scattering amplitude,  replace $\Psi$ with $\phis$, and replace $\v{A}$ with photon polarisations $\epsilon$ and $\epsilon^*$.  In the gauge chosen, $\v{E}(k) = -\partial_0 \v{\A} = i k_0 \gv{\epsilon}(k) = -ik'_0 \gv{\epsilon^*}(k') $ .
 
-Contracted with the photon of momentum $k$ we get $\v{E} \to i k_0 \v{\A}$, while with the photon of momentum $k'$ we have $\v{E} \to i k'_0 \v{\Adag}$.  Both processes must be considered in calculating the scattering, so:
+Contracted with the photon of momentum $k$, the result is $\v{E} \to i k_0 \v{\A}$, while with the photon of momentum $k'$ it is $\v{E} \to i k'_0 \v{\Adag}$.  Both processes must be considered in calculating the scattering, so:
 \[
 	\v{A} \times \v{E} = - \v{A} \times (\partial_0 \v{A})
 		\to 
@@ -503,8 +503,7 @@ So from the term in the Lagrangian
 \[
  c_S \Psi^\dagger \frac{ e^2 \v{S} \smalldot ( \v{A} \times \v{E} - \v{E} \times \v{A} )}{8m^2} ) \Psi
 \]
-we get in the scattering amplitude
-
+appears in the scattering amplitude
 \[
   -i c_S \phi^\dagger  \Big ( \frac{e^2}{4m^2}    i(k_0 + k_0')    \v{\epsilon} \times \v{\epsilon^*} \Big ) \phi
 	=
@@ -516,7 +515,7 @@ Using the approximation $k_0 \approx k'_0$, that part of the amplitude now becom
 \eeq
 
 
-This is the only part of the amplitude we wanted to compare for reasons of consistency.
+This is the part of the amplitude wanted to compare for reasons of consistency.
 	
 
 \subsection{Comparison of QED and NRQED Compton scattering}

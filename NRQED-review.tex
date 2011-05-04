@@ -465,15 +465,15 @@ To determine the coefficients of the two-fermion piece of the NRQED Lagrangian, 
 \vspace{1em}
  \mbox{
 \begin{minipage}{1.6in}
-   \includegraphics[scale=0.8]{eps/QED-static-field-blob} 
+   \center{\includegraphics[scale=0.8]{eps/QED-static-field-blob}} 
 \end{minipage}
-$	=	\hspace{2em} 	 $
+$	=	\hspace{1em} 	 $
 \begin{minipage}{1.6in}
-   \includegraphics[scale=0.8]{eps/NRQED-static-coulomb-field}
+  \center{ \includegraphics[scale=0.8]{eps/NRQED-static-coulomb-field}}
 \end{minipage}
-$\hspace{2em}   +  \hspace{2em} $
+$\hspace{1em}   +  \hspace{1em} $
 \begin{minipage}{1.6in}
-   \includegraphics[scale=0.8]{eps/NRQED-static-vector-field} 
+  \center{ \includegraphics[scale=0.8]{eps/NRQED-static-vector-field}}  
 \end{minipage}
 } 
 \vspace{1em}
@@ -546,31 +546,4 @@ Which means
 
 With the result that the final correction to this coefficient depends upon the cut-off, just as with the regular renormalization theory.  The same idea goes through to each other coefficient.
 
-
-\subsection{Vertices}
-
-
-To formally establish rules for the various vertices written above, it is necessary to strip off the external fields, and write derivatives of such fields in terms of their momentum.  The coulomb potential $A_0$ becomes a Coulomb photon, so (for example) $\grad \cdot \v{E}$ becomes the Darwin vertex, consisting of two fermion legs and a Coulomb photon, and a vertex with a factor of $-(e / 8m^2 ) \v{q}^2$.
-
-Coulomb photon propagator
-
-\VertexEq{nrqed-coulomb-photon-prop}
-	{\frac{1}{\v{q}^2 + \lambda^2} }
-
-Transverse photon propagator
-
-\VertexEq{nrqed-transverse-photon-prop}
-	{\frac{ \delta^{ij} - \frac{q^i q^j}{\v{q}^2 - \lambda^2} }{ (q^0)^2 - \v{q}^2 - \lambda^2 + ie} }
-
-
-Darwin vertex
-
-\VertexEq{Darwin-vertex}
-	{\frac{-e}{8m^2} \abs{\v{p'} - \v{p}}^2}
-
-Fermi vertex
-
-\VertexEq{Fermi-vertex}
-	{ \frac{ie}{2m} (\v{p'} - \v{p} ) \times \gv{\sigma} }
-	
 	

@@ -1,4 +1,4 @@
-\chapter{Spin one particles: the Foldy-Wouthyusen approach}
+\chapter{Spin one: Calculation of nonrelativistic Hamiltonian for spin one particles --- the Foldy-Wouthyusen approach}
 
 
 The ultimate goal is to investigate the $g$-factor of bound particles of arbitrary spin.  In the previous section, two methods were reviewed for a spin-half particle: deriving the Hamiltonian from the equations of motion, and calculating the NRQED Lagrangian by comparing scattering diagrams.  
@@ -375,12 +375,13 @@ However, we only need corrections to the magnetic moment of order $v^2$. This me
 The needed terms of H are, after performing the transformation:
 \beqa
 	H_{11} 	&=& H'_{11} + H'_{12} + H'_{21} + H'_{22}	\\
-			&\approx& m + e\Phi + \frac{\pi^2}{2m} - \frac{g}{2}\frac{e}{m} \v{S} \cdot \v{B}	\\
-			&& - i (g-1)\frac{e}{2m^2} 
-				 \left [ 
-					\v{E} \cdot \gv{\pi} - (\v{S} \cdot \v{E})( \v{S} \cdot \gv{\pi}) + i \v{S} \cdot \v{E} \times \gv{\pi}
+			&\approx& m + e\Phi + \frac{\pi^2}{2m} - \frac{g}{2}\frac{e}{m} \v{S} \cdot \v{B}	
+			- i (g-1)\frac{e}{2m^2} 
+				 \big [ 
+					\v{E} \cdot \gv{\pi} - (\v{S} \cdot \v{E})( \v{S} \cdot \gv{\pi}) 
+			\\&&		+ i \v{S} \cdot \v{E} \times \gv{\pi}
 					- \gv{\pi} \cdot \v{E} + (\v{S} \cdot \gv{\pi}) (\v{S} \cdot \v{E}) - i \v{S} \cdot \gv{\pi} \times \v{E} 
-				\right ]	\\
+				\big ]	\\
 	H_{12} 	&=&  H'_{11} - H'_{12} + H'_{21} - H'_{22}	\\
 			&\approx& -  \frac{\pi^2}{2m} + \frac{1}{m}(\v{S} \cdot \gv{\pi})^2 - \frac{g-2}{2}\frac{e}{m} \v{S} \cdot \v{B}
 				\\
@@ -430,32 +431,32 @@ The complicated expression in square brackets can be cleaned up a bit:
 	&=&	2 (\v{E} \times \gv{\pi})_k
 \end{eqnarray*}
 
-Using these identities and collecting terms, and then writing everything in terms of $g$, $g-2$
-\begin{eqnarray*}
+Using these identities and collecting terms, and then writing everything in terms of $g$ and $g-2$:
+\small
+\beqa
 	E \Upsilon_u 
-		&=&\left\{ m + e\Phi + \frac{\pi^2}{2m} - \frac{\pi^4 } {8m^3}
+		&=&\Bigg\{ m + e\Phi + \frac{\pi^2}{2m} - \frac{\pi^4 } {8m^3}
 			- \frac{e}{m} \v{S} \cdot \v{B} \left ( \frac{g}{2} - \frac{p^2}{2m^2} \right )
-			+ (g-2)\frac{e}{4m^3} (\v{S} \cdot \v{p}) (\v{B} \cdot \v{p})	\right. \\
-		&&	\left.
+			+ (g-2)\frac{e}{4m^3} (\v{S} \cdot \v{p}) (\v{B} \cdot \v{p})	 
+		\\&&	
 			- (g-1)\frac{e}{2m^2} 
 				\left [ 
 					\v{\nabla} \cdot \v{E} 
 					- S_i S_j \nabla_i E_j +\v{S} \cdot \v{E} \times \gv{\pi}
 				\right ]
-			\right\}\Upsilon_u	\\
-		&=& \left\{ m + e\Phi + \frac{\pi^2}{2m} - \frac{\pi^4 } {8m^3}
+			\Bigg\}\Upsilon_u	\\
+		&=& \Bigg\{ m + e\Phi + \frac{\pi^2}{2m} - \frac{\pi^4 } {8m^3}
 			- \frac{g}{2}\frac{e}{m} \v{S} \cdot \v{B} \left ( 1 - \frac{p^2}{2m^2} \right )
 			- \frac{g-2}{2} \frac{e}{m} \frac{p^2}{2m^2} \v{S} \cdot \v{B} 
-			+ (g-2)\frac{e}{4m^3} (\v{S} \cdot \v{p}) (\v{B} \cdot \v{p})	\right.	\\
-		&&	\left.
-			- \left ( \frac{g}{2} + \frac{g-2}{2} \right) \frac{e}{2m^2} 
+		\\&&	+ (g-2)\frac{e}{4m^3} (\v{S} \cdot \v{p}) (\v{B} \cdot \v{p})		
+				- \left ( \frac{g}{2} + \frac{g-2}{2} \right) \frac{e}{2m^2} 
 				\left [ 
 					\v{\nabla} \cdot \v{E} 
 					- S_i S_j \nabla_i E_j +\v{S} \cdot \v{E} \times \gv{\pi}
 				\right ]
-			\right\}\Upsilon_u
-\end{eqnarray*}
-			
+			\Bigg\}\Upsilon_u
+\eeqa	
+\normalsize		
 This is a Hamiltonian for the upper component of the bispinor, as desired.  In the spin-half case, the Foldy-Wouthyusen transformation was necessary, going to a representation where all the physics up to the desired order is contained in the single spinor equation.  However, to the needed order, it can be shown that the Hamiltonian above is correct.
 
 

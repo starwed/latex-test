@@ -1,6 +1,5 @@
-\tableofcontents
 
-\chapter{Spin one-half}
+\chapter{Spin one-half: Calculation of nonrelativistic Hamiltonian}
 
 \section{Structure of the spin one-half theory}
 
@@ -115,7 +114,7 @@ The starting point will be the relativistic Lagrangian of Dirac.  However, remem
 Knowing that there will actually be bound-state corrections proportional to $g-2$, it is necessary to somehow include this anomalous term.  The way to do so is to introduce a new local interaction into the Lagrangian, coming from the high energy radiative corrections which dress the electron vertex.  The Lagrangian to be used is, then
 \beqa
 \mathcal{L} &=&	
-	\bar{\Psi}(\cancel{D} - m)\Psi + \frac{1}{2} \mu' \bar{\Psi} \sigma^{\mu\nu}F_{\mu\nu} \Psi	
+	\Psigbar(\cancel{D} - m)\Psi + \frac{1}{2} \mu' \bar{\Psi} \sigma^{\mu\nu}F_{\mu\nu} \Psig	
 \eeqa
 %TODO check \mu_0
 $\mu'$ is the correction to the classical moment $\mu_0 = \frac{e}{2m}$, and is equal to $(g-2)/2 \mu_0$.  $D$ is the long derivative $\partial + ieA$.
@@ -123,17 +122,17 @@ $\mu'$ is the correction to the classical moment $\mu_0 = \frac{e}{2m}$, and is 
 
 From this Lagrangian the equations of motion of the particle may be obtained from the Euler-Lagrange method.  The Euler-Lagrange equation is
 \beq
-\pd{ \mathcal{L}}{{\bar{\Psi} } } - \partial_\mu \frac{\partial \mathcal{L}} {\partial (\partial_\mu {\bar{\Psi})} } 
+\pd{ \mathcal{L}}{{ \Psigbar } } - \partial_\mu \frac{\partial \mathcal{L}} {\partial (\partial_\mu { \Psigbar )} } 
 	= 0	
 \eeq
 
 In the Lagrangian above, we can consider that all differential operators act only on the right field $\Psi$.  (This freedom of choice comes from being able to rewrite the Lagrangian through integration by parts, without changing its physical meaning.)  So the second term in the Euler-Lagrange equation can be ignored, and after differentiating with respect to $\bar{\Psi}$ the following equation is obtained:
 \beq
-	(i\cancel{D} - m + \frac{1}{2} \mu'  \sigma^{\mu\nu}F_{\mu\nu} )\Psi = 0	
+	(i\cancel{D} - m + \frac{1}{2} \mu'  \sigma^{\mu\nu}F_{\mu\nu} )\Psig = 0	
 \eeq
 Writing explicitly in terms of the $\gamma$ matrices, this is
 \beq \label{eq:Sh:eom}
-	\left( (i\partial_\mu- eA_\mu)\gamma^\mu -m + i\mu' \frac{1}{4}[ \gamma^\mu, \gamma^\nu]F_{\mu\nu} \right) \Psi
+	\left( (i\partial_\mu- eA_\mu)\gamma^\mu -m + i\mu' \frac{1}{4}[ \gamma^\mu, \gamma^\nu]F_{\mu\nu} \right) \Psig
 		=0
 \eeq
 This equation of motion is invariant under Lorentz transformations.  It is written in terms of the Dirac bispinor $\Psi$, external fields $A_\mu$ and $F_{\mu\nu}$, and the gamma matrices.  To apply in to a nonrelativistic problem, the very first step will be to rewrite it in terms of the sorts of quantities that appear in that domain: three-vectors and scalars.
@@ -160,6 +159,7 @@ A solution of definite momentum $p$ to the equation is written in terms of upper
 
 
 With these considerations, the \eqref{eq:Sh:eom} can be rewritten acting explicitly on the bispinor.
+\scriptsize
 \beq \label{eq:Sh:matrixEOM}
 	\left\{
 		\begin{pmatrix}
@@ -179,6 +179,7 @@ With these considerations, the \eqref{eq:Sh:eom} can be rewritten acting explici
 	\right\} \begin{pmatrix} \eta \\ \chi \end{pmatrix}
 		= 0
 \eeq
+\normalsize
 This gives rise to exact coupled equations for $\eta$ and $\chi$.  So far this is in principle the same as the relativistic equation, only the form in which it is written is non covariant.
 
 \subsection{Nonrelativistic limit}
@@ -371,30 +372,28 @@ So, writing down the new $H_1'$:
 From the relativistic equations of motion, a nonrelativistic Hamiltonian was defined in terms of Schrodinger-like wave functions that conserve probability.  The final result may now be written down.  For comparison with other work, rather than writing in terms of $\mu'$, it will be written in terms of the gyromagnetic ratio $g$.  Because terms proportional to $g-2$ may enter seperately, it is convenient to express all $g$ dependent terms as linear combinations of $g$ and $g-2$. 
 
 So the entire Hamiltonian, using $\mu' = \frac{g-2}{2}\mu_0 = \frac{g-2}{2}\frac{e}{2m} $, is:
-\begin{eqnarray*}
-H	&=&
-		e\Phi  + \frac{ \pi^2}{2m} -\frac{\pi^4}{8m^3} - (1 + \frac{g-2}{2})\frac{e}{2m} \sigdot{B}	\\
-	&&
-		 + e \frac{p^2}{4m^3}\sigdot{B} + \frac{ie}{8m^2}(1 + (g-2))[\sigdot{E},\sigdotg{\pi}]
-		 + (g-2) \frac{e}{2m}  \frac{ (\sigdot{p}) (\v{B} \cdot \v{p}) }{4m^2}  	\\
-	&=&
-		e\Phi  + \frac{ \pi^2}{2m} -\frac{\pi^4}{8m^3} 
-	\\&&
-		- \frac{e}{2m} \left\{
+\beqa
+H	&=&	e\Phi  + \frac{ \pi^2}{2m} 
+		- \frac{\pi^4}{8m^3} 
+		- (1 + \frac{g-2}{2})\frac{e}{2m} \sigdot{B}	
+		+ e \frac{p^2}{4m^3}\sigdot{B}
+\\&&  	+ \frac{ie}{8m^2}(1 + (g-2))[\sigdot{E},\sigdotg{\pi}]
+		+ (g-2) \frac{e}{2m}  \frac{ (\sigdot{p}) (\v{B} \cdot \v{p}) }{4m^2}  	\\
+&=&		e\Phi  + \frac{ \pi^2}{2m}
+		-\frac{\pi^4}{8m^3} 
+		- \frac{e}{2m} \Big\{
 			\frac{g}{2}\sigdot{B} - \frac{p^2}{2m^2}\sigdot{B}
-			- (g-2) \frac{ (\sigdot{p}) (\v{B} \cdot \v{p}) }{4m^2} 
+\\&&		- (g-2) \frac{ (\sigdot{p}) (\v{B} \cdot \v{p}) }{4m^2} 
 			+(g-1) \gv{\sigma} \cdot (\v{E} \times \gv{\pi})
-		\right \}	\\
-	&=&
+		\Big \}	
+\\&=&
 		e\Phi  + \frac{ \pi^2}{2m} -\frac{\pi^4}{8m^3} 
-	\\&&
-		- \frac{e}{2m} \left\{
+		- \frac{e}{2m} \Big\{
 			\frac{g}{2} \left( 1 - \frac{p^2}{2m^2} \right) \sigdot{B} + \frac{g-2}{2} \frac{p^2}{2m^2}\sigdot{B}
-			- \frac{g-2}{2} \frac{ (\sigdot{p}) (\v	{B} \cdot \v{p}) }{2m^2} 
+	\\&&		- \frac{g-2}{2} \frac{ (\sigdot{p}) (\v	{B} \cdot \v{p}) }{2m^2} 
 			+\left(\frac{g}{2} + \frac{g-2}{2}\right) \gv{\sigma} \cdot (\v{E} \times \gv{\pi})
-		\right \}	\\	
-\end{eqnarray*}
-
+		\Big \}	
+\eeqa
 			
 
 

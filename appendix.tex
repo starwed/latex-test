@@ -27,8 +27,7 @@ Simplify $\v{D} \times ( \v{D} \times \v{W} ) $
 	&=&	-\left( [\v{S} \cdot \v{D}]^2 \v{W} \right)_i	\\
 \end{eqnarray*}
 
-Our representation defines the spin matrices as follows:
-
+The spin matrices are represented as:
 $${(S_k)}_{ij}=-i \epsilon_{ijk}$$
 
 They have the commutator
@@ -56,7 +55,7 @@ Or
 
 $$ \v{A} (\v{B} \cdot \v{v}) =  (\v{A} \cdot \v{B}   -  S_i S_j A_j B_i) \v{v} $$
 
-Now we can use this to establish some identities:
+This can be used this to establish some identities:
 
 \begin{eqnarray*}
  E^i \v{D} \cdot \v{\eta}
@@ -94,7 +93,7 @@ Similarly:
 \end{eqnarray*}	
 
 \subsection*{Product of $H_{12}H_{21}$}
-We need to calculate $\left(  \frac {\gv{\pi}^2} {2} -  (\v{S} \cdot \gv{\pi})^2 + (g-2)\frac{2}{m} \v{S} \cdot \v{B} \right )^2 $ to first order in magnetic field strength.  As a first step of simplification
+It is necessary to calculate $\left(  \frac {\gv{\pi}^2} {2} -  (\v{S} \cdot \gv{\pi})^2 + (g-2)\frac{2}{m} \v{S} \cdot \v{B} \right )^2 $ to first order in magnetic field strength.  As a first step of simplification
 \[
 \left(  \frac {\gv{\pi}^2} {2} -  (\v{S} \cdot \gv{\pi})^2 + \frac{g-2}{2}\frac{e}{m} \v{S} \cdot \v{B} \right )^2 
 	=	\left(  \frac {\gv{\pi}^2} {2} -  (\v{S} \cdot \gv{\pi})^2  \right )^2 
@@ -174,7 +173,7 @@ So now:
 				-\gv{\pi}^2 (e \v{S} \cdot \v{B})_{ac} \\
 \end{eqnarray*}
 
-Now evaluate the commutator:
+Evaluating the commutator:
 \begin{eqnarray*}
 [\pi_b, \pi_c \pi_a]
 	&=&	[\pi_b, \pi_c]\pi_a - \pi_c [\pi_a, \pi_b]	\\
@@ -213,7 +212,7 @@ This gives the result:
 				-\gv{\pi}^2 (e \v{S} \cdot \v{B})_{ac}	\\
 \end{eqnarray*}
 
-Since we can throw away terms of order $B^2$, the final result tells us that, to first order in B:
+Since terms of order $B^2$ can be thrown away, the final result is that, to first order in B:
 \begin{eqnarray*}
  \left(  \frac {\gv{\pi}^2} {2} -  (\v{S} \cdot \gv{\pi})^2   \right )^2
 	&=&	\frac{ \gv{\pi}^4 } {4}  -  \gv{\pi}^2 (e \v{S} \cdot \v{B}) \\
@@ -221,14 +220,14 @@ Since we can throw away terms of order $B^2$, the final result tells us that, to
 \end{eqnarray*}
 
 \subsubsection*{Second term}
-To simplify the second term, we need
+To simplify the second term, use the following:
 \begin{eqnarray*}
 \left \{ \frac{\v{p}^2}{2} - (\v{S} \cdot \v{p})^2, \v{S} \cdot \v{B} \right \}
 	&=&	 \v{p}^2 \v{S} \cdot \v{B} - [(\v{S} \cdot \v{p})^2 \v{S} \cdot \v{B} + \v{S} \cdot \v{B} (\v{S} \cdot \v{p})^2  ]	\\
 	&=&	 \v{p}^2 \v{S} \cdot \v{B} - (S_i S_j S_k + S_k S_j S_i) p_i p_j B_k
 \end{eqnarray*}
 
-To simplify that triple product of spin matrices, we can use their explicit form:
+That triple product of spin matrices can be simplified by using their explicit form:
 \begin{eqnarray*}
 	(S_i S_j S_k )_{ab}
 		&=&	i\epsilon_{aci}\epsilon_{cdj}\epsilon_{dbk}	\\
@@ -253,7 +252,7 @@ So
 \eeq
 
 \subsubsection*{Result}
-At last, the final result is that, to the order we care about 
+At last, the final result is that, to the order desired,
 \beq \label{eq:A:crossterm}
 	\left(  \frac {\gv{\pi}^2} {2} -  (\v{S} \cdot \gv{\pi})^2 + (g-2)\frac{e}{m} \v{S} \cdot \v{B} \right )^2 
 	=	\frac{ \gv{\pi}^4 } {4}  -  e \v{p}^2  \v{S} \cdot \v{B} \\
@@ -265,9 +264,8 @@ At last, the final result is that, to the order we care about
 
 
 \section{Spin identity}
-The product of two spin-1 matrices is
 
-Our representation defines the spin matrices as follows:
+The spin matrices are represented as:
 $${(S_k)}_{ij}=-i \epsilon_{ijk}$$
 
 
@@ -280,7 +278,7 @@ The product of two such spin matrices is given by:
 	& = & (\delta_{k\ell} \delta_{ij} - \delta_{kj} \delta_{\ell i} )
 \end{eqnarray*}
 
-We can use this to write some pair of vector components $u_i v_j$ as a matrix structure.  Contract both sides of the above identity with $v_k$ and $u_\ell$.  The result is
+This can be used to write some pair of vector components $u_i v_j$ as a matrix structure.  Contract both sides of the above identity with $v_k$ and $u_\ell$.  The result is
 \[
 	[(\v{S} \cdot \v{v} )(\v{S} \cdot \v{u})]_{ij}
 		= \v{u} \cdot \v{v} \delta_{ij} - u_i v_j 
@@ -289,7 +287,7 @@ or equivalently
 \[
 	u_i v_j = \v{u} \cdot \v{v} \delta_{ij}  - [(\v{S} \cdot \v{v} )(\v{S} \cdot \v{u})]_{ij}
 \]
-The indices on the second term on the write refer to the indices of the product of spin matrices.  We will use this identity frequently in the following form:
+The indices on the second term on the right refer to the indices of the product of spin matrices.  This identity will be used frequently in the following form:
 \[
 	(\v{W^\dagger} \cdot \v{v} )( \v{u} \cdot \v{W} )
 		=	\v{W^\dagger} \left[ \v{u} \cdot \v{v} - (\v{S} \cdot \v{u} )(\v{S} \cdot \v{v}) \right ] \v{W}
@@ -304,7 +302,7 @@ The indices on the second term on the write refer to the indices of the product 
 	&=&	 \v{p}^2 \v{S} \cdot \v{B} - (S_i S_j S_k + S_k S_j S_i) p_i p_j B_k
 \end{eqnarray*}
 
-To simplify that triple product of spin matrices, we can use their explicit form:
+To simplify that triple product of spin matrices, use their explicit form:
 \begin{eqnarray*}
 	(S_i S_j S_k )_{ab}
 		&=&	i\epsilon_{aci}\epsilon_{cdj}\epsilon_{dbk}	\\
