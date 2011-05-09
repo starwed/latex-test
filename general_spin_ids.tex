@@ -1,0 +1,291 @@
+ \input{header.tex} 
+\newcommand{\sigdot}[1]{ \gv{\sigma} \hspace{-2pt} \cdot \hspace{-2pt} \v{#1} \,}
+\newcommand{\sigdotg}[1]{ \gv{\sigma} \hspace{-2pt} \cdot \hspace{-2pt} \gv{#1} \,}
+\newcommand{\dotprod}[2]{ \v{#1} \hspace{-2pt} \cdot \hspace{-2pt} \v{#2} \,}
+
+\newcommand{\beqa}{\begin{eqnarray*} }
+\newcommand{\eeqa}{\end{eqnarray*} }
+
+\newcommand{\ubar}{\bar{u}'}
+\usepackage{cancel}
+\title{General spin identities}
+
+\author{}
+\begin{document}
+
+\section{Derivation of v spinor}
+
+
+In the chiral representation, at rest, we expect
+\[ v = \begin{pmatrix} \xi_0 \\ -\xi_0 \end{pmatrix} \]
+Boosting by some rapidity $\phi$, we know how the upper/lower components of this transform.
+\[ v = \begin{pmatrix} e^{ \frac{\gv{\Sigma} \cdot \gv{\phi}}{2} } \xi_0 \\ -e^{ \frac{\gv{\Sigma} \cdot \gv{\phi}}{2} }  \xi_0 \end{pmatrix} \]
+
+If in the chiral representation there exists a spinor $\Psi = \begin{pmatrix} \eta_1 \\ \eta_2 \end{pmatrix}$, then in the standard representation it becomes 
+
+\beqa
+	\Psi &=& \begin{pmatrix} \varphi \\ \chi  \end{pmatrix}	\\
+	\varphi &=& \frac{1}{2}( \eta_1 + \eta_2 )	\\
+	\chi &=& \frac{1}{2} ( \eta_1 - \eta_2)		\\
+\eeqa
+For our v spinor, this means that, in the standard representation
+\beqa
+	v &=& \begin{pmatrix} 	\sinh{\frac{\gv{\Sigma} \cdot \gv{\phi}}{2}} \xi_0	\\
+		\cosh{\frac{\gv{\Sigma} \cdot \gv{\phi}}{2} } \xi_0	\end{pmatrix}
+\eeqa
+
+To first order $ \phi_i = \frac{p_i}{m}$, so v up to linear order in p is
+\beqa
+	v &=& \begin{pmatrix} 	\frac{ \gv{\Sigma} \cdot \v{p} }{2m} \xi_0\\	
+			 \xi_0	\end{pmatrix}
+\eeqa
+\section{Khriplovich spinors to second order}
+
+
+We might need lower component to second order.
+Define $\xi = exp(\frac{\v{\Sigma} \cdot \v{\phi}}{2} )\xi_0$ and $\eta = exp(-\frac{\v{\Sigma} \cdot \v{\phi}}{2} )\xi_0$.
+This is obtained from boosting the rest frame spinor $\xi_0$.  Parameter $\v{\phi}$ points along $\v{v}$ and has magnitude $\tanh \phi = v$
+
+We now define $\varphi = \frac{1}{2} ( \xi + \eta)$ and $\chi = \frac{1}{2} ( \xi - \eta)$  It then follows that
+\begin{eqnarray*}
+	\varphi &=& \cosh{ \frac{\v{\Sigma} \cdot \v{\phi}}{2} } \xi_0	\\
+	\chi &=& \sinh{ \frac{\v{\Sigma} \cdot \v{\phi}}{2} } \xi_0	\\	
+\end{eqnarray*}
+
+Express the spinors in terms of the momentum and not the boost parameter.  We only need terms to second order.
+\begin{eqnarray*}
+	\tanh \phi &=& v 	\\
+	\phi  - \frac{\phi^3}{3} &=& v	\\
+	\phi &=& v +\frac{v^3}{3}	\\
+	\phi_i &=& v_i \left( 1 + \frac{v^2}{3} \right )	\\
+	p &=& mv\gamma 	\\
+	v_i &=& \frac{p_i}{m} \left( 1 -\frac{p^2}{2m^2} \right )	
+\end{eqnarray*}
+So
+\begin{eqnarray*}
+	\phi_i &=& \frac{p_i}{m}\left( 1 - \frac{p^2}{2m^2} \right ) \left ( 1 + \frac{p^2}{3m^2} \right )	\\
+		&=& \frac{p_i}{m}\left( 1 - \frac{p^2}{6m^2} \right )
+\end{eqnarray*}
+
+Finally
+\begin{eqnarray*}
+	\chi &=& \sqrt{\frac{m}{E}} \sinh( \frac{\v{\Sigma} \cdot \v{\phi}}{2} ) \xi_0	\\
+		&=& \left( 1 - \frac{p^2}{4m^2} \right ) \left( 
+			\frac{\v{\Sigma} \cdot \v{\phi}}{2} + \frac{(\v{\Sigma} \cdot \v{\phi})^3}{3!2^3 }
+			\right) \xi_0	\\
+		&=&	\frac{\v{\Sigma} \cdot \v{p}}{2m} \left ( 1 - \frac{p^2}{4m^2} - \frac{p^2}{6m^2} + \frac{(\v{\Sigma} \cdot \v{p})^2}{24m^2} \right )\xi_0	\\
+		&=&	\frac{\v{\Sigma} \cdot \v{p}}{2m} \left ( 1 - \frac{5p^2}{12m^2}  + \frac{(\v{\Sigma} \cdot \v{p})^2}{24m^2} \right )\xi_0
+\end{eqnarray*}
+
+\section*{Transformation under boost}
+
+Using the definitions above we can derive the transformation of $\phi$ and $\chi$ under infinitesimal boost. 
+
+We'll consider the transformation of these objects under an infinitesimal boost $\gv{\phi} \to \gv{\phi} + \gv{\eta}$, considering for now only boosts parallel to the orientation $\gv{\phi}$ of the spinors.  For this type of transformation, we only need to first order in $\eta$, and $[\Sigma \cdot \eta, \Sigma \cdot \phi]=0$.  (The last identity is because $\v{\eta}$ is proportional to $\phi$.)
+t
+\beqa
+\varphi &=& \cosh{ \frac{\v{\Sigma} \cdot \v{\phi}}{2} } \xi_0	\\
+\chi &=& \sinh{ \frac{\v{\Sigma} \cdot \v{\phi}}{2} } \xi_0	\\
+\varphi' &=& \cosh{ \frac{\v{\Sigma} \cdot (\v{\phi+\eta})}{2} } \xi_0	\\
+	&=& ( \cosh{ \frac{\v{\Sigma} \cdot \v{\phi}}{2} } \cosh{\frac{\v{\Sigma} \cdot \v{\eta}}{2} }
+		+ \sinh{ \frac{\v{\Sigma} \cdot \v{\phi}}{2} } \sinh{\frac{\v{\Sigma} \cdot \v{\eta}}{2} }
+		) \xi_0	\\
+	&=& ( \cosh{ \frac{\v{\Sigma} \cdot \v{\phi}}{2} } + \sinh{ \frac{\v{\Sigma} \cdot \v{\phi}}{2} } \frac{\v{\Sigma} \cdot \v{\eta}}{2}  ) \xi_0	\\
+	&=& \varphi + \frac{\v{\Sigma} \cdot \v{\eta}}{2} \chi	\\
+\chi' &=& \sinh{ \frac{\v{\Sigma} \cdot (\v{\phi+\eta})}{2} } \xi_0	\\
+	&=& ( \cosh{ \frac{\v{\Sigma} \cdot \v{\phi}}{2} } \sinh{\frac{\v{\Sigma} \cdot \v{\eta}}{2} }
+		+ \sinh{ \frac{\v{\Sigma} \cdot \v{\phi}}{2} } \cosh{\frac{\v{\Sigma} \cdot \v{\eta}}{2} }
+		) \xi_0	\\
+	&=&	( \cosh{ \frac{\v{\Sigma} \cdot \v{\phi}}{2} } \frac{\v{\Sigma} \cdot \v{\eta}}{2} 
+		+ \sinh{ \frac{\v{\Sigma} \cdot \v{\phi}}{2} }
+		) \xi_0	\\
+	&=& \chi + \frac{\v{\Sigma} \cdot \v{\eta}}{2} \varphi	\\
+\eeqa
+
+So we can write that 
+\beqa
+	\Psi &\to& \Psi' = \Psi + \frac{\eta_i }{2} \begin{pmatrix} 0 & \Sigma_i \\ \Sigma_i & 0 \end{pmatrix}\Psi
+\eeqa
+
+If we define $ \Gamma^i =  \begin{pmatrix} 0 & \Sigma_i \\ -\Sigma_i & 0 \end{pmatrix}$, then
+\beqa
+	\Psi &\to& \Psi' = \Psi + \frac{\eta_i }{2} \Gamma^0 \Gamma_i \Psi	\\
+	\bar{\Psi} &\to& \bar{\Psi'} = \bar{\Psi} + \frac{\eta_i }{2} (\Gamma^0 \Gamma_i \Psi)^\dagger \Gamma^0	\\
+		&=&	\bar{\Psi} + \frac{\eta_i }{2} \Psi^\dagger {\Gamma^i}^\dagger {\Gamma^0}^\dagger \Gamma^0	\\
+		&=&  	\bar{\Psi} - \frac{\eta_i }{2} \bar{\Psi} \Gamma^0 \Gamma^i
+\eeqa
+
+\subsection*{Transforms of bilinears}
+Let's investigate the transformation properties of three bilinears: $\bar{\Psi}\Psi$, $\bar{\Psi}\Gamma^\mu\Psi$, and $\bar{\Psi} [\Gamma^\mu, \Gamma^\nu] \Psi$.  
+
+
+
+
+
+\beqa
+	\bar{\Psi}\Psi &\to& \bar{\Psi}\Psi + \frac{\eta_i}{2} [ \bar{\Psi} \Gamma^0 \Gamma_i \Psi - \bar{\Psi} \Gamma^0 \Gamma^i \Psi]\\
+	&=&	\bar{\Psi}\Psi	\\
+\eeqa
+So the term $\bar{\Psi}\Psi$ is a Lorentz invariant.
+
+Now consider the terms $\bar{\Psi}\Gamma^0\Psi$ and  $\bar{\Psi}\Gamma^i\Psi$.  Do they act like the components of a lorentz vector?  We can use the relation $\{ \Gamma^0, \Gamma^i\} = 0$.
+\beqa
+\bar{\Psi} \Gamma^0 \Psi 
+	&\to& 	\bar{\Psi} \Gamma^0 \Psi + \frac{\eta_j}{2} \left (
+			\bar{\Psi} \Gamma^0 \Gamma^0 \Gamma^j  \Psi - \bar{\Psi} \Gamma^0 \Gamma^j \Gamma^0 \Psi
+		\right )	\\
+	&=&	\bar{\Psi} \Gamma^0 \Psi + \frac{\eta_j}{2} \left (
+			\bar{\Psi} \Gamma^0 \Gamma^0 \Gamma^j  \Psi + \bar{\Psi} \Gamma^0 \Gamma^0 \Gamma^j \Psi
+		\right )	\\
+	&=&	\bar{\Psi} \Gamma^0 \Psi + \eta_j \bar{\Psi}  \Gamma^j  \Psi \\
+\bar{\Psi} \Gamma^i \Psi &\to& \bar{\Psi} \Gamma^i \Psi +  \frac{\eta_j}{2} \left (
+			\bar{\Psi} \Gamma^i \Gamma^0 \Gamma^j  \Psi - \bar{\Psi} \Gamma^0 \Gamma^j \Gamma^i \Psi
+		\right )	\\
+	&=& \bar{\Psi} \Gamma^i \Psi -  \frac{\eta_j}{2} \left (
+			\bar{\Psi} \Gamma^0 \Gamma^i \Gamma^j  \Psi +\bar{\Psi} \Gamma^0 \Gamma^j \Gamma^i \Psi
+		\right )	\\
+	&=& \bar{\Psi} \Gamma^i \Psi -  \frac{\eta_j}{2} \bar{\Psi} \Gamma^0 \{\Gamma^i,  \Gamma^j\} \Psi	\\
+\eeqa
+What we expect is that, for a lorentz vector $V^\mu$, the transformation is $V^0 \to V^0 + \eta_j V^j$ and $V^i \to V^i + \eta_i V^0$.  For spin-$\frac{1}{2}$, $\{\Gamma^i,  \Gamma^j\} = -2\delta_{ij}$, and so the bilinear transforms correctly.  But for higher spin particles, no such simplification exists.
+
+
+\subsection*{Tensor bilinear}
+A second rank tensor $T^{\mu\nu}$ should transform as the product of two vectors.  Under a boost of $\gv{\eta}$, 
+\beqa
+	T^{00} &\to&
+		T^{00} + \eta_i T^{i0} + \eta_i T^{0i}	\\
+	T^{0i} &\to& T^{0i} + \eta_i T^{00} + \eta_j T^{ji}	\\
+	T^{ij}	&\to& T^{ij} + \eta_i T^{0j} + \eta_j T^{i0}	\\
+\eeqa
+
+
+The third bilinear to consider is $\bar{\Psi} \sigma^{\mu\nu} \Psi$.  $\sigma^{\mu\nu}$ is proportional to $[\Gamma^\mu, \Gamma^\nu]$.  Since it's antisymmetric, we need only consider two special cases.  
+\beqa
+	[\Gamma^i, \Gamma^j] &=& -4i\epsilon_{ijk}\begin{pmatrix}S_k & 0 \\ 0 & S_k \end{pmatrix}	\\
+	{}[\Gamma^i, \Gamma^0] &=& 2\Gamma^i\Gamma^0	\\
+\eeqa
+
+\beqa
+	 \bar{\Psi} [\Gamma^0, \Gamma^i] \Psi 
+		&=&  2 \bar{\Psi} \Gamma^0 \Gamma^i \Psi	\\
+		&\to&	2 \bar{\Psi} \Gamma^0 \Gamma^i \Psi	
+			+ \eta_j \bar{\Psi} (\Gamma^0 \Gamma^i \Gamma^0 \Gamma^j - \Gamma^0 \Gamma^j \Gamma^0 \Gamma^i)  \Psi	 \\
+		&\to&	2 \bar{\Psi} \Gamma^0 \Gamma^i \Psi	
+			+ \eta_j \bar{\Psi} (-  \Gamma^i  \Gamma^j +  \Gamma^j  \Gamma^i)  \Psi	 \\
+		&=&   \bar{\Psi} [\Gamma^0, \Gamma^i] \Psi  + \eta_j \bar{\Psi} [\Gamma^j, \Gamma^i] \Psi 	\\
+\eeqa
+
+\beqa
+	\bar{\Psi} [\Gamma^i, \Gamma^j] \Psi 
+	&=& -4i\epsilon_{ijk}\bar{\Psi} \begin{pmatrix}S_k & 0 \\ 0 & S_k \end{pmatrix} \Psi	\\
+	&\to& \bar{\Psi} [\Gamma^i, \Gamma^j] \Psi 
+		+2i\epsilon_{ijk} \eta_\ell \bar{\Psi} \left\{ \Gamma^0 \Gamma^\ell \begin{pmatrix}S_k & 0 \\ 0 & S_k \end{pmatrix} - \begin{pmatrix}S_k & 0 \\ 0 & S_k  \end{pmatrix} \Gamma^0 \Gamma^\ell \right \} \Psi	\\
+	&=& \bar{\Psi} [\Gamma^i, \Gamma^j] \Psi 
+		-2i\epsilon_{ijk} \eta_\ell \bar{\Psi}  \begin{pmatrix} 0 & [S_k, \Sigma_\ell] \\  [S_k, \Sigma_\ell] & 0 \end{pmatrix} \Psi	\\
+	&=& \bar{\Psi} [\Gamma^i, \Gamma^j] \Psi 
+		-2i\epsilon_{ijk} (i\epsilon_{k\ell m}) \eta_\ell \bar{\Psi}  \begin{pmatrix} 0 & \Sigma_m \\  \Sigma_m & 0 \end{pmatrix} \Psi	\\
+	&=& \bar{\Psi} [\Gamma^i, \Gamma^j] \Psi 
+		+ (\delta_{i\ell}\delta_{jm} - \delta_{im}\delta_{j\ell}) \eta_\ell \bar{\Psi}  [\Gamma^0, \Gamma^m] \Psi	\\
+	&=& \bar{\Psi} [\Gamma^i, \Gamma^j] \Psi 
+		+  \eta_i \bar{\Psi}  [\Gamma^0, \Gamma^j]\Psi
+		+  \eta_j \bar{\Psi}  [\Gamma^i, \Gamma^0]\Psi	\\
+\eeqa
+It transforms as we'd expect for a tensor.
+
+\section*{$\Sigma$ in terms of spin}
+The matrices $\Sigma_i$ act on wave functions with $p+q$ indices.  If we treat the two sets of indices as two seperate spaces, with spins $\frac{p}{2}, \frac{q}{2}$ respectively, we can write it as the sum of those spaces spin operators: $\Sigma_i = 2(S^P_i - S^Q_i)$.  We can then write the total spin operator as $S^I_i = S^P_i + S^Q_i$.
+
+From these expressions, and because $[S^P_i, S^Q_j]=0$, we can obtain
+\beqa
+	[S^I_i, \Sigma_j] = i\epsilon_{ijk}\Sigma_k	\\ {}
+	[\Sigma_i, \Sigma_j] = 4i\epsilon_{ijk}S^I_k
+\eeqa
+We can show that wave functions of definite spin are also eigenfunctions of $\Sigma^2$ and $\Sigma \cdot S^I$:
+\beqa
+	{S^P}^2 &=& \frac{p}{2} ( \frac{p}{2} + 1)	\\
+	{S^Q}^2 &=& \frac{q}{2} ( \frac{q}{2} + 1)	\\
+	(S^I)^2 	&=& \frac{p+q}{2} ( \frac{p+q}{2} + 1 )	\\
+		&=& \frac{p}{2} (\frac{p}{2} + 1) + \frac{q}{2}(\frac{q}{2} + 1 ) + 2 \frac{pq}{4}	\\
+		&=& {S^P}^2 + 2\frac{pq}{4} + {S^Q}^2	\\
+	 {S^P} \cdot {S^Q} &=& \frac{pq}{4}	\\
+	\Sigma ^2 &=& 4(S^P - S^Q)^2	\\
+		&=&	4({S^P}^2 + {S^Q}^2 - 2 S^P \cdot S^Q)	\\
+		&=& 	4\left(
+				\frac{p}{2} ( \frac{p}{2} + 1)
+				+\frac{q}{2} ( \frac{q}{2} + 1)
+				- \frac{pq}{2}
+			\right )	\\
+		&=&	p^2 + q^2 - 2pq + 2(p + q)	\\
+		&=& 	(p-q)^2 + 2(p+q)	\\
+	\Sigma \cdot S &=& 2 (S^P - S_Q) \cdot (S^P + S_Q)	\\
+		&=& 2 (S^P)^2 - 2 (S^Q)^2	\\
+		&=&	\frac{1}{2} ( p^2 - q^2 + p - q )	\\
+\eeqa
+
+Expressing these in terms of $I= \frac{p+q}{2}$ and $\Delta = p-q$ we can write
+\beqa
+	S^2 		&=&	I(I+1)	\\
+	\Sigma^2	&=&	4I + \Delta	\\
+	\Sigma \cdot S	&=&	\frac{\Delta}{2} ( 2I + 1)	\\
+\eeqa
+
+
+We can guess that the matrix element of $\Sigma_i \Sigma_j$ must be expressible in terms of the spin operator's matrix element.  Assuming a correspondance between the traceless tensor component of each operator
+\beqa
+	\Sigma_i \Sigma_j + \Sigma_j \Sigma_i - \frac{2}{3} \delta_{ij} \gv{\Sigma}^2
+		&=&	\lambda \left \{ I_i I_j + I_j I_i - \frac{2}{3} \delta_{ij} \v{I}^2 \right\}	\\
+\eeqa
+We want to determine the constant $\lambda$.  One easy way to do it is to consider the zz component of the tensor structure acting on a wave function with all spin projected in the z direction.  Then $I_3 \to \frac{p+q}{2} = I$, and $\Sigma_3 \to p-q = \Delta$, giving
+\beqa
+	2 \Delta^2 - \frac{2}{3} (4I + \Delta) 
+		&=& \lambda  \left \{ 2 I^2 -\frac{2}{3} (I^2 + I) \right \}	\\
+		&=& \lambda \frac{2}{3}I(2I - 1 )
+\eeqa
+For integer spin we have $\Delta = 0$, giving
+\beqa
+	-\frac{8}{3} I &=& \lambda_1 \frac{2}{3}I (2I -1)	\\
+	\lambda_1 &=& -\frac{4}{2I-1}	\\
+\eeqa
+For half spin we have $\Delta = 1$ 
+\beqa
+	\frac{4}{3} (1  - 2I) &=& \lambda_{\frac{1}{2}}	 \frac{2}{3}I (2I -1)	\\
+	\lambda_{\frac{1}{2}} &=&-\frac{4}{2I}	\\
+\eeqa
+
+\section*{Consideration of Gordon identity for these general spinors}
+For spin-$\frac{1}{2}$ particles we can derive, from the Dirac equation, the Gordon identity
+\beqa
+	\bar{u}(p') \gamma^\mu u(p) &=& \bar{u}(p')\left ( \frac{ p^\mu + p'^\mu}{2m} + \frac{\sigma^{\mu\nu} q_\nu}{2m} \right )u(p)	\\
+\eeqa
+
+We can examine whether this type of identity is consistent with the general spin formalism.  Consider what the identity implies for a special case: the zero component with $\v{p'} = \v{p}$. If true, then
+\beqa
+	\bar{u} \gamma^0 u &=& \bar{u} \frac{p_0}{m} u	\\
+	u^\dagger u &=& \frac{p_0}{m} u^\dagger \gamma^0 u	\\
+	\varphi^\dagger \varphi + \chi^\dagger \chi &=& \frac{p_0}{m} (\varphi^\dagger \varphi - \chi^\dagger \chi)	\\
+	\xi_0^\dagger \left ( \cosh^2 \frac{\Sigma \cdot \phi }{2}  + \sinh^2\frac{\Sigma \cdot \phi }{2}  \right ) \xi_0		&=&	\frac{p_0}{m} \xi_0^\dagger  \left ( \cosh^2 \frac{\Sigma \cdot \phi }{2}  - \sinh^2\frac{\Sigma \cdot \phi }{2}  \right )  \xi_0  \\
+	\xi_0^\dagger \left (1 + 2\sinh^2 \frac{\Sigma \cdot \phi }{2} \right ) \xi_0
+		&=&
+	\frac{p_0}{m} \xi_0^\dagger \xi	\\
+	 2 \xi_0^\dagger  \sinh^2 \frac{\Sigma \cdot \phi }{2}  \xi_0
+		&=&
+	\frac{p_0-m}{m} \xi_0^\dagger \xi \\
+\eeqa
+We can further consider what this implies about the first order terms in the relativistic expansion.  The two sides can be approximated:
+\beqa
+	\frac{p_0-m}{m} &\approx& \frac{p^2}{2m^2}	\\
+	2\sinh^2 \frac{\Sigma \cdot \phi }{2} &\approx& \frac{(\Sigma \cdot p)^2 }{2m^2}	\\
+\eeqa
+This then implies
+\beqa
+	\xi_0^\dagger \frac{(\Sigma \cdot p)^2 }{2m^2} \xi_0 &=& \xi_0^\dagger \frac{p^2}{2m^2} \xi_0	\\
+\eeqa
+which is true for spin-$\frac{1}{2}$, but looks unlikely to be true in general.  To investigate, we can explicitly evaluate.  We can evaluate the left side by first evaluating $\avg{p_i p_j} = \frac{p^2}{3} \delta_{ij}$.  Then we'll use that $\Sigma^2 = 4S + \Delta$.
+\beqa
+	\frac{p^2}{6m^2} \xi_0^\dagger \Sigma^2 \xi_0 &=& \xi_0^\dagger \frac{p^2}{2m^2} \xi_0	\\
+	\frac{p^2}{6m^2} (4S + \Delta) &=& \frac{p^2}{2m^2}	\\
+\eeqa
+This implies that $4S + \Delta =3$, which again is only true for spin-$\frac{1}{2}$.  ($\Delta=1$ for half-integer spin, zero otherwise.)  For all other spins, it seems that the Gordon identity must prove incorrect for this particular case, and therefore is not generally true.
+
+
+\end{document}

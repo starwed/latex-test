@@ -1,0 +1,56 @@
+
+\chapter{Conclusions}
+
+
+Starting from a general spin formalism, an NRQED Lagrangian was developed that, up to $\mathcal{O}(1/m^3)$, fully captures the interaction of particles with arbitrary spin with an external, constant magnetic field. 
+
+
+
+\beq \label{eq:C:nrL}
+\begin{split}
+\mathcal{L}_{NRQED} =  \fnrb \Bigg\{ &
+		iD_0 +  \frac{\v{D}^2}{2m}  + 	\frac{\v{D}^4}{8m^2}
+		 + g \frac{e}{m} \v{S} \cdot \v{B}
+		+ (g-1) \frac{\Sigma^2}{3} \frac{e (\v{D} \cdot \v{E} - \v{E} \cdot \v{D})}{8m^2} 
+	\\&	+ \lambda \frac{g-1}{2}  \frac{eQ_{ij}(D_i E_j - E_i D_j)}{8m^2}
+		 + (g-1) \frac{ i e \v{S} \cdot(\v{D} \times \v{E} - \v{E} \times \v{D})}{4m^2}
+	\\&	+ \frac{ e \v{D}^2 \v{S} \cdot \v{B} }{2m^3}
+		(g-2) \frac{ e  (\v{S}\cdot \v{D})(\v{B} \cdot \v{D})}{4m^3}
+		\Bigg \} \fnr
+\end{split}
+\eeq
+Here, the value of $\lambda$ and $\Sigma^2$ depends on the spin of the particular particle.  Of all the terms entering at this order, only two had coefficients which varied with spin: the Darwin term and the quadrupole moment.  Both of these terms involved derivatives of the electric field.  It is reasonable to think that, if terms involving derivatives of the magnetic field were calculated, they might also display such spin dependence.  But in calculations of first order binding corrections to the $g$-factor, no such terms were important.  
+
+Likewise, if the calculation were pushed to a higher order, additional terms depending on \emph{both} the magnetic field and derivatives of the electric field could enter.  This too could introduce a dependence on spin. 
+
+From the Lagrangian, it became possible to calculate the interaction potential between two charged particles in a bound state.  The resulting potential shared the same feature outlined above: spin dependence lived only in terms which do not contribute to the $g$-factor.
+
+Finally, from the interaction potential the bound state $g$-factor was calculated.  This first necessitated transformation to properly separate internal degrees of freedom from the motion of the bound system's center of mass.  The final result was that for one of the two bound particles, in a spherically symmetric $S$ state:
+\beq \label{eq:C:gbound}
+\begin{split}
+g_1^\text{bound} =& g_1 \Bigg [ \left( 1 - \frac{ \mu_2^2 e_1^2 e_2^2 }{32 \pi^2 n^2} \right )
+		\frac{ \mu_2 e_1 e_2^2 [ e_1 - (e_1 + e_2) \mu_1^2 ] }{96\pi n^2}
+		+ \frac{ \mu_2 e_1 e_2^2 [ e_1 - (e_1 + e_2) \mu_2^2 ] }{48\pi n^2} \Bigg]
+	\\& + (g_1 - 2) \Bigg [ 
+			\frac{\mu_2^2 e_1^2 e_2^2 }{48\pi^2 n^2} 
+			+ \frac{ \mu_2 e_1 e_2^2 [ e_1 - (e_1 + e_2) \mu_1^2 ] }{96\pi n^2} 
+	\Bigg ]
+\end{split}
+\eeq
+
+
+If this is specialized to considering to the case of an electron in a hydrogen-like atom of charge $Z$, it becomes
+\beq \label{eq:C:gbound-atom}
+\begin{split}
+g_e^\text{bound} =& g_e \Bigg \{
+			\left( 1 - \frac{ \mu_2^2 (Z\alpha)^2}{2n^2} \right )
+			+ \frac{ 	\mu_2^2 Z^2 \alpha [ \alpha + (Z\alpha - \alpha)\mu_1^2 ] }{6n^2}
+			- \frac{ \mu_1^2 Z^2 \alpha [Z\alpha + (Z\alpha - \alpha)\mu_2^2 ]}{3n^2} \Bigg \}
+		\\& + (g_e - 2) \Bigg \{
+			\frac{ \mu_2^2 (Z\alpha)^2 }{3n^2}
+			+ \frac{ \mu_2^2 Z^2 \alpha[ \alpha + ( Z\alpha - \alpha) \mu_1^2)\mu_1^2 ] }{6n^2} \Bigg \}
+\end{split}
+\eeq
+
+The feature of universality---that is, independence of the result on the spin of the particles considered---arose at this stage because none of the relevant terms in the nonrelativistic Lagrangian depended upon spin.  
+
