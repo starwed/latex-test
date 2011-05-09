@@ -315,11 +315,9 @@ The tensor structure is defined by
 	\Sigma_{0i} = \Mblock{0}{\Sigma_i}{\Sigma_i}{0}
 \eeq
  
-For the case of spin one-half, where $2S_i = \Sigma_i = \sigma_i$, this reduces to the familiar anti-symmetric tensor $\sigma_{\mu\nu} = [\Gamma_\mu, \Gamma_\nu]
+For the case of spin one-half, where $2S_i = \Sigma_i = \sigma_i$, this reduces to the familiar anti-symmetric tensor $\sigma_{\mu\nu} = [\Gamma_\mu, \Gamma_\nu]$.
 %Section on bilinear transforms
 %\input{bilinear_transforms}
-
-
 
 \subsection{Electromagnetic Interaction}
 %TODO insert diagram, showing the type of interaction we're talking about, defining momenta of particles in question.
@@ -706,17 +704,18 @@ Using these
 \eeqB
 
 \beqB
-	e \v{j} \cdot \v{A}	= e \phis^\dagger \left \{
+\begin{split}
+	e \v{j} \cdot \v{A}	=& e \phis^\dagger \Bigg \{
 			\frac{ \v{p} \cdot \v{A} }{m} + \frac{(\v{B} \cdot \v{p})  (\v{S} \cdot \v{p}) - (\v{B} \cdot \v{S}) \v{p}^2 }{m^2} 
-			- F_m \left ( \frac{ \v{S} \cdot \v{B} }{m} \left\{ 1 - \frac{\v{p}^2 + \v{p'}^2}{4m^2} \right \} + \frac{(\v{B} \cdot \v{p})  (\v{S} \cdot \v{p}) - (\v{B} \cdot \v{S}) \v{p}^2 }{2m^2} \right ) \right \} \phi
+		\\&	- F_m \left ( \frac{ \v{S} \cdot \v{B} }{m} \left\{ 1 - \frac{\v{p}^2 + \v{p'}^2}{4m^2} \right \} + \frac{(\v{B} \cdot \v{p})  (\v{S} \cdot \v{p}) - (\v{B} \cdot \v{S}) \v{p}^2 }{2m^2} \right ) \Bigg \} \phi
+\end{split}
 \eeqB
-
 \beqB
 	=e\phis^\dagger \left\{
 		 \frac{ \v{p} \cdot \v{A} }{m} + [1 -2F_m] \frac{ (\v{B} \cdot \v{p} )(\v{S} \cdot \v{p})}{m^2} 
 				- \v{S} \cdot \v{B} \frac{ \v{p}^2 }{m^2} - \frac{F_m}{m} \v{S} \cdot \v{B} \right \}
 \eeqB
-From this it can be seen that $F_m$ is actually $g/2$, so in such terms
+From looking at the leading order coefficient of $\v{S} \cdot \v{B}$ it can be seen that $F_m$ is actually $g/2$, so in such terms
 
 \beqB	
 	ej_0 A_0 = e\phis^\dagger \left\{

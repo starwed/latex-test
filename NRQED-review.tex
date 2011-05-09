@@ -1,23 +1,23 @@
 \chapter{Nonrelativistic Quantum Electrodynamics}
 
 \section{Effective Field Theories}
-The most generally powerful approach to nonrelativistic bond state theories is the use of the techniques of effective field theory.  In this chapter we develop the theory of such an approach.
+The most generally powerful approach to nonrelativistic bond state theories is the use of the techniques of effective field theory.  In this chapter we develop the theory of such an approach.  In the end it will be seen that only the simplest aspects are necessary for the problem at hand.
 
 
-\subsection{Brief background}
-First, a brief background of the development of effective field theories.
+%\subsection{Brief background}
+%First, a brief background of the development of effective field theories.
 
-The first workable relativistic theory of quantum mechanics came from Dirac.  By realising that a relativistic equation for fermions necessitated a four component spinor, he was able to write down what is now known as Dirac's equation.  This led to the prediction of the electron's antiparticle the positron.
+%The first workable relativistic theory of quantum mechanics came from Dirac.  By realising that a relativistic equation for fermions necessitated a four component spinor, he was able to write down what is now known as Dirac's equation.  This led to the prediction of the electron's antiparticle the positron.
 
-The relativistic theory necessitated the introduction of an infinite degrees of freedom.  Thus, wave functions had to be promoted to fields, and the first quantum field theory arose.  It was highly successful at predicting leading order quantities, but when attempting to use perturbation theory within this context, a number of infinities arose.
+%The relativistic theory necessitated the introduction of an infinite degrees of freedom.  Thus, wave functions had to be promoted to fields, and the first quantum field theory arose.  It was highly successful at predicting leading order quantities, but when attempting to use perturbation theory within this context, a number of infinities arose.
 
-To resolve this matter, QED and renormalization were developed in the late 1940s.  The key was in changing the parametrization from of the theory from ``bare'' values, to measured values at some particular energy scale.  So to completely define the theory one needed to write down not only the Lagrangian but also the renormalization point.  The coupling constants of the theory would depend upon this.  With this approach QED was enormously successful, producing very accurate predictions to such quantities as the anomalous magnetic moment.
+%To resolve this matter, QED and renormalization were developed in the late 1940s.  The key was in changing the parametrization from of the theory from ``bare'' values, to measured values at some particular energy scale.  So to completely define the theory one needed to write down not only the Lagrangian but also the renormalization point.  The coupling constants of the theory would depend upon this.  With this approach QED was enormously successful, producing very accurate predictions to such quantities as the anomalous magnetic moment.
 
-There was much frustrating work to formulate a theory of the other interactions along the same lines.  During this work (such as that by Gell-man and Low) with these types of theories it became clear that there was structure to how the coupling constants behaved as the renormalization point changed.
+%There was much frustrating work to formulate a theory of the other interactions along the same lines.  During this work (such as that by Gell-man and Low) with these types of theories it became clear that there was structure to how the coupling constants behaved as the renormalization point changed.
 
-While working through the Ising model, Wilson, who had a background working with QFTs, realised there were applications of these renormalisation ideas to critical phenomena.    Later, working with fixed-source meson theory, had an insight that led to effective field theory.  Working with a hierarchy of momentum ``slices'' and a process of eliminating energy scales, he found that although an infinite number of interactions was generated, the effects at each iteration were bounded -- only a finite number of terms were necessary for any particular level of precision.  A successful theory with arbitrarily many constants still worked, as long as there was a clear hierarchy of terms.
+%While working through the Ising model, Wilson, who had a background working with QFTs, realised there were applications of these renormalisation ideas to critical phenomena.    Later, working with fixed-source meson theory, had an insight that led to effective field theory.  Working with a hierarchy of momentum ``slices'' and a process of eliminating energy scales, he found that although an infinite number of interactions was generated, the effects at each iteration were bounded -- only a finite number of terms were necessary for any particular level of precision.  A successful theory with arbitrarily many constants still worked, as long as there was a clear hierarchy of terms.
 
-An effective field theory was not renormalizable in the way QED was, but as Wilson found the proliferation of terms could be contained such that only a finite number mattered for a particular calculation.  The constraint is that an effective field theory has application only well below some energy scale.  But, the very feature that it is formulated at a particular scale makes it in many ways the natural theory to use at that scale.
+%An effective field theory was not renormalizable in the way QED was, but as Wilson found the proliferation of terms could be contained such that only a finite number mattered for a particular calculation.  The constraint is that an effective field theory has application only well below some energy scale.  But, the very feature that it is formulated at a particular scale makes it in many ways the natural theory to use at that scale.
 
 
 \subsection{A Worked example of Renormalization}
@@ -29,7 +29,7 @@ Let us review how the process of renormalization works when a theory {\it is} re
 The QED Lagrangian defined at some cut-off is:
 \beq
 	\mathcal{L}_0 = 
-		\bar{\Psi} \left( i \partial \cdot \gamma - e_0 A \cdot \gamma - m_0 \right) \Psi - \frac{1}{4} F^{\mu\nu}) F^{\mu\nu} 
+		\bar{\Psi} \left( i \partial \cdot \gamma - e_0 A \cdot \gamma - m_0 \right) \Psi - \frac{1}{4} F_{\mu\nu} F^{\mu\nu} 
 \eeq 
 and additionally the cut-off regulator $\Lambda_0$.  
 
@@ -281,7 +281,7 @@ So, if high precision is important and all high energy processes must be account
 
 Let us now consider the effective field theory approach to finding, from the relativistic theory, a nonrelativistic Lagrangian suitable for the bound-state problems already mentioned.  As an example, consider a hydrogen-like muonium system with an electron and a muon.  Formally the idea is to introduce into QED a cut-off at the nonrelativistic energy, $\lambda$.  This cut-off is somewhere about the energy of the electron mass $m_e$.    The higher energy states are removed, leaving an explicitly nonrelativistic Lagrangian.
 
-As normal for an effective field theory, this Lagrangian will have an inifinte number of terms, but they can be arranged in a hierarchy that allows any particular calculation to be performed with only a finite number.  This hierarchy can be treated as an expansion over the large mass scale of the system, $1/m$.  In the example calculation, terms up to order $1/m^3$ will be kept.
+As normal for an effective field theory, this Lagrangian will have an infinite number of terms, but they can be arranged in a hierarchy that allows any particular calculation to be performed with only a finite number.  This hierarchy can be treated as an expansion over the large mass scale of the system, $1/m$.  In the example calculation, terms up to order $1/m^3$ will be kept.
 
 First a Lagrangian is written that contains all the possible terms that might contribute to the process considered.  Lorentz symmetry is no longer required, but the following constraints on the forms of terms exist:
 \begin{itemize}
@@ -300,7 +300,9 @@ The simplest process that will give the required information can be used.  So an
 
 However, given the assumption of gauge invariance, different gauges may be chosen for each calculation.  Since the physical measurement will be gauge invariant, there is nothing inconsistent about this.  And indeed the most convenient gauges for a relativistic and nonrelativistic calculation often differ.
 
-Remember that the goal is to use NRQED to calculate bound state energies.  To this end, it is necessary that the theory has poles in the complex plain and can thus be analytically continued to include off-shell bound states.  To ensure this, it is necessary to demand that all external particles be on mass-shell when fixing the coefficients.  For the same reason, it is necessary to perform all the intermediate calculations with a finite photon mass.  {\bf Why? I don't really follow this point very well.}
+Remember that the goal is to use NRQED to calculate bound state energies.  To this end, it is necessary that the theory has poles in the complex plain and can thus be analytically continued to include off-shell bound states.  To ensure this, it is necessary to demand that all external particles be on mass-shell when fixing the coefficients.  For the same reason, it is necessary to perform all the intermediate calculations with a finite photon mass.  
+
+%TODO {\bf Why? I don't really follow this point very well.}
  
 So that the processes we compare have the same meaning, it is necessary for the S-matrix to have the same normalisation in both theories.  Because of this, the normal relativistic normalisation of the QED spinor cannot be used.  It is conventional to set $\bar{u} u = 2m$, but this will make it hard to find a sensible relation between the spinors of QED and NRQED.  Instead, the normalisation $u^\dagger u = 1$ will be used.
 
