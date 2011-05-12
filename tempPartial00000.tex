@@ -1,6 +1,6 @@
 %%This is a very basic article template.
 %%There is just one section and two subsections.
-\documentclass[11pt]{scrbook}
+\documentclass[11pt,oldfontcommands]{memoir}
 
 \include{header}
 \pagenumbering{arabic}
@@ -34,8 +34,8 @@
 \newcommand{\wxd}{\phis^\dagger}
 
 %nonrelativistic fields
-\newcommand{\fnr}{\Psi}
-\newcommand{\fnrb}{\Psi^\dagger}
+\newcommand{\fnr}{\psi}
+\newcommand{\fnrb}{\psi^\dagger}
 
 %relativistic fields
 \newcommand{\fr}{\Psi}
@@ -120,9 +120,13 @@
 
  
 \usepackage{setspace}
-\doublespacing
+\DoubleSpacing
+\title{Universality of Leading Relativistic Corrections to Bound State Gyromagnetic Ratios}
+\author{Timothy J. S. Martin}
+
+
 \begin{document}
-\input{abstract}
+\input{NRQED-review}
 \bibliographystyle{plain}
 \bibliography{refs}
 

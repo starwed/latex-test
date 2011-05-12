@@ -21,7 +21,7 @@ The most generally powerful approach to nonrelativistic bond state theories is t
 
 
 \subsection{A Worked example of Renormalization}
-Let us review how the process of renormalization works when a theory {\it is} renormalizable.
+Let us review how the process of renormalization works when a theory \emph{is} renormalizable.  This review draws heavily from reviews by Lepage \cite{Lepage:1997cs,Lepage:1989hf}, Kinoshita \cite{Kinoshita:1990ai,Kinoshita:1998jfa}, and Labelle \cite{Labelle:1996en}.
 %TODO Define what a cut-off actually is
 
 %TODO Make sure to mention locality of terms!
@@ -49,19 +49,22 @@ These corrections can be calculated from the original theory.  Before, loop-inte
 First consider the calculation of the electron vertex.  Call the original value $T$, which will have contributions from several diagrams.  On such contribution is from the one loop diagram, where a photon is exchanged between the fermion line before and after the interaction.  Call this contribution $T^{(a)}$.  
 
 In the original $\mathcal{L}_0$ theory the contribution would be
+\small
 \beq
 	T{(a)}(k>0) = -e_0^3 \int_{0}^{\Lambda_0} \frac{d^4 k}{(2\pi)^4} \frac{1}{k^2} \left\{
 		\bar{u}(p') \gamma^\mu \frac{1}{(p'-k) \cdot \gamma -m_0} A_{\text{ext}}(p'-p) \cdot \gamma \frac{1}{(p-k) \cdot \gamma -m_0} \gamma_\mu
 		u(p) \right\}
 \eeq  
-
+\normalsize
 
 When the momenta are cut-off at the lower point $\Lambda$, the part of the old integral missing from the new calculation will be
+\small
 \beq
 	T{(a)}(k>\Lambda) = -e_0^3 \int_{\Lambda}^{\Lambda_0} \frac{d^4 k}{(2\pi)^4} \frac{1}{k^2} \left\{
 		\bar{u}(p') \gamma^\mu \frac{1}{(p'-k) \cdot \gamma -m_0} A_{\text{ext}}(p'-p) \cdot \gamma \frac{1}{(p-k) \cdot \gamma -m_0} \gamma_\mu
 		u(p) \right\}
-\eeq  
+\eeq 
+\normalsize
 Remember that $\Lambda$ is chosen to be a great deal greater than $p$, $p'$ or $m_0$, and this then holds for $k$ over the entire range of the integral.  Then, if corrections of the type $p/\Lambda$ are discarded, the integral can be greatly simplified.  The approximation used is:
 
 \beq
@@ -99,7 +102,7 @@ What about the nature of this constant $c_0$?  Consider the above calculation of
 
 That the result of these integrals involves only the limits is contingent upon the approximation made earlier, that the scales $p$, $p'$ and $m_0$ are all small compared to $\Lambda$.  If corrections of that order are important, then there will be additional terms with structures including these momenta and mass.  This can be accomplished by, instead of completely neglecting these terms, doing Taylor expansion in terms of $p/k$, $m_0/k$ and so forth.  We'll return to this later. %TODO check k vs. lambda for expansion  
 
-Going back to the correction $\delta \mathcal{L}$, note that it has almost the same form as a term in the original $\mathcal{L}_0$, the difference being an explicit dependence on the cut-offs $\Lambda$, $\Lambda_0$.  (Although of course, $e_0$ itself depended on comparing measurements to calculations in the $\mathcal{L}_0$ theory, so it really {\it was} dependent on $\Lambda_0$.)  Rather than interpret it as new interaction, then, it can be seen as change in the strength of $e_0$.  
+Going back to the correction $\delta \mathcal{L}$, note that it has almost the same form as a term in the original $\mathcal{L}_0$, the difference being an explicit dependence on the cut-offs $\Lambda$, $\Lambda_0$.  (Although of course, $e_0$ itself depended on comparing measurements to calculations in the $\mathcal{L}_0$ theory, so it really \emph{was} dependent on $\Lambda_0$.)  Rather than interpret it as new interaction, then, it can be seen as change in the strength of $e_0$.  
 
 \beq
  - \bar{\Psi} e_0 A \cdot \gamma  \Psi \to - \bar{\Psi} e_0  [1 + c_0(\Lambda/\Lambda_0) ] A \cdot \gamma  \Psi
@@ -159,7 +162,7 @@ Systematically using such expansions, the high energy part of the loop calculati
 					- \frac{ ie_0 m_0 c_2 }{\Lambda^2}(p-p')^2\bar{u} (A_{\text{ext}} \cdot \gamma) u
 \eeq
 
-The form of these corrections can in some cases be found from explicit calculation.  In such cases, the calculation will also fix the coefficients in the Lagrangian.  However, often it is either difficult or impossible to explicitly ``integrate out'' high momentum contributions to the theory.  One can already see above how much more tedious the integrations over intermediate momenta will become when polynomial terms in $p$ and so forth are included.  There will be a proliferation of new terms to account for in the loop integrals, and if pushed to the next order of correction an unpleasant combinatorical explosion will occur.  The hope is to use NRQED to {\it simplify} the calculation.
+The form of these corrections can in some cases be found from explicit calculation.  In such cases, the calculation will also fix the coefficients in the Lagrangian.  However, often it is either difficult or impossible to explicitly ``integrate out'' high momentum contributions to the theory.  One can already see above how much more tedious the integrations over intermediate momenta will become when polynomial terms in $p$ and so forth are included.  There will be a proliferation of new terms to account for in the loop integrals, and if pushed to the next order of correction an unpleasant combinatorical explosion will occur.  The hope is to use NRQED to \emph{simplify} the calculation.
 
 And there also exist theories where explicit calculation is simply impossible, and the use of an effective Lagrangian is not just a convenience but a necessity.  In low energy QCD it is impossible to work with a perturbative expansion of Feynman diagrams.  Because of the strength of the coupling, such series do not converge.
 
@@ -376,7 +379,7 @@ When acting on the fermion wave functions, the spatial derivative will bring dow
 
 Knowing both the order and symmetries of each building block, the NRQED Lagrangian can be explicitly constructed.
 
-It is the suppressing powers of $1/m$ that keep the number of terms to be considered finite.  A term with six derivatives like $D^6$ need not be considered, because it must appear in $\mathcal{L}_{NRQED}$ as $\v{D}^6 / 32m^5$.  So the first step is to consider what combination of such terms {\it are} allowed, if terms of higher order than $mv^4$ are discarded.  The only allowed spin structure is $\sigma$.
+It is the suppressing powers of $1/m$ that keep the number of terms to be considered finite.  A term with six derivatives like $D^6$ need not be considered, because it must appear in $\mathcal{L}_{NRQED}$ as $\v{D}^6 / 32m^5$.  So the first step is to consider what combination of such terms \emph{are} allowed, if terms of higher order than $mv^4$ are discarded.  The only allowed spin structure is $\sigma$.
 
 The leading order terms appear at $mv^2$.  Since $E$ and $B$ are already too high order, the only available terms are $A_0$, $\partial_0$, and $D_i$.  
 Without spin, $A_0$ and $\partial_0$ appear by themselves.  A single power of $D_i$ has nothing to contract with, and two powers may only be contracted with each other.  So the spinless terms are
@@ -531,7 +534,7 @@ The first part of the calculation of scattering from the NRQED Lagrangian is str
 
 But of course, in calculating from NRQED at this level of precision perturbation theory terms will also enter. This introduces a further renormalization of the coefficients, in a similar manner to the production of counterterms in QED.  Without further correction these perturbations would spoil the agreement of QED and NRQED.  The solution is to introduce an additional term in the NRQED Lagrangian that simply subtracts off the unwanted term.
 
-To again use the Darwin term as an example, it was found that in the absence of perturbation theory the value for $c_D$ labelled $c^{QED}_D$ would cause QED and NRQED to predict the same result.  However, when perturbations are taken into account there will be an {\it additional} contribution, of the same form of the Darwin term, with some coefficient we can call $c^{NRQED}_D$.  So the actual value of $c_D$ should be adjusted in order to bring the two theories back into agreement:
+To again use the Darwin term as an example, it was found that in the absence of perturbation theory the value for $c_D$ labelled $c^{QED}_D$ would cause QED and NRQED to predict the same result.  However, when perturbations are taken into account there will be an \emph{additional} contribution, of the same form of the Darwin term, with some coefficient we can call $c^{NRQED}_D$.  So the actual value of $c_D$ should be adjusted in order to bring the two theories back into agreement:
 \beq
 	c_D = c^{QED}_D - c^{NRQED}_D
 \eeq
