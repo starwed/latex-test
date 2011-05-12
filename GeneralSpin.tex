@@ -36,7 +36,7 @@ The different combinations of position space operators were catalogued in descri
   c_{T_1} \frac{ e\Sb_{ijk} D_i B_j D_k }{8m^3}  + c_{T_2} \frac{ e\Sb_{ijk} (D_i D_j B_k + B_i D_j D_i) }{8m^2} 
 \eeq   
 
-Only one combination of position space operators existed at the needed order, $D_i D_j D_k D_\ell$.  This cannot be coupled to $\Sb_{ijk\ell}$ because it would spoil the kinetic term.  So the only new terms are those in  \eqref{eq:Sg:Lnewterms}.  Adding these to the Lagrangian \eqref{??} found for spin one, the result is
+Only one combination of position space operators existed at the needed order, $D_i D_j D_k D_\ell$.  This cannot be coupled to $\Sb_{ijk\ell}$ because it would spoil the kinetic term.  So the only new terms are those in  \eqref{eq:Sg:Lnewterms}.  Adding these to the Lagrangian \eqref{eq:S1:Lnr} found for spin one, the result is
 
 \beq \label{eq:Sg:nrLFull}
 \begin{split}
@@ -57,7 +57,7 @@ Only one combination of position space operators existed at the needed order, $D
 
 \subsection{Scattering off an external field in NRQED}
 
-To calculate scattering off an external field, that part of the Lagrangian involving only a single power of $A$ is needed.  The terms which arise for spin greater than one are the only modifications from \eqref{??}
+To calculate scattering off an external field, that part of the Lagrangian involving only a single power of $A$ is needed.  The terms which arise for spin greater than one are the only modifications from \eqref{eq:S1:nrqedScatter}
 \small
 \beq
 \begin{split}
@@ -308,10 +308,10 @@ In the appendix \ref{chap:bilinear} the transformations of various bilinears are
 
 The tensor structure is defined by
 
-\beq
+\beq \label{eq:Sg:SigDef}
 	\Sigma_{ij} = -2 i \epsilon_{ijk} \Mblock{S_k}{0}{0}{S_k}
 \eeq
-\beq
+\beq 
 	\Sigma_{0i} = \Mblock{0}{\Sigma_i}{\Sigma_i}{0}
 \eeq
  
@@ -485,9 +485,9 @@ Calculating the scalar bilinear is just straightforward substitution and expansi
 \subsubsection{Tensor $ij$ component}
 
 
-%FIXME eqref problem
-In calculating the nonrelativistic limit of the antisymmetric tensor bilinear, the $0i$ and the $ij$ components will be treated separately.  First consider $\Psigbar \Sigma_{ij} \Psig$.  The value of $\TensBi_{ij}$ itself was written in \eqref{??}
 
+In calculating the nonrelativistic limit of the antisymmetric tensor bilinear, the $0i$ and the $ij$ components will be treated separately.  First consider $\Psigbar \Sigma_{ij} \Psig$.  The value of $\TensBi_{ij}$ itself was written in \eqref{eq:Sg:SigDef}
+\scriptsize
 \beqa
 	\Psigbar \TensBi_{ij} \Psig 
 		&=& \Psigbar (-2\epsilon_{ijk} S_k) \Psig	\\
@@ -498,7 +498,7 @@ In calculating the nonrelativistic limit of the antisymmetric tensor bilinear, t
 				+ \frac{1}{8m^2} \underbrace{\Big[ ( \gv{\Sigma} \cdot \v{p'})^2 S_k + S_k ( \gv{\Sigma} \cdot \v{p})^2 - 2 ( \gv{\Sigma} \cdot \v{p'})S_k ( \gv{\Sigma} \cdot \v{p}) \Big ]}_{T_k}
 			\right \} \phis
 \eeqa
-
+\normalsize
 Call the term in square brackets $T_k$.  It should be written explicitly in terms of $\v{p}$ and $\v{q}$.
 \beqa
 T_k	&=& ( \gv{\Sigma} \cdot \v{p})^2 S_k + S_k ( \gv{\Sigma} \cdot \v{p}) -2 ( \gv{\Sigma} \cdot \v{p}) S_k ( \gv{\Sigma} \cdot \v{p})

@@ -470,6 +470,7 @@ U_2(\v{p_1}, \v{p_2}, \v{q}) &=& 	 e_1 e_2   \Big\{
 \eeqa
 
 None of these terms are gauge-invariant by themselves.  So we'd expect the above to agree with what we'd get if we took the terms in the potential without $\v{A}$ and restored gauge invariance.  That potential was:
+\small
 \beqa
 	U_1(\v{p_1}, \v{p_2}, \v{q}) &=& 	 e_1 e_2   \Big\{
 	\frac{1}{\v{q}^2} - \frac{1}{8m_2^2}\left ( d_D   + d_Q {Q_2}_{ij} \frac{  q_i q_j }{\v{q}^2 } + 2 i d_S \frac{\v{q} \cdot \v{S_2} \times \v{p_2} }{\v{q}^2}  \right ) 
@@ -479,7 +480,7 @@ None of these terms are gauge-invariant by themselves.  So we'd expect the above
 	- \frac{c_F d_F}{4 m_1 m_2} \big( \v{S_1} \cdot \v{S_2} - \frac{(\v{S_1} \cdot \v{q})(\v{S_2} \cdot \v{q})}{\v{q}^2}\big)
 	\Big \}
 \eeqa
-
+\normalsize
 Picking out only terms with the momentum operators $\v{p}_1$, $\v{p}_2$, which we'll call $U_p$, we find:
 \beqa
 	U_p(\v{p_1}, \v{p_2}, \v{q}) &=&  e_1 e_2   \Big\{
@@ -530,7 +531,7 @@ From above, the full interaction potential, in terms of $\v{r}=\v{r_1} - \v{r_2}
 To calculate the bound magnetic moment of the system, the internal degrees of freedom must be separated from the motion of the center of mass.   
 
  
-\section{Separation of motion}
+\section{Separation of the center of mass motion}
 In the interaction above, the potential depends upon the relative displacement $\v{r}$ between the two particles, not upon the absolute positions.  The free Hamiltonians $H_1$ and $H_2$ depend upon the particular position and momentum of the two.  A transformation is needed which splits the Hamiltonian into two parts -- one which corresponding to the motion of a single composite particle, the other corresponding to the internal degrees of freedom of the system.
 
 This transformation can be worked out for the leading order part of the Hamiltonian or Lagrangian, ignoring all the second order terms -- there might be additional corrections that enter from considering such, but they will enter at a higher order than needed here.
@@ -632,13 +633,6 @@ The effects of the unitary transformation on the Hamiltonian reduce to applying 
 
 
 
-
-
-
-
-
-%%%% JUMP
-
 For one particle, that part of the full Hamiltonian which can contribute directly to the gyromagnetic moment is
 \small
 \beq
@@ -654,11 +648,8 @@ For one particle, that part of the full Hamiltonian which can contribute directl
 \normalsize
 After transformation, this is
 
-
-
-
 \small
-\beq
+\beq \label{eq:Br:H}
 \begin{split}
  H'^{(1)}_\text{spin} =&
  -g_1 \frac{e_1}{2m_1} \v{S}_1 \cdot \v{B} \left( 1 - \frac{ \v{p}^2 }{2m_1^2} \right )
@@ -669,7 +660,10 @@ After transformation, this is
 \end{split}
 \eeq
 \normalsize
-This is finally suitable for calculating the bound $g$-factor of the particle.  Taking the matrix element of these terms between $S$ states, $\matrixel{n}{H'}{n}$, the corrections to the free $g$-factor will be found.  First, those terms involving $\v{r} \times \v{A}$ should be rewritten in terms of $\v{B}$:
+
+\section{Calculation of $g_b$}
+
+The Hamiltonian \eqref{eq:Br:H} is finally suitable for calculating the bound $g$-factor of the particle.  Taking the matrix element of these terms between $S$ states, $\matrixel{n}{H'}{n}$, the corrections to the free $g$-factor will be found.  First, those terms involving $\v{r} \times \v{A}$ should be rewritten in terms of $\v{B}$:
 \beq
 	\v{S} \cdot \v{r} \times \v{A} =  \frac{1}{2} \left[ (\v{S} \cdot \v{B}) r^2 - (\v{S} \cdot \v{r}) ( \v{B} \cdot \v{r}) \right ]
 \eeq
@@ -681,11 +675,11 @@ Because the matrix element is taken between spherical states, $r_i r_j$ can be r
 
 With that replacement, there are only two types of terms left in the Hamiltonian:  $\v{p}^2$ terms and $1/r$ terms.  Their respective matrix elements are:
 \beq
-	\matrixel{n}{\frac{1}{r}}{n} = - \frac{m_r e_1 e_2 }{4\pi n^2} = \frac{m_r Z\alpha}{n^2}
+	\matrixel{n}{\frac{1}{r}}{n} = - \frac{m_r e_1 e_2 }{4\pi n^2} = \frac{m_r Z\alpha}{n^2},
 \eeq
 
 \beq
-	\matrixel{n}{\v{p}^2}{n} = \frac{ m_r^2  e_1^2 e_2^2}{16 \pi^2 n^2} = \frac{m_r^2  (Z\alpha)^2}{n^2}
+	\matrixel{n}{\v{p}^2}{n} = \frac{ m_r^2  e_1^2 e_2^2}{16 \pi^2 n^2} = \frac{m_r^2  (Z\alpha)^2}{n^2}.
 \eeq
 
 So finally, applying this to the above Hamiltonian, the bound $g$ factor for the first particle is:
@@ -698,13 +692,12 @@ g_1^\text{bound} =& g_1 \Bigg [ \left( 1 - \frac{ \mu_2^2 e_1^2 e_2^2 }{32 \pi^2
 	\\& + (g_1 - 2) \Bigg [ 
 			\frac{\mu_2^2 e_1^2 e_2^2 }{48\pi^2 n^2} 
 			+ \frac{ \mu_2 e_1 e_2^2 [ e_1 - (e_1 + e_2) \mu_1^2 ] }{96\pi n^2} 
-	\Bigg ]
+	\Bigg ].
 \end{split}
 \eeq
 
-Because both the original Hamiltonian and the unitary transformation were symmetric under exchange of labels, it is necessarily the case that the expression for $g_2$ can be found by just switching $1$ and $2$ everwhere above.
+Because both the original Hamiltonian and the unitary transformation were symmetric under exchange of labels, it is necessarily the case that the expression for $g_2$ can be found by just switching $1$ and $2$ everywhere above.
 
-\subsection{Electron g-factors in hydrogen-like atoms}
 
 When applied to a hydrogen like atom, with one particle the electron and the other a nucleus with charge $Z$, the above can be simplified somewhat.  In this case, $e_1 = -e$ and $ e_2 = Ze$.  Then, 
 
@@ -716,7 +709,7 @@ g_1^\text{bound} =& g_1 \Bigg \{
 			- \frac{ \mu_1^2 Z^2 \alpha [Z\alpha + (Z\alpha - \alpha)\mu_2^2 ]}{3n^2} \Bigg \}
 		\\& + (g_1 - 2) \Bigg \{
 			\frac{ \mu_2^2 (Z\alpha)^2 }{3n^2}
-			+ \frac{ \mu_2^2 Z^2 \alpha[ \alpha + ( Z\alpha - \alpha) \mu_1^2)\mu_1^2 ] }{6n^2} \Bigg \}
+			+ \frac{ \mu_2^2 Z^2 \alpha[ \alpha + ( Z\alpha - \alpha) \mu_1^2)\mu_1^2 ] }{6n^2} \Bigg \}.
 \end{split}
 \eeq
 
