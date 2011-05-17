@@ -1,5 +1,5 @@
 
-\chapter{Spin one-half: Calculation of nonrelativistic Hamiltonian}
+\chapter{Spin one-half: Derivation of nonrelativistic Hamiltonian}
 
 \section{Structure of the spin one-half theory}
 
@@ -11,7 +11,7 @@ In the relativistic theory, the electrons are part of a fermion field that also 
 The relativistic Lagrangian for the fermion fields is
 \beqa
 \mathcal{L} &=&	
-	\Psigbar(i \partial \cdot \gamma - e A \cdot \gamma - m)\Psig  - \frac{1}{4} F_{\mu\nu} F^{\mu\nu}
+	\Psigbar(i \partial \cdot \gamma - e A \cdot \gamma - m)\Psig  - \frac{1}{4} F_{\mu\nu} F^{\mu\nu}.
 \eeqa
 
 The fermion fields are $\Psig$ ($\Psi$ being reserved for the fermion fields in the nonrelativistic theory), the photon field is $A$.   $m$ is the particle's mass, and $e$ the electron's charge.  The $\gamma$ matrices mix the different components.  %TODO better explanation of gamma matrices
@@ -20,11 +20,11 @@ It will be convenient to work in a representation which already suggests the non
 
 In this representation, the gamma matrices are written
 \beq
-	\gamma^0 = \Mblock{1}{0}{0}{-1}
+	\gamma^0 = \Mblock{1}{0}{0}{-1},
 \eeq
 
 \beq
-	\gamma^i = \Mblock{0}{\sigma_i}{-\sigma_i}{0}
+	\gamma^i = \Mblock{0}{\sigma_i}{-\sigma_i}{0}.
 \eeq	
 
 
@@ -38,40 +38,40 @@ There is the identity --- such bilinears transform as a scalar.
 Symmetric combinations are not considered because $\{ \gamma^\mu, \gamma^\nu \}= g^{\mu\nu}$.  The antisymmetric combinations are explicitly
  \beqa
 	  {[\gamma^0, \gamma^i]}
-		&=&  2 \gamma^0 \gamma^i = \begin{pmatrix}	0 & 2\sigma_i \\ 2\sigma_i & 0\end{pmatrix}	\\
+		&=&  2 \gamma^0 \gamma^i = \begin{pmatrix}	0 & 2\sigma_i \\ 2\sigma_i & 0\end{pmatrix},	\\
 	  {[\gamma^i, \gamma^j ]}
-		&=&	 \begin{pmatrix}	-2i\epsilon_{ijk}\sigma_k & 0 \\ 0 & -2i\epsilon_{ijk}\sigma_k\end{pmatrix}
+		&=&	 \begin{pmatrix}	-2i\epsilon_{ijk}\sigma_k & 0 \\ 0 & -2i\epsilon_{ijk}\sigma_k\end{pmatrix}.
 \eeqa
 Using these a tensor like structure arises:
 \beq
-	\sigma^{\mu \nu} = i \frac{1}{2} [ \gamma^\mu, \gamma^\nu]	%defined as in Peskin p.50
+	\sigma^{\mu \nu} = i \frac{1}{2} [ \gamma^\mu, \gamma^\nu].	%defined as in Peskin p.50
 \eeq
 
 The specific form in the Dirac representation is
 \beq
 	\sigma^{ij} = \frac{i}{2} [ \gamma^i, \gamma^j] 
-		= \epsilon_{ijk} \Mblock{\sigma_k}{0}{0}{\sigma_k}
+		= \epsilon_{ijk} \Mblock{\sigma_k}{0}{0}{\sigma_k},
 \eeq
 \beq
 	\sigma^{0i} = i \gamma^0 \gamma^i 
-			= \Mblock{0}{i \sigma_i}{i \sigma_i}{0}
+			= \Mblock{0}{i \sigma_i}{i \sigma_i}{0}.
 \eeq
 
 The product of each gamma matrix in turn gives a pseudo-scalar:
 \beq
-	\gamma^5 = i \gamma^0 \gamma^1 \gamma^2 \gamma^3 = \Mblock{0}{1}{1}{0}
+	\gamma^5 = i \gamma^0 \gamma^1 \gamma^2 \gamma^3 = \Mblock{0}{1}{1}{0}.
 \eeq
  
  The product of $\gamma^5$ and $\gamma^\mu$ gives a pseudo-vector
  \beq
- 	\gamma^5 \gamma^\mu 
+ 	\gamma^5 \gamma^\mu .
  \eeq
  
  
  
-Solutions of the Dirac equation in momentum space are the spinors $\sr$.  They have four degrees of freedom, and can be treated as a bispinor consisting of an upper and lower spinor.  In the chiral basis the upper and lower components have opposite helicity; in the Dirac basis, opposite charge.
+Solutions of the Dirac equation in momentum space are the spinors $\sr$.  They have four degrees of freedom, and can be treated as a bispinor consisting of an upper and lower spinor.  In the chiral basis the upper and lower components have opposite helicity; in the Dirac basis, opposite charge:
 \beq
-	\sr = \begin{pmatrix} \eta \\ \chi \end{pmatrix}
+	\sr = \begin{pmatrix} \eta \\ \chi \end{pmatrix}.
 \eeq
 
 
@@ -79,12 +79,12 @@ Solutions of the Dirac equation in momentum space are the spinors $\sr$.  They h
  
 \subsection{Nonrelativistic framework for spin one-half}
 The nonrelativistic theory describes a single particle, without its oppositely charged antiparticle.  
-
+%FIXME a bit more word here
 
 
 \beqa
-	\eta &=& \left( 1  - \frac{\v{p}^2}{8m^2} \right ) w	\\
-	\chi &=& 	\frac{ \gv{\sigma} \cdot \v{p}}{2m} \left(1 - \frac{3\v{p}^2}{8m^2} \right ) w	\\
+	\eta &=& \left( 1  - \frac{\v{p}^2}{8m^2} \right ) w,	\\
+	\chi &=& 	\frac{ \gv{\sigma} \cdot \v{p}}{2m} \left(1 - \frac{3\v{p}^2}{8m^2} \right ) w.	\\
 \eeqa
 
 
@@ -114,7 +114,7 @@ The starting point will be the relativistic Lagrangian of Dirac.  However, remem
 Knowing that there will actually be bound-state corrections proportional to $g-2$, it is necessary to somehow include this anomalous term.  The way to do so is to introduce a new local interaction into the Lagrangian, coming from the high energy radiative corrections which dress the electron vertex.  The Lagrangian to be used is, then
 \beqa
 \mathcal{L} &=&	
-	\Psigbar(\cancel{D} - m)\Psi + \frac{1}{2} \mu' \bar{\Psi} \sigma^{\mu\nu}F_{\mu\nu} \Psig	
+	\Psigbar(\cancel{D} - m)\Psi + \frac{1}{2} \mu' \bar{\Psi} \sigma^{\mu\nu}F_{\mu\nu} \Psig.
 \eeqa
 %TODO check \mu_0
 $\mu'$ is the correction to the classical moment $\mu_0 = \frac{e}{2m}$, and is equal to $(g-2)/2 \mu_0$.  $D$ is the long derivative $\partial + ieA$.
@@ -123,17 +123,17 @@ $\mu'$ is the correction to the classical moment $\mu_0 = \frac{e}{2m}$, and is 
 From this Lagrangian the equations of motion of the particle may be obtained from the Euler-Lagrange method.  The Euler-Lagrange equation is
 \beq
 \pd{ \mathcal{L}}{{ \Psigbar } } - \partial_\mu \frac{\partial \mathcal{L}} {\partial (\partial_\mu { \Psigbar )} } 
-	= 0	
+	= 0	.
 \eeq
 
 In the Lagrangian above, we can consider that all differential operators act only on the right field $\Psi$.  (This freedom of choice comes from being able to rewrite the Lagrangian through integration by parts, without changing its physical meaning.)  So the second term in the Euler-Lagrange equation can be ignored, and after differentiating with respect to $\bar{\Psi}$ the following equation is obtained:
 \beq
-	(i\cancel{D} - m + \frac{1}{2} \mu'  \sigma^{\mu\nu}F_{\mu\nu} )\Psig = 0	
+	(i\cancel{D} - m + \frac{1}{2} \mu'  \sigma^{\mu\nu}F_{\mu\nu} )\Psig = 0	.
 \eeq
 Writing explicitly in terms of the $\gamma$ matrices, this is
 \beq \label{eq:Sh:eom}
 	\left( (i\partial_\mu- eA_\mu)\gamma^\mu -m + i\mu' \frac{1}{4}[ \gamma^\mu, \gamma^\nu]F_{\mu\nu} \right) \Psig
-		=0
+		=0 .
 \eeq
 This equation of motion is invariant under Lorentz transformations.  It is written in terms of the Dirac bispinor $\Psi$, external fields $A_\mu$ and $F_{\mu\nu}$, and the gamma matrices.  To apply in to a nonrelativistic problem, the very first step will be to rewrite it in terms of the sorts of quantities that appear in that domain: three-vectors and scalars.
 
@@ -147,14 +147,14 @@ Using the antisymmetry of $\sigma^{\mu\nu} \equiv $, and that we deal with time-
 		&=&	F_{ij} \sigma^{ij} -2F_{0i} \sigma^{0i}	\\
 		&=&	2 \partial_i A_j \sigma^{ij} - 2\partial_i \Phi \sigma^{0i}	\\
 		&=&	-2i \begin{pmatrix} \sigdot{B} & 0 \\ 0 & \sigdot{B}\end{pmatrix}	
-			-2 \begin{pmatrix} 0 & \sigdot{E} \\ \sigdot{E} & 0 \end{pmatrix}	
+			-2 \begin{pmatrix} 0 & \sigdot{E} \\ \sigdot{E} & 0 \end{pmatrix}.	
 \eeqa
 
 So far the discussion has been in position space.  To work out the nonrelativistic form it will be easier to talk about the equations of motion directly in terms of energy and momentum.  So replace $i\partial_t$ with $p_0$, and $i\partial_i$ with $p_i$.  Likewise, replace the gauge invariant derivative  $iD_i = \pi_i = p_i - eA_i$.
 
 A solution of definite momentum $p$ to the equation is written in terms of upper and lower components
 \beq
-	u = \begin{pmatrix} \eta \\ \chi \end{pmatrix}
+	u = \begin{pmatrix} \eta \\ \chi \end{pmatrix}.
 \eeq
 
 
@@ -177,7 +177,7 @@ With these considerations, the \eqref{eq:Sh:eom} can be rewritten acting explici
 			\end{pmatrix}
 		\right ] 
 	\right\} \begin{pmatrix} \eta \\ \chi \end{pmatrix}
-		= 0
+		= 0.
 \eeq
 \normalsize
 This gives rise to exact coupled equations for $\eta$ and $\chi$.  So far this is in principle the same as the relativistic equation, only the form in which it is written is non covariant.
@@ -190,37 +190,37 @@ The upshot is that although the equation above is really a set of coupled equati
 
 Because the off diagonal terms are small, the set of coupled equations may be solved perturbatively.  The particular quantity of interest is the nonrelativistic energy of the particle $\epsilon = p_0 - m$.  For a free particle, this would be
 \beq
-	\epsilon = p_0 - m \approx \frac{\v{p}^2}{2m} + \frac{\v{p}^4}{8m^3} + \mathcal{O}\left (\frac{\v{p}^6}{m^5} \right )
+	\epsilon = p_0 - m \approx \frac{\v{p}^2}{2m} + \frac{\v{p}^4}{8m^3} + \mathcal{O}\left (\frac{\v{p}^6}{m^5} \right ).
 \eeq  
 
 In order to perform this perturbative analysis the order of various terms needs to be established.  It's evident that at leading order $\epsilon \sim mv^2$.  From earlier analysis,   $\Phi\sim mv^2$, $\v{\pi} \sim mv$, and $\v{E} \sim m^2v^3$.
 
 First, find an expression for $\chi$ in terms of $\eta$.  The second of the set of equations represented by \eqref{eq:Sh:matrixEOM} is
 \beq
-	(-p_0 + e\Phi - m) \chi + \sigdotg{\pi} \eta + \mu'( \sigdot{B} \chi - i \sigdot{E}  \eta)
+	(-p_0 + e\Phi - m) \chi + \sigdotg{\pi} \eta + \mu'( \sigdot{B} \chi - i \sigdot{E}  \eta).
 \eeq
 Writing $p_0 = \epsilon + m$, and grouping terms, the result is that
 \beq
-	\left( \epsilon + 2m - \mu' \sigdot{B} \right ) \chi = \left( \sigdotg{\pi} - i\sigdot{E} \right) \eta	
+	\left( \epsilon + 2m - \mu' \sigdot{B} \right ) \chi = \left( \sigdotg{\pi} - i\sigdot{E} \right) \eta	.
 \eeq
 It is necessary now to approximate $\chi$ in terms of $\eta$.  Because $\epsilon$ and $\abs{B}$ are smaller than $m$, and only second order terms are needed for the final result:
 \beq
-	\chi \approx	\frac{1}{2m} \left ( 1- \frac{\epsilon - e\Phi - \mu' \sigdot{B}}{2m} \right ) (\sigdotg{\pi} - i\mu' \sigdot{E} )\phi
+	\chi \approx	\frac{1}{2m} \left ( 1- \frac{\epsilon - e\Phi - \mu' \sigdot{B}}{2m} \right ) (\sigdotg{\pi} - i\mu' \sigdot{E} )\phi.
 \eeq
 
 With this expression $\chi$ may be eliminated from the first of the set of equations (at least at the necessary order).  The resulting equation will only involve $\eta$, and so may be used to solve for energy $\epsilon$ of  $\eta$.
 
 The original equation is
 \beq
-	(p_0 - e\Phi - m) \eta - \sigdotg{\pi} \chi + \mu'( \sigdot{B}\eta  - i \sigdot{E} \chi ) 
+	(p_0 - e\Phi - m) \eta - \sigdotg{\pi} \chi + \mu'( \sigdot{B}\eta  - i \sigdot{E} \chi ) .
 \eeq
 So again using $p_0 - m = \epsilon$
 \beq
-	\epsilon \eta 	= (e\Phi - \mu' \sigdot{B} )\eta + (\sigdot{E} + \sigdotg{\pi}) \chi	
+	\epsilon \eta 	= (e\Phi - \mu' \sigdot{B} )\eta + (\sigdot{E} + \sigdotg{\pi}) \chi	.
 \eeq
 Now the expression for $\chi$ in terms of $\eta$ may be used.
 \beq
- 	\epsilon \eta \approx (e\Phi - \mu' \sigdot{B} )\eta + (\sigdot{E} + \sigdotg{\pi})  \frac{1}{2m} \left ( 1- \frac{\epsilon - e\Phi - \mu' \sigdot{B}}{2m} \right ) (\sigdotg{\pi} - i\mu' \sigdot{E} )\eta 
+ 	\epsilon \eta \approx (e\Phi - \mu' \sigdot{B} )\eta + (\sigdot{E} + \sigdotg{\pi})  \frac{1}{2m} \left ( 1- \frac{\epsilon - e\Phi - \mu' \sigdot{B}}{2m} \right ) (\sigdotg{\pi} - i\mu' \sigdot{E} )\eta .
 \eeq				
  
 Writing the $1/m$ and $1/m^2$ terms separately:
@@ -228,7 +228,7 @@ Writing the $1/m$ and $1/m^2$ terms separately:
 \begin{split}				\epsilon \eta		\approx& \left \{
 		e\Phi - \mu' \sigdot{B} + \frac{ \exminus \explus}{2m}	\right. \\
 		& \left. +\frac{1}{4m^2} \exminus (\mu' \sigdot{B} - [\epsilon - e\Phi]) \explus 	
-	\right \} \eta	
+	\right \} \eta	.
 \end{split}
 \eeq
 
@@ -237,7 +237,7 @@ Several of the terms are of too high order to consider.  A term with both $E$ an
 	\epsilon \eta \approx \left \{
 				e\Phi - \mu' \sigdot{B} + \frac{(\sigdotg{\pi})^2 - i\mu' [\sigdotg{\pi}, \sigdot{E}]}{2m}
 				+\frac{1}{4m^2} \sigdotg{\pi} (\mu' \sigdot{B} - [\epsilon - e\Phi]) \sigdotg{\pi} 
-			\right \} \eta
+			\right \} \eta.
 \eeq
 This is an expression for the energy $\epsilon$ of the particle, in terms of operators.  This will yield the nonrelativistic Hamiltonian.  There is still some manipulation required, though, because the right hand side also contains $\epsilon$.  But since the leading order terms don't, it may be perturbatively solved for.  (The above expression could be simplified somewhat, using the properties of $\sigma$ matrices for instance, but for now it is more convenient to write it compactly.)
 
@@ -245,16 +245,16 @@ To that end, the Hamiltonian can be split into leading order and second order te
  Since the leading order term in H is $\mathcal{O}(mv^2)$, this suggests we split it into two parts: $H = H_0 + H_1 +\mathcal{O}(mv^6, (e/m) B v^4)$, where $H_1$ consists of only second order terms.
 \beqa
 	\hat{H_0} 
-			&=&  e\Phi - \mu' \sigdot{B} + \frac{ (\sigdotg{\pi})^2}{2m}	\\
+			&=&  e\Phi - \mu' \sigdot{B} + \frac{ (\sigdotg{\pi})^2}{2m},	\\
 	\hat{H_1} 
 			&=& -\frac{i\mu'}{2m}  [\sigdotg{\pi}, \sigdot{E}]
-				+\frac{1}{4m^2} \sigdotg{\pi} (\mu' \sigdot{B} - [\epsilon - e\Phi]) \sigdotg{\pi} 
+				+\frac{1}{4m^2} \sigdotg{\pi} (\mu' \sigdot{B} - [\epsilon - e\Phi]) \sigdotg{\pi} .
 \eeqa
 $H_1$ contains $\epsilon$, along with other terms of total order $mv^2$.  So to eliminate $\epsilon$ from $H_1$ it'll only be necessary to find it to leading order.
 \beqa
 	\epsilon \eta
 			&=& \left(\hat{H_0} + \mathcal{O}(mv^4) \right)\eta 										\\
-			&\approx& \left(e\Phi - \mu' \sigdot{B} + \frac{ (\sigdotg{\pi})^2}{2m}	\right) \eta			
+			&\approx& \left(e\Phi - \mu' \sigdot{B} + \frac{ (\sigdotg{\pi})^2}{2m}	\right) \eta.			
 \eeqa
 The operators on the right hand side, operating on $\eta$, produce $\epsilon$.  The combination actually needed is $\sigdotg{\pi} \epsilon \sigdotg{\pi}$.  To that end, start with $\sigdotg{\pi}^2 \epsilon$ and use commutation relations.
 \beqa
@@ -274,29 +274,29 @@ With this $\epsilon$ is eliminated, leaving:
 			- \frac{(\sigdotg{\pi})^4}{2m} 
 			+ \mu' (\sigdotg{\pi})^2 \sigdot{B} 
 			+ \sigdotg{\pi}[e\Phi, \sigdotg{\pi}]
-		\right)
+		\right).
 \eeq
 Some terms couple $A$ and $B$; they can be dropped.  Some simplification of the structures involving $\sigma$ matrices can be done.  To start with, simplify $(\sigdotg{\pi})^2$.
 \beq
-	(\sigdotg{\pi})^2 = \sigma_i \sigma_j \pi_i \pi_j = \pi^2 - i\epsilon_{ijk} \pi_i \pi_j \sigma_k
+	(\sigdotg{\pi})^2 = \sigma_i \sigma_j \pi_i \pi_j = \pi^2 - i\epsilon_{ijk} \pi_i \pi_j \sigma_k.
 \eeq
 Since $\v{p} \times \v{p} = \v{A} \times \v{A} = 0$, from $\gv{\pi} \times \gv{\pi}$ only the cross terms survive:
 \beq
-	(\sigdotg{\pi})^2 = \pi^2 - i e \epsilon_{ijk}(p_i A_j - A_i p_j) = \pi^2 - e \sigdot{B}
+	(\sigdotg{\pi})^2 = \pi^2 - i e \epsilon_{ijk}(p_i A_j - A_i p_j) = \pi^2 - e \sigdot{B}.
 \eeq
 Looking at the terms $\mu' \sigdotg{\pi} \sigdot{B} \sigdotg{\pi} + \mu' (\sigdotg{\pi})^2 \sigdot{B}$, they contain an anticommutator involving $B$ and $p$.  Because the magnetic field is assumed to be constant, $p$ and $B$ commute, so: 
 \beqa
 \{ \sigdot{B}, \sigdot{p} \}	&=&		B_i p_j \{\sigma_i, \sigma_j\}	\\
-		&=&	2\v{B}\cdot \v{p}	
+		&=&	2\v{B}\cdot \v{p}.
 \eeqa
 The commutator of $\Phi$ and a derivative operator should give the electric field $E$:
 \beq
-	[ \Phi, \sigdotg{\pi} ]	= [ \Phi, p_i] \sigma_i = -iE_i \sigma_i = -i\sigdot{E} 
+	[ \Phi, \sigdotg{\pi} ]	= [ \Phi, p_i] \sigma_i = -iE_i \sigma_i = -i\sigdot{E} .
 \eeq
 Using these identities, the Hamiltonian can be expressed as:
 \beq
 	\hat{H_0} 
-			=  e\Phi - \mu' \sigdot{B} + \frac{ \pi^2}{2m} - \frac{e}{2m} \sigdot{B}	\\
+			=  e\Phi - \mu' \sigdot{B} + \frac{ \pi^2}{2m} - \frac{e}{2m} \sigdot{B},	\\
 \eeq
 \beq
 	\hat{H}_1	=
@@ -306,7 +306,7 @@ Using these identities, the Hamiltonian can be expressed as:
 		+ \mu' \left(	
 			\frac{ \sigdot{p} \v{B}\cdot \v{p} }{2m^2}
 			-\frac{i[\sigdotg{\pi}, \sigdot{E}]}{2m} 
-		\right )
+		\right ).
 \eeq
 There are still some simplifications that can be made to terms quadratic in $\sigma$, but it'll be more convenient for now to keep $H$ written as is.
 
@@ -320,56 +320,57 @@ To find the necessary transformation, we can use the relativistic current densit
 		&=& \int d^3x 	\left[ \eta^\dagger \phi + \left (\frac{\sigdotg{\pi}}{2m} \phi \right)^\dagger
 										   \left (\frac{\sigdotg{\pi}}{2m} \eta \right)
 						\right ]	\\
-		&=& \int d^3x 	\eta^\dagger \left[ 1 + \frac{ (\sigdotg{\pi})^2 }{4m^2} \right ] \eta
+		&=& \int d^3x 	\eta^\dagger \left[ 1 + \frac{ (\sigdotg{\pi})^2 }{4m^2} \right ] \eta.
 \eeqa
 Since we know that $\langle \phis, \phis \rangle=1$ this shows that if $\eta = \left( 1 - \frac{ (\sigdotg{\pi})^2 }{8m^2} \right )\phis$, the current conservation works out correctly.
 
 
 We now need to find the form of $\hat{H}$ after this transformation.  For now work with the general form:
 \beq
-	\epsilon \eta = (\hat{H}_0 + \hat{H}_1) \eta 
+	\epsilon \eta = (\hat{H}_0 + \hat{H}_1) \eta .
 \eeq
 After changing to the Schrodinger like wave functions, this becomes:
 \beq
-	\epsilon \left (1 - \frac{(\sigdotg{\pi})^2}{8m^2} \right )\phi_S =  (\hat{H}_0 + \hat{H}_1) \left(1 - \frac{(\sigdotg{\pi})^2}{8m^2}\right)\phi_S 
+	\epsilon \left (1 - \frac{(\sigdotg{\pi})^2}{8m^2} \right )\phi_S 
+		=  (\hat{H}_0 + \hat{H}_1) \left(1 - \frac{(\sigdotg{\pi})^2}{8m^2}\right)\phi_S .
 \eeq
 To the order needed the inverse of $1 + \sigdotg{\pi}^2 / 8m^2 $ is just $1 - \sigdotg{\pi}^2 / 8m^2 $, so eliminating that on the left hand side gives:
 \beq
-	\epsilon \phi_S =  (1 + \frac{(\sigdotg{\pi})^2}{8m^2})(\hat{H}_0 + \hat{H}_1) (1 - \frac{(\sigdotg{\pi})^2}{8m^2})\phi_S
+	\epsilon \phi_S =  (1 + \frac{(\sigdotg{\pi})^2}{8m^2})(\hat{H}_0 + \hat{H}_1) (1 - \frac{(\sigdotg{\pi})^2}{8m^2})\phi_S .
 \eeq
 Since $H_1$ is already second order, these further corrections don't involve it directly.  Expressing the result as a commutator:
 \beq
-	\epsilon \phi_S = \left (  \hat{H}_0 + \frac{1}{8m^2}[(\sigdotg{\pi})^2, \hat{H}_0] + \hat{H}_1 \right )\phi_S 
+	\epsilon \phi_S = \left (  \hat{H}_0 + \frac{1}{8m^2}[(\sigdotg{\pi})^2, \hat{H}_0] + \hat{H}_1 \right )\phi_S .
 \eeq
 So under the FW transformation, the leading order term is unchanged, and the second order term is:
 \beq
-	 \hat{H}_1 \to \hat{H}_1' = \hat{H}_1 + \frac{1}{8m^2}[(\sigdotg{\pi})^2, \hat{H}_0]
+	 \hat{H}_1 \to \hat{H}_1' = \hat{H}_1 + \frac{1}{8m^2}[(\sigdotg{\pi})^2, \hat{H}_0] .
 \eeq
 
 The final step is to simplify the commutator $ [(\sigdotg{\pi})^2, \hat{H}_0] $.
   
-\beq [(\sigdotg{\pi})^2, \hat{H}_0] = [(\sigdotg{\pi})^2, e\Phi - \mu' \sigdot{B} + \frac {(\sigdotg{\pi})^2}{2m}] \eeq
+\beq [(\sigdotg{\pi})^2, \hat{H}_0] = [(\sigdotg{\pi})^2, e\Phi - \mu' \sigdot{B} + \frac {(\sigdotg{\pi})^2}{2m}] . \eeq
 
 Obviously $(\sigdotg{\pi})^2$ commutes with itself, so that term vanishes.  Since $\sigdot{B}$ is constant, that commutator will also disappear.  Writing $\sigdotg{\pi}$ as shown earlier:
-$$[(\sigdotg{\pi})^2, \mu' \sigdot{B}] =[\pi^2 - e \sigdot{B}, \mu'\sigdot{B}] = 0 $$
+$$[(\sigdotg{\pi})^2, \mu' \sigdot{B}] =[\pi^2 - e \sigdot{B}, \mu'\sigdot{B}] = 0 .$$
 
 
 The non-trivial part is the commutation of the derivative operators with the electric potential $\Phi$. 
 \beqa
 [(\sigdotg{\pi})^2, \hat{H}_0] &=& [(\sigdotg{\pi})^2, e\Phi] \\
 		&=&	e( \sigdotg{\pi}[\sigdotg{\pi},  \Phi] + [\sigdotg{\pi},  \Phi]\sigdotg{\pi}) \\
-		&=&	i e( \sigdotg{\pi} \sigdot{E} + \sigdot{E} \sigdotg{\pi} ) \\
+		&=&	i e( \sigdotg{\pi} \sigdot{E} + \sigdot{E} \sigdotg{\pi} ). \\
 \eeqa
 So, writing down the new $H_1'$:
 \beqa
 \hat{H}_1' 
 	&=&  \hat{H}_1 + \frac{i e}{8m^2}( \sigdotg{\pi} \sigdot{E} + \sigdot{E} \sigdotg{\pi} )	\\
 	&=&	 -\frac{\pi^4}{8m^3} + e \frac{p^2}{4m^3}\sigdot{B} - \frac{ie}{8m^2}[\sigdot{E},\sigdotg{\pi}]
-		 + \mu' \left( \frac{ (\sigdot{p}) (B \cdot p) }{2m^2} - \frac{i}{2m}[\sigdot{E},\sigdotg{\pi}] \right)
+		 + \mu' \left( \frac{ (\sigdot{p}) (B \cdot p) }{2m^2} - \frac{i}{2m}[\sigdot{E},\sigdotg{\pi}] \right).
 \eeqa
 
 \subsection*{Nonrelativistic Hamiltonian}
-From the relativistic equations of motion, a nonrelativistic Hamiltonian was defined in terms of Schrodinger-like wave functions that conserve probability.  The final result may now be written down.  For comparison with other work, rather than writing in terms of $\mu'$, it will be written in terms of the gyromagnetic ratio $g$.  Because terms proportional to $g-2$ may enter seperately, it is convenient to express all $g$ dependent terms as linear combinations of $g$ and $g-2$. 
+From the relativistic equations of motion, a nonrelativistic Hamiltonian was defined in terms of Schrodinger-like wave functions that conserve probability.  The final result may now be written down.  For comparison with other work, rather than writing in terms of $\mu'$, it will be written in terms of the gyromagnetic ratio $g$.  Because terms proportional to $g-2$ may enter separately, it is convenient to express all $g$ dependent terms as linear combinations of $g$ and $g-2$. 
 
 So the entire Hamiltonian, using $\mu' = \frac{g-2}{2}\mu_0 = \frac{g-2}{2}\frac{e}{2m} $, is:
 \beqa
@@ -392,7 +393,7 @@ H	&=&	e\Phi  + \frac{ \pi^2}{2m}
 			\frac{g}{2} \left( 1 - \frac{p^2}{2m^2} \right) \sigdot{B} + \frac{g-2}{2} \frac{p^2}{2m^2}\sigdot{B}
 	\\&&		- \frac{g-2}{2} \frac{ (\sigdot{p}) (\v	{B} \cdot \v{p}) }{2m^2} 
 			+\left(\frac{g}{2} + \frac{g-2}{2}\right) \gv{\sigma} \cdot (\v{E} \times \gv{\pi})
-		\Big \}	
+		\Big \}	.
 \eeqa
 			
 
@@ -420,12 +421,12 @@ For spin one-half, up to the order desired, the form of the NRQED Lagrangian inv
 		+ c_{W1} \frac{ e \v{D}^2 \v{S} \cdot \v{B} + \v{S} \cdot \v{B} \v{D}^2 }{8m^3}
 		- c_{W2} \frac{e D_i (\v{S} \cdot \v{B}) D_i}{4m^3}
 \\	&		+c_{p'p} \frac{ e [ (\v{S}\cdot \v{D})(\v{B} \cdot \v{D}) + (\v{B} \cdot \v{D})(\v{S}\cdot \v{D})]}{8m^3}
-		\Bigg \} \fnr
+		\Bigg \} \fnr.
 \end{split}
 \eeq
 Each term contains two fermion fields, and zero, one or two powers of the photon field.  Terms with a different number of photon fields, of course, correspond to different physical processes.  But because gauge invariance is a necessary feature of the theory, the coefficients of many terms involving the photon field are constrained to be the same as that of terms with a smaller number of such fields.  For instance, the gauge invariant term $\v{D}^2/(2m)$ is: 
 \beq	
-	\frac{\v{D}^2}{2m} = \frac{ \grad^2 - i e (\grad \cdot \v{A} + e \v{A} \cdot \grad ) - e^2 \v{A}^2 }{2m}
+	\frac{\v{D}^2}{2m} = \frac{ \grad^2 - i e (\grad \cdot \v{A} + e \v{A} \cdot \grad ) - e^2 \v{A}^2 }{2m}.
 \eeq
 The first term above, containing $\grad^2$, is a purely kinetic term.  The other two represent interactions with one or two photon fields.  To fix these coefficients, two physical processes could be calculated and compared with the QED results, but in the end they must have the same coefficient as guaranteed by gauge invariance.
 
@@ -437,7 +438,7 @@ To fix these terms, some physical process must be chosen.  For the one photon te
 %First form
 To fix all the terms in the NRQED Lagrangian which have a single power of the photon field, it suffices to calculate the scattering of an electron off an external field, as represented (in QED) by the diagram
 
-   \includegraphics[scale=0.8]{eps/blob-wave} 
+\begin{center}   \includegraphics[scale=0.8]{eps/blob-wave} \end{center} 
 	%TODO add additional diagrams
 
 
@@ -447,7 +448,7 @@ However, it turns out that the actual \emph{form} of the interaction is highly c
 
 The first symmetry that constrains the interaction is that it must be invariant under Lorentz transformations.  Since every term involves the photon field $A_\mu$ and has external fermion legs, then the interaction must be proportional to the general form:
 \beq
-	A_\mu \srb(p') \Gamma^\mu(p', p) \sr(p) 
+	A_\mu \srb(p') \Gamma^\mu(p', p) \sr(p).
 \eeq 	
 and $\srb(p') \Gamma^\mu(p', p) \sr(p) $ must transform as a Lorentz vector.  If it did not, the whole would not be Lorentz invariant.  To leading order $\Gamma^\mu = \gamma^\mu$, since the fundamental vertex is just that.  The corrections, whatever the exact details of the processes which produce them, can only depend on the momenta $p$ and $p'$, in addition to constants $m$ and $e$, and such structures as may act upon the spinors.
 
@@ -459,25 +460,25 @@ The vector bilinear $\srb \gamma^\mu \sr$ already has the correct transformation
 
 The momenta terms available are $p$ and $p'$.  However, the terms constructed from them are not independent, because each must separately obey current conservation.  So whatever terms go into $\Gamma^\mu$, $q_\mu \srb \Gamma^\mu \sr = 0$.  The unique scalar term will be
 \beq
-	\frac{p^\mu + p'^\mu}{2m} \srb \sr
+	\frac{p^\mu + p'^\mu}{2m} \srb \sr,
 \eeq     
 which vanishes because $(p'+p) \cdot (p'-p) = p'^2 - p^2 = m^2- m^2=0$.
 
 The unique tensor term allowed will be
 \beq
-	\frac{q_\nu}{2m} \srb \sigma^{\mu\nu} \sr
+	\frac{q_\nu}{2m} \srb \sigma^{\mu\nu} \sr,
 \eeq
 which conserves current because $\sigma^{\mu\nu}$ is antisymmetric.  So from these considerations, the general form of the vertex will have three terms, each with a momentum dependant coefficient:
 \beq \label{eq:Sh:Gamma}
 	\srb \Gamma^\mu \sr 
 		= 	c_1(p, p') \frac{p^\mu + p'^\mu}{2m} \srb \sr
 			+ c_2(p, p') \srb \gamma^\mu \sr
-			+ c_3(p, p') \frac{q_\mu}{2m} \srb \sigma^{\mu\nu} \sr
+			+ c_3(p, p') \frac{q_\mu}{2m} \srb \sigma^{\mu\nu} \sr.
 \eeq
 
 However, there is one more consideration.  From the Dirac equation can be derived the Gordon identity, which relates these three terms:
 \beq \label{eq:Sh:gordon}
-	\srb \gamma^\mu \sr = \srb \left( \frac{p^\mu + p'^\mu }{2m} + \frac{i \sigma^{\mu\nu}q_\nu}{2m} \right ) \sr
+	\srb \gamma^\mu \sr = \srb \left( \frac{p^\mu + p'^\mu }{2m} + \frac{i \sigma^{\mu\nu}q_\nu}{2m} \right ) \sr.
 \eeq
 
 With this, any one of the terms in \eqref{eq:Sh:Gamma} can be rewritten as some combination of the other two, and its coefficient effectively absorbed into the other two.  To write down the most general form of the vertex, one need only choose two of the three terms.  Which two to choose might depend on the nature of the calculation; at any rate, there are always three paths to go down.
@@ -487,29 +488,29 @@ In the calculation of scattering off an external field an agnostic approach will
 The vertex can be written in each of three ways.  The form factors will be defined with respect to the particular combination of $\gamma^\mu$ and $\sigma^{\mu\nu}$ terms.
 
 \beq
-	\Gamma^\mu = \gamma^\mu F_1(q^2) + i \frac{\sigma^{\mu\nu}q_\nu}{2m} F_2 (q^2)
+	\Gamma^\mu = \gamma^\mu F_1(q^2) + i \frac{\sigma^{\mu\nu}q_\nu}{2m} F_2 (q^2).
 \eeq
 
 Using the Gordon identity to write this in terms of the scalar and vector bilinears, the result is
 \beq
-	\Gamma^\mu = \gamma^\mu [F_1(q^2) + F_2(q^2) ]  -  \frac{p^\mu  + p'^\mu }{2m}F_2 (q^2)
+	\Gamma^\mu = \gamma^\mu [F_1(q^2) + F_2(q^2) ]  -  \frac{p^\mu  + p'^\mu }{2m}F_2 (q^2).
 \eeq
 
 And writing in terms of the scalar and tensor:
 \beq
-	\Gamma^\mu = \frac{p^\mu  + p'^\mu }{2m} F_1(q^2) + i \frac{\sigma^{\mu\nu}q_\nu}{2m} [F_1(q^2) + F_2(q^2) ] 
+	\Gamma^\mu = \frac{p^\mu  + p'^\mu }{2m} F_1(q^2) + i \frac{\sigma^{\mu\nu}q_\nu}{2m} [F_1(q^2) + F_2(q^2) ] .
 \eeq
 
 %TODO move this section up a bit?
 The momentum dependence can be uniquely written in terms of $q^2$.  The factors must be Lorentz invariant, so only such combinations of momenta can be considered.  From the momenta $p$ and $p'$, only three such quantities can be constructed.  But since the external fermions are on mass-shell, $p^2 = p'^2 = m^2$.  That leaves only $p \cdot p' = m^2 + p \cdot q$, and this can be related to $q^2$ by noting that since $p^2 = p'^2$,
 \beq
-	p^2 = p^2 + 2p\cdot q + q^2  \to q^2 = -\frac{1}{2} p \cdot q
+	p^2 = p^2 + 2p\cdot q + q^2  \to q^2 = -\frac{1}{2} p \cdot q.
 \eeq
 
 
 Given that there exist these three ways to write the vertex, there are three ways to perform the calculation.  The scattering amplitude will have the form
 \beq	
-	i M = 	A_\mu \srb(p') \Gamma^\mu(p', p) \sr(p) 
+	i M = 	A_\mu \srb(p') \Gamma^\mu(p', p) \sr(p),
 \eeq
 and no matter which way $\Gamma^\mu$ is written, a nonrelativistic expansion in terms of $\phis$ will be needed.  For now an agnostic approach will be taken, and the expressions for each of the three possible bilinears found.
 
@@ -519,8 +520,8 @@ To compare with the NRQED scattering amplitude, everything needs to be written w
 
 The bispinors $u$ will be first written in terms of upper and lower components $\eta$, $\chi$, and then in terms of the nonrelativistic wave spinors $w$.  The relationship between the two sets are
 \begin{eqnarray}
-	\label{eq:Sh:eta-w} \eta(p) &=& \left( 1 - \frac{\v{p}^2}{8m^2} \right ) \wx(p)	\\
-	\label{eq:Sh:chi-w}  \chi(p)	&=& \frac{ \sigdot{p} }{2m} \left(1  - \frac{3\v{p}^2}{8m^2} \right ) \wx(p)
+	\label{eq:Sh:eta-w} \eta(p) &=& \left( 1 - \frac{\v{p}^2}{8m^2} \right ) \wx(p),	\\
+	\label{eq:Sh:chi-w}  \chi(p)	&=& \frac{ \sigdot{p} }{2m} \left(1  - \frac{3\v{p}^2}{8m^2} \right ) \wx(p).
 \end{eqnarray}
 In writing in terms of the upper and lower components,  the explicit expressions of the $\gamma$ matrices, as well as $\sigma^{\mu\nu}$ will be needed.  
 
@@ -531,47 +532,47 @@ This same general procedure will be followed for each of the bilinears.
 \subsubsection{Terms involving the scalar bilinear}
 Start with the first bilinear, a scalar coupled with a momentum four-vector.  Rewrite it in terms of $\eta$ and $\chi$.
 \beq
-	(p + p')^\mu \srb \sr  = (p + p')^\mu \left( \eta^\dagger \eta - \chi^\dagger \chi \right ) 
+	(p + p')^\mu \srb \sr  = (p + p')^\mu \left( \eta^\dagger \eta - \chi^\dagger \chi \right ).
 \eeq
 Now express in terms of $\wx$, replacing $\eta$ and $\chi$ according to \eqref{eq:Sh:eta-w} and \eqref{eq:Sh:chi-w}.
 \beq
 	(p + p')^\mu \srb \sr = (p + p')^\mu \left \{
 		\wxd \left( 1 - \frac{ \v{p'}^2}{8m^2} \right )  \left( 1 - \frac{ \v{p}^2}{8m^2} \right ) \wx
-		- \wxd \left( \frac{ \gv{\sigma} \cdot \v{p'}}{2m} \frac{ \gv{\sigma} \cdot \v{p}}{2m} \right ) \wx \right \}
+		- \wxd \left( \frac{ \gv{\sigma} \cdot \v{p'}}{2m} \frac{ \gv{\sigma} \cdot \v{p}}{2m} \right ) \wx \right \}.
 \eeq 
 Combining the terms, and dropping terms beyond the order needed:
 \beq
 	(p + p')^\mu \srb \sr = (p + p')^\mu \wxd \left( 
 		1 -  \frac{ \v{p}^2 + \v{p'}^2}{8m^2} - \frac{ \gv{\sigma} \cdot \v{p'} \gv{\sigma} \cdot \v{p} }{4m^2} 
-		\right ) \wx
+		\right ) \wx.
 \eeq
 The term quadratic in $\sigma$ can be simplified, using $\sigdot{p'} \sigdot{p} = \v{p} \cdot \v{p'} + i\gv{\sigma} \cdot \v{q} \times \v{p}$.
 \beq \label{eq:Sh:Si}
 	(p + p')^\mu \srb \sr  = (p + p')^\mu \wxd \left( 
 		1 -  \frac{ \v{p}^2  +2 \v{p} \cdot \v{p'} +  \v{p'}}{8m^2} - \frac{i\gv{\sigma} \cdot \v{q} \times \v{p} }{4m^2} 
-		\right ) \wx
+		\right ) \wx.
 \eeq
 
 The spatial part is straightforward, but the time-like part is 
 \beq
 	(p + p')^0 \srb \sr  = (p + p')_0 \wxd \left( 
 		1 -  \frac{ \v{p}^2  +2 \v{p} \cdot \v{p'} +  \v{p'}^2 }{8m^2} - \frac{i\gv{\sigma} \cdot \v{q} \times \v{p} }{4m^2} 
-		\right ) \wx
+		\right ) \wx.
 \eeq
 Approximating the relativistic energies gives $p_0 = m + \v{p}^2 / (2m) $.  So
 \beq
-	p_0 + p'_0 \approx 2m + \frac{ \v{p}^2 + \v{p'}^2 }{2m} = 2m\left( 1 +  \frac{ \v{p}^2 + \v{p'}^2 }{4m^2} \right )
+	p_0 + p'_0 \approx 2m + \frac{ \v{p}^2 + \v{p'}^2 }{2m} = 2m\left( 1 +  \frac{ \v{p}^2 + \v{p'}^2 }{4m^2} \right ).
 \eeq
 Then using this correction to the leading order term gives the time like component:
 \beq
 	(p + p')^0 \srb \sr  = 2m  \wxd \left( 
 		1 +  \frac{ \v{p}^2   - 2 \v{p} \cdot \v{p'} +  \v{p'} }{8m^2} - \frac{i\gv{\sigma} \cdot \v{q} \times \v{p} }{4m^2} 
-		\right ) \wx
+		\right ) \wx,
 \eeq
 \beq \label{eq:Sh:S0}
 	(p + p')^0 \srb \sr  \approx 2m  \wxd \left( 
 		1 +  \frac{ \v{q}^2 }{8m^2} - \frac{i\gv{\sigma} \cdot \v{q} \times \v{p} }{4m^2} 
-		\right ) \wx
+		\right ) \wx.
 \eeq
 
 
@@ -582,11 +583,11 @@ For the term $\srb \gamma^\mu \sr$ it'll be necessary to treat the spatial/time-
 
 The time-like part is:
 \beq
-	\srb \gamma^0 u = u^\dagger u
+	\srb \gamma^0 u = u^\dagger u,
 \eeq
 which in terms of $\eta$ and $\chi$ is just
 \beq
-	= \eta^\dagger \eta + \chi^\dagger \chi 
+	= \eta^\dagger \eta + \chi^\dagger \chi.
 \eeq
 Then rewritten with $\wx$
 \beq
@@ -597,14 +598,14 @@ Which is, at the order needed
 \beq
 	=	 \wxd \left( 
 		1 -  \frac{ \v{p}^2 + \v{p'}^2}{8m^2} + \frac{ \gv{\sigma} \cdot \v{p'} \gv{\sigma} \cdot \v{p} }{4m^2} 
-		\right ) \wx
+		\right ) \wx.
 \eeq
 Simplifying the last term, using $\sigma_i \sigma_j = \delta_{ij} + i\epsilon_{ijk}\sigma_k$, gives
 \beq \label{eq:Sh:V0}
-	\srb \gamma^0 u = 
+	\srb \gamma^0 \sr = 
 			\wxd \left( 
 		1 -  \frac{ \v{q}^2 }{8m^2} + \frac{i \gv{\sigma} \cdot \v{q} \times \v{p} }{4m^2} 
-		\right ) \wx
+		\right ) \wx.
 \eeq
 
 
@@ -613,36 +614,36 @@ Simplifying the last term, using $\sigma_i \sigma_j = \delta_{ij} + i\epsilon_{i
 
 The spatial part is
 \beq
-	\srb \gamma^i \sr = \sr^\dagger \gamma^0 \gamma^i \sr
+	\srb \gamma^i \sr = \sr^\dagger \gamma^0 \gamma^i \sr.
 \eeq
-writing the matrices explicitly
+Writing the matrices explicitly,
 \beq
-	= \srb^\dagger \begin{pmatrix}
+	 \srb^\dagger \begin{pmatrix}
 		0 & \sigma_i \\ \sigma_i & 0 		
-	\end{pmatrix} \sr
+	\end{pmatrix} \sr,
 \eeq
 which in terms of spinors is
 \beq
-	= \eta^\dagger \sigma_i \chi + \chi^\dagger \sigma_i \eta
+	 \eta^\dagger \sigma_i \chi + \chi^\dagger \sigma_i \eta.
 \eeq
 Replacing the spinors with $w$ gives
 \beq
-	= \wxd \left\{
+	 \wxd \left\{
 		\left( 1 - \frac{ \v{p'}^2}{8m^2}   \right ) \frac{ \sigma_i \sigdot{p} }{2m} \left( 1 - \frac{3\v{p}^2}{8m^2} \right )
 			+ \left( 1 - \frac{ 3\v{p'}^2}{8m^2} \right )  \frac{  \sigdot{p'} \sigma_i }{2m} \left( 1 - \frac{\v{p}^2}{8m^2} \right )
-	\right\} \wx
+	\right\} \wx.
 \eeq
 Using $\v{p'}^2 = \v{p}^2$ gives
 \beq
 	= \wxd \left\{
 		\frac{ \sigma_i \sigdot{p}  + \sigdot{p'} \sigma_i }{2m} \left( 1 -\frac{ \v{p}^2}{2m^2} \right )
-	\right\} \wx
+	\right\} \wx.
 \eeq
 Then $\sigma_i \sigma_j = \delta_{ij} + i\epsilon_{ijk} \sigma_k$
 \beq
 	= \wxd \left\{
 		\frac{ p_i + \epsilon_{ijk} p_j \sigma_k + p'_i  + \epsilon_{jik} p'_j \sigma_k }{2m} \left( 1 -\frac{ \v{p}^2}{2m^2} \right )
-	\right\} \wx
+	\right\} \wx.
 \eeq
 So finally
 \beq \label{eq:Sh:Vi}
@@ -659,29 +660,29 @@ The tensor term is subject to an additional simplification.  Because the process
 Dealing first with the case where $\mu=i$, write the tensor structure explicitly as a matrix:  
 \beq
 	\srb  \frac{i}{2m} q_j \sigma^{ij} \sr 
-		=  \frac{i \epsilon_{ijk} q_j}{2m} \srb \Mblock{\sigma_k}{0}{0}{\sigma_k} \sr
+		=  \frac{i \epsilon_{ijk} q_j}{2m} \srb \Mblock{\sigma_k}{0}{0}{\sigma_k} \sr.
 \eeq
-Write in terms of spinors
+Write in terms of spinors this is
 \beq
-	= \frac{i \epsilon_{ijk} q_j}{2m} \left( \eta^\dagger \sigma_k \eta - \chi^\dagger \sigma_k \chi \right )
+	 \frac{i \epsilon_{ijk} q_j}{2m} \left( \eta^\dagger \sigma_k \eta - \chi^\dagger \sigma_k \chi \right ),
 \eeq
-And then in terms of $\wx$
+and then in terms of $\wx$
 \beq
 	= \frac{i \epsilon_{ijk} q_j}{2m} \wxd \left \{
 		\left( 1 - \frac{\v{p'}^2}{8m^2} \right ) \sigma_k \left( 1 - \frac{\v{p'}^2}{8m^2} \right )- \frac{ \gv{\sigma} \cdot \v{p'} \sigma_k \gv{\sigma} \cdot \v{p} }{4m^2} \wx
-	\right \}
+	\right \}.
 \eeq
 There now appears a term with a triple product of $\sigma$ matrices.  That can be simplified with the following expression:
 \beq
 	\sigma_a \sigma_b \sigma_c = \sigma_a (\delta_{bc} + i\epsilon_{bcd}\sigma_d)
-		=	\sigma_a \delta_{bc} - \sigma_b \delta_{ca} + \sigma_c \delta_{ab} + i \epsilon_{abc}	
+		=	\sigma_a \delta_{bc} - \sigma_b \delta_{ca} + \sigma_c \delta_{ab} + i \epsilon_{abc}.
 \eeq
 Using that identity, 
 \beq
 	\srb  \frac{i}{2m} q_j \sigma^{ij} \sr 
 		= \frac{i \epsilon_{ijk} q_j}{2m} \wxd \left \{
 			\sigma_k \left( 1 - \frac{\v{p'}^2  + \v{p}^2}{8m^2} \right ) - \frac{ \gv{\sigma} \cdot (\v{p} + \v{p'})p_k - \sigma_k \v{p} \cdot \v{p'} + i \epsilon_{akc} q_a p_c }{4m^2} 
-		\right \} \wx
+		\right \} \wx .
 \eeq
 
 This can be further simplified by combining the like terms $\sigma_k (\v{p'}^2 + \v{p}^2 ) - 2 \sigma_k \v{p} \cdot \v{p'} = \sigma_k \v{q}^2$.
@@ -689,14 +690,14 @@ This can be further simplified by combining the like terms $\sigma_k (\v{p'}^2 +
 	\srb  \frac{i}{2m} q_j \sigma^{ij} \sr 
 		= \frac{i \epsilon_{ijk} q_j}{2m} \wxd \left \{
 			\sigma_k \left( 1 - \frac{\v{q}^2}{8m^2} \right ) - \frac{ \gv{\sigma} \cdot (\v{p} + \v{p'})p_k + i \epsilon_{akc} q_a p_c }{4m^2} 
-		\right \} \wx
+		\right \} \wx .
 \eeq
 Now it is necessary to consider exactly what derivatives of the field $A_i$ are to be kept.  The assumption is that $B$ is constant and so $\partial_i B_j = 0$.  Contracted with $A_i$ above, $\epsilon_{ijk} A_i q_j \sim B_k$.  So besides the leading factor, no terms with $q$ are needed.  Applying this simplification,
 \beq \label{eq:Sh:Ti}
 	\srb  \frac{i}{2m} q_j \sigma^{ij} \sr 
 		= \frac{i \epsilon_{ijk} q_j}{2m} \wxd \left \{
 			\sigma_k - \frac{ \gv{\sigma} \cdot \v{p} p_k  }{2m^2} 
-		\right \} \wx
+		\right \} \wx.
 \eeq
 
 
@@ -708,36 +709,36 @@ The case with $\mu=0$ goes as follows.
 \beq
 	\srb  \frac{i}{2m} q_j \sigma^{0j} \sr
 		=	 - \frac{q_j}{2m} \srb \gamma^0 \gamma^j \sr 		
- 		=  - \frac{q_j}{2m} \sr^\dagger \gamma^j \sr
+ 		=  - \frac{q_j}{2m} \sr^\dagger \gamma^j \sr.
 \eeq
 Explicitly in matrix form 
 \beq
-	 = - \frac{q_j}{2m} \sr^\dagger \Mblock{0}{\sigma_j}{\sigma_j}{0} \sr 
+	\srb  \frac{i}{2m} q_j \sigma^{0j} \sr  = - \frac{q_j}{2m} \sr^\dagger \Mblock{0}{\sigma_j}{\sigma_j}{0} \sr. 
 \eeq
  Written in terms of spinors, and Galilean three-vector $q^j= -q_j$.
  \beq
- 	= \frac{q^j}{2m}  \left( \eta^\dagger \sigma_j \chi - \chi^\dagger \sigma_j \eta \right )
+ 	\srb  \frac{i}{2m} q_j \sigma^{0j} \sr = \frac{q^j}{2m}  \left( \eta^\dagger \sigma_j \chi - \chi^\dagger \sigma_j \eta \right ).
  \eeq
  And then in terms of $w$:
 \beq
 	=  \frac{q^j}{2m}  \wxd \left \{
 		\left(1 - \frac{\v{p'}^2}{8m^2} \right )  \frac{ \sigma_j \gv{\sigma} \cdot \v{p} }{2m} \left(1 - \frac{3\v{p}^2}{8m^2} \right )
 		- \left(1 - \frac{3 \v{p'}^2}{8m^2} \right ) \frac{\gv{\sigma} \cdot \v{p'} \sigma_j  }{2m} \left(1 - \frac{\v{p}^2}{8m^2} \right )
-	\right \} \wx
+	\right \} \wx.
 \eeq
 
 This bilinear is contracted with $A_0$, and so actually, only terms involving two additional powers of momenta need be kept.
 \beq
-	=  \frac{q^j}{2m}  \wxd \left \{
+	\srb  \frac{i}{2m} q_j \sigma^{0j} \sr =  \frac{q^j}{2m}  \wxd \left \{
 		  \frac{ \sigma_j \gv{\sigma} \cdot \v{p} }{2m} 
 		-  \frac{\gv{\sigma} \cdot \v{p'} \sigma_j  }{2m} 
-	\right \} \wx
+	\right \} \wx,
 \eeq
 or simplifying using the commutator of $\sigma$ matrices
 \beq 
-	=   \frac{q^j}{2m}  \wxd \left \{
+	\srb  \frac{i}{2m} q_j \sigma^{0j} \sr =   \frac{q^j}{2m}  \wxd \left \{
 		\frac{ 2 i\epsilon_{jik} p_i \sigma_k  - q_i - i\epsilon_{ijk} q_j \sigma_k }{2m} 
-	\right \} \wx
+	\right \} \wx.
 \eeq
 One term above vanishes because of symmetry
 \beq \label{eq:Sh:T0}
@@ -745,7 +746,7 @@ One term above vanishes because of symmetry
 	=  -  \wxd \left \{
 			\frac{  \v{q}^2  }{4m^2} 
 			- \frac{  i\gv{\sigma} \cdot \v{q} \times \v{p}   }{2m^2} 
-	\right \} \wx
+	\right \} \wx.
 \eeq
 
 
@@ -764,7 +765,7 @@ The term with $A_0$ coupled with the scalar bilinear \eqref{eq:Sh:S0} gives
 	& \approx &
 			 \wxd \left( 
 				eA_0  +  \frac{ e \grad \cdot \v{E} }{8m^2} - \frac{e \gv{\sigma} \cdot \v{E} \times \v{p} }{4m^2} 
-				\right ) \wx
+				\right ) \wx.
 \eeqaL
 The term involving the vector bilinear term \eqref{eq:Sh:V0} is
 \beqaL    \label{eq:Sh:VA0}
@@ -775,7 +776,7 @@ The term involving the vector bilinear term \eqref{eq:Sh:V0} is
 	&=& 
 		 \wxd \left( 
 		eA_0  - \frac{ e \grad \cdot \v{E} }{8m^2} + \frac{ e\gv{\sigma} \cdot \v{E} \times \v{p} }{4m^2} 
-		\right ) \wx
+		\right ) \wx.
 \eeqaL
 
 The third type of term, with the tensor bilinear appearing:
@@ -787,7 +788,7 @@ e A_0 \srb  \frac{i}{2m} q_j \sigma^{0j} \sr
 	\right \} \wx	\\
 	&=&  -   \wxd \left \{
 			\frac{e  \grad \cdot \v{E} }{4m^2} - \frac{e \gv{\sigma} \cdot \v{E} \times \v{p} }{2m^2} 
-	\right \} \wx
+	\right \} \wx.
 \eeqaL
 
 \subsubsection{Contraction of bilinears with $A_i$}
@@ -796,16 +797,16 @@ Terms with $\v{A}$ and $\v{q}$ give rise to terms with $\v{B} = \grad \times \v{
 
 Consider the expression $(\v{p} + \v{p'})\cdot \v{A}  (\gv{\sigma} \cdot \v{p} \times i\v{q})$.  Kinematic constraints will help in expressing this term.  First, it is convenient to develop an identity for $iq_i (\v{p} + \v{p'}) \cdot \v{A}$.  Using $\epsilon_{ijk} B_k = i(q_i A_j - q_j A_i)$:
 \beq
-	(p + p')_i \epsilon_{ijk} B_k = (p + p')_i  \left( i q_i A_j - i q_j A_i \right )
+	(p + p')_i \epsilon_{ijk} B_k = (p + p')_i  \left( i q_i A_j - i q_j A_i \right ).
 \eeq
 There are additional conditions coming from the fact that this is elastic scattering.  Since in this case $ ( \v{p'} + \v{p}) \cdot \v{q} = \v{p'}^2 - \v{p}^2 = 0$, the $(p+p')_i q_i$ term vanishes, leaving
 \beq
-	(p + p')_i \epsilon_{ijk} B_k = -i (p + p')_i q_j A_i = -i q_j(\v{p} + \v{p'}) \cdot \v{A} 
+	(p + p')_i \epsilon_{ijk} B_k = -i (p + p')_i q_j A_i = -i q_j(\v{p} + \v{p'}) \cdot \v{A} .
 \eeq
 
 This gives the identity
 \beq \label{eq:Sh:pqA}
-i q_j (\v{p} + \v{p'}) \cdot \v{A}  =  - \epsilon_{ijk} (p + p')_i  B_k
+i q_j (\v{p} + \v{p'}) \cdot \v{A}  =  - \epsilon_{ijk} (p + p')_i  B_k.
 \eeq
 This identity helps reduce the more complicated term:
 \beqa
@@ -814,12 +815,12 @@ This identity helps reduce the more complicated term:
 	&=&	- \sigma_i p_j \epsilon_{ijk} [ \epsilon_{\ell k m} (p + p')_\ell B_ m]	\\
 	&=&	 \sigma_i p_j \epsilon_{ijk} [ \epsilon_{\ell m k} (p + p')_\ell B_ m]	\\
 	&=&	\sigma_i p_j (p+p')_\ell B_m [\delta_{i \ell} \delta_{jm} - \delta_{i m} \delta_{j \ell}]	\\
-	&=&	\gv{\sigma} \cdot  (\v{p} + \v{p'}) \v{B} \cdot \v{p} - \gv{\sigma} \cdot \v{B} (\v{p} + \v{p'}) \cdot \v{p}
+	&=&	\gv{\sigma} \cdot  (\v{p} + \v{p'}) \v{B} \cdot \v{p} - \gv{\sigma} \cdot \v{B} (\v{p} + \v{p'}) \cdot \v{p}.
 \eeqa
 For the case of a constant $\v{B}$, any terms of the type $q_i B_j$ vanish.  So the above reduces to
 \beq \label{eq:Sh:A-p-id}
 (\v{p} + \v{p'}) \cdot \v{A}  (\gv{\sigma} \cdot \v{p} \times i\v{q} )
-	= 2 \{  (\gv{\sigma} \cdot  \v{p})( \v{B} \cdot \v{p}) - \v{p}^2 \gv{\sigma} \cdot \v{B} \}
+	= 2 \{  (\gv{\sigma} \cdot  \v{p})( \v{B} \cdot \v{p}) - \v{p}^2 \gv{\sigma} \cdot \v{B} \}.
 \eeq
 
 Now consider $A_i$ coupled with each of the particular bilinear expressions.  (Remember that here $A_i = -\v{A}_i$.)  With the term involving a scalar bilinear \eqref{eq:Sh:Si}
@@ -828,7 +829,7 @@ Now consider $A_i$ coupled with each of the particular bilinear expressions.  (R
 		1 -  \frac{ \v{p}^2  +2 \v{p} \cdot \v{p'} +  \v{p'}}{8m^2} - \frac{i\gv{\sigma} \cdot \v{q} \times \v{p} }{4m^2} 
 		\right ) \wx	\\
 	 &=&	- \wxd  \left [ \frac{e \v{A} \cdot (\v{p} + \v{p'} ) }{2m} \left(1 - \frac{\v{p}^2}{4m^2} \right )  \right ] \wx
-	- \wxd  \left [  \frac{ 	 e (\gv{\sigma} \cdot  \v{p})( \v{B} \cdot \v{p}) - e \v{p}^2 \gv{\sigma} \cdot \v{B} }{4m^2} \right ] \wx \nonumber
+	- \wxd  \left [  \frac{ 	 e (\gv{\sigma} \cdot  \v{p})( \v{B} \cdot \v{p}) - e \v{p}^2 \gv{\sigma} \cdot \v{B} }{4m^2} \right ] \wx . \nonumber
 \eeqaL
 The term involving a vector bilinear coupled to $A_i$ comes from \eqref{eq:Sh:Vi}
 \beqaL \label{eq:Sh:VAi}
@@ -837,7 +838,7 @@ A_i \srb \gamma^i \sr  &=& \wxd \left\{
 	\right\} \wx \\
 	&=&- \wxd \left \{
 		 \frac{ \v{A} \cdot (\v{p} + \v{p'}) + \gv{\sigma} \cdot \v{B} }{2m} \left(1 - \frac{\v{p}}{2m^2} \right ) 
-	\right\} \wx
+	\right\} \wx.
 \eeqaL
 Finally the term with a tensor gives
 \beqaL  \label{eq:Sh:TAi}
@@ -847,7 +848,7 @@ Finally the term with a tensor gives
 		\right \} \wx \\ 
 		&=&  - \wxd \left \{ 
 				\frac{ \gv{\sigma} \cdot \v{B} }{2m} - \frac{ (\gv{\sigma} \cdot \v{p}) (\v{B} \cdot \v{p}) }{4m^2}
-			\right \} \wx
+			\right \} \wx.
 \eeqaL
 
 % Start of comparison
@@ -863,7 +864,7 @@ The first has $	\Gamma^\mu = \gamma^\mu F_1(q^2) + i \frac{\sigma^{\mu\nu}q_\nu}
 		\right ) \wx
 		- F_2    \wxd \left \{
 			\frac{e  \grad \cdot \v{E} }{4m^2} - \frac{e \gv{\sigma} \cdot \v{E} \times \v{p} }{2m^2} 
-	\right \} \wx
+	\right \} \wx.
 \eeq
 The second is	$\Gamma^\mu = \gamma^\mu [F_1(q^2) + F_2(q^2) ]  -  \frac{p^\mu  + p'^\mu }{2m}F_2 (q^2)$.  Using \eqref{eq:Sh:VA0} and \eqref{eq:Sh:SA0}.
 \beq
@@ -873,7 +874,7 @@ The second is	$\Gamma^\mu = \gamma^\mu [F_1(q^2) + F_2(q^2) ]  -  \frac{p^\mu  +
 		\right ) \wx
 		- F_2   \wxd \left( 
 		eA_0  +  \frac{ e \grad \cdot \v{E} }{8m^2} - \frac{e \gv{\sigma} \cdot \v{E} \times \v{p} }{4m^2} 
-		\right ) \wx
+		\right ) \wx.
 \eeq
 The third combination is $	\Gamma^\mu = \frac{p^\mu  + p'^\mu }{2m} F_1(q^2) + i \frac{\sigma^{\mu\nu}q_\nu}{2m} [F_1(q^2) + F_2(q^2) ] $.  Using \eqref{eq:Sh:SA0} and \eqref{eq:Sh:TA0}
 \beq
@@ -883,18 +884,18 @@ The third combination is $	\Gamma^\mu = \frac{p^\mu  + p'^\mu }{2m} F_1(q^2) + i
 		\right ) \wx
 		- [F_1 + F_2] \wxd \left \{
 			\frac{e  \grad \cdot \v{E} }{4m^2} - \frac{e \gv{\sigma} \cdot \v{E} \times \v{p} }{2m^2} 
-	\right \} \wx
+	\right \} \wx.
 \eeq
-Taking any of these three results and collecting like terms gives the result:
+Taking any of these three results and collecting like terms gives the result
 \beq
 		 A_0 \srb  \Gamma^0 \sr = \wxd \left(  
 			F_1  eA_0
 			+ [F_1 + 2 F_2] \left [ 
 				\frac{e \gv{\sigma} \cdot \v{E} \times \v{p} }{4m^2}  - \frac{e  \grad \cdot \v{E} }{8m^2}
 			\right ]
-		\right ) \wx
+		\right ) \wx,
 \eeq
-So the calculations are at least consistent with the Gordon identity.
+so the calculations are consistent with the Gordon identity.
 
 Now turning to the coupling with $\v{A}$.  The first has $	\Gamma^\mu = \gamma^\mu F_1(q^2) + i \frac{\sigma^{\mu\nu}q_\nu}{2m} F_2 (q^2)$.  Using \eqref{eq:Sh:VAi} and \eqref{eq:Sh:TAi}
 \beq
@@ -904,7 +905,7 @@ Now turning to the coupling with $\v{A}$.  The first has $	\Gamma^\mu = \gamma^\
 		 \frac{ \v{A} \cdot (\v{p} + \v{p'}) + \gv{\sigma} \cdot \v{B} }{2m} \left(1 - \frac{\v{p}}{2m^2} \right ) 
 	\right\} \wx
 	\\& - e F_2  \wxd \left \{ \frac{ \gv{\sigma} \cdot \v{B} }{2m} - \frac{ (\gv{\sigma} \cdot \v{p}) (\v{B} \cdot \v{p}) }{4m^2}
-			\right \} \wx
+			\right \} \wx.
 \end{split}
 \eeq
 The second is	$\Gamma^\mu = \gamma^\mu [F_1(q^2) + F_2(q^2) ]  -  \frac{p^\mu  + p'^\mu }{2m}F_2 (q^2)$.  Using \eqref{eq:Sh:VAi} and \eqref{eq:Sh:SAi}:
@@ -914,7 +915,7 @@ The second is	$\Gamma^\mu = \gamma^\mu [F_1(q^2) + F_2(q^2) ]  -  \frac{p^\mu  +
 		 \frac{  \v{A} \cdot (\v{p} + \v{p'}) +  \gv{\sigma} \cdot \v{B} }{2m} \left(1 - \frac{\v{p}}{2m^2} \right ) 
 	\right\} \wx
 	\\& + e F_2 \wxd  \left [ \frac{e \v{A} \cdot (\v{p} + \v{p'} ) }{2m} \left(1 - \frac{\v{p}^2}{4m^2} \right )  \right ] \wx
-	+ eF_2 \wxd  \left [  \frac{ 	 e (\gv{\sigma} \cdot  \v{p})( \v{B} \cdot \v{p}) - e \v{p}^2 \gv{\sigma} \cdot \v{B} }{4m^2} \right ] \wx
+	+ eF_2 \wxd  \left [  \frac{ 	 e (\gv{\sigma} \cdot  \v{p})( \v{B} \cdot \v{p}) - e \v{p}^2 \gv{\sigma} \cdot \v{B} }{4m^2} \right ] \wx.
 \end{split} \eeq
 The third combination is $\Gamma^\mu = \frac{p^\mu  + p'^\mu }{2m} F_1(q^2) + i \frac{\sigma^{\mu\nu}q_\nu}{2m} [F_1(q^2) + F_2(q^2) ] $.  Using \eqref{eq:Sh:SAi} and \eqref{eq:Sh:TAi}
 \beq \begin{split}
@@ -922,7 +923,7 @@ The third combination is $\Gamma^\mu = \frac{p^\mu  + p'^\mu }{2m} F_1(q^2) + i 
 		 e F_1 \wxd  \left [ \frac{e \v{A} \cdot (\v{p} + \v{p'} ) }{2m} \left(1 - \frac{\v{p}^2}{4m^2} \right )  \right ] \wx
 		 + e F_1 \wxd  \left [  \frac{ (\gv{\sigma} \cdot  \v{p})( \v{B} \cdot \v{p}) - e \v{p}^2 \gv{\sigma} \cdot \v{B} }{4m^2} \right ] \wx
 	\\&	-[F_1 + F_2] \wxd \left \{ \frac{ \gv{\sigma} \cdot \v{B} }{2m} - \frac{ (\gv{\sigma} \cdot \v{p}) (\v{B} \cdot \v{p}) }{4m^2}
-			\right \} \wx
+			\right \} \wx.
 \end{split} \eeq
 
 For any of these paths, the total result is that
@@ -932,7 +933,7 @@ For any of these paths, the total result is that
 		- [F_1 + F_2] \frac{ e \gv{\sigma} \cdot \v{B} }{2m} 
 	\\	+ F_1 \frac{ e \gv{\sigma} \cdot \v{B} \v{p}^2 }{4m^3} 
 		+ F_2 \frac{ (\gv{\sigma} \cdot \v{p}) (\v{B} \cdot \v{p}) }{4m^2}
-	\Bigg \} \wx
+	\Bigg \} \wx.
 \end{split}
 \eeq
 
@@ -943,25 +944,25 @@ Earlier, the Lagrangian \eqref{eq:nr:L-half} for spin one-half particles was cal
 
 First take the kinetic terms, involving simple powers of $\v{D}$.  $\v{D} = \grad - ie\v{A}$, so
 \beq
-	\v{D}^2 = (\nabla_i - ieA_i)(\nabla_i - ieA_i)
+	\v{D}^2 = (\nabla_i - ieA_i)(\nabla_i - ieA_i).
 \eeq
 It is a mixture of terms with two, one, or no powers of the external field $A$.  If just the terms with one power of $\v{A}$ are included, what remains is
 \beq
-	-ie( A_i \nabla_i + A_i \nabla_i = -ie \{A_i, \nabla_i\}
+	-ie( A_i \nabla_i + A_i \nabla_i = -ie \{A_i, \nabla_i\}.
 \eeq
 So from $\v{D}^2/ 2m$ emerges, in $\mathcal{L}_A$,  $-ie \{\nabla_i, A_i\}/2m$ in  $\mathcal{L}_A$.
 
 The second kinetic term is $\v{D}^4$:
 \beq
-	\v{D}^4 = (\nabla_i - ieA_i)(\nabla_i - ieA_i) (\nabla_j - ieA_j)(\nabla_j - ieA_j)
+	\v{D}^4 = (\nabla_i - ieA_i)(\nabla_i - ieA_i) (\nabla_j - ieA_j)(\nabla_j - ieA_j),
 \eeq
 or
 \beq
-	\v{D}^4 = ( \grad^2 - ie \{A_i, \nabla_i\} - e^2 \v{A}^2)( \grad^2 - ie \{A_j, \nabla_j\} - e^2 \v{A}^2)
+	\v{D}^4 = ( \grad^2 - ie \{A_i, \nabla_i\} - e^2 \v{A}^2)( \grad^2 - ie \{A_j, \nabla_j\} - e^2 \v{A}^2).
 \eeq
 Keeping again only the terms with a single power of $A$, what remains may be expressed as the double anti-commutator
 \beq
-	-ie \{ \grad^2, \{\nabla_i, A_i \} \} 
+	-ie \{ \grad^2, \{\nabla_i, A_i \} \} .
 \eeq
 
 There are then several terms involving one or more powers of $D$ combined with either $E$ or $B$.  Since only terms with a single power of the field are of interest, in all such terms $\v{D}$ may be replaced with $\grad$.
@@ -980,7 +981,7 @@ So finally, writing all such terms from the original Lagrangian involved in scat
 			\\&	+ c^{1}_S \frac{ ie \v{S} \smalldot ( \v{\grad} \times \v{E} - \v{E} \times \v{\grad} )}{8m^2}
 		+ c_{W_1} \frac{ e [ \v{\grad}^2 (\v{S} \smalldot \v{B} ) + (\v{S} \smalldot \v{B} ) \v{\grad}^2] }{8m^3}	
 		\\& - c_{W_2} \frac{ e \nabla^i (\v{S} \smalldot \v{B} ) \nabla^i }{4m^3}
-		+ c_{p'p} \frac{ e [ (\v{S} \smalldot \v{\grad}) (\v{B} \smalldot \v{\grad}) + (\v{B} \smalldot \v{\grad})(\v{S} \smalldot \v{\grad}) }{8m^3} \Bigg )\fnr
+		+ c_{p'p} \frac{ e [ (\v{S} \smalldot \v{\grad}) (\v{B} \smalldot \v{\grad}) + (\v{B} \smalldot \v{\grad})(\v{S} \smalldot \v{\grad}) }{8m^3} \Bigg )\fnr.
 \end{split} \eeq
 \normalsize
 
@@ -997,30 +998,30 @@ It is necessary to switch to the language of momentum space.  The recipe is this
 
 The terms originating from $D^2$ are:
 \beq
-	- ie  \frac{ \{\nabla_i, A_i \} }{2m} 
+	- ie  \frac{ \{\nabla_i, A_i \} }{2m} ,
 \eeq
 which in position space become
 \beq
-	e \frac{ \v{A} \cdot (\v{p} + \v{p'}) }{2m} 
+	e \frac{ \v{A} \cdot (\v{p} + \v{p'}) }{2m}.
 \eeq
 
 While the terms arising from $D^4$
 \beq
--ie \frac{ \{\grad^2, \{\nabla_i, A_i \}  \} }{8m^3} 
+-ie \frac{ \{\grad^2, \{\nabla_i, A_i \}  \} }{8m^3} ,
 \eeq
 become
 \beq
-- e \frac{ \v{A} \cdot (\v{p} + \v{p'}) (\v{p'}^2 + \v{p}^2 ) }{8m^3} 
+- e \frac{ \v{A} \cdot (\v{p} + \v{p'}) (\v{p'}^2 + \v{p}^2 ) }{8m^3} .
 \eeq
 
 
 Some of the expressions involving $\grad$ and $\v{E}$ can be simplified.  Because $E_i = -\partial_i \Phi$
 \beq
-	\v{\grad} \times \v{E} - \v{E} \times \v{\grad} =  - 2 \v{E} \times \v{\grad}
+	\v{\grad} \times \v{E} - \v{E} \times \v{\grad} =  - 2 \v{E} \times \v{\grad}.
 \eeq
 And also
 \beq
-\v{\grad} \smalldot \v{E} - \v{E} \smalldot \v{\grad} = (\partial_i E_i)
+\v{\grad} \smalldot \v{E} - \v{E} \smalldot \v{\grad} = (\partial_i E_i).
 \eeq
 
 
@@ -1044,7 +1045,7 @@ After all these considerations, the total scattering amplitude off an external f
 		+ c^{1}_S \frac{  \v{E} \times \v{p} }{4m^2}
 		- c_{W_1}  \frac{  (\v{S} \smalldot \v{B} ) (\v{p}^2 + \v{p'}^2)  }{8m^3}
 	\\&	+ c_{W_2} \frac{  (\v{S} \smalldot \v{B} ) (\v{p} \cdot \v{p'}) }{4m^3}
-		-  c_{p'p} \frac{  (\v{S} \smalldot \v{p'}) (\v{B} \smalldot \v{p}) + (\v{B} \smalldot \v{p'}) (\v{S} \smalldot \v{p}) }{8m^3} \Bigg )\wnr
+		-  c_{p'p} \frac{  (\v{S} \smalldot \v{p'}) (\v{B} \smalldot \v{p}) + (\v{B} \smalldot \v{p'}) (\v{S} \smalldot \v{p}) }{8m^3} \Bigg )\wnr .
 \end{split}
 \eeq 
 
@@ -1063,7 +1064,7 @@ This can be simplified somewhat.  Choose the gauge such that $\nabla_i A_i = 0$.
 		+ c_D \frac{ ( \partial_i E_i ) }{8m^2}	
 		\\&	+ c^{1}_S \frac{  \v{E} \times \v{p} }{4m^2}
 		- (c_{W_1} -c_{W_2}) \frac{   (\v{S} \smalldot \v{B} ) \v{p}^2  }{4m^3}	
-		-  c_{p'p} \frac{   (\v{S} \smalldot \v{p}) (\v{B} \smalldot \v{p})  }{4m^3} \Bigg )\wnr 
+		-  c_{p'p} \frac{   (\v{S} \smalldot \v{p}) (\v{B} \smalldot \v{p})  }{4m^3} \Bigg )\wnr .
 \end{split}
 \eeq
 

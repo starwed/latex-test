@@ -1,5 +1,5 @@
 
-\chapter{Arbitrary spin: Calculation of nonrelativistic Hamiltonian}
+\chapter{Arbitrary spin: Derivation of nonrelativistic Hamiltonian}
 
 %name? 
 Above, two particular relativistic theories have been considered: those sectors of QED involving spin half and spin one particles.  A nonrelativistic theory for each was derived in two ways, each starting from the relativistic Lagrangian; once by solving the equations of motion, the other by comparing scattering amplitudes so as to determine NRQED coefficients.
@@ -33,7 +33,7 @@ With the general set of spin operators in hand, what new terms can occur in the 
 
 The different combinations of position space operators were catalogued in describing the spin half Lagrangian.  The first new spin structure to consider is $\Sb_{ijk}$, which has three indices.  The only allowed set of position space operators that can be contracted with this operator is $\v{B}, \v{D}, \v{D}$.  Considering Hermitian combinations, two new terms can arise:
 \beq \label{eq:Sg:Lnewterms}
-  c_{T_1} \frac{ e\Sb_{ijk} D_i B_j D_k }{8m^3}  + c_{T_2} \frac{ e\Sb_{ijk} (D_i D_j B_k + B_i D_j D_i) }{8m^2} 
+  c_{T_1} \frac{ e\Sb_{ijk} D_i B_j D_k }{8m^3}  + c_{T_2} \frac{ e\Sb_{ijk} (D_i D_j B_k + B_i D_j D_i) }{8m^2}.
 \eeq   
 
 Only one combination of position space operators existed at the needed order, $D_i D_j D_k D_\ell$.  This cannot be coupled to $\Sb_{ijk\ell}$ because it would spoil the kinetic term.  So the only new terms are those in  \eqref{eq:Sg:Lnewterms}.  Adding these to the Lagrangian \eqref{eq:S1:Lnr} found for spin one, the result is
@@ -45,13 +45,13 @@ Only one combination of position space operators existed at the needed order, $D
 		 + c_F \frac{e}{m} \v{S} \cdot \v{B}
 		+ c_D \frac{e (\v{D} \cdot \v{E} - \v{E} \cdot \v{D})}{8m^2} 
 		+ c_Q \frac{eQ_{ij}(D_i E_j - E_i D_j)}{8m^2}
-\\	& + c_S \frac{ i e \v{S} \cdot(\v{D} \times \v{E} - \v{E} \times \v{D}}{8m^2}
+\\	& + c_S \frac{ i e \v{S} \cdot(\v{D} \times \v{E} - \v{E} \times \v{D})}{8m^2}
 		+ c_{W1} \frac{ e \v{D}^2 \v{S} \cdot \v{B} + \v{S} \cdot \v{B} \v{D}^2 }{8m^3}
 		- c_{W2} \frac{e D_i (\v{S} \cdot \v{B}) D_i}{4m^3}
 \\	&		+c_{p'p} \frac{ e [ (\v{S}\cdot \v{D})(\v{B} \cdot \v{D}) + (\v{B} \cdot \v{D})(\v{S}\cdot \v{D})]}{8m^3}
  	+ c_{T_1} \frac{ e \bar{S}_{ijk} (D_i D_j B_k + B_k D_j D_i)}{8m^3}
 		+ c_{T_2} \frac{ e \bar{S}_{ijk} D_i B_j D_k }{8m^3} 
-		\Bigg \} \fnr
+		\Bigg \} \fnr.
 \end{split}
 \eeq
 
@@ -71,7 +71,7 @@ To calculate scattering off an external field, that part of the Lagrangian invol
 		+ c_{p'p} \frac{ e [ (\v{S} \smalldot \v{\grad}) (\v{B} \smalldot \v{\grad}) + (\v{B} \smalldot \v{\grad})(\v{S} \smalldot \v{\grad}) }{8m^3} 
 	\\&	+ c_{T_1} \frac{ e \bar{S}_{ijk} (D_i D_j B_k + B_k D_j D_i)}{8m^3}
 		+ c_{T_2} \frac{ e \bar{S}_{ijk} D_i B_j D_k }{8m^3} 
-		\big )\fnr
+		\big )\fnr.
 \end{split}
 \eeq
 \normalsize
@@ -88,7 +88,7 @@ The calculation of the scattering amplitude goes just as before, with a couple o
 	\\	- (c_{W_1} -c_{W_2}) \frac{   (\v{S} \smalldot \v{B} ) \v{p}^2  }{4m^3}	
 		-  c_{p'p} \frac{   (\v{S} \smalldot \v{p}) (\v{B} \smalldot \v{p})  }{4m^3} 
 		+ (c_{T_1} + c_{T_2} )\frac{ e \bar{S}_{ijk} D_i B_j D_k }{8m^3}
-		\Bigg )\wnr 
+		\Bigg )\wnr.
 \end{split}
 \eeq
 
@@ -111,22 +111,22 @@ It is easiest to start with the chiral basis, where the upper and lower componen
 To that end define an object
 
 \beq \label{eq:PsiDef}
-\Psig  = \frac{1}{\sqrt{2}} \begin{pmatrix} \xi \\ \eta \end{pmatrix}
+\Psig  = \frac{1}{\sqrt{2}} \begin{pmatrix} \xi \\ \eta \end{pmatrix},
 \eeq
 
 the components of which will have the desired properties.  Each component should transform as a particle of spin $s$, but with opposite helicity.  Under reflection the upper and lower components transform into each other.
 
 Spinors which are separately symmetric in dotted and undotted indices are representations of the proper Lorentz group.  If $\xi$ is an object with $p$ undotted and $q$ dotted indices
 \beq
-	\xi = \{ \xi^{\alpha_1 \ldots \alpha_p}_{\dot\beta_1 \ldots \dot\beta_q} \}
+	\xi = \{ \xi^{\alpha_1 \ldots \alpha_p}_{\dot\beta_1 \ldots \dot\beta_q} \},
 \eeq
-Then this can be a representation of a particle of spin $s = (p+q)/2$.
+then this can be a representation of a particle of spin $s = (p+q)/2$.
 
 There is some free choice in how to partition the dotted/undotted indices --- the same scheme won't work for all spin as long as both types of indices are present.  However, separately consistent choices can be made for integral and half-integral spin.  For integral spin let $p=q=s$, while for the half-integral case choose $p=s+\frac{1}{2}$, $q=s-\frac{1}{2}$.
 
 $\xi$ and $\eta$ should transform as objects of opposite helicity.  Under reflection they will transform into each other.  So the choices made for $\xi$ then dictate that
 \beq
-	\eta = \{ \eta_{\dot \alpha_1 \ldots \dot \alpha_p}^{\beta_1 \ldots \beta_q} \}
+	\eta = \{ \eta_{\dot \alpha_1 \ldots \dot \alpha_p}^{\beta_1 \ldots \beta_q} \}.
 \eeq
 
 
@@ -134,12 +134,11 @@ $\xi$ and $\eta$ should transform as objects of opposite helicity.  Under reflec
 
 In the rest frame of the particle, there is no helicity.  Both objects will have clearly defined and identical properties under rotation.    The rest frame spinors are equivalent to rank $2s$ nonrelativistic spinors.  So the bispinor in the rest frame looks like
 \beq \label{eq:PsiRest}
-\Psig = \frac{1}{\sqrt{2}} \begin{pmatrix} \xi_0 \\ \xi_0 \end{pmatrix}
+	\Psig = \frac{1}{\sqrt{2}} \begin{pmatrix} \xi_0 \\ \xi_0 \end{pmatrix},
 \eeq
-
 where
 \beq \label{eq:xi0def}
-	\xi_0 = \{ (\xi_0)_{\alpha_1 \ldots \alpha_p \beta_1 \ldots \beta_q}  \}
+	\xi_0 = \{ (\xi_0)_{\alpha_1 \ldots \alpha_p \beta_1 \ldots \beta_q}  \},
 \eeq
 and is symmetric in all indices.
 
@@ -147,45 +146,45 @@ We can obtain the spinors in an arbitrary frame by boosting from the rest frame.
 \beq \label{eq:xi0boosted}
 	\xi = \exp{ \left (\frac{\v{\Sigma} \cdot \gv{\rapidity}}{2} \right ) } \xi_0,  
 	\hspace{3em} 
-	\eta = \exp{ \left(-\frac{\v{\Sigma} \cdot \gv{\rapidity}}{2} \right) } \xi_0
+	\eta = \exp{ \left(-\frac{\v{\Sigma} \cdot \gv{\rapidity}}{2} \right) } \xi_0.
 \eeq
 
 %TODO check dotted/undotted transformations are correct
 What form should the operator $\v{\Sigma}$ have?  Under an infinitesimal boost by a rapidity $\phi$, a spinor with a single undotted index is transformed as
 \beqB
-	\xi_\alpha \to \xi'_\alpha = \left(\delta_{\alpha \beta} + \frac{\gv{\rapidity}\cdot \gv{\sigma}_{\alpha \beta} }{2} \right) \xi_\beta 
+	\xi_\alpha \to \xi'_\alpha = \left(\delta_{\alpha \beta} + \frac{\gv{\rapidity}\cdot \gv{\sigma}_{\alpha \beta} }{2} \right) \xi_\beta, 
 \eeqB
 while one with a dotted index will transform as
 \beqB
-\xi_{\dot\alpha} \to \xi'_{\dot\alpha} = \left(\delta_{\dot \alpha \dot \beta} - \frac{\gv{\rapidity}\cdot \gv{\sigma}_{\dot \alpha \dot\beta} }{2} \right) \xi_{\dot \beta}
+\xi_{\dot\alpha} \to \xi'_{\dot\alpha} = \left(\delta_{\dot \alpha \dot \beta} - \frac{\gv{\rapidity}\cdot \gv{\sigma}_{\dot \alpha \dot\beta} }{2} \right) \xi_{\dot \beta}.
 \eeqB
 The infinitesimal transformation of a higher spin object with the first $p$ indices undotted and the last $q$ dotted would then be
 \beqB
 	\xi \to \xi' = \left(1 
 		+  \sum\limits_{a=0}^p \frac{\gv{\sigma}_a \cdot \gv{\rapidity} }{2}
 		- \sum\limits_{a=p+1}^{p+q} \frac{\gv{\sigma}_a \cdot \gv{\rapidity} }{2}
-	\right ) \xi 
+	\right ) \xi,
 \eeqB
 where $a$ denotes which spinor index of $\xi$ is operated on.
 
 
 So if $\gv{\Sigma}$ is defined as
 \beq \label{eq:SigDef}
-	\v{\Sigma} = \sum\limits_{a=0}^p \gv{\sigma}_a - \sum\limits_{a=p+1}^{p+q} \gv{\sigma}_a 
+	\v{\Sigma} = \sum\limits_{a=0}^p \gv{\sigma}_a - \sum\limits_{a=p+1}^{p+q} \gv{\sigma}_a,
 \eeq
 then the infinitesimal transformations would be
 \beqB
-	\xi \to \xi' = \left( 1 + \frac{\gv{\Sigma} \cdot \gv{\rapidity} }{2} \right) \xi
+	\xi \to \xi' = \left( 1 + \frac{\gv{\Sigma} \cdot \gv{\rapidity} }{2} \right) \xi,
 \eeqB
 \beqB
-	\eta \to \eta' = \left( 1 - \frac{\gv{\Sigma} \cdot \gv{\rapidity} }{2} \right) \eta
+	\eta \to \eta' = \left( 1 - \frac{\gv{\Sigma} \cdot \gv{\rapidity} }{2} \right) \eta.
 \eeqB
 That is satisfied if the exact transformation are
 \beqB
-		\xi \to \xi' = \exp\left( \frac{\gv{\Sigma} \cdot \gv{\rapidity} }{2} \right) \xi
+		\xi \to \xi' = \exp\left( \frac{\gv{\Sigma} \cdot \gv{\rapidity} }{2} \right) \xi,
 \eeqB
 \beqB
-	\eta \to \eta' = \exp \left( -\frac{\gv{\Sigma} \cdot \gv{\rapidity} }{2} \right) \eta
+	\eta \to \eta' = \exp \left( -\frac{\gv{\Sigma} \cdot \gv{\rapidity} }{2} \right) \eta.
 \eeqB
   
 So the bispinor of some particle boosted by $\gv{\phi}$ from rest will be
@@ -194,40 +193,38 @@ So the bispinor of some particle boosted by $\gv{\phi}$ from rest will be
 \Psig = \frac{1}{\sqrt{2}} \begin{pmatrix} 
 		\exp\left( \frac{\gv{\Sigma} \cdot \gv{\rapidity} }{2} \right)\xi_0 \\ 
 		\exp \left( \frac{-\gv{\Sigma} \cdot \gv{\rapidity} }{2} \right) \xi_0 
-	\end{pmatrix}
+	\end{pmatrix}.
 \eeq
 
 %TODO fix sqrt(2) factors in the right place
-The helicial basis made sense to examine the transformation properties of the bispinors.  But in dealing with the relativistic theory, a basis that separates the particle and antiparticle parts of the field will be more convenient.  If the upper component is supposed to be the particle, then in the rest frame the lower component will vanish, and for low momentum will be small compared to the upper component.
+The helical basis was a sensible one in which to examine the transformation properties of the bispinors.  But in descending to the nonrelativistic theory, a basis that separates the particle and antiparticle parts of the field will be more convenient.  If the upper component is supposed to be the particle, then in the rest frame the lower component will vanish, and for low momentum will be small compared to the upper component.
 
-
-  A unitary transformation which accomplishes this is 
 Define the new bispinor as
 \[
-	\Psig' = \begin{pmatrix} \phi \\ \chi \end{pmatrix}
+	\Psig' = \begin{pmatrix} \phi \\ \chi \end{pmatrix}.
 \]
 The components of this bispinor are, in terms of the old components $\xi$ and $\eta$
 \[
-	\phi = \frac{1}{\sqrt{2}}(\xi + \eta)
+	\phi = \frac{1}{\sqrt{2}}(\xi + \eta),
 \]
 \[
-	\chi = \frac{1}{\sqrt{2}}( \eta - \xi)
+	\chi = \frac{1}{\sqrt{2}}( \eta - \xi).
 \]
 
 
 And $\Psig'$ can obtained by a unitary transformation:
 \[
-	\Psig' = \frac{1}{\sqrt{2}} \begin{pmatrix}1 & 1 \\ -1 & 1 \end{pmatrix} \Psig
+	\Psig' = \frac{1}{\sqrt{2}} \begin{pmatrix}1 & 1 \\ -1 & 1 \end{pmatrix} \Psig.
 \]
 
 In terms of the original rest frame spinors, the components of $\Psig'$ are
 \beq \label{eq:phiDef}
-	\phi =  \cosh \left( \frac{\gv{\Sigma} \cdot \gv{\rapidity} }{2} \right ) \xi_0
+	\phi =  \cosh \left( \frac{\gv{\Sigma} \cdot \gv{\rapidity} }{2} \right ) \xi_0,
 \eeq
 
 %TODO consider: Sign confusion compared to original equation again?
 \beq \label{eq:chiDef}
-	\chi =  \sinh \left( \frac{\gv{\Sigma} \cdot \gv{\rapidity} }{2} \right ) \xi_0
+	\chi =  \sinh \left( \frac{\gv{\Sigma} \cdot \gv{\rapidity} }{2} \right ) \xi_0.
 \eeq
 
 
@@ -783,3 +780,91 @@ Where $I$ is the magnitude of the particle's spin.
 \eeq
 
 \input{Comparison}
+
+
+
+\section{Interpretation of universality in light of BMT equation}
+
+
+The time evolution of a particle's spin is given by
+\beq
+	\dot{\v{S}} = i[H, \v{S}].
+\eeq
+In nonrelativistic quantum mechanics, when a magnetic field is present, the above becomes
+\beq \label{eq:Sum:dotS}
+	\dot{\v{S}}	= g \frac{e}{2m} \v{S} \times \v{B}.
+\eeq
+
+Let $a$ be a four-vector that is the relativistic generalisation of $\v{S}$.  The proper time evolution of this vector is constrained in several ways: it must be linear in the electromagnetic field and the vector $a_\mu$, and must be built out of those quantities as well as the velocity $u = p/m$.  With such constraints, only two terms are possible, so the time evolution must have the form
+\beq
+	\d{a^\mu}{\tau} = 
+		\alpha F^{\mu\nu} a_\nu + \beta u^\nu F^{\mu \lambda} u_\mu a_\lambda.
+\eeq
+
+Since the nonrelativistic limit is known, the constants $\alpha$ and $\beta$ can be determined by comparison.  In the rest frame, $a = (0, \v{S})$ and $u=(1, 0)$.  Then 
+\beq
+	\d{a^i}{\tau} = \alpha F^{ij} a_j,
+\eeq
+or in terms of $\v{S}$
+\beq
+	\d{\v{S}}{\tau} = \alpha \v{S} \times \v{B}
+\eeq
+Comparing to the nonrelativistic limit \eqref{eq:Sum:dotS}, it must be that $\alpha = g \frac{e}{2m}$.  
+
+To fix $\beta$, consider the time evolution of the velocity.  According to the classical motion of a particle in a field, 
+\beq
+	m \d{u^\mu}{\tau} = e F^{\mu\nu} u_\nu.
+\eeq
+
+With $a \cdot u=0$, it follows that
+\beq
+	u \cdot \d{a}{\tau} = -a \cdot \d{u}{\tau}
+		= \frac{e}{m}F^{\mu\nu} u_\mu a_\nu.
+\eeq
+
+Dotting $u$ into the evolution equation earlier gives
+\beq
+	u \cdot \d{a}{\tau}  = \alpha F^{\mu\nu} a_\nu u_\mu + \beta u^2 F^{\mu\lambda} u_\mu a_\lambda,
+\eeq
+and substituting the values of $\alpha$ and $u \cdot \d{a}{\tau}$,
+\beq
+	\frac{e}{m} F^{\mu\nu} u_\mu a_\nu	=	\left( g \frac{e}{2m} + \beta \right)  F^{\mu \nu} u_\mu a_\nu 
+\eeq
+So 
+\beq
+	\beta = - (g-2) \frac{e}{2m}.
+\eeq 
+
+So the original equation for spin evolution is
+\beq
+\d{a^\mu}{\tau} = 
+		g \frac{e }{2m} F^{\mu\nu} a_\nu - (g-2) \frac{e }{2m} u^\nu F^{\mu \lambda} u_\mu a_\lambda.
+\eeq
+Written in terms of nonrelativistic quantities, this becomes
+\beq
+	\d{\v{S}}{t} =
+		\frac{e}{2m} \v{S} \times \left\{ 
+			\left( g- 2 + \frac{2}{\gamma}\right ) \v{B}\
+			- \frac{(g-2)\gamma}{1+\gamma} (\v{v} \cdot \v{B}) \v{v} 
+			+ \left( g - \frac{2\gamma}{1 + \gamma} \right ) \v{E} \times \v{v}
+		\right \}.
+\eeq
+
+Keeping only first order relativistic corrections, and writing $\v{p}-e\v{A}$ instead of $\v{v}$, this becomes
+
+\beq \label{eq:Sum:NRevol}
+		\d{\v{S}}{t} =
+		\frac{e}{2m} \v{S} \times \left\{ 
+			\left( g -  \frac{ \v{p}^2}{m^2} \right ) \v{B}\
+			- \frac{(g-2)}{2m^2} (\v{p} \cdot \v{B}) \v{p} 
+			+ \left( g - 1 \right ) \frac{ \v{E} \times (\v{p} - e\v{A})}{m}
+		\right \}.
+\eeq
+The logic that led up to \eqref{eq:Sum:NRevol} depended only on relativistic symmetries and classical limits.  These considerations would hold for particles of any spin.  So the BMT equation is universal and independent of spin.  
+
+Recall again that the time evolution of $\v{S}$ can also be obtained from the commutator $[H, \v{S}]$.  If the general NRQED Lagrangian \eqref{eq:Sg:nrLFull} developed previously is used, then for a constant magnetic field,
+%FIXME fill in result
+\beq
+		\d{\v{S}}{t} = 
+\eeq
+That the BMT equation does not depend on spin then constrains the coefficients appearing in $[H, \v{S}]$ to likewise be universal.  
