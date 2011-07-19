@@ -8,19 +8,20 @@
 \usepackage{amssymb}	% Math symbols such as \mathbb
 \usepackage{graphicx} % Allows for eps images
 \usepackage{multicol} % Allows for multiple columns
-\usepackage[dvips,showframe,letterpaper,margin=1.0in,left=1.5in]{geometry}
+%\usepackage[dvips]{geometry}
 % tim included
-\usepackage{cancel}
 \usepackage{siunitx}
  % Sets margins and page size
-\pagestyle{plain} % Removes page numbers
+%\pagestyle{plain} % Removes page numbers
 \makeatletter % Need for anything that contains an @ command 
 \renewcommand{\maketitle} % Redefine maketitle to conserve space
 { \begingroup \vskip 10pt \begin{center} \large {\bf \@title}
 	\vskip 10pt \large \@author \hskip 20pt \@date \end{center}
   \vskip 10pt \endgroup \setcounter{footnote}{0} }
 \makeatother % End of region containing @ commands
-\renewcommand{\labelenumi}{(\alph{enumi})} % Use letters for enumerate
+%\renewcommand{\labelenumi}{(\alph{enumi})} % Use letters for enumerate
+
+
 % \DeclareMathOperator{\Sample}{Sample}
 \let\vaccent=\v % rename builtin command \v{} to \vaccent{}
 \renewcommand{\v}[1]{\ensuremath{\mathbf{#1}}} % for vectors

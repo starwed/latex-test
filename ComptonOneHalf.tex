@@ -31,19 +31,22 @@ $\hspace{1em}   +  \hspace{1em} $
 While in NRQED, the following diagrams contribute to the scattering:
 
 \vspace{1em}
- \mbox{
 \begin{minipage}{1in}
    \includegraphics[scale=0.5]{eps/2photon-blob} 
 \end{minipage}
 $	=	\hspace{1em} 	 $
-\begin{minipage}{1.5in}
-  \begin{center} \includegraphics[scale=1.0]{eps/Tree-crossed-square} \end{center}
-\end{minipage}
+$\underbrace{ \begin{minipage}{1.3in}
+  \begin{center} \includegraphics[scale=0.9]{eps/Tree-crossed-square} \end{center}
+\end{minipage}}_I$
 $\hspace{1em}   +  \hspace{1em} $
-\begin{minipage}{1.5in}
+$\underbrace{\begin{minipage}{1.3in}
    \begin{center} \includegraphics[scale=0.5]{eps/Tree-uncrossed-square} \end{center} 
-\end{minipage}
-} 
+\end{minipage}}_{II}$
+$\hspace{1em}   +  \hspace{1em} $
+$\underbrace{\begin{minipage}{1.3in}
+   \begin{center} \includegraphics[scale=0.8]{eps/two-photon-nrqed} \end{center} 
+\end{minipage}}_{III}$
+
 \vspace{1em}
 
 
@@ -59,7 +62,7 @@ The high energy theory (QED) doesn't contain any two-photon vertices, while the 
 
 How does the local two-photon interaction arise in NRQED?  Of course there are an infinite number of contributions, but we'll consider just the leading order contributions.  These will come from the tree level two photon diagrams as shown above.  Compare the tree-level diagrams in the two theories: in addition to the vertices being different, so are the propagators.  The propagator in QED represents some admixture of the electron and positron field, while in NRQED it is only the electron.
 %%%%%%%%
-In both QED and NRQED, a process is calculated as the sum of a series of diagrams, representing an expansion in perturbation theory.  However, there is a difference btween the two in the nature of perturbation theory employed.
+In both QED and NRQED, a process is calculated as the sum of a series of diagrams, representing an expansion in perturbation theory.  However, there is a difference between the two in the nature of perturbation theory employed.
 
 In QED, at each vertex both energy and momentum is conserved.  But intermediate particles may be off mass-shell; that is, it is no longer the case that for a particle of four-momentum $p$ and mass $m$ that $p^2 = m^2$.
 
@@ -73,7 +76,7 @@ Remember that in old perturbation theory, corrections have the rough form
 \eeq
 where the sum is over intermediate states, which can have differing energy from the initial state.
 
-The trick, then is to take the relativistic tree-level diagrams of QED and rewrite them in the language of  Rayleigh-Schrodinger before trying to compare them to NRQED.  In NRQED, only intermediate states involving electrons can be considered, but in QED intermediate states identified with positrons will appear as well.  It is \emph{these} processes, involving a large violation of energy conservation, that will appear as contact terms in NRQED.  
+The trick, then, is to take the relativistic tree-level diagrams of QED and rewrite them in the language of  Rayleigh-Schrodinger before trying to compare them to NRQED.  In NRQED, only intermediate states involving electrons can be considered, but in QED intermediate states identified with positrons will appear as well.  It is \emph{these} processes, involving a large violation of energy conservation, that will appear as contact terms in NRQED.  
 
 There are two diagrams in QED, and both can be dealt with in the same general way.  Consider the uncrossed diagram:
 
@@ -115,8 +118,8 @@ Call the intermediate momentum $\v{q}$.  The initial energy will be $q_0$, the i
 \end{minipage}
 $	=$ \hspace{1em} $	i\frac{ \cancel{q} -m}{q^2 - m^2}  
 		= i\frac{1}{\sqrt{\v{q}^2 + m^2} } \left(
-			\frac{ \Sigma \bar{u}(\v{q}) u(\v{q}) }  {q_0 - \sqrt{\v{q}^2 + m^2} }
-			+ \frac{ \Sigma \bar{v}(-\v{q}) v(-\v{q}) }  {q_0 + \sqrt{\v{q}^2 + m^2} }
+			\frac{ \Sigma u(\v{q}) \bar{u}(\v{q})  }  {q_0 - \sqrt{\v{q}^2 + m^2} }
+			+ \frac{ \Sigma v(-\v{q}) \bar{v}(-\v{q})  }  {q_0 + \sqrt{\v{q}^2 + m^2} }
 		\right )	 $
 } 
 \vspace{1em}
@@ -143,7 +146,7 @@ So it implies poles at $q_0 = \pm  \sqrt{\v{q}^2 + m^2}$.  There is one unique w
 The two numerators can be exactly equated to sums over polarisation states of electron and positron spinors:
 \beqa
 	\Sigma u(\v{p}) \bar{u}(\v{p}) &=& \gamma \cdot p + m	\\
-	\Sigma v(\v{p}) \bar{v}(\v{p}) &=& \gamma \cdot p - m	\\
+	\Sigma v(\v{p}) \bar{v}(\v{p}) &=& \gamma \cdot p - m	
 \eeqa
 These relations hold for particles which are on mass-shell.  That is exactly the case here.  But then, there is an assumption that the quantity $p_0$ above is the on mass-shell energy, $\sqrt{\v{p}^2 + m^2}$.
 
@@ -160,7 +163,7 @@ The numerators have now been put into exactly the forms expected for the regular
 
 As mentioned above this can be understood in the context of old perturbation theory as sum over intermediate states in the numerator,  with the expected form of the denominator being $E_\text{in} - E_\text{int}$.  It can be shown that the denominators have exactly this form. 
 
-Now consider the first, regular diagram.  The initial energy is $q_0$, since in relativistic theory the total energy at the vertex is conserved.  The intermediate energy is the on-mass shell energy of the electron: $\sqrt{\v{q}^2+ m^2}$.  Thus the denominator of $q_0 - \sqrt{\v{q}^2+ m^2}$ is that expected.
+Now consider the first, regular diagram.  The initial energy is $q_0$, since in relativistic theory the total energy at the vertex is conserved.  The intermediate energy is the on-mass shell energy of the electron: $\sqrt{\v{q}^2+ m^2}$.  Thus the denominator of $q_0 - \sqrt{\v{q}^2+ m^2}$ is as expected.
 
 Now consider the Z-diagram.  The initial energy is still $q_0$.  The intermediate energy is more complicated: there are two photons, two electrons, and a positron present.  The total combined energy is:
 \beq
@@ -205,7 +208,7 @@ $\Bigg )$
 
 
 
-Where
+
 %Define each piece
 %Vertex in, prop, vertex out
 Recall that the total NRQED one-photon vertex was derived by comparing to the QED vertex, so necessarily
@@ -478,9 +481,9 @@ Further, ultimately only a few of these terms are relevant -- terms which have b
 The remaining terms of interest are:
 \scriptsize
 \beqa
-	\mathcal{L}_{A^2} &=& \Psi^\dagger ( - \frac{e^2 \v{A}^2}{2m}  - e^2 \frac{ \{ \grad^2, \v{A}^2 \} 
+	\mathcal{L}_{A^2} &=& \fnr^\dagger ( - \frac{e^2 \v{A}^2}{2m}  - e^2 \frac{ \{ \grad^2, \v{A}^2 \} 
 }{8m^3} - e^2\frac{ \{\nabla_i, A_i \} \{\nabla_j, A_j\} }{8m^3}
-		+ c^2_S \frac{ e^2 \v{S} \smalldot ( \v{A} \times \v{E} - \v{E} \times \v{A} )}{8m^2} ) \Psi
+		+ c^2_S \frac{ e^2 \v{S} \smalldot ( \v{A} \times \v{E} - \v{E} \times \v{A} )}{8m^2} ) \fnr
 \eeqa
 \normalsize
 

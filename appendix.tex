@@ -1,6 +1,7 @@
 \appendix
 
 \chapter{Appendices}
+\numberwithin{equation}{section}
 \input{bilinear_transforms}
 
 
@@ -295,27 +296,27 @@ The indices on the second term on the right refer to the indices of the product 
 (Note that the vector dotted into $W^\dagger$ appears dotted with right-most spin matrix.)
 
 
-\section{Anticommutator identity}
-\begin{eqnarray*}
-\left \{ \frac{\v{p}^2}{2} - (\v{S} \cdot \v{p})^2, \v{S} \cdot \v{B} \right \}
-	&=&	 \v{p}^2 \v{S} \cdot \v{B} - [(\v{S} \cdot \v{p})^2 \v{S} \cdot \v{B} + \v{S} \cdot \v{B} (\v{S} \cdot \v{p})^2  ]	\\
-	&=&	 \v{p}^2 \v{S} \cdot \v{B} - (S_i S_j S_k + S_k S_j S_i) p_i p_j B_k
-\end{eqnarray*}
-
-To simplify that triple product of spin matrices, use their explicit form:
-\begin{eqnarray*}
-	(S_i S_j S_k )_{ab}
-		&=&	i\epsilon_{aci}\epsilon_{cdj}\epsilon_{dbk}	\\
-		&=&	i(\delta_{id} \delta_{aj} - \delta_{ij} \delta_{ad})\epsilon_{dbk}	\\
-		&=&	i(\delta_{aj} \epsilon_{ibk} - \delta_{ij} \epsilon_{abk})		\\
-	(S_i S_j S_k + S_k S_j S_i)_{ab}
-		&=& i(\delta_aj \epsilon_{ibk} + \delta_{aj} \epsilon_{kbi} -\delta_{ij} \epsilon_{abk} -\delta{kj}\epsilon_{abi})	\\
-		&=& -i(\delta_{ij} \epsilon_{abk} + \delta_{kj} \epsilon_{abi})	\\
-		&=&	\delta_{ij} {(S_k)}_{ab} + \delta_{kj} {(S_i)}_{ab}	
-\end{eqnarray*}
-Now 
-\begin{eqnarray*}
- \v{p}^2 \v{S} \cdot \v{B} - (S_i S_j S_k + S_k S_j S_i) p_i p_j B_k
- 	&=& \v{p}^2 \v{S} \cdot \v{B} - (\delta_{ij} S_k + \delta_{kj} S_i	) p_i p_j B_k	\\
- 	&=& - (\v{S} \cdot \v{p}) (\v{B} \cdot \v{p})
-\end{eqnarray*}
+% \section{Anticommutator identity}
+% \begin{eqnarray*}
+% \left \{ \frac{\v{p}^2}{2} - (\v{S} \cdot \v{p})^2, \v{S} \cdot \v{B} \right \}
+% 	&=&	 \v{p}^2 \v{S} \cdot \v{B} - [(\v{S} \cdot \v{p})^2 \v{S} \cdot \v{B} + \v{S} \cdot \v{B} (\v{S} \cdot \v{p})^2  ]	\\
+% 	&=&	 \v{p}^2 \v{S} \cdot \v{B} - (S_i S_j S_k + S_k S_j S_i) p_i p_j B_k
+% \end{eqnarray*}
+% 
+% To simplify that triple product of spin matrices, use their explicit form:
+% \begin{eqnarray*}
+% 	(S_i S_j S_k )_{ab}
+% 		&=&	i\epsilon_{aci}\epsilon_{cdj}\epsilon_{dbk}	\\
+% 		&=&	i(\delta_{id} \delta_{aj} - \delta_{ij} \delta_{ad})\epsilon_{dbk}	\\
+% 		&=&	i(\delta_{aj} \epsilon_{ibk} - \delta_{ij} \epsilon_{abk})		\\
+% 	(S_i S_j S_k + S_k S_j S_i)_{ab}
+% 		&=& i(\delta_aj \epsilon_{ibk} + \delta_{aj} \epsilon_{kbi} -\delta_{ij} \epsilon_{abk} -\delta{kj}\epsilon_{abi})	\\
+% 		&=& -i(\delta_{ij} \epsilon_{abk} + \delta_{kj} \epsilon_{abi})	\\
+% 		&=&	\delta_{ij} {(S_k)}_{ab} + \delta_{kj} {(S_i)}_{ab}	
+% \end{eqnarray*}
+% Now 
+% \begin{eqnarray*}
+%  \v{p}^2 \v{S} \cdot \v{B} - (S_i S_j S_k + S_k S_j S_i) p_i p_j B_k
+%  	&=& \v{p}^2 \v{S} \cdot \v{B} - (\delta_{ij} S_k + \delta_{kj} S_i	) p_i p_j B_k	\\
+%  	&=& - (\v{S} \cdot \v{p}) (\v{B} \cdot \v{p})
+% \end{eqnarray*}

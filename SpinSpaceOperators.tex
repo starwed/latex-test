@@ -1,6 +1,6 @@
 \subsection{Properties of spin operators}
 %TODO in the context of a field theory, is talking about the state-space the correct way of thinking about it?
-In formulating NRQED for general spin particles, we need to consider all the possible operators might show up in the Lagrangian.  The state-space of a spin-$s$ particle is the direct product of it's spin-state and all the other state information.  Because the spaces are orthogonal, we can treat separately operators in the two spaces.  The operators and fields which exist in position space are the same for a particle of any spin, but unsurpsingly the operators allowed in spin space do depend upon the spin of the particle.  As the spin of the particle is increased, and thus its spin degrees of freedom rise, there are more ways to mix these components, and thus a greater number of spin operators to consider.
+In formulating NRQED for general spin particles, we need to consider all the possible operators might show up in the Lagrangian.  The state-space of a spin-$s$ particle is the direct product of its spin-state and all the other state information.  Because the spaces are orthogonal, we can treat separately operators in the two spaces.  The operators and fields which exist in position space are the same for a particle of any spin, but unsurpsingly the operators allowed in spin space do depend upon the spin of the particle.  As the spin of the particle is increased, and thus its spin degrees of freedom rise, there are more ways to mix these components, and thus a greater number of spin operators to consider.
 
 For a particular representation, we can always write a bilinear as the spin operators and other operators acting between two spinors:
 \beq
@@ -23,7 +23,7 @@ The spinors $\Psi$ are written with $2s+1$ independent components.  The spin ope
 
 For spin-$0$ there is only one component to the spinor, so the only possible operator is equivalent to the identity.
 
-For spin-$1/2$ we have, in addition to the identity, the spin matrices $s_i = \frac{1}{2} \sigma_i$.  This is four independent matrices, and since the space has $(2s+1)^2 = 4$ degrees of freedom, exactly spans the space of all spin-operators.  If we try to construct terms which are bilinear in spin matrices, they just reduce through the identity $\sigma_i \sigma_j = \delta_{ij} + \epsilon_{ijk}\sigma_k$, which we can already construct through combinations of the four operators we already have.  Since those four operators form a basis for the space, independent bilinears were forbidden even without an explicit form for the equation.
+For spin-$1/2$ we have, in addition to the identity, the spin matrices $s_i = \frac{1}{2} \sigma_i$.  This is a set of four independent matrices, and since the space has $(2s+1)^2 = 4$ degrees of freedom, exactly spans the space of all spin-operators.  If we try to construct terms which are bilinear in spin matrices, they just reduce through the identity $\sigma_i \sigma_j = \delta_{ij} + \epsilon_{ijk}\sigma_k$, which we can already construct through combinations of the four operators we already have.  Since those four operators form a basis for the space, independent bilinears were forbidden even without an explicit form for the equation.
 
 
 What about spin-$1$?  We need 9 independent operators to span the space.  All the operators that exist in spin-$1/2$ will work here as well, though the spin matrices will have a different representation.  That leaves 5 operators to construct.  It is natural to try to construct these from bilinear combinations of spin matrices.  Naively $S_i S_j$ would itself be 9 independent structures, but clearly some of these are expressible in terms of the lower order operators.  (By the order of a spin operator we mean its greatest degree in $S_i$ )  %TODO multipole moment language better?
@@ -50,11 +50,11 @@ We can explicitly write this symmetric, traceless structure as
 
 Having explored how the procedure works for spin-1, move on to consider the general spin case.   The idea is to proceed inductively using the same rough attack as for the case of spin-$1$.  In addition to all the ``lower order'' operators which were used for lower spin representations introduce new operators which are of higher degree in the spin matrices and guaranteed to be independent of the lower spin operators.
 
-So suppose that for a spin-$s-1$ particle we have a set of operators written as $\bar{S}^0, \bar{S}^1, \ldots \bar{S}^{(s-1)}$, where a structure $\bar{S}^n$ carries $n$ Galilean indices and is symmetric and traceless between any pair of indices, that is:
+So suppose that for a spin-$s-1$ particle we have a set of operators written as $\bar{S}^0$, $\bar{S}^1$ $\ldots \bar{S}^{(s-1)}$, where a structure $\bar{S}^n$ carries $n$ Galilean indices and is symmetric and traceless between any pair of indices, that is:
 \beq
 	\bar{S}^n_{..i..j..} = \bar{S}^n_{..j..i..}, \; \delta_{ij} \bar{S}^n_{..i..j..}=0
 \eeq 
-(From above, $\bar{S}^0=I$, $\bar{S}^1_i = S_i$, and $\bar{S}^2 = S_i S_j + S_j S_i + \delta_{ij} S^2$.) 
+(From above, $\bar{S}^0=I$, $\bar{S}^1_i = S_i$, and $\bar{S}^2 = S_i S_j + S_j S_i - \delta_{ij} S^2$.) 
 
 The objects $\bar{S}^n$ are built as follows: start with all combinations involving the product of exactly $n$ spin matrices.  (There are $3^n$ such structures.)  Form them into combinations which are symmetric in all indices.  Each index has three possible values, so we can label each structure by how many indices are equal to 1 and 2.  If $a$ is the number of indices equal to $1$, and $b$ the number of indices equal to $2$, then for a given $a$ there are $n+1-a$ possible choices for $b$.  The total number of symmetric structures is then
 \beq

@@ -19,7 +19,7 @@ The first question is how to represent the fields in a nonrelativistic theory.  
 
 \subsection{Building the NRQED Lagrangian}
 %TODO add refs back to them
-Previously, NRQED Lagrangians were developed for spin half and spin one.  They included all the terms that could arise at the required order for such theories.  As discussed in developing the Lagrangian for spin one, new terms will arise because the increasing degrees of spin freedom allow a larger set of spin operators.  So to describe the NREQED Lagrangian for general spin, a complete description of spin space operators are needed.
+Previously, NRQED Lagrangians were developed for spin half and spin one.  They included all the terms that could arise at the required order for such theories.  As discussed in developing the Lagrangian for spin one, new terms will arise because the increasing degrees of spin freedom allow a larger set of spin operators.  So to describe the NRQED Lagrangian for general spin, a complete description of spin space operators are needed.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -37,8 +37,7 @@ The different combinations of position space operators were catalogued in descri
 \eeq   
 
 Only one combination of position space operators existed at the needed order, $D_i D_j D_k D_\ell$.  This cannot be coupled to $\Sb_{ijk\ell}$ because it would spoil the kinetic term.  So the only new terms are those in  \eqref{eq:Sg:Lnewterms}.  Adding these to the Lagrangian \eqref{eq:S1:Lnr} found for spin one, the result is
-
-\beq \label{eq:Sg:nrLFull}
+\small \beq \label{eq:Sg:nrLFull}
 \begin{split}
 \mathcal{L}_{NRQED} = & \fnrb \Bigg\{
 		iD_0 +  \frac{\v{D}^2}{2m}  + 	\frac{\v{D}^4}{8m^2}
@@ -50,11 +49,11 @@ Only one combination of position space operators existed at the needed order, $D
 		- c_{W2} \frac{e D_i (\v{S} \cdot \v{B}) D_i}{4m^3}
 \\	&		+c_{p'p} \frac{ e [ (\v{S}\cdot \v{D})(\v{B} \cdot \v{D}) + (\v{B} \cdot \v{D})(\v{S}\cdot \v{D})]}{8m^3}
  	+ c_{T_1} \frac{ e \bar{S}_{ijk} (D_i D_j B_k + B_k D_j D_i)}{8m^3}
-		+ c_{T_2} \frac{ e \bar{S}_{ijk} D_i B_j D_k }{8m^3} 
+\\&		+ c_{T_2} \frac{ e \bar{S}_{ijk} D_i B_j D_k }{8m^3} 
 		\Bigg \} \fnr.
 \end{split}
 \eeq
-
+\normalsize
 \subsection{Scattering off an external field in NRQED}
 
 To calculate scattering off an external field, that part of the Lagrangian involving only a single power of $A$ is needed.  The terms which arise for spin greater than one are the only modifications from \eqref{eq:S1:nrqedScatter}
@@ -109,11 +108,9 @@ To work out a relativistic theory that describes particles of arbitrary spin, th
 It is easiest to start with the chiral basis, where the upper and lower components of the bispinor are objects of opposite helicity, each transforming as an object of spin $s$.
 
 To that end define an object
-
 \beq \label{eq:PsiDef}
 \Psig  = \frac{1}{\sqrt{2}} \begin{pmatrix} \xi \\ \eta \end{pmatrix},
 \eeq
-
 the components of which will have the desired properties.  Each component should transform as a particle of spin $s$, but with opposite helicity.  Under reflection the upper and lower components transform into each other.
 
 Spinors which are separately symmetric in dotted and undotted indices are representations of the proper Lorentz group.  If $\xi$ is an object with $p$ undotted and $q$ dotted indices
@@ -179,7 +176,7 @@ then the infinitesimal transformations would be
 \beqB
 	\eta \to \eta' = \left( 1 - \frac{\gv{\Sigma} \cdot \gv{\rapidity} }{2} \right) \eta.
 \eeqB
-That is satisfied if the exact transformation are
+That is satisfied if the exact transformations are
 \beqB
 		\xi \to \xi' = \exp\left( \frac{\gv{\Sigma} \cdot \gv{\rapidity} }{2} \right) \xi,
 \eeqB
@@ -230,7 +227,7 @@ In terms of the original rest frame spinors, the components of $\Psig'$ are
 
 \subsection{Properties of $\gv{\Sigma}$ matrices}
 
-The matrices $\Sigma_i$ act on wave functions with $p+q$ indices.  If we treat the two sets of indices as two seperate spaces, with spins $\frac{p}{2}, \frac{q}{2}$ respectively, we can write it as the sum of those spaces spin operators: $\Sigma_i = 2(S^P_i - S^Q_i)$.  We can then write the total spin operator as $S^I_i = S^P_i + S^Q_i$.  (The case of spin one-half is degenerate: $\Sigma_i =  2 S_i = \sigma_i $.)
+The matrices $\Sigma_i$ act on wave functions with $p+q$ indices.  If we treat the two sets of indices as two separate spaces, with spins $\frac{p}{2}, \frac{q}{2}$ respectively, we can write it as the sum of those spaces spin operators: $\Sigma_i = 2(S^P_i - S^Q_i)$.  We can then write the total spin operator as $S^I_i = S^P_i + S^Q_i$.  (The case of spin one-half is degenerate: $\Sigma_i =  2 S_i = \sigma_i $.)
 
 Because the two spaces are orthogonal, $[S^P_i, S^Q_j]=0$.  Using that and the above definitions, the algebra of these matrices is found.  
 \beq \label{eq:Sg:comSSig}
@@ -275,7 +272,7 @@ It will eventually be necessary to take the matrix element of terms containing $
 	\avg{\Sigma_i \Sigma_j + \Sigma_j \Sigma_i - \frac{2}{3} \delta_{ij} \gv{\Sigma}^2}
 		=	\lambda \avg{ \left \{ I_i I_j + I_j I_i - \frac{2}{3} \delta_{ij} \v{I}^2 \right\} }	
 \eeq
-To determine the constant $\lambda$, consider the zz component of the tensor structure acting on a wave function with all spin projected in the z direction.  Then $I_3 \to \frac{p+q}{2} = I$, and $\Sigma_3 \to p-q = \Delta$, giving
+To determine the constant $\lambda$, consider the $zz$ component of the tensor structure acting on a wave function with all spin projected in the $z$ direction.  Then $I_3 \to \frac{p+q}{2} = I$, and $\Sigma_3 \to p-q = \Delta$, giving
 \beqa
 	2 \Delta^2 - \frac{2}{3} (4I + \Delta) 
 		&=& \lambda  \left \{ 2 I^2 -\frac{2}{3} (I^2 + I) \right \}	\\
@@ -325,12 +322,14 @@ Knowing how the fields themselves behave, what form might the electromagnetic in
 where $j^\mu$ is the electromagnetic current.
 
 
-The electromagnetic current must be built out of the particle's momenta and bilinears of the charged particle fields in such a way that they have the correct Lorentz properties.  It must also obey current conservation: the equation $q_\mu j^\mu = 0$ must hold.  Above it was shown that, in the case of general spin, there exist two such bilinears, a scalar and a tensor.  A vector bilinear could not be constructed.
+The electromagnetic current must be built out of the particle's momenta and bilinears of the charged particle fields in such a way that they have the correct Lorentz properties.  It must also obey current conservation: the equation $q_\mu j^\mu = 0$ must hold.  
 
 %TODO address concern about p_0 terms
-As higher spins are considered, higher order bilinears will appear.  But necessarily, they will be coupled to a greater number of powers of the external momenta, and so suppressed in the nonrelativistic limit.
+As higher spins are considered, higher order bilinears will appear.  But the electromagnetic current must ultimately be related to the physically relevant vectors of the problem: the momentum and the spin four-vectors.  This means that only two independent terms will enter.
 
-So there will be just two relevant terms in the current that transform as Lorentz vectors.  One is a scalar bilinear coupled with a single power of external momenta.  In order to fulfill the current conservation requirement, the exact combination will be
+ And on such physical grounds, there will necessarily be some relation (like the Gordon identity in the case of spin one-half) that relates any seemingly independent vector-like term to the two appearing in the electromagnetic current.  
+
+So if we can come up with two terms that transform as Lorentz vectors, that will be sufficient to capture the essence of the current.  One such is a scalar bilinear coupled with a single power of external momenta.  In order to fulfill the current conservation requirement, the exact combination will be
 \[
 	\frac{p^\mu + p'^\mu}{2m} \Psigbar^\dagger \Psig
 \]
@@ -340,8 +339,6 @@ The other type of term will be a tensor term contracted with a power of momenta.
 \[
 	\frac{q_\nu}{2m} \Psigbar^\dagger \TensBi^{\mu\nu} \Psig
 \]
-
-There is no need to consider higher order tensor bilinears; they will necessitate additional powers of the external momenta.
 
 So the most general current would look like
 \beq \label{eq:khr_current}
@@ -353,8 +350,6 @@ The form factors might have quite complicated dependence on $q$, but these corre
 	j^\mu =  e \frac{p^\mu + p'^\mu}{2m} \Psigbar^\dagger \Psig +   e g \frac{q_\nu}{2m} \Psigbar^\dagger \TensBi^{\mu\nu} \Psig
 \eeq
 
-%FIXME discuss how only two terms ``really'' exist, since there are only two independant vectors .. ..
-%TODO Actually show this formally: that the two types of antisymmetric tensors aren't truly different
 %The tensor bilinear $\Psigbar^\dagger T^{\mu\nu} \Psig$ itself has some free parameters.  However, it'll turn out that, when computing actual nonrelativistic amplitudes, the two types of anti-symmetric tensors collapse into the same general form.
 
 This captures the essence of the interaction between a charged particle of general-spin and a single photon.
@@ -363,7 +358,7 @@ This captures the essence of the interaction between a charged particle of gener
 \section{Comparison of scattering amplitudes}
 
 \subsection{Connection between the spinors of the two theories}
-Having sufficient knowledge of the relativistic theory, the approach of NRQED can be applied.  In NRQED, the amplitude for scattering off an external field has been calculated.  To compare the same process in this relativistic theory, first a way to write the nonrealtivistic spinors in terms of the relativistic ones is needed.
+Having sufficient knowledge of the relativistic theory, the approach of NRQED can be applied.  In NRQED, the amplitude for scattering off an external field has been calculated.  To compare the same process in this relativistic theory, first a way to write the nonrelativistic spinors in terms of the relativistic ones is needed.
 
 In the rest frame, there are two independent bispinors which represent particle and antiparticle states.  The particle state is represented by
 \beq
@@ -449,7 +444,7 @@ Above the bispinors were written terms of $\phi_s$, so those identities can be u
 \subsubsection{Scalar bilinear}
 
 Calculating the scalar bilinear is just straightforward substitution and expansion.  To express the commutator of $\Sigma$ operators, the identity \eqref{eq:Sg:comSigSig} is needed.
-\beqa
+\small \beqa
 \Psigbar^\dagger(p') \Psig(p)
 	&=&	\phi^\dagger \phi - \chi^\dagger \chi	\\
 	&=&	\phi_s^\dagger \left[1 + \frac{(\gv{\Sigma} \cdot \v{p'})^2 }{8m^2}  - \frac{\v{p'}^2}{4m^2} \right ]
@@ -476,7 +471,7 @@ Calculating the scalar bilinear is just straightforward substitution and expansi
 				[ 4 i \epsilon_{ijk} p_i q_j S_k  + ( \gv{\Sigma} \cdot \v{q})^2 
 			\right \}
 	\right ) \phi_s
-\eeqa
+\eeqa \normalsize
 %TODO at some point need to translate \Sigma functions into spin functions in NR theory, but where?
 
 \subsubsection{Tensor $ij$ component}
@@ -572,8 +567,8 @@ The four-current \eqref{eq:khr_current} was derived above; in Galilean form it i
 			+F_m \frac{q_0}{2m} \Psigbar^\dagger \TensBi^{i0} \Psig
 \eeq
 
-Expressions for the bilinears in terms of the nonrelativistic wave functions $\phis$ have been calcaluted, so it is fairly straight forward to apply them here.  The calculation of $j_0$ goes:
-\beqa
+Expressions for the bilinears in terms of the nonrelativistic wave functions $\phis$ have been calculated, so it is fairly straight forward to apply them here.  The calculation of $j_0$ goes:
+\small \beqa
 F_e \frac{p_0 + p'_0}{2m} \Psigbar^\dagger \Psig 
 	  &=& F_e \left(1 + \frac{\v{p}^2 + \v{p'}^2}{4m^2} \right)  \phis^\dagger \left (
 			1 - \frac{ \v{p}^2 + \v{p'}^2 }{4m^2}
@@ -587,7 +582,7 @@ F_e \frac{p_0 + p'_0}{2m} \Psigbar^\dagger \Psig
 F_m \frac{q_j}{2m} \Psigbar^\dagger \TensBi^{0j} \Psig
 	&=& F_m \frac{q_i}{2m}\phis^\dagger \left( \frac{ 4i\epsilon_{ijk} p_j S_k - \Sigma_j \Sigma_i q_j}{2m} \right )\phis	\\
 	&=&  F_m \phis^\dagger \left( \frac{ 4i \v{S} \cdot \v{q} \times \v{p} -  (\gv{\Sigma} \cdot \v{q})^2 }{4m^2} \right )\phis	\\
-\eeqa
+\eeqa \normalsize
 
 It turns out that both terms here have the same form, so combining them, 
 \beq \label{eq:nrJ0}
@@ -625,7 +620,7 @@ F_m \frac{q_j}{2m} \Psigbar^\dagger \TensBi^{ij} \Psig
 \eeqa
 
 So the full spatial part of the current is
-\beq \label{eq:nrJi}
+\small \beq \label{eq:nrJi}
 j_i	=	\phis^\dagger \Bigg \{
 			F_e \frac{p_i + p'_i}{2m} \left (
 				1 + \frac{ i \epsilon_{\ell jk} p_\ell q_j S_k   }{2m^2}  \right)
@@ -633,7 +628,7 @@ j_i	=	\phis^\dagger \Bigg \{
 				S_k \left \{ 1 - \frac{ \v{p}^2 + \v{p'}^2}{4m^2}  \right \}
 				+ \frac{\v{p}^2 S_k - (\v{S} \cdot \v{p}) p_k}{2m^2} \right)	
 		\Bigg \} \phis
-\eeq
+\eeq \normalsize
 
 \subsection{Scattering off an external field}
 To compare to the NRQED Lagrangian, scattering off an external field needs to be calculated for an arbitrary spin particle.  The hardest part was calculating the current; with that in hand the amplitude can be found just as
@@ -641,7 +636,7 @@ To compare to the NRQED Lagrangian, scattering off an external field needs to be
 	M = e j_\mu A^\mu = e j_0 A_0 - e \v{j} \cdot \v{A}
 \]
 With the expressions for both $j_0$ \eqref{eq:nrJ0} and $\v{j}$ \eqref{eq:nrJi} both parts of the amplitude can be written down directly.
-\beq
+\small \beq
 \begin{split}
 	e j_0 A_0 = 
 		& eA_0 \phis^\dagger \left (
@@ -656,7 +651,7 @@ With the expressions for both $j_0$ \eqref{eq:nrJ0} and $\v{j}$ \eqref{eq:nrJi} 
 				+ \frac{\v{p}^2 S_k - (\v{S} \cdot \v{p}) p_k}{2m^2} \right)	
 		\Bigg \} \phis
 \end{split}
-\eeq  
+\eeq   \normalsize
 
 
 
@@ -784,24 +779,25 @@ Where $I$ is the magnitude of the particle's spin.
 
 
 \section{Interpretation of universality in light of BMT equation}
+Many of the coefficients are found to be independent of spin.  In the derivation above it is unclear if there is any underlying reason for this.  Another line of logic, that connects the result to the Bargmann-Michel-Telegdi (BMT) equation, helps explain this universality.  The BMT gives the relativistic equation of motion for a particle's spin.  This result is derived from relativistic constraints on the form of this equation, as well as demanding the appropriate nonrelativistic limit.
 
-
-The time evolution of a particle's spin is given by
+The time evolution of a particle's spin is related to the Hamiltonian of a system by the Heisenberg equation
 \beq
 	\dot{\v{S}} = i[H, \v{S}].
 \eeq
-In nonrelativistic quantum mechanics, when a magnetic field is present, the above becomes
+In regular quantum mechanics, the only part of the Hamiltonian that doesn't commute with spin is $H_{SB}= - 2 \mu \v{S} \cdot \v{B}$.  So the equation for $\dot{S}$ is 
 \beq \label{eq:Sum:dotS}
 	\dot{\v{S}}	= g \frac{e}{2m} \v{S} \times \v{B}.
 \eeq
 
-Let $a$ be a four-vector that is the relativistic generalisation of $\v{S}$.  The proper time evolution of this vector is constrained in several ways: it must be linear in the electromagnetic field and the vector $a_\mu$, and must be built out of those quantities as well as the velocity $u = p/m$.  With such constraints, only two terms are possible, so the time evolution must have the form
+
+The idea is to find the relativistic generalisation of this equation.  First let $a$ be a (pseudo) four-vector that is the relativistic generalisation of $\v{S}$.  In the rest frame it is $(0, \v{S})$, and its form in other frames can be found by boosting.  The proper time evolution of $a$ can be highly constrained if only terms linear in the electromagnetic field tensor $F^{\mu\nu}$ are considered, and derivatives of that field are not considered.  Then the only other quantities involved will be $a_\mu$ and the velocity $u = p/m$.    With such constraints, only two independent terms are possible, and the time evolution must have the form
 \beq
 	\d{a^\mu}{\tau} = 
 		\alpha F^{\mu\nu} a_\nu + \beta u^\nu F^{\mu \lambda} u_\mu a_\lambda.
 \eeq
 
-Since the nonrelativistic limit is known, the constants $\alpha$ and $\beta$ can be determined by comparison.  In the rest frame, $a = (0, \v{S})$ and $u=(1, 0)$.  Then 
+The constants $\alpha$ and $\beta$ can be determined by comparison to the nonrelativistic limits.  In the rest frame, $a = (0, \v{S})$ and $u=(1, 0)$.  Then 
 \beq
 	\d{a^i}{\tau} = \alpha F^{ij} a_j,
 \eeq
@@ -809,7 +805,7 @@ or in terms of $\v{S}$
 \beq
 	\d{\v{S}}{\tau} = \alpha \v{S} \times \v{B}
 \eeq
-Comparing to the nonrelativistic limit \eqref{eq:Sum:dotS}, it must be that $\alpha = g \frac{e}{2m}$.  
+Comparing to the nonrelativistic limit \eqref{eq:Sum:dotS}, it follows that $\alpha = g \frac{e}{2m}$.  
 
 To fix $\beta$, consider the time evolution of the velocity.  According to the classical motion of a particle in a field, 
 \beq
@@ -850,21 +846,24 @@ Written in terms of nonrelativistic quantities, this becomes
 		\right \}.
 \eeq
 
-Keeping only first order relativistic corrections, and writing $\v{p}-e\v{A}$ instead of $\v{v}$, this becomes
+Keeping only first order relativistic corrections, and writing $\v{p}-e\v{A}$ instead of $\v{v}$, this is
 
 \beq \label{eq:Sum:NRevol}
 		\d{\v{S}}{t} =
 		\frac{e}{2m} \v{S} \times \left\{ 
-			\left( g -  \frac{ \v{p}^2}{m^2} \right ) \v{B}\
+			\left( g -  \frac{ \v{p}^2}{m^2} \right ) \v{B}
 			- \frac{(g-2)}{2m^2} (\v{p} \cdot \v{B}) \v{p} 
 			+ \left( g - 1 \right ) \frac{ \v{E} \times (\v{p} - e\v{A})}{m}
 		\right \}.
 \eeq
-The logic that led up to \eqref{eq:Sum:NRevol} depended only on relativistic symmetries and classical limits.  These considerations would hold for particles of any spin.  So the BMT equation is universal and independent of spin.  
 
-Recall again that the time evolution of $\v{S}$ can also be obtained from the commutator $[H, \v{S}]$.  If the general NRQED Lagrangian \eqref{eq:Sg:nrLFull} developed previously is used, then for a constant magnetic field,
-%FIXME fill in result
-\beq
-		\d{\v{S}}{t} = 
-\eeq
-That the BMT equation does not depend on spin then constrains the coefficients appearing in $[H, \v{S}]$ to likewise be universal.  
+This equation must match the condition that $\dot{\v{S}} = i[H, S]$.  This implies that terms linear in spin are
+\beq	H_S =
+		\frac{e}{2m} \v{S} \cdot \left\{ 
+			\left( g -  \frac{ \v{p}^2}{m^2} \right ) \v{B}
+			- \frac{(g-2)}{2m^2} (\v{p} \cdot \v{B}) \v{p} 
+			+ \left( g - 1 \right ) \frac{ \v{E} \times (\v{p} - e\v{A})}{m}
+		\right \}.
+\eeq 
+
+The logic that led up to \eqref{eq:Sum:NRevol} depended only on relativistic symmetries and classical limits.  These considerations would hold for particles of any spin.  So the partial Hamiltonian is universal, and requires the equivalent coefficients in \eqref{eq:Sg:nrLFull} to likewise be universal.

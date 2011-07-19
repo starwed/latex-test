@@ -35,7 +35,7 @@ The gamma matrices by themselves do not form a complete basis for this space.  T
 
 There is the identity --- such bilinears transform as a scalar.
 
-Symmetric combinations are not considered because $\{ \gamma^\mu, \gamma^\nu \}= g^{\mu\nu}$.  The antisymmetric combinations are explicitly
+Symmetric combinations of gamma matrices need not be considered because $\{ \gamma^\mu, \gamma^\nu \}= g^{\mu\nu}$.  The antisymmetric combinations are explicitly
  \beqa
 	  {[\gamma^0, \gamma^i]}
 		&=&  2 \gamma^0 \gamma^i = \begin{pmatrix}	0 & 2\sigma_i \\ 2\sigma_i & 0\end{pmatrix},	\\
@@ -62,7 +62,7 @@ The product of each gamma matrix in turn gives a pseudo-scalar:
 	\gamma^5 = i \gamma^0 \gamma^1 \gamma^2 \gamma^3 = \Mblock{0}{1}{1}{0}.
 \eeq
  
- The product of $\gamma^5$ and $\gamma^\mu$ gives a pseudo-vector
+ And the product of $\gamma^5$ and $\gamma^\mu$ gives a pseudo-vector
  \beq
  	\gamma^5 \gamma^\mu .
  \eeq
@@ -78,13 +78,10 @@ Solutions of the Dirac equation in momentum space are the spinors $\sr$.  They h
 
  
 \subsection{Nonrelativistic framework for spin one-half}
-The nonrelativistic theory describes a single particle, without its oppositely charged antiparticle.  
-%FIXME a bit more word here
-
-
+The nonrelativistic theory describes a single particle, without its oppositely charged antiparticle.  The nonrelativistic fields will be denoted by $\fnr$, which had two components.  The wave function that appears in amplitudes will be the Schrodinger-like $\phis$.  The relation between the relativistic and nonrelativistic amplitudes is obtained through the relations
 \beqa
-	\eta &=& \left( 1  - \frac{\v{p}^2}{8m^2} \right ) w,	\\
-	\chi &=& 	\frac{ \gv{\sigma} \cdot \v{p}}{2m} \left(1 - \frac{3\v{p}^2}{8m^2} \right ) w.	\\
+	\eta &=& \left( 1  - \frac{\v{p}^2}{8m^2} \right ) \phis,	\\
+	\chi &=& 	\frac{ \gv{\sigma} \cdot \v{p}}{2m} \left(1 - \frac{3\v{p}^2}{8m^2} \right ) \phis.	\\
 \eeqa
 
 
@@ -114,7 +111,7 @@ The starting point will be the relativistic Lagrangian of Dirac.  However, remem
 Knowing that there will actually be bound-state corrections proportional to $g-2$, it is necessary to somehow include this anomalous term.  The way to do so is to introduce a new local interaction into the Lagrangian, coming from the high energy radiative corrections which dress the electron vertex.  The Lagrangian to be used is, then
 \beqa
 \mathcal{L} &=&	
-	\Psigbar(\cancel{D} - m)\Psi + \frac{1}{2} \mu' \bar{\Psi} \sigma^{\mu\nu}F_{\mu\nu} \Psig.
+	\Psigbar(\cancel{D} - m)\Psig + \frac{1}{2} \mu' \Psigbar \sigma^{\mu\nu}F_{\mu\nu} \Psig.
 \eeqa
 %TODO check \mu_0
 $\mu'$ is the correction to the classical moment $\mu_0 = \frac{e}{2m}$, and is equal to $(g-2)/2 \mu_0$.  $D$ is the long derivative $\partial + ieA$.
@@ -141,7 +138,7 @@ The scalars that appear will be $\partial_0= \partial_t$ and $A_0 = \Phi$.  The 
 
 Of the terms that appear in \eqref{eq:Sh:eom}, all except the last are trivial to write in this manner.  To deal with that last term, the antisymmetric tensor $\sigma^{\mu\nu} =  \frac{1}{2}[\gamma^\mu, \gamma^\nu]$ needs to be written explicitly.
 
-Using the antisymmetry of $\sigma^{\mu\nu} \equiv $, and that we deal with time-independent fields: %TODO fix sigma
+Using the antisymmetry of $\sigma^{\mu\nu}$, and that we deal with time-independent fields: 
 \beqa
 	F_{\mu\nu} \sigma^{\mu\nu} &=& F_{i}\sigma^{ij} - F_{0i}\sigma^{0i} 	- F_{i0}\sigma^{i0} +F_{00}\sigma^{00}	\\
 		&=&	F_{ij} \sigma^{ij} -2F_{0i} \sigma^{0i}	\\
@@ -184,7 +181,7 @@ This gives rise to exact coupled equations for $\eta$ and $\chi$.  So far this i
 
 \subsection{Nonrelativistic limit}
 
-The particle under consideration is a nonrelativistic electron.  Roughly, the expectation is that $\eta$ corresponds to the electron field and $\chi$ to that of the positron.  The off-diagonal terms in the equation above represent some sort of mixing between the electron and positron: the electron wave function still has some small positron component, that decreases as momentum is decreased.    The off diagonal component that does \emph{it} vanish at 0 momentum is proportional to $\mu'$, the term introduced to account for a high-energy process.
+The particle under consideration is a nonrelativistic electron.  Roughly, the expectation is that $\eta$ corresponds to the electron field and $\chi$ to that of the positron.  The off-diagonal terms in the equation above represent some sort of mixing between the electron and positron: the electron wave function still has some small positron component, that decreases as momentum is decreased.    The off-diagonal component that \emph{does} vanish at 0 momentum is proportional to $\mu'$, the term introduced to account for a high-energy process.
 
 The upshot is that although the equation above is really a set of coupled equations for $\eta$ and $\chi$, $\chi$ will be small compared to $\eta$ --- the very leading order diagonal term will indicate that $\chi \sim \sigdotg{\pi} \eta$.
 
@@ -222,7 +219,6 @@ Now the expression for $\chi$ in terms of $\eta$ may be used.
 \beq
  	\epsilon \eta \approx (e\Phi - \mu' \sigdot{B} )\eta + (\sigdot{E} + \sigdotg{\pi})  \frac{1}{2m} \left ( 1- \frac{\epsilon - e\Phi - \mu' \sigdot{B}}{2m} \right ) (\sigdotg{\pi} - i\mu' \sigdot{E} )\eta .
 \eeq				
- 
 Writing the $1/m$ and $1/m^2$ terms separately:
 \beq
 \begin{split}				\epsilon \eta		\approx& \left \{
@@ -359,7 +355,7 @@ The non-trivial part is the commutation of the derivative operators with the ele
 \beqa
 [(\sigdotg{\pi})^2, \hat{H}_0] &=& [(\sigdotg{\pi})^2, e\Phi] \\
 		&=&	e( \sigdotg{\pi}[\sigdotg{\pi},  \Phi] + [\sigdotg{\pi},  \Phi]\sigdotg{\pi}) \\
-		&=&	i e( \sigdotg{\pi} \sigdot{E} + \sigdot{E} \sigdotg{\pi} ). \\
+		&=&	i e( \sigdotg{\pi} \sigdot{E} + \sigdot{E} \sigdotg{\pi} ). 
 \eeqa
 So, writing down the new $H_1'$:
 \beqa
@@ -407,7 +403,7 @@ H	&=&	e\Phi  + \frac{ \pi^2}{2m}
 %define spinors and structures
 Instead of starting from the relativistic equations of motion and rewriting them in the form of a Schrodinger like equation, the method of NRQED can be employed.  The nonrelativistic Lagrangian can be written in the most general way, but ignoring all possible terms that will have too small a contribution to calculations.  The coefficients before each term will be unknown, but there is a straightforward method of fixing them.
 
-Within the realm of NRQEDs validity, it should produce the same predictions as QED.  The same physical process can be calculated in both frameworks, and then the results compared.  The calculation in QED will then fix the coefficients in NRQED.  In comparing the two calculations it will be necessary to write the QED results nonrelativisitcally, in the same manner as was done for the equation of motion.
+Within the realm of NRQEDs validity, it should produce the same predictions as QED.  The same physical process can be calculated in both frameworks, and then the results compared.  The calculation in QED will then fix the coefficients in NRQED.  In comparing the two calculations it will be necessary to write the QED results nonrelativistically, in the same manner as was done for the equation of motion.
 %TODO mention free vs. nonfree spinors?
 
 For spin one-half, up to the order desired, the form of the NRQED Lagrangian involving two fermion fields has been derived in the previous chapter.  It is
@@ -448,7 +444,7 @@ However, it turns out that the actual \emph{form} of the interaction is highly c
 
 The first symmetry that constrains the interaction is that it must be invariant under Lorentz transformations.  Since every term involves the photon field $A_\mu$ and has external fermion legs, then the interaction must be proportional to the general form:
 \beq
-	A_\mu \srb(p') \Gamma^\mu(p', p) \sr(p).
+	A_\mu \srb(p') \Gamma^\mu(p', p) \sr(p),
 \eeq 	
 and $\srb(p') \Gamma^\mu(p', p) \sr(p) $ must transform as a Lorentz vector.  If it did not, the whole would not be Lorentz invariant.  To leading order $\Gamma^\mu = \gamma^\mu$, since the fundamental vertex is just that.  The corrections, whatever the exact details of the processes which produce them, can only depend on the momenta $p$ and $p'$, in addition to constants $m$ and $e$, and such structures as may act upon the spinors.
 
@@ -468,7 +464,7 @@ The unique tensor term allowed will be
 \beq
 	\frac{q_\nu}{2m} \srb \sigma^{\mu\nu} \sr,
 \eeq
-which conserves current because $\sigma^{\mu\nu}$ is antisymmetric.  So from these considerations, the general form of the vertex will have three terms, each with a momentum dependant coefficient:
+which conserves current because $\sigma^{\mu\nu}$ is antisymmetric.  So from these considerations, the general form of the vertex will have three terms, each with a momentum dependent coefficient:
 \beq \label{eq:Sh:Gamma}
 	\srb \Gamma^\mu \sr 
 		= 	c_1(p, p') \frac{p^\mu + p'^\mu}{2m} \srb \sr
@@ -495,7 +491,6 @@ Using the Gordon identity to write this in terms of the scalar and vector biline
 \beq
 	\Gamma^\mu = \gamma^\mu [F_1(q^2) + F_2(q^2) ]  -  \frac{p^\mu  + p'^\mu }{2m}F_2 (q^2).
 \eeq
-
 And writing in terms of the scalar and tensor:
 \beq
 	\Gamma^\mu = \frac{p^\mu  + p'^\mu }{2m} F_1(q^2) + i \frac{\sigma^{\mu\nu}q_\nu}{2m} [F_1(q^2) + F_2(q^2) ] .
@@ -552,7 +547,6 @@ The term quadratic in $\sigma$ can be simplified, using $\sigdot{p'} \sigdot{p} 
 		1 -  \frac{ \v{p}^2  +2 \v{p} \cdot \v{p'} +  \v{p'}}{8m^2} - \frac{i\gv{\sigma} \cdot \v{q} \times \v{p} }{4m^2} 
 		\right ) \wx.
 \eeq
-
 The spatial part is straightforward, but the time-like part is 
 \beq
 	(p + p')^0 \srb \sr  = (p + p')_0 \wxd \left( 
@@ -684,7 +678,6 @@ Using that identity,
 			\sigma_k \left( 1 - \frac{\v{p'}^2  + \v{p}^2}{8m^2} \right ) - \frac{ \gv{\sigma} \cdot (\v{p} + \v{p'})p_k - \sigma_k \v{p} \cdot \v{p'} + i \epsilon_{akc} q_a p_c }{4m^2} 
 		\right \} \wx .
 \eeq
-
 This can be further simplified by combining the like terms $\sigma_k (\v{p'}^2 + \v{p}^2 ) - 2 \sigma_k \v{p} \cdot \v{p'} = \sigma_k \v{q}^2$.
 \beq
 	\srb  \frac{i}{2m} q_j \sigma^{ij} \sr 
@@ -950,7 +943,7 @@ It is a mixture of terms with two, one, or no powers of the external field $A$. 
 \beq
 	-ie( A_i \nabla_i + A_i \nabla_i = -ie \{A_i, \nabla_i\}.
 \eeq
-So from $\v{D}^2/ 2m$ emerges, in $\mathcal{L}_A$,  $-ie \{\nabla_i, A_i\}/2m$ in  $\mathcal{L}_A$.
+So from $\v{D}^2/ 2m$ emerges, in $\mathcal{L}_A$,  $-ie \{\nabla_i, A_i\}/2m$.
 
 The second kinetic term is $\v{D}^4$:
 \beq
@@ -991,7 +984,7 @@ So finally, writing all such terms from the original Lagrangian involved in scat
 
 
 
-The form Lagrangian that will account for all interactions with a single photon is now established.  From this, the idea is to calculate a particular process: scattering off an external field, with incoming momentum $\v{p}$, outgoing $\v{p'}$, and $\v{q} = \v{p'} - \v{p}$. 
+The form of the Lagrangian that will account for all interactions with a single photon is now established.  From this, the idea is to calculate a particular process: scattering off an external field, with incoming momentum $\v{p}$, outgoing $\v{p'}$, and $\v{q} = \v{p'} - \v{p}$. 
 One diagram could be associated with each term in \eqref{eq:Sh:nrL-A}, but the total amplitude is just going to be the sum of all these one-photon vertices.  These of course can just be read off directly from the Lagrangian.
 
 It is necessary to switch to the language of momentum space.  The recipe is this: replace the fields $\Psi$ with the spinors $\phi$, and any operator $\grad$ acting will become $i\v{p}$ if it acts on the right, $i\v{p'}$ if it is to the left.
