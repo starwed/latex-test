@@ -45,7 +45,7 @@ This conditions form a set of 4 constraints, so from the original 9 degrees of f
 
 We can explicitly write this symmetric, traceless structure as
 \beq
-	 S_i S_j + S_j S_i - \delta_{ij} S^2
+	 S_i S_j + S_j S_i - \frac{2}{3} \delta_{ij} S^2
 \eeq
 
 Having explored how the procedure works for spin-1, move on to consider the general spin case.   The idea is to proceed inductively using the same rough attack as for the case of spin-$1$.  In addition to all the ``lower order'' operators which were used for lower spin representations introduce new operators which are of higher degree in the spin matrices and guaranteed to be independent of the lower spin operators.
@@ -54,7 +54,7 @@ So suppose that for a spin-$s-1$ particle we have a set of operators written as 
 \beq
 	\bar{S}^n_{..i..j..} = \bar{S}^n_{..j..i..}, \; \delta_{ij} \bar{S}^n_{..i..j..}=0
 \eeq 
-(From above, $\bar{S}^0=I$, $\bar{S}^1_i = S_i$, and $\bar{S}^2 = S_i S_j + S_j S_i - \delta_{ij} S^2$.) 
+(From above, $\bar{S}^0=I$, $\bar{S}^1_i = S_i$, and $\bar{S}^2 = S_i S_j + S_j S_i - \frac{2}{3}\delta_{ij} S^2$.) 
 
 The objects $\bar{S}^n$ are built as follows: start with all combinations involving the product of exactly $n$ spin matrices.  (There are $3^n$ such structures.)  Form them into combinations which are symmetric in all indices.  Each index has three possible values, so we can label each structure by how many indices are equal to 1 and 2.  If $a$ is the number of indices equal to $1$, and $b$ the number of indices equal to $2$, then for a given $a$ there are $n+1-a$ possible choices for $b$.  The total number of symmetric structures is then
 \beq
