@@ -103,6 +103,7 @@ It is necessary to calculate $\left(  \frac {\gv{\pi}^2} {2} -  (\v{S} \cdot \gv
 
 \subsubsection*{First term}
 To simplify the first term, consider one element of this matrix operator:
+\small
 \begin{eqnarray*}
 \left\{ \left(  \frac {\gv{\pi}^2} {2} -  (\v{S} \cdot \gv{\pi})^2   \right )^2  \right \} _{ac}
 	&=& 	\left (  \frac {\gv{\pi}^2} {2} - S_i S_j \pi_i \pi_j \right)_{ab} 
@@ -118,6 +119,7 @@ To simplify the first term, consider one element of this matrix operator:
 				- \frac{\gv{\pi}^2}{2} \pi_c \pi_a
 				+ \pi_b \pi_a \pi_c \pi_b \\
 \end{eqnarray*}
+\normalsize
 
 It's very useful to have the following identity:
 \begin{eqnarray*}
@@ -154,7 +156,7 @@ Also,
 				+ \pi_b \pi_c (e \v{S} \cdot \v{B})_{ba}	\\
 	&=&	\pi_b \pi_b \pi_c \pi_a 
 				+ \pi_b \pi_a (e \v{S} \cdot \v{B})_{bc}
-				+ \pi_b \pi_c (e \v{S} \cdot \v{B})_{ba}	\\
+				+ \pi_b \pi_c (e \v{S} \cdot \v{B})_{ba}	
 \end{eqnarray*}
 
 So now:
@@ -170,8 +172,8 @@ So now:
 				- \frac{\gv{\pi}^2}{4} \pi_c \pi_a	\\
 	&=&	\frac{1}{2} [\gv{\pi}^2, \pi_c \pi_a]
 				+ \pi_b \pi_a (e \v{S} \cdot \v{B})_{bc}
-				+ \pi_b \pi_c (e \v{S} \cdot \v{B})_{ba}
-				-\gv{\pi}^2 (e \v{S} \cdot \v{B})_{ac} \\
+	\\&&			+ \pi_b \pi_c (e \v{S} \cdot \v{B})_{ba}
+				-\gv{\pi}^2 (e \v{S} \cdot \v{B})_{ac} 
 \end{eqnarray*}
 
 Evaluating the commutator:
@@ -179,7 +181,7 @@ Evaluating the commutator:
 [\pi_b, \pi_c \pi_a]
 	&=&	[\pi_b, \pi_c]\pi_a - \pi_c [\pi_a, \pi_b]	\\
 	&=&	(e \v{S} \cdot \v{B})_{cb} \pi_a
-				- \pi_c (e \v{S} \cdot \v{B})_{ba}	\\
+				- \pi_c (e \v{S} \cdot \v{B})_{ba}	
 \end{eqnarray*}
 
 \begin{eqnarray*}
@@ -187,11 +189,12 @@ Evaluating the commutator:
 	&=&	[\pi_b \pi_b, \pi_c \pi_a]	\\
 	&=&	\pi_b [\pi_b, \pi_c \pi_a] + [\pi_b, \pi_c \pi_a] \pi_b	\\
 	&=&	(e \v{S} \cdot \v{B})_{cb} ( \pi_b \pi_a + \pi_a \pi_b)
-				-  (e \v{S} \cdot \v{B})_{ba} (\pi_b \pi_c + \pi_c \pi_b)	\\
+				-  (e \v{S} \cdot \v{B})_{ba} (\pi_b \pi_c + \pi_c \pi_b)	
 \end{eqnarray*}
 
 
 This gives the result:
+\small
 \begin{eqnarray*}
 \pi_b \pi_a \pi_c \pi_b  
 	- \pi_c \pi_a \frac{\gv{\pi}^2}{2} 
@@ -203,7 +206,7 @@ This gives the result:
 				-\gv{\pi}^2 (e \v{S} \cdot \v{B})_{ac}	\\
 	&=&	\frac{1}{2} [(e \v{S} \cdot \v{B})_{cb} ( \pi_a \pi_b - \pi_b \pi_a)
 				+ (e \v{S} \cdot \v{B})_{ba} (\pi_b \pi_c - \pi_c \pi_b)]
-				-\gv{\pi}^2 (e \v{S} \cdot \v{B})_{ac}	\\
+	\\&&			-\gv{\pi}^2 (e \v{S} \cdot \v{B})_{ac}	\\
 	&=&	\frac{1}{2} [(e \v{S} \cdot \v{B})_{cb} (e \v{S} \cdot \v{B})_{ba}
 				+ (e \v{S} \cdot \v{B})_{ba} (e \v{S} \cdot \v{B})_{cb}]
 				-\gv{\pi}^2 (e \v{S} \cdot \v{B})_{ac}	\\
@@ -212,7 +215,7 @@ This gives the result:
 	&=&	\left[ (e \v{S} \cdot \v{B})^2 \right ]_{ac}
 				-\gv{\pi}^2 (e \v{S} \cdot \v{B})_{ac}	\\
 \end{eqnarray*}
-
+\normalsize
 Since terms of order $B^2$ can be thrown away, the final result is that, to first order in B:
 \begin{eqnarray*}
  \left(  \frac {\gv{\pi}^2} {2} -  (\v{S} \cdot \gv{\pi})^2   \right )^2

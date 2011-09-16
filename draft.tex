@@ -7,6 +7,16 @@
 \numberwithin{equation}{section}
 %NEW COMMANDS
 
+
+
+\newcommand{\sectionline}{%
+  \nointerlineskip \vspace{\baselineskip}%
+ \rule{0.5\linewidth}{.7pt}\hspace{\fill}%
+  \par\nointerlineskip \vspace{\baselineskip}
+}
+
+
+
 \newcommand{\hC}{^{12}C^{5+} }
 \newcommand{\hO}{^{16}O^{7+} }
 
@@ -122,6 +132,9 @@
 
 \usepackage{setspace}
 \DoubleSpacing
+
+\setlength{\TPHorizModule}{1in}\setlength{\TPVertModule}{1in}
+
 \title{Universal Binding and Recoil Corrections to Bound State $g$-Factors}
 \author{Timothy J. S. Martin}
 
@@ -131,6 +144,7 @@
 \maketitle
 
 \frontmatter*
+\include{cover}
 \include{abstract}
  \tableofcontents
 \include{intro2}

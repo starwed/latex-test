@@ -48,15 +48,17 @@ Under an infitesimal Lorentz boost $\gv{\eta}$ this will transform into
 		+ \frac{\eta_i}{2} \bar{\Psi} \left (  \begin{pmatrix} A + D & B+C \\ B-C & A - D \end{pmatrix} \begin{pmatrix} 0 & \Sigma_i \\ \Sigma_i & 0 \end{pmatrix} - \begin{pmatrix} 0 & \Sigma_i \\ \Sigma_i & 0 \end{pmatrix} \begin{pmatrix} A + D & B+C \\ B-C & A - D \end{pmatrix} \right ) \Psi					
 \]
 We can express this in terms of commutators and anti-commutators
-\[
-	\bar{\Psi} T \Psi \to \bar{\Psi} T \Psi
+\beq
+	\begin{split}
+	\bar{\Psi} T \Psi \to & \bar{\Psi} T \Psi
 		+ \frac{\eta_i}{2} \bar{\Psi} \left [
 			[B, \Sigma_i] \otimes \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}
-			+ [A, \Sigma_i] \otimes \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}
- 			+ \{C, \Sigma_i\} \otimes \begin{pmatrix} 1 & 0 \\ 0 & -1\end{pmatrix}
+			+ [A, \Sigma_i] \otimes \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \right.
+ 	\\&		\left. \hspace{6em} + \hspace{.5em} \{C, \Sigma_i\} \otimes \begin{pmatrix} 1 & 0 \\ 0 & -1\end{pmatrix}
 			+ \{D, \Sigma_i\} \otimes \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix}
-	\right)] \Psi
-\]
+	\right] \Psi
+	\end{split}
+\eeq
 
 We can note here that, using only the matrices $\gv{\Sigma}$ and $\gv{S}$ we can build three structures invariant under rotations: and $S^2$, $\Sigma^2$, and $\Sigma \cdot S$.  All three of these structures commute with both $S_i$ and $\Sigma_i$, and their value depends only on the particular representation we're working with.  So for our purposes here, they can just be treated as pure numbers.
 
